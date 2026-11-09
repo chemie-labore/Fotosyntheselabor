@@ -88,7 +88,7 @@
 @media(max-width:1100px){.dc-step-card{padding:16px 18px;gap:14px}.dc-step-copy h2{font-size:21px}.dc-step-copy>p:last-child{font-size:12px}.dc-step-action{min-width:125px}}
 @media(max-width:700px){.dc-step-card{top:4px;padding:13px 14px;gap:10px;flex-wrap:wrap}.dc-step-number{width:33px;height:33px;font-size:19px;align-self:flex-start}.dc-step-copy{min-width:calc(100% - 50px)}.dc-step-copy h2{font-size:19px;margin-bottom:5px}.dc-step-copy>p:last-child{font-size:12px;line-height:1.4}.dc-step-action{margin-left:43px;flex:1;flex-direction:row;align-items:center;justify-content:space-between;gap:8px}.dc-step-action button{padding:8px 12px;min-height:44px;font-size:11px}.dc-step-action output{font-size:23px}}
 
-/* A single workspace fits tablet screens; materials remain one tap away. */
+/* Tablet workspace with a persistent tool tray beside the experiment. */
 .dc-bench-tools{display:flex;align-items:center;gap:8px}.dc-bench-tools button{min-height:44px;font-size:11px}
 #dc-materials-open,#dc-guide-compact-open{display:none}
 #dc-materials{width:min(850px,calc(100% - 28px));max-height:calc(100dvh - 28px);overflow:auto;padding:20px}
@@ -107,7 +107,7 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
 .dc-compact .dc-step-number{width:36px;height:36px;font-size:21px}.dc-compact .dc-step-copy{min-width:0}.dc-compact .dc-step-copy .eyebrow{font-size:9px;margin-bottom:3px}
 .dc-compact .dc-step-copy h2{font-size:20px;margin-bottom:5px}.dc-compact .dc-step-copy>p:last-child{font-size:13px;line-height:1.4}
 .dc-compact .dc-step-action{margin:0;min-width:135px;max-width:190px;gap:6px;flex:none;flex-direction:column;align-items:flex-end}.dc-compact .dc-step-action button{min-height:44px;font-size:12px;padding:8px 12px}.dc-compact .dc-step-action output{font-size:26px}
-.dc-compact .dc-workspace{display:block;min-height:0;min-width:0}.dc-compact .dc-bench{height:100%;min-height:0;position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:52px minmax(0,1fr) auto auto;border-radius:12px}
+.dc-compact .dc-workspace{display:grid;grid-template-columns:160px minmax(0,1fr);gap:10px;align-items:stretch;min-height:0;min-width:0}.dc-compact .dc-bench{height:100%;min-height:0;position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:52px minmax(0,1fr) auto auto;border-radius:12px}
 .dc-compact .dc-bench-head{grid-column:1/-1;padding:4px 12px;gap:12px}.dc-compact .dc-bench-head .eyebrow{display:none}.dc-compact .dc-bench-head h2{font-size:19px;white-space:nowrap}
 .dc-compact .dc-bench-tools{gap:6px}.dc-compact .dc-bench-tools button{padding:8px 10px;font-size:12px}.dc-compact #dc-materials-open,.dc-compact #dc-guide-compact-open{display:block}
 .dc-compact .dc-stage-scroll{grid-column:1/-1;min-height:0;min-width:0;max-height:none;overflow:hidden}.dc-compact #dc-stage{width:100%;height:100%;min-width:0}.dc-compact #dc-stage>svg{width:100%;height:100%}
@@ -118,6 +118,33 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
 .dc-compact .dc-manual-progress{position:absolute;bottom:0;left:0;right:0;z-index:4;min-height:32px;padding:8px 12px;background:#edf3e2;border-top:1px solid #d6e0c9;font-size:12px;pointer-events:none}
 .dc-compact .dc-run-strip{margin:0;padding:5px 12px;gap:16px;min-height:54px;border-radius:10px;flex-wrap:nowrap}.dc-compact .dc-clock{display:grid;grid-template-columns:auto auto;align-items:center;column-gap:10px;min-width:0}.dc-compact #dc-clock-label{display:none}.dc-compact .dc-clock output{font-size:28px;margin:0}.dc-compact .dc-clock>span:last-child{font-size:11px}.dc-compact .dc-run-copy{min-width:0}.dc-compact .dc-run-copy strong{font-size:12px}.dc-compact .dc-run-copy p{display:none}.dc-compact .dc-run-copy progress{display:block;margin-top:6px}.dc-compact #dc-reset-open{min-height:44px;width:auto;padding:8px 12px;font-size:12px}
 @media(max-width:800px){.dc-compact .dc-bench-head h2{display:none}.dc-compact .dc-bench-head{justify-content:flex-end}.dc-compact .dc-step-card{padding:10px;gap:9px}.dc-compact .dc-step-number{display:none}.dc-compact .dc-step-action{min-width:120px;max-width:150px}.dc-compact .dc-tool-context{max-width:165px}.dc-compact .dc-targets button{padding:8px}.dc-compact .dc-clock{column-gap:7px}.dc-compact .dc-run-strip{gap:10px}}
+
+/* Tools stay within reach while the apparatus remains visible. */
+.dc-inventory:focus,.dc-inventory.dc-highlight{outline:3px solid #8da95b;outline-offset:1px}
+.dc-tool-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:10px 0}
+.dc-tool-groups button{min-width:0;min-height:44px;padding:5px 2px;font-size:11px;line-height:1.2;font-weight:500;hyphens:manual;background:#f0f3e9}
+.dc-tool-groups button[aria-pressed=true]{background:#355741;border-color:#355741;color:#fff;box-shadow:inset 0 0 0 1px #355741}
+#dc-tools{display:block}
+.dc-tray-hint{margin:12px 0 0;font-size:11px;line-height:1.4;color:#5c7055}
+.dc-tool[aria-pressed=true]{box-shadow:inset 0 0 0 1px #476d3d,0 4px 9px #31584825}
+.dc-compact .dc-inventory{height:100%;min-height:0;min-width:0;padding:10px 7px 9px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;border-radius:12px;overflow:hidden}
+.dc-compact .dc-tray-title .eyebrow{font-size:9px;letter-spacing:1.1px;line-height:1.4}
+.dc-compact .dc-tray-title button{display:none}
+.dc-compact .dc-tool-groups{margin:8px 0;gap:4px}
+.dc-compact .dc-tool-groups button{min-height:44px;font-size:11px;padding:4px 1px}
+.dc-compact #dc-tools{min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:3px 2px 5px;scroll-padding-block:4px}
+.dc-compact .dc-tool-group>p{display:none}
+.dc-compact .dc-tool-grid,.dc-compact .dc-tool-group:first-child .dc-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;align-content:start}
+.dc-compact .dc-tool{min-width:0;min-height:82px;padding:6px 2px;gap:4px;font-size:11px;line-height:1.15;touch-action:none;hyphens:auto;overflow-wrap:anywhere}
+.dc-compact .dc-tool svg{width:32px;height:32px;flex:none;stroke-width:1.5}
+.dc-compact .dc-tool span{max-width:100%}
+.dc-compact .dc-tool small{font-size:9px;line-height:1.15}
+.dc-compact .dc-tray-hint{margin:7px 0 0;padding-top:7px;border-top:1px solid #e0e6d6;font-size:11px;line-height:1.3}
+
+#dc-tool-ghost[data-tool="capillary"]{transform:translate(-13px,-79px)}#dc-tool-ghost[data-tool="capillary"] svg{width:90px;height:90px}
+#dc-inventory .dc-tool{touch-action:none}#dc-tools-toggle{display:none!important}
+
+@media(max-width:1000px){.dc-compact .dc-bench-head h2{display:none}.dc-compact .dc-bench-head{justify-content:flex-end}}
 </style></head>
 <body>
 <header class="topbar"><a class="brand" href="#" aria-label="Fotosyntheselabor"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26 5C9 3 3 12 8 23c12 7 21-2 18-18Z"/><path d="M6 27 24 8M13 20l-1-8m6 3 7 1"/></svg><span>Fotosynthese<span class="brand-sub">EXPERIMENTIERLABOR</span></span></a></header>
@@ -158,9 +185,13 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
   <div class="dc-step-action"><span id="dc-step-count">Schritt 1</span><button id="dc-step-tool" class="primary">Werkzeug auswählen</button><output id="dc-step-time" hidden aria-live="off"></output></div>
  </section>
  <div class="dc-workspace">
-  <aside class="dc-inventory" aria-label="Materialien und Werkzeuge"><div class="dc-tray-title"><p class="eyebrow">MATERIAL & WERKZEUG</p><button id="dc-tools-toggle" aria-expanded="true" aria-controls="dc-tools">Einklappen</button></div><div id="dc-tools"></div></aside>
+  <aside class="dc-inventory" id="dc-inventory" tabindex="-1" aria-label="Materialien und Werkzeuge">
+   <div class="dc-tray-title"><p class="eyebrow">WERKZEUGABLAGE</p><button id="dc-tools-toggle" aria-expanded="true" aria-controls="dc-tools">Einklappen</button></div>
+   <div class="dc-tool-groups" id="dc-tool-groups" role="group" aria-label="Werkzeuggruppen"><button type="button" data-tool-group="0" aria-pressed="true" aria-controls="dc-tools">Lauf<wbr>mittel</button><button type="button" data-tool-group="1" aria-pressed="false" aria-controls="dc-tools">Blatt<wbr>auszug</button><button type="button" data-tool-group="2" aria-pressed="false" aria-controls="dc-tools">DC-Folie</button></div>
+   <div id="dc-tools"></div><p class="dc-tray-hint">Werkzeug zum Einsatzort ziehen oder antippen.</p>
+  </aside>
   <section class="dc-bench" aria-label="Arbeitsplatz für Chromatografie">
-   <header class="dc-bench-head"><div><p class="eyebrow">DEIN VERSUCHSPLATZ</p><h2 id="dc-stage-title">Ansatz vorbereiten</h2></div><div class="dc-bench-tools"><button id="dc-materials-open" aria-haspopup="dialog">Material & Werkzeug</button><button id="dc-guide-compact-open" aria-haspopup="dialog">Anleitung</button><button id="dc-zoom" aria-pressed="false">Vergrößern</button></div></header>
+   <header class="dc-bench-head"><div><p class="eyebrow">DEIN VERSUCHSPLATZ</p><h2 id="dc-stage-title">Ansatz vorbereiten</h2></div><div class="dc-bench-tools"><button id="dc-materials-open" aria-controls="dc-inventory">Werkzeugablage</button><button id="dc-guide-compact-open" aria-haspopup="dialog">Anleitung</button><button id="dc-zoom" aria-pressed="false">Vergrößern</button></div></header>
    <div class="dc-stage-scroll" id="dc-stage-scroll"><div id="dc-stage" role="group" aria-label="Mischglas, Blattmaterial, Mörser, DC-Folie und DC-Kammer"></div><div id="dc-tool-ghost" aria-hidden="true" hidden></div><div id="dc-ruler" hidden aria-label="Verschiebbares Lineal in Millimetern"><svg viewBox="0 0 48 380"></svg></div></div>
    <div class="dc-tool-context"><span id="dc-selected-icon" aria-hidden="true"></span><div><strong id="dc-selected-name">Werkzeug auswählen</strong><p id="dc-selected-help">Wähle ein Material oder Werkzeug. Ziehe es an seinen Einsatzort oder tippe anschließend auf das passende Objekt.</p></div></div>
    <div id="dc-targets" class="dc-targets" aria-label="Werkzeug an einem Objekt anwenden"></div>
@@ -2031,6 +2062,87 @@ syncPhysics();updateUI();requestAnimationFrame(frame);
 
 </script>
 <script>
+/* Touch-tolerant capillary strokes. Pure geometry; no experiment-state changes. */
+(function (root) {
+  'use strict';
+  const BASELINE = 390, LEFT = 475, RIGHT = 555;
+  const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+  const pointOK = p => !!p && Number.isFinite(p.x) && Number.isFinite(p.y);
+  const num = n => Math.round(n * 100) / 100;
+  function create(point, options = {}) {
+    if (!pointOK(point)) return null;
+    const scale = Number.isFinite(options.scale) && options.scale > 0 ? options.scale : 1;
+    // A 22-screen-pixel corridor remains usable when the whole bench is fitted.
+    const tolerance = clamp(22 / scale, 22, 55);
+    if (point.x < 425 || point.x > 605 || Math.abs(point.y - BASELINE) > tolerance) return null;
+    return {
+      start: { ...point }, last: { ...point }, tolerance,
+      pointerType: options.pointerType || 'mouse',
+      intervals: [], minX: null, maxX: null,
+      distance: 0, maxDeviation: Math.abs(point.y - BASELINE),
+      minY: point.y, maxY: point.y, invalid: false,
+      tipX: clamp(point.x, LEFT, RIGHT)
+    };
+  }
+  // Clip actual movement to the permitted lane; being near it without crossing
+  // it does not create coverage. This also handles sparsely sampled drags.
+  function clippedSegment(a, b, tolerance) {
+    let lo = 0, hi = 1;
+    const dx = b.x - a.x, dy = b.y - a.y;
+    for (const [p, q] of [[-dx, a.x - LEFT], [dx, RIGHT - a.x], [-dy, a.y - (BASELINE - tolerance)], [dy, BASELINE + tolerance - a.y]]) {
+      if (p === 0) { if (q < 0) return null; continue; }
+      const t = q / p;
+      if (p < 0) lo = Math.max(lo, t); else hi = Math.min(hi, t);
+      if (lo > hi) return null;
+    }
+    const x1 = clamp(a.x + lo * dx, LEFT, RIGHT), x2 = clamp(a.x + hi * dx, LEFT, RIGHT);
+    return Math.abs(x2 - x1) > .01 ? [Math.min(x1, x2), Math.max(x1, x2)] : null;
+  }
+  function merge(intervals) {
+    const merged = [];
+    for (const range of intervals.slice().sort((a, b) => a[0] - b[0])) {
+      const last = merged[merged.length - 1];
+      if (last && range[0] <= last[1] + .5) last[1] = Math.max(last[1], range[1]);
+      else merged.push(range.slice());
+    }
+    return merged;
+  }
+  function move(stroke, point) {
+    if (!stroke || !pointOK(point)) return stroke;
+    const segment = clippedSegment(stroke.last, point, stroke.tolerance);
+    const intervals = segment ? merge([...stroke.intervals, segment]) : stroke.intervals.map(r => r.slice());
+    const minY = Math.min(stroke.minY, point.y), maxY = Math.max(stroke.maxY, point.y);
+    const deviation = Math.max(stroke.maxDeviation, Math.abs(point.y - BASELINE));
+    return {
+      ...stroke, last: { ...point }, intervals,
+      minX: intervals.length ? intervals[0][0] : null,
+      maxX: intervals.length ? intervals[intervals.length - 1][1] : null,
+      distance: stroke.distance + Math.hypot(point.x - stroke.last.x, point.y - stroke.last.y),
+      maxDeviation: deviation, minY, maxY,
+      invalid: stroke.invalid || deviation > stroke.tolerance * 1.5 || maxY - minY > Math.max(50, stroke.tolerance * 1.5),
+      tipX: clamp(point.x, LEFT, RIGHT)
+    };
+  }
+  function finish(stroke) {
+    if (!stroke) return { ok: false, message: 'Setze die gefüllte Kapillare auf Höhe der beiden Randmarkierungen an.' };
+    if (stroke.invalid) return { ok: false, message: 'Führe die Kapillare möglichst waagerecht auf Höhe der Randmarkierungen. Probiere die Spur noch einmal.' };
+    const longest = stroke.intervals.reduce((m, [a, b]) => Math.max(m, b - a), 0);
+    if (longest < 55 || stroke.distance < 55) return { ok: false, message: 'Ziehe die Kapillare noch weiter waagerecht über den mittleren Bereich der Folie. Die grüne Spur zeigt dir den Auftrag.' };
+    return { ok: true, message: 'Die schmale Auftragsspur ist aufgetragen. Lass sie jetzt trocknen.' };
+  }
+  function render(stroke) {
+    if (!stroke) return '';
+    const lines = stroke.intervals.map(([a, b]) => `<path d="M${num(a)} ${BASELINE}H${num(b)}" fill="none" stroke="#254c2c" stroke-width="2.7" stroke-linecap="round"/>`).join('');
+    const x = num(stroke.tipX);
+    return `<g class="dc-stroke-preview" pointer-events="none" aria-hidden="true">${lines}<circle cx="${x}" cy="${BASELINE}" r="4.5" fill="#426734" fill-opacity=".2" stroke="#315b35" stroke-width="1"/><path d="M${x} ${BASELINE}l18-42" stroke="#537b68" stroke-width="3.8" stroke-linecap="round"/><path d="M${x} ${BASELINE - 1}l18-42" stroke="#f8fff4" stroke-width="1.4" stroke-linecap="round"/></g>`;
+  }
+  const api = Object.freeze({ create, move, finish, render });
+  root.DCStroke = api;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(globalThis);
+
+</script>
+<script>
 (function(){
 'use strict';
 const $=id=>document.getElementById(id), M=globalThis.DCModel, KEY='fotosyntheselabor.dc.v1';
@@ -2073,12 +2185,12 @@ const tools=[
 ];
 const toolMap=Object.fromEntries(tools.map(t=>[t[0],t]));
 const pointerCaptures=new Map(), inventory=document.querySelector('.dc-inventory'), coarsePointer=window.matchMedia('(pointer: coarse)');
-let compactLayoutActive=null, desktopToolsHidden=false, rulerFrame=null, actionPointer=null;
+let compactLayoutActive=null, rulerFrame=null, actionPointer=null,toolGroup=0;
 const LIQUID_HOLD_MS=1800;
 let liquidFlow=null,liquidFrame=null;
 function capturePointer(element,id){try{element.setPointerCapture(id);pointerCaptures.set(id,element);}catch(_){}}
 function cancelGestures(){
- activeGesture=null;toolDrag=null;rulerDrag=null;actionPointer=null;suppressToolClick=false;stopHold();stopLiquid();
+ activeGesture=null;toolDrag=null;rulerDrag=null;actionPointer=null;suppressToolClick=false;stopHold();stopLiquid();paintStroke();
  for(const [id,element] of pointerCaptures){try{if(element.hasPointerCapture(id))element.releasePointerCapture(id);}catch(_){}}
  pointerCaptures.clear();
 }
@@ -2088,12 +2200,10 @@ function openDialog(id){cancelGestures();const dialog=$(id);if(dialog&&!dialog.o
 function syncCompactLayout(){
  const compact=!$('dc-panel').hidden&&window.innerWidth>=600&&window.innerHeight>=540&&(window.innerWidth<=1400||coarsePointer.matches);
  if(compact!==compactLayoutActive){
-  cancelGestures();closeDialog($('dc-materials'));
+  cancelGestures();
   $('dc-stage-scroll').classList.remove('zoom');$('dc-stage-scroll').scrollTo(0,0);$('dc-zoom').setAttribute('aria-pressed','false');$('dc-zoom').textContent='Vergrößern';
   document.body.classList.toggle('dc-compact',compact);
-  if(compact){desktopToolsHidden=$('dc-tools').hidden;$('dc-tools').hidden=false;$('dc-materials-body').appendChild(inventory);}
-  else{document.querySelector('.dc-workspace').insertBefore(inventory,document.querySelector('.dc-bench'));if(compactLayoutActive===true)$('dc-tools').hidden=desktopToolsHidden;}
-  $('dc-tools-toggle').setAttribute('aria-expanded',String(!$('dc-tools').hidden));$('dc-tools-toggle').textContent=$('dc-tools').hidden?'Ausklappen':'Einklappen';
+  $('dc-tools').hidden=false;
   compactLayoutActive=compact;
  }
  scheduleRuler();
@@ -2102,7 +2212,7 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(_){st
 function feedback(text,error=false){$('dc-feedback').textContent=text;$('dc-feedback').classList.toggle('error',error);}
 function apply(type,extra={},quiet=false){const result=M.act(state,{type,...extra});if(result.ok){state=result.state;save();}if(!quiet||!result.ok)feedback(result.message,!result.ok);render();return result.ok;}
 function timeText(ms){const seconds=Math.ceil(ms/1000);return String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');}
-function renderScene(){if(!$('dc-panel').hidden){$('dc-stage').innerHTML=DCScene.render(state,M.timing(state));if(foilHeld&&!state.plateInChamber)$('dc-stage').classList.add('foil-held');else $('dc-stage').classList.remove('foil-held');syncRuler();renderGuide();paintLiquid();}}
+function renderScene(){if(!$('dc-panel').hidden){$('dc-stage').innerHTML=DCScene.render(state,M.timing(state));if(foilHeld&&!state.plateInChamber)$('dc-stage').classList.add('foil-held');else $('dc-stage').classList.remove('foil-held');syncRuler();renderGuide();paintLiquid();paintStroke();}}
 function phase(){if(state.plateOnLid)return 'Chromatogramm auf dem Deckel';if(state.removedAt!==null)return state.frontMarked?'Chromatogramm trocknen':'Laufmittelfront markieren';if(state.startedAt!==null)return M.timing(state).complete?'Folie entnehmen':'Chromatografie läuft';if(state.coats)return 'Auftragen und trocknen';if(state.grind===100)return 'DC-Folie vorbereiten';return 'Ansatz vorbereiten';}
 function render(){document.querySelectorAll('.dc-tool').forEach(b=>{b.disabled=state.plateOnLid&&b.dataset.tool!=='ruler';});renderScene();$('dc-stage-title').textContent=phase();renderContext();updateClock();}
 function updateClock(){renderGuide();const t=M.timing(state),started=state.startedAt!==null,done=state.plateOnLid;$('dc-clock').textContent=timeText(t.remainingMs);$('dc-clock-state').textContent=done?'Abgeschlossen':t.complete?'20 Minuten vergangen':started?'Läuft in Echtzeit':'Noch nicht gestartet';$('dc-run-progress').value=t.elapsedMs;$('dc-run-progress').setAttribute('aria-valuetext',timeText(t.elapsedMs)+' von 20 Minuten');document.querySelector('.dc-run-strip').classList.toggle('done',t.complete);$('dc-clock-label').textContent=started?'RESTZEIT':'LAUFZEIT';$('lab-dc-status').textContent=started?(done?'Chromatografie abgeschlossen':t.complete?'Chromatografie: Folie entnehmen':'DC läuft · '+timeText(t.remainingMs)):'';
@@ -2120,6 +2230,7 @@ function renderGuide(){
  const step=currentGuide(), signature=JSON.stringify([step.id,step.number,step.total,step.phase,step.title,step.instruction]);
  if(signature!==guideSignature){
   guideSignature=signature;
+  if(step.tool&&!toolDrag&&!activeGesture)setToolGroup(toolMap[step.tool][4]);
   $('dc-step-number').textContent=step.mode==='done'?'✓':String(step.number);
   $('dc-step-phase').textContent=step.phase;
   $('dc-step-title').textContent=step.title;
@@ -2128,7 +2239,7 @@ function renderGuide(){
   $('dc-step-card').dataset.mode=step.mode;
  }
  const button=$('dc-step-tool');button.hidden=!step.tool;
- if(step.tool){button.textContent=selected===step.tool?toolMap[step.tool][1]+' ausgewählt':toolMap[step.tool][1]+' auswählen';button.disabled=selected===step.tool;}
+ if(step.tool){button.textContent=selected===step.tool?toolMap[step.tool][1]+' aufgenommen':'Zur Werkzeugablage';button.disabled=selected===step.tool;}
  $('dc-step-time').hidden=step.mode!=='wait';
  if(step.mode==='wait')$('dc-step-time').textContent=timeText(M.timing(state).remainingMs);
  document.querySelectorAll('.dc-tool').forEach(b=>b.classList.toggle('dc-recommended',b.dataset.tool===step.tool));
@@ -2136,8 +2247,8 @@ function renderGuide(){
  document.querySelectorAll('#dc-stage .dc-next-target').forEach(el=>el.classList.remove('dc-next-target'));
  if(selected===step.tool&&step.target)document.querySelectorAll('#dc-stage rect[data-dc-target]').forEach(el=>{if(el.dataset.dcTarget===step.target)el.classList.add('dc-next-target');});
 }
-$('dc-step-tool').addEventListener('click',()=>{const step=currentGuide();if(step.tool&&selected!==step.tool)selectTool(step.tool);});
-function selectTool(id){stopHold();stopLiquid();selected=id;document.querySelectorAll('.dc-tool').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tool===id)));if(id==='ruler'){$('dc-ruler').hidden=!$('dc-ruler').hidden;syncRuler();}renderContext();}
+$('dc-step-tool').addEventListener('click',focusTools);
+function selectTool(id){stopHold();stopLiquid();selected=id;setToolGroup(toolMap[id][4]);document.querySelectorAll('.dc-tool').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tool===id)));if(id==='ruler'){$('dc-ruler').hidden=!$('dc-ruler').hidden;syncRuler();}renderContext();}
 function targetAllowed(target){return targets().some(t=>t[0]===target);}
 function activate(target){if(!selected)return feedback('Wähle zuerst ein Werkzeug.');if(!targetAllowed(target))return feedback('Prüfe, an welchem Objekt du dieses Werkzeug sinnvoll einsetzen kannst.',true);
  switch(selected){
@@ -2160,7 +2271,7 @@ function startHold(target,event){const kind=continuousKind(target);if(!kind||!ca
  $('dc-hand-value').value=p;if(origin&&holdTimer){const ox=kind==='grind'?Math.cos(elapsed/100)*14:kind==='apply'?Math.min(1,elapsed/1600)*40-20:0,oy=kind==='grind'?Math.sin(elapsed/100)*8:0;showGhost(origin.x+ox,origin.y+oy);}
  },180);return true;}
 function stopHold(){if(holdTimer)clearInterval(holdTimer);holdTimer=null;if(liquidFlow?.hold)stopLiquid();$('dc-hand-progress').hidden=true;$('dc-tool-ghost').hidden=true;}
-function showGhost(x,y){if(!selected||liquidFlow)return;const g=$('dc-tool-ghost');g.innerHTML=icon(toolMap[selected][3]);g.style.left=x+'px';g.style.top=y+'px';g.hidden=false;}
+function showGhost(x,y){if(!selected||liquidFlow)return;const g=$('dc-tool-ghost');g.dataset.tool=selected;g.innerHTML=selected==='capillary'?'<svg viewBox="0 0 90 90" aria-hidden="true"><path d="M12 78 67 12 72 16 15 80Z" fill="#eff9e8" fill-opacity=".85" stroke="#547363" stroke-width="1.3"/><path d="M14 77 59 24" stroke="'+(state.capillaryLoaded?'#47742d':'#bdccc2')+'" stroke-width="2.6"/><path d="M67 12l5 4" stroke="#fff" stroke-width="1.6"/><circle cx="13" cy="79" r="2" fill="#436e2c"/></svg>':icon(toolMap[selected][3]);g.style.left=x+'px';g.style.top=y+'px';g.hidden=false;}
 // Liquid motion is visual only; experiment quantities remain in DCModel.
 function startLiquid(tool,hold){
  stopLiquid();
@@ -2202,27 +2313,76 @@ function stagePoint(e){
  try{const point=svg.createSVGPoint();point.x=e.clientX;point.y=e.clientY;const local=point.matrixTransform(matrix.inverse());return Number.isFinite(local.x)&&Number.isFinite(local.y)?{x:local.x,y:local.y}:null;}catch(_){return null;}
 }
 function targetAt(e){const node=document.elementFromPoint(e.clientX,e.clientY);return node?.closest('[data-dc-target]')?.dataset.dcTarget||null;}
-function renderTools(){const names=['Laufmittel','Blattauszug','DC-Folie'];$('dc-tools').innerHTML=names.map((name,g)=>'<section class="dc-tool-group"><p>'+name+'</p><div class="dc-tool-grid">'+tools.filter(t=>t[4]===g).map(t=>'<button class="dc-tool" data-tool="'+t[0]+'" aria-pressed="false">'+icon(t[3])+'<span>'+t[1]+'</span><small>'+t[2]+'</small></button>').join('')+'</div></section>').join('');}
-$('dc-tools').addEventListener('click',e=>{const b=e.target.closest('[data-tool]');if(suppressToolClick){suppressToolClick=false;return;}if(b&&!b.disabled&&!toolDrag){selectTool(b.dataset.tool);if($('dc-materials')?.open)closeDialog($('dc-materials'));}});
-$('dc-tools').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-tool]');if(!b||b.disabled||e.button>0||$('dc-materials')?.open)return;stopLiquid();selected=b.dataset.tool;toolDrag={id:e.pointerId,startX:e.clientX,startY:e.clientY,moved:false};capturePointer(b,e.pointerId);});
-document.addEventListener('pointermove',e=>{if(toolDrag&&e.pointerId===toolDrag.id){if(Math.hypot(e.clientX-toolDrag.startX,e.clientY-toolDrag.startY)>10)toolDrag.moved=true;if(toolDrag.moved){e.preventDefault();showGhost(e.clientX,e.clientY);}}
- if(rulerDrag&&e.pointerId===rulerDrag.id){e.preventDefault();const p=stagePoint(e);if(p){rulerPosition={x:Math.max(0,Math.min(1052,p.x-rulerDrag.dx)),y:Math.max(0,Math.min(250,p.y-rulerDrag.dy))};syncRuler();}}
-});
-document.addEventListener('pointerup',e=>{if(toolDrag&&e.pointerId===toolDrag.id){const moved=toolDrag.moved,id=selected;toolDrag=null;$('dc-tool-ghost').hidden=true;if(moved){suppressToolClick=true;selectTool(id);const target=targetAt(e);if(target){const kind=continuousKind(target);if(kind&&kind!=='cut')feedback('Werkzeug bereit. Halte den Finger jetzt am Einsatzort oder nutze die Schaltfläche unter der Arbeitsfläche.');else activate(target);}else feedback('Wähle auf der Arbeitsfläche den Einsatzort für dein Werkzeug.');}}rulerDrag=null;actionPointer=null;pointerCaptures.delete(e.pointerId);stopHold();});
-document.addEventListener('pointercancel',cancelGestures);
-document.addEventListener('lostpointercapture',e=>{if(pointerCaptures.get(e.pointerId)===e.target)pointerCaptures.delete(e.pointerId);});
-$('dc-stage').addEventListener('pointerdown',e=>{if(e.button>0)return;e.preventDefault();const target=targetAt(e),p=stagePoint(e);if(!target||!p)return;if(!selected){feedback('Wähle zuerst ein Werkzeug aus der Materialablage.');return;}if(!targetAllowed(target)){feedback('Prüfe, an welchem Objekt du dieses Werkzeug sinnvoll einsetzen kannst.',true);return;}
- const kind=continuousKind(target);activeGesture={id:e.pointerId,target,start:p,last:p,minX:p.x,maxX:p.x,minY:p.y,maxY:p.y,distance:0,moved:false,kind};capturePointer($('dc-stage'),e.pointerId);
- if(kind==='pour'||kind==='dry'){activeGesture.held=startHold(target,e);}
- if(kind==='grind'&&!canHold('grind'))activeGesture=null;
- if(kind==='apply'){if(!canHold('apply'))activeGesture=null;else if(p.x<465||p.x>565||Math.abs(p.y-390)>13){feedback('Setze die Kapillare auf Höhe der Randmarkierungen an. Halte dabei Abstand zu den Seiten der Folie.',true);activeGesture=null;}}
- if(activeGesture)showGhost(e.clientX,e.clientY);
-});
-$('dc-stage').addEventListener('pointermove',e=>{const g=activeGesture;if(!g||g.id!==e.pointerId)return;e.preventDefault();const p=stagePoint(e);if(!p)return;const distance=Math.hypot(p.x-g.last.x,p.y-g.last.y);g.distance+=distance;g.moved=g.distance>10;g.last=p;g.minX=Math.min(g.minX,p.x);g.maxX=Math.max(g.maxX,p.x);g.minY=Math.min(g.minY,p.y);g.maxY=Math.max(g.maxY,p.y);showGhost(e.clientX,e.clientY);
- if(g.kind==='grind'&&targetAt(e)==='mortar'&&distance>3){const ok=apply('grind',{amount:Math.max(1,Math.min(12,Math.floor(distance/9)))},true);if(!ok||state.grind===100){feedback(state.grind===100?'Der Blattauszug ist dunkelgrün.':$('dc-feedback').textContent,!ok);activeGesture=null;$('dc-tool-ghost').hidden=true;}}
+function setToolGroup(group){
+ toolGroup=Number(group);document.querySelectorAll('#dc-tools .dc-tool-group').forEach(el=>{el.hidden=Number(el.dataset.group)!==toolGroup;});
+ document.querySelectorAll('[data-tool-group]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.toolGroup)===toolGroup)));
+}
+function focusTools(){const step=currentGuide();if(step.tool)setToolGroup(toolMap[step.tool][4]);inventory.focus({preventScroll:true});}
+function renderTools(){const names=['Laufmittel','Blattauszug','DC-Folie'];$('dc-tools').innerHTML=names.map((name,g)=>'<section class="dc-tool-group" data-group="'+g+'"><p>'+name+'</p><div class="dc-tool-grid">'+tools.filter(t=>t[4]===g).map(t=>'<button class="dc-tool" data-tool="'+t[0]+'" aria-label="'+t[1]+' aufnehmen" aria-pressed="false">'+icon(t[3])+'<span>'+t[1]+'</span><small>'+t[2]+'</small></button>').join('')+'</div></section>').join('');setToolGroup(toolGroup);}
+$('dc-tool-groups').addEventListener('click',e=>{const b=e.target.closest('[data-tool-group]');if(b){cancelGestures();setToolGroup(b.dataset.toolGroup);}});
+// Pointer pickup happens immediately; keyboard/assistive clicks select the same tool.
+$('dc-tools').addEventListener('click',e=>{const b=e.target.closest('[data-tool]');if(e.detail===0&&b&&!b.disabled){selectTool(b.dataset.tool);feedback(toolMap[b.dataset.tool][1]+' aufgenommen. Wähle jetzt seinen Einsatzort.');}});
+$('dc-tools').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-tool]');if(!b||b.disabled||e.button>0)return;e.preventDefault();cancelGestures();selectTool(b.dataset.tool);toolDrag={id:e.pointerId,startX:e.clientX,startY:e.clientY,moved:false,lastTarget:null,completed:false,pointerType:e.pointerType};capturePointer(b,e.pointerId);feedback(toolMap[selected][1]+' aufgenommen. Ziehe das Werkzeug zum Einsatzort.');showGhost(e.clientX,e.clientY);});
+function strokeAt(e){const p=stagePoint(e),m=$('dc-stage').querySelector('svg')?.getScreenCTM();return p?DCStroke.create(p,{scale:m?Math.hypot(m.a,m.b):1,pointerType:e.pointerType}):null;}
+function gestureTarget(e){const target=targetAt(e);if(selected==='capillary'&&!state.plateInChamber&&strokeAt(e))return 'plate';return target;}
+function paintStroke(){const svg=$('dc-stage').querySelector('svg');if(!svg)return;svg.querySelector('.dc-stroke-layer')?.remove();if(activeGesture?.stroke){const g=document.createElementNS('http://www.w3.org/2000/svg','g');g.setAttribute('class','dc-stroke-layer');g.setAttribute('pointer-events','none');g.setAttribute('aria-hidden','true');g.innerHTML=DCStroke.render(activeGesture.stroke);svg.appendChild(g);}}
+function beginGesture(e,target,fromTray=false){
+ const p=stagePoint(e);if(!p||!targetAllowed(target))return false;
+ const kind=continuousKind(target),g={id:e.pointerId,target,last:p,distance:0,moved:false,kind,fromTray};
+ if(kind==='apply'){if(!canHold(kind))return false;g.stroke=strokeAt(e);if(!g.stroke){feedback('Setze die Kapillare auf Höhe einer Randmarkierung an und ziehe sie waagerecht über die Folie.',true);return false;}}
+ if(kind==='grind'&&!canHold(kind))return false;
+ activeGesture=g;
+ if(kind==='pour'||kind==='dry'||(fromTray&&(kind==='grind'||kind==='cut'))){g.held=startHold(target,e);if(!g.held){activeGesture=null;return false;}}
+ paintStroke();if(g.stroke)$('dc-tool-ghost').hidden=true;else showGhost(e.clientX,e.clientY);return true;
+}
+function moveGesture(e){
+ const g=activeGesture;if(!g||g.id!==e.pointerId)return;const p=stagePoint(e);if(!p)return;
+ const distance=Math.hypot(p.x-g.last.x,p.y-g.last.y);g.distance+=distance;g.moved=g.distance>10;g.last=p;
+ if(g.stroke){g.stroke=DCStroke.move(g.stroke,p);paintStroke();$('dc-tool-ghost').hidden=true;return;}
+ if(g.held){if(gestureTarget(e)!==g.target){stopHold();activeGesture=null;}return;}
+ showGhost(e.clientX,e.clientY);
+ if(g.kind==='grind'&&targetAt(e)==='mortar'&&distance>3){const ok=apply('grind',{amount:Math.max(1,Math.min(12,Math.floor(distance/9)))},true);if(!ok||state.grind===100){feedback(state.grind===100?'Der Blattauszug ist dunkelgrün.':$('dc-feedback').textContent,!ok);activeGesture=null;}}
  if(g.kind==='cut'&&g.distance>55&&targetAt(e)==='leaves'){g.distance=0;apply('cut',{},true);if(state.leavesCut===8){feedback('Die Blätter sind zerkleinert.');activeGesture=null;}}
+}
+function finishGesture(e){
+ const g=activeGesture;if(!g||g.id!==e.pointerId)return false;
+ moveGesture(e);activeGesture=null;stopHold();paintStroke();
+ if(g.held)return true;
+ if(g.stroke){const result=DCStroke.finish(g.stroke);if(result.ok)activate('plate');else feedback(result.message,true);return true;}
+ if(g.kind==='grind'){if(!g.moved)feedback('Bewege den Pistill im Mörser oder halte „Im Mörser reiben“ gedrückt.');return true;}
+ if(!g.fromTray)activate(g.target);return !g.fromTray;
+}
+function moveTool(e){
+ const drag=toolDrag;if(!drag||drag.id!==e.pointerId)return;
+ if(Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>8)drag.moved=true;if(!drag.moved)return;e.preventDefault();
+ const target=gestureTarget(e);
+ if(activeGesture){moveGesture(e);if(activeGesture)return;}
+ if(selected==='capillary'&&target==='plate'&&state.capillaryLoaded&&!state.wet&&strokeAt(e)){if(beginGesture(e,'plate',true)){drag.lastTarget=target;return;}}
+ if(target!==drag.lastTarget){stopHold();drag.lastTarget=target;drag.completed=false;
+  if(targetAllowed(target)){
+   if(selected==='capillary'&&target==='mortar'&&!state.capillaryLoaded){activate('mortar');drag.completed=true;}
+   else if(selected==='pipette'&&target==='mix'&&!pipetteLoaded){activate('mix');drag.completed=true;}
+   else if(selected==='forceps'&&target==='plate'&&!foilHeld){activate('plate');drag.completed=true;}
+   else if(continuousKind(target)){if(beginGesture(e,target,true))return;}
+  }
+ }
+ showGhost(e.clientX,e.clientY);
+}
+document.addEventListener('pointermove',e=>{
+ if(toolDrag){moveTool(e);return;}
+ if(rulerDrag&&e.pointerId===rulerDrag.id){e.preventDefault();const p=stagePoint(e);if(p){rulerPosition={x:Math.max(0,Math.min(1052,p.x-rulerDrag.dx)),y:Math.max(0,Math.min(250,p.y-rulerDrag.dy))};syncRuler();}return;}
+ if(activeGesture){e.preventDefault();moveGesture(e);}
 });
-$('dc-stage').addEventListener('pointerup',e=>{const g=activeGesture;activeGesture=null;stopHold();if(!g||g.id!==e.pointerId)return;if(g.held)return;if(g.kind==='apply'){if(g.maxX-g.minX>=55&&g.minX>=465&&g.maxX<=565&&g.minY>=377&&g.maxY<=403)activate('plate');else feedback('Ziehe eine schmale, waagerechte Spur zwischen den Randmarkierungen. Mit „Spur auftragen“ kannst du sie auch durch Gedrückthalten ziehen.',true);}else if(g.kind==='grind'){if(!g.moved)feedback('Bewege den Pistill im Mörser oder halte „Im Mörser reiben“ gedrückt.');}else activate(g.target);});
+document.addEventListener('pointerup',e=>{
+ const drag=toolDrag;if(drag&&drag.id===e.pointerId){moveTool(e);const handled=finishGesture(e);toolDrag=null;if(drag.moved&&!handled&&!drag.completed){const target=gestureTarget(e);if(targetAllowed(target)){if(!continuousKind(target))activate(target);else feedback('Werkzeug bereit. Halte es am Einsatzort; die Kapillare ziehst du waagerecht über die Folie.');}else feedback('Das Werkzeug ist aufgenommen. Tippe auf seinen Einsatzort.');}}
+ else finishGesture(e);
+ rulerDrag=null;actionPointer=null;pointerCaptures.delete(e.pointerId);stopHold();$('dc-tool-ghost').hidden=true;renderGuide();
+});
+document.addEventListener('pointercancel',cancelGestures);
+document.addEventListener('lostpointercapture',e=>{if(pointerCaptures.get(e.pointerId)===e.target){pointerCaptures.delete(e.pointerId);cancelGestures();}});
+$('dc-stage').addEventListener('pointerdown',e=>{if(e.button>0)return;e.preventDefault();if(!selected){feedback('Nimm zuerst ein Werkzeug aus der Ablage.');return;}const target=gestureTarget(e);if(!targetAllowed(target)){feedback('Prüfe, an welchem Objekt du dieses Werkzeug sinnvoll einsetzen kannst.',true);return;}if(beginGesture(e,target))capturePointer($('dc-stage'),e.pointerId);});
+$('dc-stage').addEventListener('pointermove',e=>{if(e.pointerType==='mouse'&&!e.buttons&&!activeGesture&&!toolDrag&&selected)showGhost(e.clientX,e.clientY);});
+$('dc-stage').addEventListener('pointerleave',()=>{if(!activeGesture&&!toolDrag)$('dc-tool-ghost').hidden=true;});
 $('dc-targets').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-target]');if(!b||e.button>0)return;e.preventDefault();actionPointer=e.pointerId;capturePointer(document.documentElement,e.pointerId);if(b.dataset.mode==='hold')startHold(b.dataset.target,e);else activate(b.dataset.target);});
 $('dc-targets').addEventListener('keydown',e=>{const b=e.target.closest('[data-target]');if(!b||![' ','Enter'].includes(e.key)||e.repeat)return;e.preventDefault();if(b.dataset.mode==='hold')startHold(b.dataset.target);else activate(b.dataset.target);});
 document.addEventListener('keyup',e=>{if([' ','Enter'].includes(e.key))stopHold();});
@@ -2242,7 +2402,7 @@ $('dc-tools-toggle').addEventListener('click',()=>{const collapsed=!$('dc-tools'
 $('dc-zoom').addEventListener('click',()=>{cancelGestures();const on=$('dc-stage-scroll').classList.toggle('zoom');$('dc-zoom').setAttribute('aria-pressed',String(on));$('dc-zoom').textContent=on?'Gesamtansicht':'Vergrößern';scheduleRuler();});
 $('dc-guide-open').addEventListener('click',()=>openDialog('dc-guide'));
 $('dc-guide-compact-open').addEventListener('click',()=>openDialog('dc-guide'));
-$('dc-materials-open').addEventListener('click',()=>openDialog('dc-materials'));
+$('dc-materials-open').addEventListener('click',focusTools);
 $('dc-reset-open').addEventListener('click',()=>openDialog('dc-reset-dialog'));
 document.querySelectorAll('[data-dc-close]').forEach(b=>b.addEventListener('click',()=>closeDialog($(b.dataset.dcClose))));
 document.querySelectorAll('dialog[id^="dc-"]').forEach(dialog=>{dialog.addEventListener('cancel',cancelGestures);dialog.addEventListener('close',()=>{cancelGestures();scheduleRuler();});});
