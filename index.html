@@ -76,6 +76,9 @@
 @keyframes clock-warning{0%,100%{background-color:#243e34;box-shadow:inset 0 0 0 2px #e4ba65}50%{background-color:#67502a;box-shadow:inset 0 0 0 2px #ffe0a0}}
 @media(max-width:1030px){.compact-clock{flex-wrap:wrap}.compact-clock .timer-notice{flex:0 0 100%;margin:0;min-height:0;font-size:11px}.compact-clock #timer-compact-reset{font-size:22px;padding:4px 10px;background:transparent;color:#dce8b9;border-color:#60715b}}
 @media(prefers-reduced-motion:reduce){.stopwatch.timer-warning,.compact-clock.timer-warning{animation:none;background:#67502a;box-shadow:inset 0 0 0 2px #ffe0a0}}
+.distance-control{margin:0 18px 14px;padding:11px 13px;background:#edf2e4;border:1px solid #d5dfc8;border-radius:9px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:12px;line-height:1.5}
+.distance-control>div{flex:1;min-width:190px}.distance-control strong{display:block}.distance-control span{color:#60705d}.distance-control output{font-size:20px;font-variant-numeric:tabular-nums;white-space:nowrap}.distance-control output small{font-size:12px}.distance-control p{flex-basis:100%;margin:4px 0 0;font-size:12px}.distance-control.has-warning{background:#fff2db;border-color:#d5ac63;color:#74501b}.distance-control.has-warning span{color:#74501b}.finish-row{align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.run-count{font-size:12px;color:#60705d;font-variant-numeric:tabular-nums}.run-count.complete{font-weight:700;color:#28483a}
+.room-temperature-note{margin:0 18px 14px;padding:10px 13px;border:1px solid #d5dfc8;border-radius:9px;background:#edf2e4;font-size:12px;line-height:1.5}.alignment-warning{margin:0 18px 14px;padding:11px 13px;background:#fff2db;border:1px solid #d5ac63;border-radius:9px;color:#74501b;font-size:12px;line-height:1.5}.alignment-warning strong{display:block;margin-bottom:3px}
 </style>
 <style>.lab-nav{max-width:1484px;margin:22px auto 0;padding:0 38px;display:flex;gap:10px;align-items:center}.lab-nav button{min-height:52px;padding:13px 24px;font-size:14px;background:transparent}.lab-nav button[aria-pressed=true]{color:#fff;background:#294c3e;border-color:#294c3e}.lab-nav button span{opacity:.65;margin-right:8px;font-size:11px}.lab-nav output{margin-left:auto;font-size:12px;font-variant-numeric:tabular-nums;color:#526550}.lab-nav output:not(:empty):before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#748e37;margin-right:8px}
 #dc-panel{max-width:1484px}.dc-intro{margin-bottom:22px}.dc-intro>div>p:last-child{font-size:14px;color:var(--muted);margin:10px 0 0}.dc-topline{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding:14px 0;font-size:11px;color:#677567}.dc-topline i{width:6px;height:6px;border-radius:50%;background:#709747;display:inline-block;margin-right:6px}.dc-workspace{display:grid;grid-template-columns:208px minmax(0,1fr);gap:18px;align-items:start}.dc-inventory{border:1px solid var(--line);border-radius:14px;background:#fafbf6;padding:16px 12px}.dc-tray-title{display:flex;align-items:center;justify-content:space-between}.dc-tray-title .eyebrow{font-size:9px;margin:0}.dc-tray-title button{display:none}.dc-tool-group>p{font-size:10px;font-weight:600;color:#778575;letter-spacing:1px;margin:20px 4px 8px;text-transform:uppercase}.dc-tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.dc-tool{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:78px;padding:8px 3px;font-size:10px;font-weight:500;touch-action:none;user-select:none;background:#fffef9}.dc-tool svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}.dc-tool[aria-pressed=true]{border-color:#476d3d;background:#e6eed8;box-shadow:inset 0 0 0 1px #476d3d;color:#284627}.dc-tool small{font-size:8px;color:#788273;line-height:1.3}.dc-bench{border:1px solid var(--line);border-radius:16px;background:#fdfdf9;overflow:hidden;box-shadow:0 14px 35px #28453208}.dc-bench-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 12px}.dc-bench-head .eyebrow{margin:0 0 5px}.dc-bench-head h2{font:25px Georgia,serif;margin:0}.dc-bench-head>button{font-size:11px;min-height:44px}.dc-stage-scroll{position:relative;overflow:auto;background:linear-gradient(#fafbf7,#edf0e9);overscroll-behavior:contain}.dc-stage-scroll.zoom #dc-stage{min-width:1250px}.dc-stage-scroll.zoom{max-height:650px}#dc-stage{touch-action:none;min-width:650px;user-select:none}#dc-stage>svg{display:block;width:100%;height:auto}#dc-stage [data-dc-target]{cursor:pointer}#dc-stage [data-dc-target]:hover{filter:brightness(.985)}.dc-tool-context{display:flex;align-items:center;gap:14px;padding:16px 22px;border-top:1px solid #e2e6db;min-height:89px;background:#f5f7ee}.dc-tool-context strong{font-size:13px;font-weight:600}.dc-tool-context p{font-size:12px;color:#687465;line-height:1.5;margin:5px 0 0}#dc-selected-icon svg{width:32px;height:32px;fill:none;stroke:#476b3b;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}.dc-targets{padding:0 20px 12px;background:#f5f7ee;display:flex;flex-wrap:wrap;gap:8px}.dc-targets:empty{padding:0}.dc-targets button{min-height:46px;font-size:11px;padding:10px 14px;touch-action:none}.dc-targets button:active{background:#dbe7c7}.dc-feedback{margin:16px 20px;padding-left:13px;border-left:3px solid #a2b27b;color:#596752;font-size:12px;line-height:1.6;min-height:38px}.dc-feedback.error{border-left-color:#b89b61;color:#785c33}.dc-manual-progress{display:flex;gap:12px;align-items:center;padding:0 20px 16px;font-size:11px;color:#536844}.dc-manual-progress progress{flex:1}.dc-run-strip{margin-top:20px;border:1px solid #d3dec8;border-radius:14px;background:#eef3e5;display:flex;align-items:center;gap:30px;padding:22px 28px}.dc-clock{display:flex;flex-direction:column;min-width:135px}.dc-clock>span:first-child{font-size:9px;letter-spacing:2px;color:#748269}.dc-clock output{font:38px Georgia,serif;font-variant-numeric:tabular-nums;letter-spacing:1px;margin:4px 0}.dc-clock>span:last-child{font-size:10px;color:#617357}.dc-run-copy{flex:1}.dc-run-copy strong{font-size:14px;font-weight:500}.dc-run-copy p{font-size:12px;color:#6a7860;line-height:1.6;margin:7px 0 13px}.dc-run-copy progress{width:100%;height:4px}.dc-run-strip.done{background:#e4eedb;border-color:#a0b68a}#dc-panel progress{appearance:none;height:5px;accent-color:#648548}#dc-panel progress::-webkit-progress-bar{background:#dce4d0;border-radius:10px}#dc-panel progress::-webkit-progress-value{background:#6e8e4c;border-radius:10px}.dc-guide{max-width:730px;width:calc(100% - 32px);max-height:88vh}.dc-guide>p{line-height:1.65;color:#677460;font-size:13px}.dc-instructions{padding-left:23px;margin:25px 0}.dc-instructions li{padding:0 0 15px 9px}.dc-instructions li::marker{color:#7d9556;font:18px Georgia,serif}.dc-instructions strong{font-size:14px}.dc-instructions p{font-size:13px;line-height:1.65;color:#626e5c;margin:7px 0}.dc-guide .dc-guide-note{padding:15px;background:#f2f5ea;border-radius:8px;font-size:11px}#dc-tool-ghost{position:fixed;pointer-events:none;z-index:1001;transform:translate(-50%,-50%);filter:drop-shadow(3px 5px 4px #253f3330)}#dc-tool-ghost svg{width:70px;height:70px;stroke:#45633c;fill:#fffdf4e0;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}#dc-ruler{position:absolute;left:60%;top:16%;width:4.36%;background:#f1df8ecc;box-shadow:2px 4px 6px #223b2828;border:1px solid #c9b976;cursor:grab;touch-action:none;user-select:none;z-index:3}#dc-ruler svg{display:block;width:100%;height:auto}
@@ -181,14 +184,17 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
 <main id="factors-panel">
 <section class="intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1>Außenfaktoren der Fotosynthese.</h1></div><button id="guide-open" class="guide-open" aria-haspopup="dialog" aria-controls="guide-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>Erkenntnisweg</button></section>
 <nav class="experiment-tabs" aria-label="Einzelversuch wählen" id="experiment-tabs"></nav>
-<p class="measurement-rule">Jeder Versuchsdurchlauf dauert <strong>60 Sekunden</strong>. Ab 55 Sekunden blinkt das Stoppuhrfeld.</p>
+<p class="measurement-rule">Pro Einzelversuch sind <strong>3 Messdurchgänge à 60 Sekunden</strong> möglich. Plane deine Einstellungen vorab. Ab 55 Sekunden blinkt das Stoppuhrfeld.</p>
 <div class="laboratory">
  <aside class="materials" aria-label="Materialablage"><p class="eyebrow">MATERIALABLAGE</p><div id="material-tray"></div><p class="material-note">Ziehen oder auswählen und auf der Arbeitsfläche ablegen.</p></aside>
  <section class="bench" aria-labelledby="bench-title">
   <header class="bench-head"><div><p class="eyebrow">DEIN VERSUCHSPLATZ</p><h2 id="bench-title">Lichtintensität</h2></div><span class="run-status" id="run-status"><i></i>Aufbau</span></header>
+  <p id="room-temperature-note" class="room-temperature-note">Annahme für diesen Versuch: <strong>konstante Raumtemperatur von 20 °C</strong>. Ein Wasserbad ist nicht erforderlich.</p>
+  <aside id="lamp-alignment-warning" class="alignment-warning" role="status" aria-live="polite" hidden><strong>Lichteinfall prüfen</strong><span id="lamp-alignment-text"></span></aside>
+  <aside id="distance-control" class="distance-control" aria-label="Konstanter Lampenabstand" hidden><div><strong>Abstand Lampe–Pflanze: 10 cm</strong><span>Bei allen Durchläufen möglichst gleich halten. Toleranz: 7–13 cm.</span></div><output id="control-distance" aria-label="Aktueller Lampenabstand">— <small>cm</small></output><p id="distance-warning" role="status" aria-live="polite" hidden></p></aside>
   <div class="scene-wrap" id="scene-wrap"><canvas id="scene" tabindex="0" role="application" aria-label="Arbeitsfläche für deinen Versuchsaufbau" aria-describedby="assembly-help"></canvas><div class="empty-bench" id="empty-bench"><span>Deine Arbeitsfläche</span></div><div class="scene-tools"><button id="zoom-button" aria-pressed="false" disabled title="Schnittstelle vergrößern"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6m-3-3v6"/></svg><span>Nahansicht</span></button></div><div class="scene-bottom"><span class="specimen-tag" id="placement-label">Material frei platzieren</span><span class="simulation-tag">Simulation</span></div><div class="visibility-message" id="visibility-message" hidden>Versuch und Stoppuhr pausiert.</div></div>
   <div class="bench-bottom"><button class="primary" id="run-button"><span class="play-icon" aria-hidden="true">▶</span><span id="run-label">Versuch starten</span></button><p id="bench-note">Eigener Versuchsaufbau</p><button id="experiment-switch" aria-haspopup="dialog" aria-controls="experiment-dialog"><span aria-hidden="true">⇄</span> Versuch wechseln</button><button class="icon-button" id="reset-open" aria-label="Diesen Versuchsplatz zurücksetzen" title="Diesen Versuchsplatz zurücksetzen">↺</button></div>
-  <div class="finish-row"><button id="finish-experiment" aria-haspopup="dialog" aria-controls="finish-dialog">Versuch abschließen</button></div>
+  <div class="finish-row"><output id="run-count" class="run-count" aria-live="polite">Messdurchgänge: 0 / 3</output><button id="finish-experiment" aria-haspopup="dialog" aria-controls="finish-dialog">Versuch abschließen</button></div>
   <div class="compact-clock" id="compact-clock" hidden aria-label="Stoppuhr"><span>Stoppuhr</span><output id="timer-compact-value">00:00,0</output><button id="timer-compact-toggle" disabled>Start</button><button id="timer-compact-reset" aria-label="Stoppuhr auf null zurücksetzen">↺</button><p class="timer-notice" id="timer-compact-notice">Messzeit: 60 Sekunden</p></div>
   <p id="assembly-help" class="sr-only">Material auswählen und auf die Arbeitsfläche ziehen oder dort antippen. Geräte auf der Arbeitsfläche lassen sich verschieben. Mit der Tastatur: Material auswählen, Pfeiltasten für die Position, Enter zum Ablegen; Entf zum Zurücklegen.</p>
   <aside class="learning-hint" id="learning-hint" role="status" aria-live="polite" hidden><strong>Denkanstoß</strong><p id="learning-hint-text"></p></aside>
@@ -288,13 +294,13 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
 </dialog>
 <dialog id="experiment-dialog" aria-labelledby="experiment-dialog-title" aria-describedby="experiment-dialog-description"><div class="dialog-head"><p class="eyebrow">EINZELVERSUCHE</p><button class="close-dialog" data-close="experiment-dialog" aria-label="Versuchsauswahl schließen">×</button></div><h2 id="experiment-dialog-title">Versuch wechseln</h2><p id="experiment-dialog-description">Deine Aufbauten bleiben beim Wechsel erhalten. Laufende Versuche und Stoppuhren pausieren.</p><div id="experiment-choices" class="experiment-choices"></div><div class="dialog-actions"><button class="quiet" data-close="experiment-dialog">Zurück zum Arbeitsplatz</button></div></dialog>
 <dialog id="finish-dialog" aria-labelledby="finish-title" aria-describedby="finish-message"><div class="dialog-head"><p class="eyebrow">DEIN EINZELVERSUCH</p><button class="close-dialog" data-close="finish-dialog" aria-label="Hinweis schließen">×</button></div><h2 id="finish-title">Versuch abschließen</h2><p id="finish-message"></p><p id="finish-incomplete" class="dialog-note" hidden></p><p class="dialog-note">Hier werden nur vollständig beobachtete Einstellungen berücksichtigt. Bläschenzahlen und deine eigenen Aufzeichnungen werden nicht geprüft. Dein Aufbau bleibt erhalten.</p><div class="dialog-actions"><button class="primary" data-close="finish-dialog">Zurück zum Versuch</button></div></dialog>
-<dialog id="reset-dialog" aria-labelledby="reset-title"><div class="dialog-head"><p class="eyebrow">VERSUCHSPLATZ</p><button class="close-dialog" data-close="reset-dialog" aria-label="Schließen">×</button></div><h2 id="reset-title">Diesen Aufbau leeren?</h2><p>Nur der ausgewählte Einzelversuch wird zurückgesetzt. Die anderen Versuchsplätze bleiben erhalten.</p><div class="dialog-actions"><button class="quiet" data-close="reset-dialog">Abbrechen</button><button class="primary" id="reset-confirm">Zurücksetzen</button></div></dialog>
+<dialog id="reset-dialog" aria-labelledby="reset-title"><div class="dialog-head"><p class="eyebrow">VERSUCHSPLATZ</p><button class="close-dialog" data-close="reset-dialog" aria-label="Schließen">×</button></div><h2 id="reset-title">Diesen Aufbau leeren?</h2><p>Der Aufbau und die Messreihe dieses Einzelversuchs werden zurückgesetzt. Danach stehen wieder drei Messdurchgänge zur Verfügung. Die anderen Versuchsplätze bleiben erhalten.</p><div class="dialog-actions"><button class="quiet" data-close="reset-dialog">Abbrechen</button><button class="primary" id="reset-confirm">Zurücksetzen</button></div></dialog>
 <div class="drag-ghost" id="drag-ghost" hidden aria-hidden="true"></div>
 <div id="timer-announcement" class="sr-only" role="status" aria-live="polite"></div>
 <div id="status-message" class="sr-only" role="status" aria-live="polite"></div>
 <script>(()=>{
 "use strict";
-const {VESSEL,LAMP_GEOMETRY,lampMeasurement,lampDistanceCm,lightAtDistance} = (()=>{
+const {VESSEL,LAMP_GEOMETRY,LAMP_ANGLE_TOLERANCE_DEG,lampMeasurement,lampDistanceCm,lampAngleDeg,lampAlignmentHint,lightAtDistance} = (()=>{
 // Shared apparatus geometry in the 960 × 640 logical scene.
 // Centimetres describe the virtual bench, not a calibrated real lamp.
 const VESSEL = Object.freeze({cx:571,cy:322,sx:96/290,sy:186/432});
@@ -308,14 +314,26 @@ function lampMeasurement(setup){
  return {origin,target,direction,distanceCm:Math.hypot(target.x-origin.x,target.y-origin.y )/32};
 }
 const lampDistanceCm=setup=>lampMeasurement(setup)?.distanceCm??null;
+const LAMP_ANGLE_TOLERANCE_DEG=15;
+function lampAngleDeg(setup){
+ const measured=lampMeasurement(setup);if(!measured)return null;
+ return Math.atan2(Math.abs(measured.target.y-measured.origin.y),Math.abs(measured.target.x-measured.origin.x))*180/Math.PI;
+}
+function lampAlignmentHint(setup,lampOn=true){
+ const angle=lampAngleDeg(setup);
+ return lampOn&&angle!==null&&angle>LAMP_ANGLE_TOLERANCE_DEG+1e-6
+  ? 'Die Leuchte steht schräg zur Pflanze. Ein schräger Lichteinfall kann die beleuchtete Fläche und damit die Fotosyntheserate verändern. Richte die Leuchte möglichst waagerecht auf die Pflanze und behalte diese Ausrichtung bei den Messungen bei.'
+  : '';
+}
 function lightAtDistance(distanceCm){return distanceCm==null?0:100/(1+(Math.max(0,distanceCm)/10)**2);}
 
-return {VESSEL,LAMP_GEOMETRY,lampMeasurement,lampDistanceCm,lightAtDistance};})();
-const {createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint} = (()=>{
+return {VESSEL,LAMP_GEOMETRY,LAMP_ANGLE_TOLERANCE_DEG,lampMeasurement,lampDistanceCm,lampAngleDeg,lampAlignmentHint,lightAtDistance};})();
+const {MAX_RUNS,DISTANCE_TARGET_CM,DISTANCE_TOLERANCE_CM,completedRuns,distanceHint,conditionChanged,createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint} = (()=>{
 // Formative hints use only experimental settings and elapsed observation time.
 // Bubble counts, calculated rates and students' written results are never stored.
 // All functions return new state; keep one series per independent workbench.
 const FACTORS = new Set(['light', 'carbon', 'temperature']);
+const MAX_RUNS = 3, DISTANCE_TARGET_CM = 10, DISTANCE_TOLERANCE_CM = 3;
 const NUMERIC_KEYS = ['factorValue', 'light', 'carbon', 'temperature', 'lampDistanceCm'];
 const sameNumber = (a, b, tolerance = .05) =>
   a === b || (Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) <= tolerance);
@@ -339,15 +357,26 @@ function targetValue(condition) {
   return condition[condition.experimentId];
 }
 
+const controlledLight = c => c && ['carbon', 'temperature'].includes(c.experimentId);
+const withinDistance = c => Number.isFinite(c?.lampDistanceCm) && Math.abs(c.lampDistanceCm - DISTANCE_TARGET_CM) <= DISTANCE_TOLERANCE_CM + 1e-6;
+const toleratedLightChange = (a, b) => controlledLight(a) && a.experimentId === b?.experimentId && a.lampOn && b.lampOn && withinDistance(a) && withinDistance(b);
+function distanceHint(condition) {
+  if (!controlledLight(condition) || !Number.isFinite(condition.lampDistanceCm)) return '';
+  if (!condition.lampOn) return 'Bedenken: Die Leuchte ist ausgeschaltet. Bei diesem Versuch soll die Beleuchtung gleich bleiben: Leuchte einschalten und etwa 10 cm Abstand halten (7–13 cm sind in Ordnung).';
+  if (!withinDistance(condition)) return 'Bedenken: Der Lampenabstand liegt außerhalb von 7–13 cm. Dadurch kann die Lichtintensität dein Ergebnis beeinflussen. Verschiebe die Leuchte auf etwa 10 cm Abstand zur Pflanze und halte diesen Abstand bei allen drei Durchläufen möglichst gleich.';
+  return '';
+}
 function comparable(a, b) {
   if (!a || !b || a.experimentId !== b.experimentId) return false;
-  return NUMERIC_KEYS.every(key => sameNumber(a[key], b[key])) && a.lampOn === b.lampOn;
+  const tolerated = toleratedLightChange(a, b);
+  return NUMERIC_KEYS.every(key => tolerated && ['light', 'lampDistanceCm'].includes(key) || sameNumber(a[key], b[key])) && a.lampOn === b.lampOn;
 }
+const conditionChanged = (a, b) => !comparable(snapshot(a), snapshot(b));
 
 function changedControls(a, b) {
   if (!a || !b || a.experimentId !== b.experimentId) return [];
   const changed = [];
-  if (a.experimentId !== 'light' && (
+  if (a.experimentId !== 'light' && !toleratedLightChange(a, b) && (
     !sameNumber(a.light, b.light) || !sameNumber(a.lampDistanceCm, b.lampDistanceCm) || a.lampOn !== b.lampOn
   )) changed.push('die Lichtbedingungen');
   if (a.experimentId !== 'carbon' && !sameNumber(a.carbon, b.carbon)) changed.push('den CO₂-Gehalt');
@@ -358,10 +387,12 @@ function changedControls(a, b) {
 const duringObservationHint = 'Während der Beobachtungszeit haben sich die Einstellungen verändert. Prüfe, welche Bedingungen während einer einzelnen Messung gleich bleiben sollten.';
 
 function createSeries() {
-  return {observations: [], active: null, lastIssue: ''};
+  return {observations: [], active: null, lastIssue: '', completedRuns: 0};
 }
+const completedRuns = series => Math.min(MAX_RUNS, Math.max(0, series.completedRuns ?? series.observations.filter(o => o.duration >= 60).length));
 
 function beginObservation(series, condition) {
+  if (completedRuns(series) >= MAX_RUNS) return {...series, active: null};
   return {...series, active: snapshot(condition), lastIssue: ''};
 }
 
@@ -372,12 +403,14 @@ function changeHint(beforeCondition, afterCondition) {
 }
 
 // elapsedSeconds is this observation's duration, not the cumulative stopwatch
-// value. No minimum measurement duration or fixed number of settings is imposed.
+// value. Every full 60-second run consumes one of three runs, including repeats
+// and invalidated runs. Partial observations do not consume the quota.
 // invalidated records changes that were undone before the observation finished.
 function finishObservation(series, condition, elapsedSeconds) {
   if (!series.active) return series;
   const next = {...series, active: null, lastIssue: ''};
-  if (!Number.isFinite(elapsedSeconds) || elapsedSeconds <= 0) return next;
+  if (!Number.isFinite(elapsedSeconds) || elapsedSeconds < 60 || completedRuns(series) >= MAX_RUNS) return next;
+  next.completedRuns = completedRuns(series) + 1;
   const end = snapshot(condition);
   if (condition?.invalidated || !comparable(series.active, end)) {
     return {...next, lastIssue: duringObservationHint};
@@ -395,6 +428,7 @@ function finishObservation(series, condition, elapsedSeconds) {
 }
 
 function seriesHint(series) {
+  if (completedRuns(series) >= MAX_RUNS) return finishSeriesAssessment(series, series.observations.at(-1)?.condition.experimentId).message;
   if (series.lastIssue) return series.lastIssue;
   const values = [];
   for (const observation of series.observations) {
@@ -404,7 +438,7 @@ function seriesHint(series) {
     if (!values.some(known => sameNumber(known, value, .2))) values.push(value);
   }
   if (values.length === 2) {
-    return 'Du hast bisher zwei verschiedene Einstellungen untersucht. Was könntest du zwischen diesen Einstellungen noch untersuchen, um den Verlauf besser beurteilen zu können?';
+    return 'Du hast bisher zwei verschiedene Einstellungen untersucht. Ein Durchlauf ist noch möglich. Welche dritte Einstellung hilft dir, den Verlauf besser beurteilen zu können?';
   }
   return '';
 }
@@ -417,19 +451,24 @@ function finishSeriesAssessment(series, experimentId) {
     if ((Number.isFinite(value) || value === 'dark') && !values.some(known => sameNumber(known, value, .2))) values.push(value);
   }
   const count = values.length;
-  let message = count === 0
+  const exhausted = completedRuns(series) >= MAX_RUNS;
+  let message = exhausted
+    ? 'Alle 3 Messdurchgänge dieses Einzelversuchs sind beendet. ' + (count < 3
+      ? 'Dabei wurden nur '+count+' verschiedene Einstellungen vollständig und ohne störende Änderungen erfasst. Damit lässt sich der Verlauf nur eingeschränkt beurteilen. Überlege, wie du die drei Einstellungen und die gleichbleibenden Bedingungen planen würdest. Für eine neue Messreihe kannst du diesen Versuchsplatz zurücksetzen.'
+      : 'Du hast drei verschiedene Einstellungen vollständig untersucht. Prüfe in deinen eigenen Aufzeichnungen, ob du den untersuchten Bereich sinnvoll abgedeckt und die übrigen Bedingungen gleich gehalten hast.')
+    : count === 0
     ? 'Für diesen Einzelversuch ist noch kein vollständiger 60-Sekunden-Durchlauf mit unveränderten Einstellungen erfasst. Prüfe, ob du die Stoppuhr beim Beobachten gestartet und den Durchlauf vollständig beendet hast.'
     : count === 1
       ? 'Du hast bisher eine Einstellung vollständig untersucht. Mit welcher weiteren Einstellung könntest du einen Vergleich ermöglichen? Überlege dabei, welche übrigen Bedingungen gleich bleiben sollten.'
       : count === 2
         ? 'Du hast bisher nur zwei verschiedene Einstellungen vollständig untersucht. Was könntest du zwischen diesen Einstellungen oder darüber hinaus noch untersuchen, um den Verlauf besser beurteilen zu können? Ergänze deine Messreihe, bevor du den Versuch abschließt.'
-        : 'Du hast '+count+' verschiedene Einstellungen jeweils mindestens 60 Sekunden beobachtet. Prüfe in deinen eigenen Aufzeichnungen, ob du den untersuchten Bereich sinnvoll abgedeckt und die übrigen Bedingungen gleich gehalten hast. Überlege auch, ob Wiederholungen nötig sind.';
+        : 'Du hast '+count+' verschiedene Einstellungen jeweils 60 Sekunden beobachtet. Prüfe in deinen eigenen Aufzeichnungen, ob du den untersuchten Bereich sinnvoll abgedeckt und die übrigen Bedingungen gleich gehalten hast.';
   if (complete.length > count) message += ' Wiederholungen derselben Einstellung zählen hierbei als eine untersuchte Einstellung.';
   if (series.lastIssue) message += ' '+series.lastIssue;
   return {count, message};
 }
 
-return {createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint};})();
+return {MAX_RUNS,DISTANCE_TARGET_CM,DISTANCE_TOLERANCE_CM,completedRuns,distanceHint,conditionChanged,createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint};})();
 const {CONFIG} = (()=>{
 // Qualitative model settings; the lamp position supplies the light input.
 const CONFIG = Object.freeze({
@@ -456,7 +495,7 @@ const MATERIALS = Object.freeze([
 
 const commonMaterials=['beaker','water','plant','lamp','bath','thermometer','stopwatch'];
 const EXPERIMENTS = Object.freeze([
-  {id:'light',title:'Lichtintensität',availableMaterials:Object.freeze([...commonMaterials])},
+  {id:'light',title:'Lichtintensität',availableMaterials:Object.freeze(commonMaterials.filter(id=>id!=='bath'))},
   {id:'carbon',title:'CO₂-Gehalt',availableMaterials:Object.freeze([...commonMaterials,'bottle'])},
   {id:'temperature',title:'Temperatur',availableMaterials:Object.freeze([...commonMaterials])},
 ].map(experiment=>Object.freeze(experiment)));
@@ -495,7 +534,7 @@ function placeMaterial(state,id,point){
     }
     if(!targetsJar){
       const message=id==='water'
-        ? 'Wasser braucht ein Gefäß. Prüfe, ob du die Öffnung des Gläschens oder die freie Fläche des Wasserbads triffst.'
+        ? (state.experimentId==='light'?'Wasser braucht ein Gefäß. Prüfe, ob du die Öffnung des Gläschens triffst.':'Wasser braucht ein Gefäß. Prüfe, ob du die Öffnung des Gläschens oder die freie Fläche des Wasserbads triffst.')
         : 'Prüfe, in welchem Gefäß die Wasserpest untersucht werden soll. Trifft dein Spross dieses Gefäß?';
       return result(state,false,message);
     }
@@ -574,7 +613,7 @@ function setupHint(state){
   const d=deriveSetup(state),{beaker,lamp}=state.items;
   if(d.thermometerPresent&&!d.thermometerConnected){
     if(d.thermometerInBath&&!d.waterbathConnected)return 'Die Messspitze liegt im Wasserbad, das Gläschen hat aber noch keinen Wärmekontakt dazu. Welche Temperatur gehört zu deiner Probe?';
-    return 'Die Messspitze des Thermometers liegt nicht im Wasser deiner Probe oder eines verbundenen Wasserbads. Überlege, was das Thermometer an dieser Stelle messen würde.';
+    return state.experimentId==='light'?'Die Messspitze des Thermometers liegt nicht im Wasser deiner Probe. Überlege, was das Thermometer an dieser Stelle messen würde.':'Die Messspitze des Thermometers liegt nicht im Wasser deiner Probe oder eines verbundenen Wasserbads. Überlege, was das Thermometer an dieser Stelle messen würde.';
   }
   if(d.bathPresent&&!d.bathWaterPresent)return 'Das Wasserbad ist leer. Welches Medium könnte Wärme zwischen dem Wasserbad und dem Gläschen übertragen?';
   if(d.bathPresent&&!d.bathAligned)return 'Gläschen und Wasserbad haben noch keinen Wärmekontakt. Betrachte ihre Lage: Wie könnte die Umgebung die Probe erwärmen oder abkühlen?';
@@ -1332,10 +1371,12 @@ try{scene=createScene($('scene'));}catch(e){$('bench-note').textContent=e.messag
 function flash(message){$('bench-feedback').hidden=!message;$('bench-feedback').textContent=message;$('status-message').textContent=message;}
 function condition(b=current()){
  const distance=lampDistanceCm(b.assembly),d=deriveSetup(b.assembly);
- return {experimentId:b.assembly.experimentId,factorValue:b.assembly.experimentId==='light'?distance:b.assembly.experimentId==='temperature'?(d.waterbathConnected?b.settings.temperature:20):b.settings.carbon,light:lightAtDistance(distance),carbon:b.settings.carbon,temperature:d.waterbathConnected?b.settings.temperature:20,lampOn:d.lampPresent&&b.settings.lampOn,lampDistanceCm:distance};
+ return {experimentId:b.assembly.experimentId,factorValue:b.assembly.experimentId==='light'?distance:b.assembly.experimentId==='temperature'?(d.waterbathConnected?b.settings.temperature:20):b.settings.carbon,light:lightAtDistance(distance),carbon:b.settings.carbon,temperature:b.assembly.experimentId!=='light'&&d.waterbathConnected?b.settings.temperature:CONFIG.defaults.temperature,lampOn:d.lampPresent&&b.settings.lampOn,lampDistanceCm:distance};
 }
 function hint(message){$('learning-hint').hidden=!message;$('learning-hint-text').textContent=message||'';}
-function refreshHint(extra=''){hint(extra||setupHint(current().assembly)||seriesHint(current().series));}
+function refreshHint(extra=''){hint(extra||setupHint(current().assembly)||lampAlignmentHint(current().assembly,current().settings.lampOn)||distanceHint(condition())||seriesHint(current().series));}
+const exhausted=b=>completedRuns(b.series)>=MAX_RUNS;
+const quotaMessage='Alle 3 Messdurchgänge sind beendet. Du kannst den Versuch jetzt abschließen oder zu einem anderen Einzelversuch wechseln.';
 function endObservation(b=current()){
  if(b.observationStart===null)return;
  b.series=finishObservation(b.series,{...condition(b),invalidated:b.measurementChanged},b.stopwatch.elapsed-b.observationStart);
@@ -1346,7 +1387,7 @@ function syncPhysics(b=current()){
  b.simulation.set('light',lightAtDistance(lampDistanceCm(b.assembly)));
  b.simulation.set('carbon',b.settings.carbon);
  b.simulation.set('lampOn',connected.lampPresent&&b.settings.lampOn);
- b.simulation.set('temperature',connected.waterbathConnected?b.settings.temperature:20);
+ b.simulation.set('temperature',b.assembly.experimentId!=='light'&&connected.waterbathConnected?b.settings.temperature:CONFIG.defaults.temperature);
 }
 function updateTimer(){
  const b=current(),watch=b.stopwatch,t=formatTime(watch.elapsed),placed=!!b.assembly.items.stopwatch;
@@ -1355,9 +1396,9 @@ function updateTimer(){
  $('timer-value').innerHTML=t.main+'<span>,'+t.fraction+'</span>';
  $('timer-value').setAttribute('aria-label',t.main+','+t.fraction+' Minuten und Sekunden');
  $('timer-compact-value').textContent=t.main+','+t.fraction;
- for(const id of ['timer-toggle','timer-compact-toggle']){$(id).textContent=watch.running?'Stopp':watch.elapsed&&!watch.finished?'Weiter':'Start';$(id).disabled=!placed||!b.simulation.running||watch.finished;}
+ for(const id of ['timer-toggle','timer-compact-toggle']){$(id).textContent=watch.running?'Stopp':watch.elapsed&&!watch.finished?'Weiter':'Start';$(id).disabled=!placed||!b.simulation.running||watch.finished||exhausted(b);}
  $('timer-state').textContent=watch.finished?'Beendet':watch.running?'Läuft':watch.elapsed?'Angehalten':'Bereit';
- const notice=watch.finished?'60 Sekunden erreicht. Versuch pausiert. Für den nächsten Durchlauf nullstellen.':watch.warning?'Letzte 5 Sekunden – Messzeit endet bei 60 Sekunden.':'Messzeit: 60 Sekunden';
+ const notice=exhausted(b)?'3 von 3 Messdurchgängen beendet. Versuch abschließen oder Einzelversuch wechseln.':watch.finished?'60 Sekunden erreicht. Versuch pausiert. Für den nächsten Durchlauf nullstellen.':watch.warning?'Letzte 5 Sekunden – Messzeit endet bei 60 Sekunden.':'Messzeit: 60 Sekunden';
  for(const id of ['timer-notice','timer-compact-notice'])if($(id).textContent!==notice)$(id).textContent=notice;
  if(phase!==b.timerPhase){
   if(phase==='warning')$('timer-announcement').textContent=WARNING_SECONDS+' Sekunden erreicht. Noch '+(MEASUREMENT_SECONDS-WARNING_SECONDS)+' Sekunden.';
@@ -1371,7 +1412,7 @@ function cancelObservation(b=current()){
 }
 function completeMeasurement(b=current()){
  endObservation(b);b.simulation.setRunning(false);updateUI();refreshHint();
- flash('60 Sekunden erreicht. Der Versuch ist pausiert. Stelle die Stoppuhr für den nächsten Durchlauf auf null.');
+ flash(exhausted(b)?quotaMessage:'60 Sekunden erreicht. Der Versuch ist pausiert. Stelle die Stoppuhr für den nächsten Durchlauf auf null.');
 }
 
 function updateUI(){
@@ -1384,10 +1425,11 @@ function updateUI(){
  for(const key of CONFIG.enabledFactors){document.querySelector('[data-factor="'+key+'"]').hidden=key!==activeId;if(key==='light')continue;const input=$(key);input.disabled=key!==activeId||!enabled[key];input.value=b.settings[key];input.style.setProperty('--fill',((b.settings[key]-Number(input.min))/(Number(input.max)-Number(input.min))*100)+'%');$(key+'-value').innerHTML=b.settings[key]+' <small>'+(key==='temperature'?'°C':'%')+'</small>';}
  $('light-device-state').textContent=d.lampPresent?'Aufgestellt':'Nicht aufgestellt';$('carbon-device-state').textContent=enabled.carbon?'Vorrat aufgestellt':'Nicht verbunden';$('temperature-device-state').textContent=!d.bathPresent?'Nicht aufgestellt':!b.assembly.bathWater?'Wasserbad leer':d.waterbathConnected?'Wasserkontakt zum Gläschen':'Ohne Wasserkontakt zum Gläschen';
  $('lamp-button').disabled=!d.lampPresent;$('lamp-button').setAttribute('aria-checked',String(d.lampPresent&&b.settings.lampOn));
- const selected=materialById.get(b.selected);$('selected-name').textContent=selected?.label||'Kein Material gewählt';$('selected-description').textContent=b.pending==='water'?'Wasser in das Gläschen oder in das Wasserbad geben.':b.pending==='plant'?'Die Wasserpest in das Gläschen einsetzen.':b.pending?'Auf der Arbeitsfläche ablegen.':selected?'Auf der Arbeitsfläche verschiebbar oder zurücklegbar.':'Die Arbeitsfläche ist frei gestaltbar.';
+ const selected=materialById.get(b.selected);$('selected-name').textContent=selected?.label||'Kein Material gewählt';$('selected-description').textContent=b.pending==='water'?(activeId==='light'?'Wasser in das Gläschen geben.':'Wasser in das Gläschen oder in das Wasserbad geben.'):b.pending==='plant'?'Die Wasserpest in das Gläschen einsetzen.':b.pending?'Auf der Arbeitsfläche ablegen.':selected?'Auf der Arbeitsfläche verschiebbar oder zurücklegbar.':'Die Arbeitsfläche ist frei gestaltbar.';
  $('remove-material').hidden=!selected||!present(b,b.selected);$('remove-material').textContent=b.selected==='water'?'Wasser aus Gefäßen entfernen':b.selected==='beaker'&&(b.assembly.water||b.assembly.plant)?'Gefäß mit Inhalt zurücklegen':'Zurücklegen';
  $('lamp-power').hidden=b.selected!=='lamp'||!d.lampPresent;$('lamp-power').textContent=b.settings.lampOn?'Leuchte ausschalten':'Leuchte einschalten';$('lamp-power').setAttribute('aria-pressed',String(b.settings.lampOn));
- $('run-label').textContent=b.stopwatch.finished&&d.stopwatchPresent?'60 Sekunden erreicht':s.running?'Versuch pausieren':'Versuch starten';$('run-button').disabled=!scene||(d.stopwatchPresent&&b.stopwatch.finished);$('run-button').querySelector('.play-icon').textContent=s.running?'Ⅱ':'▶';$('run-status').innerHTML='<i></i>'+(s.running?'Läuft':s.time?'Pausiert':'Aufbau');$('run-status').classList.toggle('active',s.running);
+ $('run-count').textContent='Messdurchgänge: '+completedRuns(b.series)+' / '+MAX_RUNS;$('run-count').classList.toggle('complete',exhausted(b));
+ $('run-label').textContent=exhausted(b)?'3 Durchgänge beendet':b.stopwatch.finished&&d.stopwatchPresent?'60 Sekunden erreicht':s.running?'Versuch pausieren':'Versuch starten';$('run-button').disabled=!scene||exhausted(b)||(d.stopwatchPresent&&b.stopwatch.finished);$('run-button').querySelector('.play-icon').textContent=s.running?'Ⅱ':'▶';$('run-status').innerHTML='<i></i>'+(s.running?'Läuft':s.time?'Pausiert':'Aufbau');$('run-status').classList.toggle('active',s.running);
  $('zoom-button').disabled=!d.beakerPresent;$('zoom-button').setAttribute('aria-pressed',String(b.zoom));$('zoom-button').querySelector('span').textContent=b.zoom?'Gesamtansicht':'Nahansicht';
  $('empty-bench').hidden=Object.keys(b.assembly.items).length>0;
  $('placement-label').textContent=b.pending==='water'?'Wasser zugeben':b.pending?selected.label+' ablegen':b.assembly.plant?'Bläschen am Stiel':'Material frei platzieren';
@@ -1395,10 +1437,23 @@ function updateUI(){
  marker.hidden=!b.keyboard||!b.pending;marker.style.left=b.cursor.x*100+'%';marker.style.top=b.cursor.y*100+'%';
  updateReadouts();updateTimer();
 }
-function updateReadouts(){const b=current(),d=deriveSetup(b.assembly),distance=lampDistanceCm(b.preview||b.assembly);$('light-value').innerHTML=(distance===null?'—':n1(distance))+' <small>cm</small>';$('actual-temperature').textContent=d.thermometerConnected?n1(b.simulation.snapshot().temperature)+' °C':'— °C';}
+function updateReadouts(){
+ const b=current(),d=deriveSetup(b.assembly),distance=lampDistanceCm(b.preview||b.assembly),readout=(distance===null?'—':n1(distance))+' <small>cm</small>';
+ $('light-value').innerHTML=readout;
+ // Do not round an out-of-range reading onto an accepted boundary.
+ $('control-distance').innerHTML=distance!==null&&distance<7-1e-6&&distance.toFixed(1)==='7.0'?'&lt; 7 <small>cm</small>':distance!==null&&distance>13+1e-6&&distance.toFixed(1)==='13.0'?'&gt; 13 <small>cm</small>':readout;
+ $('distance-control').hidden=activeId==='light';$('room-temperature-note').hidden=activeId!=='light';
+ const alignment=lampAlignmentHint(b.preview||b.assembly,b.settings.lampOn);
+ $('lamp-alignment-warning').hidden=!alignment;
+ if($('lamp-alignment-text').textContent!==alignment)$('lamp-alignment-text').textContent=alignment;
+ const warning=distanceHint({...condition(b),lampDistanceCm:distance});
+ $('distance-control').classList.toggle('has-warning',!!warning);$('distance-warning').hidden=!warning;
+ if($('distance-warning').textContent!==warning)$('distance-warning').textContent=warning;
+ $('actual-temperature').textContent=d.thermometerConnected?n1(b.simulation.snapshot().temperature)+' °C':'— °C';
+}
 function pause(message){const b=current();b.simulation.setRunning(false);b.stopwatch.stop();updateUI();refreshHint();if(message){$('visibility-message').hidden=false;flash(message);}}
 function selectMaterial(id,keyboard=false){const b=current();pause();b.selected=id;b.pending=id==='water'?'water':present(b,id)?null:id;b.keyboard=keyboard;if(keyboard){b.zoom=false;$('scene').focus({preventScroll:true});}flash('');updateUI();}
-function commit(result){const b=current();if(!result.ok){flash(result.message);hint(result.message);return;}const before=condition(b),previous=b.assembly;b.assembly=result.state;if(b.observationStart!==null&&(JSON.stringify(before)!==JSON.stringify(condition(b))||previous.water!==b.assembly.water||previous.plant!==b.assembly.plant))b.measurementChanged=true;b.preview=null;b.pending=null;b.keyboard=false;syncPhysics();$('visibility-message').hidden=true;updateUI();flash(result.message);refreshHint(b.measurementChanged?'Dein Aufbau wurde während eines begonnenen Durchlaufs verändert. Überlege, ob deine Zählung noch zu einer einzigen Bedingung gehört. Für einen neuen Durchlauf kannst du die Stoppuhr nullstellen.':'');}
+function commit(result){const b=current();if(!result.ok){flash(result.message);hint(result.message);return;}const before=condition(b),previous=b.assembly;b.assembly=result.state;if(b.observationStart!==null&&(conditionChanged(before,condition(b))||previous.water!==b.assembly.water||previous.plant!==b.assembly.plant))b.measurementChanged=true;b.preview=null;b.pending=null;b.keyboard=false;syncPhysics();$('visibility-message').hidden=true;updateUI();flash(result.message);refreshHint(b.measurementChanged?'Dein Aufbau wurde während eines begonnenen Durchlaufs verändert. Überlege, ob deine Zählung noch zu einer einzigen Bedingung gehört. Für einen neuen Durchlauf kannst du die Stoppuhr nullstellen.':'');}
 function clearGesture(){if(gesture){try{gesture.target.releasePointerCapture(gesture.id);}catch{}gesture=null;}current().preview=null;$('drag-ghost').hidden=true;$('scene').classList.remove('dragging');}
 function chooseExperiment(id){if(!benches.has(id)||id===activeId)return;clearGesture();pause();activeId=id;$('timer-announcement').textContent='';last=performance.now();$('visibility-message').hidden=true;flash('');syncPhysics();updateUI();refreshHint();}
 $('experiment-tabs').addEventListener('click',e=>{const tab=e.target.closest('[data-experiment]');if(tab)chooseExperiment(tab.dataset.experiment);});
@@ -1421,12 +1476,12 @@ $('remove-material').addEventListener('click',removeSelected);
 for(const key of CONFIG.enabledFactors.filter(key=>key!=='light'))$(key).addEventListener('input',e=>{if(key!==activeId||e.target.disabled)return;const b=current(),before=condition(b);b.settings[key]=Number(e.target.value);if(b.observationStart!==null)b.measurementChanged=true;syncPhysics();updateUI();refreshHint(changeHint(before,condition(b)));});
 function toggleLamp(){const b=current();if(!b.assembly.items.lamp)return;const before=condition(b);b.settings.lampOn=!b.settings.lampOn;if(b.observationStart!==null)b.measurementChanged=true;syncPhysics();updateUI();refreshHint(changeHint(before,condition(b)));}
 $('lamp-button').addEventListener('click',toggleLamp);$('lamp-power').addEventListener('click',toggleLamp);
-$('run-button').addEventListener('click',()=>{const b=current();if(b.simulation.running){pause();return;}if(b.stopwatch.finished&&b.assembly.items.stopwatch){flash('Stelle die Stoppuhr für einen neuen Durchlauf auf null.');return;}const validation=validateAssembly(b.assembly);if(!validation.ok){flash(validation.message);hint(validation.message);return;}syncPhysics();b.simulation.setRunning(true);last=performance.now();$('visibility-message').hidden=true;flash('');updateUI();refreshHint();});
+$('run-button').addEventListener('click',()=>{const b=current();if(b.simulation.running){pause();return;}if(exhausted(b)){flash(quotaMessage);return;}if(b.stopwatch.finished&&b.assembly.items.stopwatch){flash('Stelle die Stoppuhr für einen neuen Durchlauf auf null.');return;}const validation=validateAssembly(b.assembly);if(!validation.ok){flash(validation.message);hint(validation.message);return;}syncPhysics();b.simulation.setRunning(true);last=performance.now();$('visibility-message').hidden=true;flash('');updateUI();refreshHint();});
 $('zoom-button').addEventListener('click',()=>{const b=current();if(!b.assembly.items.beaker)return;b.zoom=!b.zoom;b.keyboard=false;updateUI();});
-for(const id of ['timer-toggle','timer-compact-toggle'])$(id).addEventListener('click',()=>{const b=current();if(!b.assembly.items.stopwatch||!b.simulation.running||b.stopwatch.finished)return;if(b.stopwatch.running){b.stopwatch.stop();refreshHint();}else{if(b.observationStart===null){b.series=beginObservation(b.series,condition(b));b.observationStart=b.stopwatch.elapsed;b.measurementChanged=false;}b.stopwatch.start();refreshHint();}updateTimer();});
+for(const id of ['timer-toggle','timer-compact-toggle'])$(id).addEventListener('click',()=>{const b=current();if(!b.assembly.items.stopwatch||!b.simulation.running||b.stopwatch.finished||exhausted(b))return;if(b.stopwatch.running){b.stopwatch.stop();refreshHint();}else{if(b.observationStart===null){b.series=beginObservation(b.series,condition(b));if(!b.series.active)return;b.observationStart=b.stopwatch.elapsed;b.measurementChanged=false;}b.stopwatch.start();refreshHint();}updateTimer();});
 for(const id of ['timer-reset','timer-compact-reset'])$(id).addEventListener('click',()=>{const b=current();cancelObservation(b);b.stopwatch.reset();flash('');updateUI();refreshHint();});
 function openDialog(id){clearGesture();pause();$(id).showModal();}
-$('finish-experiment').addEventListener('click',()=>{const b=current(),assessment=finishSeriesAssessment(b.series,activeId),incomplete=b.observationStart!==null&&!b.stopwatch.finished;$('finish-message').textContent=assessment.message;$('finish-incomplete').hidden=!incomplete;$('finish-incomplete').textContent=incomplete?'Ein angefangener Durchlauf ist noch nicht vollständig und wurde nicht mitgezählt. Er wird beim Öffnen dieses Hinweises pausiert; du kannst ihn anschließend fortsetzen.':'';openDialog('finish-dialog');});
+$('finish-experiment').addEventListener('click',()=>{const b=current(),assessment=finishSeriesAssessment(b.series,activeId),incomplete=b.observationStart!==null&&!b.stopwatch.finished;$('finish-message').textContent=[assessment.message,distanceHint(condition(b)),lampAlignmentHint(b.assembly,b.settings.lampOn)].filter(Boolean).join(' ');$('finish-incomplete').hidden=!incomplete;$('finish-incomplete').textContent=incomplete?'Ein angefangener Durchlauf ist noch nicht vollständig und wurde nicht mitgezählt. Er wird beim Öffnen dieses Hinweises pausiert; du kannst ihn anschließend fortsetzen.':'';openDialog('finish-dialog');});
 $('reset-open').addEventListener('click',()=>openDialog('reset-dialog'));$('experiment-switch').addEventListener('click',()=>openDialog('experiment-dialog'));$('guide-open').addEventListener('click',()=>openDialog('guide-dialog'));
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
 $('reset-confirm').addEventListener('click',()=>{clearGesture();benches.set(activeId,fresh(activeId));$('reset-dialog').close();$('visibility-message').hidden=true;flash('Versuchsplatz geleert.');syncPhysics();updateUI();hint('');});
