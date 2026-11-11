@@ -294,7 +294,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
   <header class="bench-head"><div><p class="eyebrow">DEIN VERSUCHSPLATZ</p><h2 id="bench-title">Lichtintensität</h2></div><span class="run-status" id="run-status"><i></i>Aufbau</span></header>
   <p id="room-temperature-note" class="room-temperature-note">Annahme für diesen Versuch: <strong>konstante Raumtemperatur von 20 °C</strong>. Ein Wasserbad ist nicht erforderlich.</p>
   <aside id="lamp-alignment-warning" class="alignment-warning" role="status" aria-live="polite" hidden><strong>Lichteinfall prüfen</strong><span id="lamp-alignment-text"></span></aside>
-  <aside id="distance-control" class="distance-control" aria-label="Konstanter Lampenabstand" hidden><div><strong>Abstand Lampe–Pflanze: 10 cm</strong><span>Bei allen Durchläufen möglichst gleich halten. Toleranz: 7–13 cm.</span></div><output id="control-distance" aria-label="Aktueller Lampenabstand">— <small>cm</small></output><p id="distance-warning" role="status" aria-live="polite" hidden></p></aside>
+  <aside id="distance-control" class="distance-control" aria-label="Lampenabstand planen" hidden><div><strong>Lampenabstand planen</strong><span>Welche Erkenntnisse aus Versuch 1 (Lichtintensität) helfen dir, für diesen Versuch einen geeigneten Lampenabstand zu wählen?</span></div><output id="control-distance" aria-label="Aktueller Lampenabstand">— <small>cm</small></output><p id="distance-warning" role="status" aria-live="polite" hidden></p></aside>
   <div class="scene-wrap" id="scene-wrap"><canvas id="scene" tabindex="0" role="application" aria-label="Arbeitsfläche für deinen Versuchsaufbau" aria-describedby="assembly-help"></canvas><div class="empty-bench" id="empty-bench"><span>Deine Arbeitsfläche</span></div><div class="scene-tools"><button id="zoom-button" aria-pressed="false" disabled title="Schnittstelle vergrößern"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6m-3-3v6"/></svg><span>Nahansicht</span></button></div><div class="scene-bottom"><span class="specimen-tag" id="placement-label">Material frei platzieren</span><span class="simulation-tag">Simulation</span></div><div class="visibility-message" id="visibility-message" hidden>Versuch und Stoppuhr pausiert.</div></div>
   <div class="bench-bottom"><button class="primary" id="run-button"><span class="play-icon" aria-hidden="true">▶</span><span id="run-label">Versuch starten</span></button><p id="bench-note">Eigener Versuchsaufbau</p><button id="experiment-switch" aria-haspopup="dialog" aria-controls="experiment-dialog"><span aria-hidden="true">⇄</span> Versuch wechseln</button><button class="icon-button" id="reset-open" aria-label="Diesen Versuchsplatz zurücksetzen" title="Diesen Versuchsplatz zurücksetzen">↺</button></div>
   <div class="finish-row"><output id="run-count" class="run-count" aria-live="polite">Messdurchgänge: 0 / 3</output><button id="finish-experiment" aria-haspopup="dialog" aria-controls="finish-dialog">Versuch abschließen</button></div>
@@ -430,12 +430,14 @@ function lampAlignmentHint(setup,lampOn=true){
 function lightAtDistance(distanceCm){return distanceCm==null?0:100/(1+(Math.max(0,distanceCm)/10)**2);}
 
 return {VESSEL,LAMP_GEOMETRY,LAMP_ANGLE_TOLERANCE_DEG,lampMeasurement,lampDistanceCm,lampAngleDeg,lampAlignmentHint,lightAtDistance};})();
-const {MAX_RUNS,DISTANCE_TARGET_CM,DISTANCE_TOLERANCE_CM,completedRuns,distanceHint,conditionChanged,createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint} = (()=>{
+const {MAX_RUNS,completedRuns,distanceHint,lampDistanceChanged,conditionChanged,createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint} = (()=>{
 // Formative hints use only experimental settings and elapsed observation time.
 // Bubble counts, calculated rates and students' written results are never stored.
 // All functions return new state; keep one series per independent workbench.
 const FACTORS = new Set(['light', 'carbon', 'temperature']);
-const MAX_RUNS = 3, DISTANCE_TARGET_CM = 10, DISTANCE_TOLERANCE_CM = 3;
+const MAX_RUNS = 3;
+// Ignore sub-millimetre positioning noise, not a prescribed distance range.
+const DISTANCE_CHANGE_TOLERANCE_CM = .1;
 const NUMERIC_KEYS = ['factorValue', 'light', 'carbon', 'temperature', 'lampDistanceCm'];
 const sameNumber = (a, b, tolerance = .05) =>
   a === b || (Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) <= tolerance);
@@ -460,47 +462,53 @@ function targetValue(condition) {
 }
 
 const controlledLight = c => c && ['carbon', 'temperature'].includes(c.experimentId);
-const withinDistance = c => Number.isFinite(c?.lampDistanceCm) && Math.abs(c.lampDistanceCm - DISTANCE_TARGET_CM) <= DISTANCE_TOLERANCE_CM + 1e-6;
-const toleratedLightChange = (a, b) => controlledLight(a) && a.experimentId === b?.experimentId && a.lampOn && b.lampOn && withinDistance(a) && withinDistance(b);
-function distanceHint(condition) {
+const lampDistanceChanged = (a, b) => controlledLight(a) && a.experimentId === b?.experimentId && Number.isFinite(a.lampDistanceCm) && Number.isFinite(b.lampDistanceCm) && !sameNumber(a.lampDistanceCm,b.lampDistanceCm,DISTANCE_CHANGE_TOLERANCE_CM);
+function sameLighting(a,b) {
+  const measured=Number.isFinite(a.lampDistanceCm)&&Number.isFinite(b.lampDistanceCm);
+  return a.lampOn===b.lampOn && (measured ? sameNumber(a.lampDistanceCm,b.lampDistanceCm,DISTANCE_CHANGE_TOLERANCE_CM) : sameNumber(a.light,b.light)&&sameNumber(a.lampDistanceCm,b.lampDistanceCm));
+}
+const distanceDuringHint = 'Während dieses Durchlaufs hat sich der Lampenabstand verändert. Was bedeutet das mit Blick auf Versuch 1 (Lichtintensität) für deine Zählung?';
+const distanceBetweenHint = 'Der Lampenabstand ist jetzt anders als beim ersten Messdurchgang. Worauf könntest du einen Unterschied in der Bläschenzahl zurückführen? Beziehe deine Ergebnisse aus Versuch 1 (Lichtintensität) ein.';
+function distanceHint(condition,reference=null,changedDuringRun=false) {
   if (!controlledLight(condition) || !Number.isFinite(condition.lampDistanceCm)) return '';
-  if (!condition.lampOn) return 'Bedenken: Die Leuchte ist ausgeschaltet. Bei diesem Versuch soll die Beleuchtung gleich bleiben: Leuchte einschalten und etwa 10 cm Abstand halten (7–13 cm sind in Ordnung).';
-  if (!withinDistance(condition)) return 'Bedenken: Der Lampenabstand liegt außerhalb von 7–13 cm. Dadurch kann die Lichtintensität dein Ergebnis beeinflussen. Verschiebe die Leuchte auf etwa 10 cm Abstand zur Pflanze und halte diesen Abstand bei allen drei Durchläufen möglichst gleich.';
+  if (changedDuringRun==='warmup') return 'Du hast den Lampenabstand während der Anpassungsphase verändert. Welche Bedeutung könnte das für die anschließende Messung haben? Denke an Versuch 1 (Lichtintensität).';
+  if (changedDuringRun) return distanceDuringHint;
+  if (lampDistanceChanged(reference,condition)) return distanceBetweenHint;
+  if (!condition.lampOn) return 'Die Leuchte ist ausgeschaltet. Welche Bedeutung könnte das für diesen Versuch haben? Beziehe deine Ergebnisse aus Versuch 1 (Lichtintensität) ein.';
   return '';
 }
 function comparable(a, b) {
   if (!a || !b || a.experimentId !== b.experimentId) return false;
-  const tolerated = toleratedLightChange(a, b);
-  return NUMERIC_KEYS.every(key => tolerated && ['light', 'lampDistanceCm'].includes(key) || sameNumber(a[key], b[key])) && a.lampOn === b.lampOn;
+  return NUMERIC_KEYS.every(key => controlledLight(a)&&['light','lampDistanceCm'].includes(key) || sameNumber(a[key], b[key])) && (controlledLight(a)?sameLighting(a,b):a.lampOn===b.lampOn);
 }
 const conditionChanged = (a, b) => !comparable(snapshot(a), snapshot(b));
 
 function changedControls(a, b) {
   if (!a || !b || a.experimentId !== b.experimentId) return [];
   const changed = [];
-  if (a.experimentId !== 'light' && !toleratedLightChange(a, b) && (
-    !sameNumber(a.light, b.light) || !sameNumber(a.lampDistanceCm, b.lampDistanceCm) || a.lampOn !== b.lampOn
-  )) changed.push('die Lichtbedingungen');
+  if (a.experimentId !== 'light' && !sameLighting(a,b)) changed.push('die Lichtbedingungen');
   if (a.experimentId !== 'carbon' && !sameNumber(a.carbon, b.carbon)) changed.push('den CO₂-Gehalt');
   if (a.experimentId !== 'temperature' && !sameNumber(a.temperature, b.temperature)) changed.push('die Temperatureinstellung');
   return changed;
 }
 
-const duringObservationHint = 'Während der Beobachtungszeit haben sich die Einstellungen verändert. Prüfe, welche Bedingungen während einer einzelnen Messung gleich bleiben sollten.';
+const duringObservationHint = 'Während der Beobachtungszeit haben sich die Einstellungen verändert. Welche Bedeutung hat das für die Auswertung dieses Durchgangs?';
 
 function createSeries() {
-  return {observations: [], active: null, lastIssue: '', completedRuns: 0};
+  return {observations: [], active: null, lastIssue: '', completedRuns: 0, lightReference: null};
 }
 const completedRuns = series => Math.min(MAX_RUNS, Math.max(0, series.completedRuns ?? series.observations.filter(o => o.duration >= 60).length));
 
 function beginObservation(series, condition) {
   if (completedRuns(series) >= MAX_RUNS) return {...series, active: null};
-  return {...series, active: snapshot(condition), lastIssue: ''};
+  return {...series, active: snapshot(condition), lastIssue: '', lightReference: series.lightReference || (controlledLight(condition)?snapshot(condition):null)};
 }
 
 function changeHint(beforeCondition, afterCondition) {
+  if (lampDistanceChanged(beforeCondition,afterCondition)) return 'Die Messdurchgänge unterscheiden sich im Lampenabstand. Worauf könntest du einen Unterschied in der Bläschenzahl zurückführen? Beziehe deine Ergebnisse aus Versuch 1 (Lichtintensität) ein.';
   const changed = changedControls(snapshot(beforeCondition), snapshot(afterCondition));
   if (!changed.length) return '';
+  if (changed.includes('die Lichtbedingungen')) return 'Die Lichtbedingungen haben sich verändert. Welche Bedeutung könnte das für den Vergleich deiner Messungen haben? Beziehe deine Ergebnisse aus Versuch 1 (Lichtintensität) ein.';
   return `Du hast zusätzlich ${changed.join(' und ')} verändert. Wie könntest du prüfen, welcher Faktor für einen Unterschied verantwortlich ist?`;
 }
 
@@ -515,7 +523,7 @@ function finishObservation(series, condition, elapsedSeconds) {
   next.completedRuns = completedRuns(series) + 1;
   const end = snapshot(condition);
   if (condition?.invalidated || !comparable(series.active, end)) {
-    return {...next, lastIssue: duringObservationHint};
+    return {...next, lastIssue: controlledLight(end)&&(condition?.lampDistanceChanged||lampDistanceChanged(series.active,end))?distanceDuringHint:duringObservationHint};
   }
   const value = targetValue(end);
   if (!(Number.isFinite(value) || value === 'dark')) return next;
@@ -556,21 +564,21 @@ function finishSeriesAssessment(series, experimentId) {
   const exhausted = completedRuns(series) >= MAX_RUNS;
   let message = exhausted
     ? 'Alle 3 Messdurchgänge dieses Einzelversuchs sind beendet. ' + (count < 3
-      ? 'Dabei wurden nur '+count+' verschiedene Einstellungen vollständig und ohne störende Änderungen erfasst. Damit lässt sich der Verlauf nur eingeschränkt beurteilen. Überlege, wie du die drei Einstellungen und die gleichbleibenden Bedingungen planen würdest. Für eine neue Messreihe kannst du diesen Versuchsplatz zurücksetzen.'
-      : 'Du hast drei verschiedene Einstellungen vollständig untersucht. Prüfe in deinen eigenen Aufzeichnungen, ob du den untersuchten Bereich sinnvoll abgedeckt und die übrigen Bedingungen gleich gehalten hast.')
+      ? 'Dabei wurden nur '+count+' verschiedene Einstellungen vollständig und ohne störende Änderungen erfasst. Damit lässt sich der Verlauf nur eingeschränkt beurteilen. Wie würdest du die drei Einstellungen und die übrigen Versuchsbedingungen für einen aussagekräftigen Vergleich planen? Für eine neue Messreihe kannst du diesen Versuchsplatz zurücksetzen.'
+      : 'Du hast drei verschiedene Einstellungen vollständig untersucht. Prüfe in deinen eigenen Aufzeichnungen, ob du den untersuchten Bereich sinnvoll abgedeckt und wie sich die übrigen Bedingungen auf deinen Vergleich auswirken könnten.')
     : count === 0
     ? 'Für diesen Einzelversuch ist noch kein vollständiger 60-Sekunden-Durchlauf mit unveränderten Einstellungen erfasst. Prüfe, ob du die Stoppuhr beim Beobachten gestartet und den Durchlauf vollständig beendet hast.'
     : count === 1
-      ? 'Du hast bisher eine Einstellung vollständig untersucht. Mit welcher weiteren Einstellung könntest du einen Vergleich ermöglichen? Überlege dabei, welche übrigen Bedingungen gleich bleiben sollten.'
+      ? 'Du hast bisher eine Einstellung vollständig untersucht. Mit welcher weiteren Einstellung könntest du einen Vergleich ermöglichen? Welche Rolle spielen dabei die übrigen Bedingungen?'
       : count === 2
         ? 'Du hast bisher nur zwei verschiedene Einstellungen vollständig untersucht. Was könntest du zwischen diesen Einstellungen oder darüber hinaus noch untersuchen, um den Verlauf besser beurteilen zu können? Ergänze deine Messreihe, bevor du den Versuch abschließt.'
-        : 'Du hast '+count+' verschiedene Einstellungen jeweils 60 Sekunden beobachtet. Prüfe in deinen eigenen Aufzeichnungen, ob du den untersuchten Bereich sinnvoll abgedeckt und die übrigen Bedingungen gleich gehalten hast.';
+        : 'Du hast '+count+' verschiedene Einstellungen jeweils 60 Sekunden beobachtet. Prüfe in deinen eigenen Aufzeichnungen, ob du den untersuchten Bereich sinnvoll abgedeckt und wie sich die übrigen Bedingungen auf deinen Vergleich auswirken könnten.';
   if (complete.length > count) message += ' Wiederholungen derselben Einstellung zählen hierbei als eine untersuchte Einstellung.';
   if (series.lastIssue) message += ' '+series.lastIssue;
   return {count, message};
 }
 
-return {MAX_RUNS,DISTANCE_TARGET_CM,DISTANCE_TOLERANCE_CM,completedRuns,distanceHint,conditionChanged,createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint};})();
+return {MAX_RUNS,completedRuns,distanceHint,lampDistanceChanged,conditionChanged,createSeries,beginObservation,finishObservation,seriesHint,finishSeriesAssessment,changeHint};})();
 const {CONFIG} = (()=>{
 // Qualitative model settings; the lamp position supplies the light input.
 const CONFIG = Object.freeze({
@@ -1486,7 +1494,7 @@ function createScene(canvas) {
 return {createScene};})();
 const $=id=>document.getElementById(id);
 const materialById=new Map(MATERIALS.map(m=>[m.id,m]));
-const fresh=id=>({assembly:createAssembly(id),simulation:createSimulation(),stopwatch:createStopwatch(),settings:{...CONFIG.defaults},selected:null,pending:null,zoom:false,preview:null,cursor:{x:.55,y:.5},keyboard:false,series:createSeries(),observationStart:null,measurementChanged:false,timerPhase:'ready'});
+const fresh=id=>({assembly:createAssembly(id),simulation:createSimulation(),stopwatch:createStopwatch(),settings:{...CONFIG.defaults},selected:null,pending:null,zoom:false,preview:null,cursor:{x:.55,y:.5},keyboard:false,series:createSeries(),observationStart:null,measurementChanged:false,runStartCondition:null,lampDistanceChanged:false,timerPhase:'ready'});
 const benches=new Map(EXPERIMENTS.map(e=>[e.id,fresh(e.id)]));
 let activeId='light',last=performance.now(),lastReadout=0,scene=null,gesture=null;
 const current=()=>benches.get(activeId);
@@ -1539,14 +1547,17 @@ function condition(b=current()){
  const distance=lampDistanceCm(b.assembly),d=deriveSetup(b.assembly);
  return {experimentId:b.assembly.experimentId,factorValue:b.assembly.experimentId==='light'?distance:b.assembly.experimentId==='temperature'?(d.waterbathConnected?b.settings.temperature:20):b.settings.carbon,light:lightAtDistance(distance),carbon:b.settings.carbon,temperature:b.assembly.experimentId!=='light'&&d.waterbathConnected?b.settings.temperature:CONFIG.defaults.temperature,lampOn:d.lampPresent&&b.settings.lampOn,lampDistanceCm:distance};
 }
+function currentDistanceHint(b=current()){
+ return distanceHint(condition(b),b.series.lightReference||b.runStartCondition,b.lampDistanceChanged);
+}
 function hint(message,kind='error'){photoNotices.context=message||'';photoNotices.contextKind=kind;renderPhotoNotice();}
 function refreshHint(extra=''){const b=current(),setup=setupHint(b.assembly);hint(extra||setup||seriesHint(b.series),extra||setup||b.series.lastIssue?'error':'info');}
 const exhausted=b=>completedRuns(b.series)>=MAX_RUNS;
 const quotaMessage='Alle 3 Messdurchgänge sind beendet. Du kannst den Versuch jetzt abschließen oder zu einem anderen Einzelversuch wechseln.';
 function endObservation(b=current()){
  if(b.observationStart===null)return;
- b.series=finishObservation(b.series,{...condition(b),invalidated:b.measurementChanged},b.stopwatch.elapsed-b.observationStart);
- b.observationStart=null;b.measurementChanged=false;
+ b.series=finishObservation(b.series,{...condition(b),invalidated:b.measurementChanged,lampDistanceChanged:b.lampDistanceChanged},b.stopwatch.elapsed-b.observationStart);
+ b.observationStart=null;b.measurementChanged=false;b.runStartCondition=null;b.lampDistanceChanged=false;
 }
 function syncPhysics(b=current()){
  const connected=deriveSetup(b.assembly);
@@ -1577,7 +1588,7 @@ function updateTimer(){
  }
 }
 function cancelObservation(b=current()){
- b.series={...b.series,active:null,lastIssue:''};b.observationStart=null;b.measurementChanged=false;
+ b.series={...b.series,active:null,lastIssue:''};b.observationStart=null;b.measurementChanged=false;b.runStartCondition=null;b.lampDistanceChanged=false;
 }
 function restartPreparationAfterChange(b=current()){
  if(!b.stopwatch.preparing)return false;
@@ -1598,6 +1609,7 @@ function toggleRun(){
  const validation=validateAssembly(b.assembly);
  if(!validation.ok){flash(validation.message,'error');return;}
  if(!b.assembly.items.stopwatch){const message='Stelle die Stoppuhr auf die Arbeitsfläche. Sie übernimmt zuerst die Anpassungsphase und anschließend die Messzeit.';flash(message,'error');return;}
+ if(b.stopwatch.stage==='ready'){b.runStartCondition=condition(b);b.lampDistanceChanged=false;}
  syncPhysics();b.simulation.setRunning(true);b.stopwatch.start();last=performance.now();$('visibility-message').hidden=true;flash('');updateUI();refreshHint();
 }
 function completeMeasurement(b=current()){
@@ -1630,13 +1642,12 @@ function updateUI(){
 function updateReadouts(){
  const b=current(),d=deriveSetup(b.assembly),distance=lampDistanceCm(b.preview||b.assembly),readout=(distance===null?'—':n1(distance))+' <small>cm</small>';
  $('light-value').innerHTML=readout;$('light-intensity-value').innerHTML=(distance===null?'—':n1(b.settings.lampOn?lightAtDistance(distance):0))+' <small>%</small>';
- // Do not round an out-of-range reading onto an accepted boundary.
- $('control-distance').innerHTML=distance!==null&&distance<7-1e-6&&distance.toFixed(1)==='7.0'?'&lt; 7 <small>cm</small>':distance!==null&&distance>13+1e-6&&distance.toFixed(1)==='13.0'?'&gt; 13 <small>cm</small>':readout;
+ $('control-distance').innerHTML=readout;
  $('distance-control').hidden=activeId==='light';$('room-temperature-note').hidden=activeId!=='light';
  const alignment=lampAlignmentHint(b.preview||b.assembly,b.settings.lampOn);
  $('lamp-alignment-warning').hidden=true;
  if($('lamp-alignment-text').textContent!==alignment)$('lamp-alignment-text').textContent=alignment;
- const warning=distanceHint({...condition(b),lampDistanceCm:distance});
+ const warning=currentDistanceHint(b);
  $('distance-control').classList.toggle('has-warning',!!warning);$('distance-warning').hidden=true;
  if($('distance-warning').textContent!==warning)$('distance-warning').textContent=warning;
  photoNotices.alignment=alignment;photoNotices.distance=warning;renderPhotoNotice();
@@ -1644,7 +1655,20 @@ function updateReadouts(){
 }
 function pause(message){const b=current();b.simulation.setRunning(false);b.stopwatch.stop();updateUI();refreshHint();if(message){$('visibility-message').hidden=false;flash(message);}}
 function selectMaterial(id,keyboard=false){const b=current();pause();b.selected=id;b.pending=id==='water'?'water':present(b,id)?null:id;b.keyboard=keyboard;if(keyboard){b.zoom=false;$('scene').focus({preventScroll:true});}flash('');updateUI();}
-function commit(result){const b=current();if(!result.ok){flash(result.message,'error');return;}const before=condition(b),previous=b.assembly;b.assembly=result.state;const setupChanged=JSON.stringify(previous)!==JSON.stringify(b.assembly),preparationRestarted=setupChanged&&restartPreparationAfterChange(b);if(b.observationStart!==null&&(conditionChanged(before,condition(b))||previous.water!==b.assembly.water||previous.plant!==b.assembly.plant))b.measurementChanged=true;b.preview=null;b.pending=null;b.keyboard=false;syncPhysics();$('visibility-message').hidden=true;updateUI();flash(preparationRestarted?'Aufbau verändert. Beim Fortsetzen beginnt die 10-Sekunden-Anpassungsphase erneut.':result.message);refreshHint(b.measurementChanged?'Dein Aufbau wurde während eines begonnenen Durchlaufs verändert. Überlege, ob deine Zählung noch zu einer einzigen Bedingung gehört. Für einen neuen Durchlauf kannst du die Stoppuhr nullstellen.':'');}
+function commit(result){
+ const b=current();if(!result.ok){flash(result.message,'error');return;}
+ const before=condition(b),previous=b.assembly,started=b.stopwatch.stage!=='ready'&&!b.stopwatch.finished;
+ b.assembly=result.state;
+ const after=condition(b),distanceChanged=lampDistanceChanged(before,after),changedSinceStart=lampDistanceChanged(b.runStartCondition,after);
+ const distanceChangedDuringRun=b.lampDistanceChanged||(started&&(distanceChanged||changedSinceStart)?(b.stopwatch.preparing?'warmup':true):false);
+ const setupChanged=JSON.stringify(previous)!==JSON.stringify(b.assembly),preparationRestarted=setupChanged&&restartPreparationAfterChange(b);
+ b.lampDistanceChanged=distanceChangedDuringRun;
+ if(b.observationStart!==null&&(conditionChanged(b.series.active,after)||conditionChanged(before,after)||previous.water!==b.assembly.water||previous.plant!==b.assembly.plant))b.measurementChanged=true;
+ if(distanceChanged)dismissedPhotoNotice='';
+ b.preview=null;b.pending=null;b.keyboard=false;syncPhysics();$('visibility-message').hidden=true;updateUI();
+ flash(preparationRestarted?'Aufbau verändert. Beim Fortsetzen beginnt die 10-Sekunden-Anpassungsphase erneut.':result.message);
+ refreshHint(b.measurementChanged?'Dein Aufbau wurde während eines begonnenen Durchlaufs verändert. Überlege, ob deine Zählung noch zu einer einzigen Bedingung gehört. Für einen neuen Durchlauf kannst du die Stoppuhr nullstellen.':'');
+}
 function clearGesture(){if(gesture){try{gesture.target.releasePointerCapture(gesture.id);}catch{}gesture=null;}current().preview=null;$('drag-ghost').hidden=true;$('scene').classList.remove('dragging');}
 function chooseExperiment(id){if(!benches.has(id)||id===activeId)return;clearGesture();pause();activeId=id;$('timer-announcement').textContent='';last=performance.now();$('visibility-message').hidden=true;flash('');syncPhysics();updateUI();refreshHint();}
 $('experiment-tabs').addEventListener('click',e=>{const tab=e.target.closest('[data-experiment]');if(tab)chooseExperiment(tab.dataset.experiment);});
@@ -1672,7 +1696,7 @@ $('zoom-button').addEventListener('click',()=>{const b=current();if(!b.assembly.
 for(const id of ['timer-toggle','timer-compact-toggle'])$(id).addEventListener('click',toggleRun);
 for(const id of ['timer-reset','timer-compact-reset'])$(id).addEventListener('click',()=>{const b=current();b.simulation.setRunning(false);cancelObservation(b);b.stopwatch.reset();b.timerPhase='ready';flash('');updateUI();refreshHint();});
 function openDialog(id){clearGesture();pause();$(id).showModal();}
-$('finish-experiment').addEventListener('click',()=>{const b=current(),assessment=finishSeriesAssessment(b.series,activeId),incomplete=b.stopwatch.stage!=='ready'&&!b.stopwatch.finished;$('finish-message').textContent=[assessment.message,distanceHint(condition(b)),lampAlignmentHint(b.assembly,b.settings.lampOn)].filter(Boolean).join(' ');$('finish-incomplete').hidden=!incomplete;$('finish-incomplete').textContent=incomplete?'Ein angefangener Durchlauf ist noch nicht vollständig und wurde nicht mitgezählt. Er wird beim Öffnen dieses Hinweises pausiert; du kannst ihn anschließend fortsetzen.':'';openDialog('finish-dialog');});
+$('finish-experiment').addEventListener('click',()=>{const b=current(),assessment=finishSeriesAssessment(b.series,activeId),incomplete=b.stopwatch.stage!=='ready'&&!b.stopwatch.finished;$('finish-message').textContent=[assessment.message,currentDistanceHint(b),lampAlignmentHint(b.assembly,b.settings.lampOn)].filter(Boolean).join(' ');$('finish-incomplete').hidden=!incomplete;$('finish-incomplete').textContent=incomplete?'Ein angefangener Durchlauf ist noch nicht vollständig und wurde nicht mitgezählt. Er wird beim Öffnen dieses Hinweises pausiert; du kannst ihn anschließend fortsetzen.':'';openDialog('finish-dialog');});
 $('reset-open').addEventListener('click',()=>openDialog('reset-dialog'));$('experiment-switch').addEventListener('click',()=>openDialog('experiment-dialog'));$('guide-open').addEventListener('click',()=>openDialog('guide-dialog'));
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
 $('reset-confirm').addEventListener('click',()=>{clearGesture();benches.set(activeId,fresh(activeId));$('reset-dialog').close();$('visibility-message').hidden=true;flash('Versuchsplatz geleert.');syncPhysics();updateUI();hint('');});
@@ -3152,5 +3176,6 @@ else if(state.startedAt!==null&&!state.plateOnLid)feedback(M.timing(state).compl
 
 </script>
 </body></html>
+
 
 
