@@ -178,14 +178,116 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
 .dc-disposal-sources{font-size:11px;color:#697760;margin:16px 0}.dc-disposal-sources summary{cursor:pointer}.dc-disposal-sources a{display:block;margin:8px 0;color:#355d43}
 .dc-bench-tools{flex-wrap:wrap}.dc-compact #dc-disposal-open{min-height:36px;padding:6px 10px}.dc-compact .dc-step-action:has(#dc-finish-measure:not([hidden])){min-width:150px}
 @media(max-width:660px){.dc-compact .dc-bench{grid-template-rows:auto minmax(0,1fr) auto auto}.dc-compact .dc-bench-head{padding-block:6px}.dc-compact .dc-bench-tools{gap:4px}.dc-compact .dc-bench-tools button{font-size:10px;padding:6px}.dc-measure-dialog{padding:12px}.dc-measure-dialog h2{font-size:22px}.dc-measure-help{font-size:12px}}
+/* Compact photosynthesis workspace; activated by the viewport controller. */
+body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-template-rows:44px 52px minmax(0,1fr);overflow:hidden}
+.photo-compact>.topbar{height:44px;width:100%;padding:0 16px}
+.photo-compact>.topbar .brand{font-size:20px;gap:8px}
+.photo-compact>.topbar .brand>svg{width:26px;height:26px}
+.photo-compact>.topbar .brand-sub{display:none}
+.photo-compact>.lab-nav{width:100%;max-width:none;margin:0;padding:4px 12px;gap:8px;flex-wrap:nowrap}
+.photo-compact>.lab-nav button{min-height:44px;padding:8px 16px;font-size:13px}
+.photo-compact>.lab-nav output{width:auto;min-height:0;font-size:11px}
+.photo-compact #factors-panel{width:100%;max-width:none;height:100%;min-height:0;display:grid;grid-template-rows:auto auto auto minmax(0,1fr);gap:6px;margin:0;padding:4px 12px 8px}
+.photo-compact #factors-panel>.intro{margin:0;min-width:0;gap:12px;flex-direction:row;align-items:center}
+.photo-compact #factors-panel>.intro .eyebrow{display:none}
+.photo-compact #factors-panel>.intro h1{font-size:24px;line-height:1.15;max-width:none;letter-spacing:-.5px}
+.photo-compact #guide-open{margin:0;min-height:44px;padding:8px 10px;font-size:11px}
+.photo-compact #experiment-tabs{margin:0;gap:7px}
+.photo-compact #experiment-tabs button{min-height:44px;gap:7px;padding:7px 11px}
+.photo-compact #experiment-tabs small{display:none}
+.photo-compact #experiment-tabs strong{font-size:13px}
+.photo-compact #experiment-tabs .tab-symbol{width:24px;font-size:19px}
+.photo-compact #factors-panel>.measurement-rule{position:relative;font-size:11px;line-height:1.4;margin:0;z-index:15}
+.photo-compact #factors-panel>.measurement-rule summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 11px;list-style:none;cursor:pointer;border:1px solid #d6dfcc;border-radius:8px;background:#edf2e4;font-size:12px}
+.photo-compact #factors-panel>.measurement-rule summary::-webkit-details-marker{display:none}
+.photo-compact #factors-panel>.measurement-rule summary::before{content:'▸';font-size:16px;flex:none}
+.photo-compact #factors-panel>.measurement-rule[open] summary::before{content:'▾'}
+.photo-compact #factors-panel>.measurement-rule>p{position:absolute;top:calc(100% + 5px);left:0;right:0;max-height:min(45dvh,260px);overflow:auto;margin:0;padding:13px 15px;background:#fdfef8;border:1px solid #b9c9a9;border-radius:9px;box-shadow:0 8px 24px #203b3224;font-size:12px;line-height:1.5}
+.photo-compact #factors-panel>.laboratory{min-height:0;min-width:0;grid-template-columns:98px minmax(0,1fr) 212px;gap:9px;align-items:stretch}
+.photo-compact #factors-panel .materials{grid-column:auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:8px}
+.photo-compact #factors-panel .materials>.eyebrow{font-size:8px;margin:0 0 8px;text-align:center;letter-spacing:.7px}
+.photo-compact #material-tray{grid-template-columns:1fr;gap:5px}
+.photo-compact #material-tray .material-button{min-height:52px;padding:5px 2px;gap:3px;font-size:10px;line-height:1.2}
+.photo-compact #material-tray .material-button svg{width:22px;height:22px;flex:none}
+.photo-compact #factors-panel .material-note{font-size:10px;line-height:1.35;margin:8px 0 0;text-align:left}
+.photo-compact #factors-panel .bench{min-width:0;min-height:0;height:100%;position:relative;top:auto;display:flex;flex-direction:column;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;border-radius:12px}
+.photo-compact #factors-panel .bench> :not(.scene-wrap){flex:none}
+.photo-compact #factors-panel .bench-head{padding:8px 11px;min-height:42px;gap:8px}
+.photo-compact #factors-panel .bench-head .eyebrow{display:none}
+.photo-compact #factors-panel .bench-head h2{font-size:19px}
+.photo-compact #factors-panel .run-status{font-size:10px;padding:5px 8px;white-space:nowrap}
+.photo-compact #factors-panel .room-temperature-note,.photo-compact #factors-panel .alignment-warning,.photo-compact #factors-panel .distance-control{margin:0 10px 7px;padding:7px 9px;font-size:11px;line-height:1.35}
+.photo-compact #factors-panel .distance-control>div{min-width:150px}
+.photo-compact #factors-panel .distance-control p{font-size:11px}
+.photo-compact #factors-panel .scene-wrap{flex:1 0 180px;min-height:180px;aspect-ratio:auto}
+.photo-compact #factors-panel .scene-tools{top:8px;right:8px}
+.photo-compact #factors-panel .scene-tools button{min-height:44px;padding:8px 10px}
+.photo-compact #factors-panel .scene-bottom{left:10px;right:10px;bottom:8px}
+.photo-compact #factors-panel .specimen-tag{font-size:9px;padding:5px 7px}
+.photo-compact #factors-panel .bench-bottom{display:flex;flex-wrap:wrap;gap:6px;min-height:56px;padding:6px 10px}
+.photo-compact #factors-panel .bench-bottom button{min-height:44px;font-size:11px;padding:7px 9px}
+.photo-compact #bench-note{display:none}
+.photo-compact #experiment-switch{margin-left:auto}
+.photo-compact #reset-open{flex:0 0 44px;margin:0}
+.photo-compact #factors-panel .finish-row{padding:0 10px 7px;gap:6px}
+.photo-compact #factors-panel .finish-row button{min-height:44px;padding:7px 9px;font-size:11px}
+.photo-compact #run-count{font-size:11px}
+.photo-compact #factors-panel .instruments{height:100%;min-height:0;min-width:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;display:grid;grid-template-columns:1fr;align-content:start;gap:7px}
+.photo-compact #factors-panel .instrument,.photo-compact #factors-panel .stopwatch{padding:10px;border-radius:10px;grid-column:auto;grid-row:auto}
+.photo-compact #factors-panel .instrument-title{margin-bottom:8px;gap:6px}
+.photo-compact #factors-panel .instrument-title h2{font-size:14px}
+.photo-compact #factors-panel .instrument-icon{display:none}
+.photo-compact #factors-panel .selected-material p:not(.eyebrow){font-size:11px;line-height:1.4;margin:7px 0}
+.photo-compact #factors-panel .selected-material button{min-height:44px;padding:7px 9px;margin-top:6px}
+.photo-compact #factors-panel .distance-reading output{font-size:24px}
+.photo-compact #factors-panel .distance-reading>span{margin-bottom:4px}
+.photo-compact #factors-panel .relative-light-reading{margin-top:7px;padding-top:7px}
+.photo-compact #factors-panel .distance-note{font-size:11px;line-height:1.4;margin:7px 0}
+.photo-compact #factors-panel .device-state{margin-top:6px}
+.photo-compact #factors-panel input[type=range]{height:44px;margin:0}
+.photo-compact #factors-panel .switch{min-width:44px;min-height:44px;width:44px;border-radius:22px;padding:12px 3px}
+.photo-compact #factors-panel .switch[aria-checked=true] span{transform:translateX(19px)}
+.photo-compact #compact-clock{display:none}
+.photo-compact #stopwatch-panel{display:block}
+.photo-compact #stopwatch-panel .time{font-size:28px;margin:7px 0}
+.photo-compact #stopwatch-panel .time>span{font-size:20px}
+.photo-compact #stopwatch-panel .timer-notice{font-size:11px;line-height:1.35;min-height:0;margin:0 0 7px}
+.photo-compact #stopwatch-panel .clock-buttons{gap:6px;flex-direction:row}
+.photo-compact #stopwatch-panel .clock-buttons button{min-height:44px;padding:7px 8px}
+.photo-compact #factors-panel>.page-footer{display:none}
+@media(max-width:899px){
+  .photo-compact #factors-panel>.laboratory{grid-template-columns:minmax(0,1fr) 190px;grid-template-rows:auto minmax(0,1fr);gap:8px}
+  .photo-compact #factors-panel .materials{grid-column:1/-1;max-height:140px;padding:7px 8px}
+  .photo-compact #factors-panel .materials>.eyebrow{text-align:left;margin-bottom:5px}
+  .photo-compact #material-tray{grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}
+  .photo-compact #material-tray .material-button{min-height:52px;font-size:9px;padding:4px 2px;gap:2px}
+  .photo-compact #material-tray .material-button svg{width:20px;height:20px}
+  .photo-compact #factors-panel .material-note{margin-top:5px;font-size:10px}
+  .photo-compact #factors-panel .bench{grid-column:1;grid-row:2}
+  .photo-compact #factors-panel .instruments{grid-column:2;grid-row:2}
+  .photo-compact #factors-panel>.intro h1{font-size:21px}
+}
+/* Feedback remains visible at the top, even when the workspace is scrolled. */
+#photo-notice{position:fixed;z-index:2000;top:max(10px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:flex;align-items:flex-start;gap:14px;width:min(720px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:14px 12px 14px 18px;border:2px solid #bd3636;border-left-width:6px;border-radius:12px;background:#fff0ef;color:#9f2020;box-shadow:0 10px 32px #551b1b33}
+#photo-notice[data-kind=info]{border-color:#78926a;background:#f1f6e9;color:#304c2e;box-shadow:0 10px 32px #203b3224}
+#photo-notice-message{flex:1;min-width:0;max-height:calc(100dvh - 65px);overflow:auto;font-size:14px;line-height:1.5}
+#photo-notice-title{display:block;font-size:14px;margin:0 0 4px}
+#photo-notice-text{margin:0;overflow-wrap:anywhere}
+#photo-notice-close{flex:0 0 44px;min-width:44px;min-height:44px;padding:0;border:1px solid currentColor;background:transparent;color:inherit;font-size:26px;line-height:1}
+#photo-notice-close:hover{background:#ffffff99}
+#factors-panel>.measurement-rule>summary{min-height:44px;padding:10px 0;cursor:pointer;font-size:12px;font-weight:600}
+#factors-panel>.measurement-rule>p{margin:0 0 12px}
+.photo-compact #factors-panel .bench-feedback{padding:7px 10px;font-size:11px;line-height:1.35}
+@media(max-width:699px){#photo-notice{top:8px;padding:12px 10px 12px 13px;gap:10px}#photo-notice-message{font-size:13px}#factors-panel .scene-wrap{max-height:50dvh}#factors-panel>.intro{margin-bottom:12px}#factors-panel>.experiment-tabs{margin-bottom:8px}}
 </style></head>
 <body>
 <header class="topbar"><a class="brand" href="#" aria-label="Fotosyntheselabor"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26 5C9 3 3 12 8 23c12 7 21-2 18-18Z"/><path d="M6 27 24 8M13 20l-1-8m6 3 7 1"/></svg><span>Fotosynthese<span class="brand-sub">EXPERIMENTIERLABOR</span></span></a></header>
 <nav class="lab-nav" aria-label="Laborbereich wählen"><button id="lab-factors" aria-pressed="true"><span>01</span>Außenfaktoren</button><button id="lab-chromatography" aria-pressed="false"><span>02</span>Chromatografie</button><output id="lab-dc-status" aria-live="off"></output></nav>
 <main id="factors-panel">
+<aside id="photo-notice" data-kind="error" aria-label="Hinweis zum Versuch" hidden><div id="photo-notice-message" role="alert" aria-atomic="true"><strong id="photo-notice-title">Bitte prüfen</strong><p id="photo-notice-text"></p></div><button type="button" id="photo-notice-close" aria-label="Hinweis schließen">×</button></aside>
 <section class="intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1>Außenfaktoren der Fotosynthese.</h1></div><button id="guide-open" class="guide-open" aria-haspopup="dialog" aria-controls="guide-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>Erkenntnisweg</button></section>
 <nav class="experiment-tabs" aria-label="Einzelversuch wählen" id="experiment-tabs"></nav>
-<p class="measurement-rule">Pro Einzelversuch sind <strong>3 Messdurchgänge à 60 Sekunden</strong> möglich. Nach „Versuch starten“ zählt die Stoppuhr zuerst <strong>10 Sekunden rückwärts</strong>: die Anpassungsphase ist im Modell verkürzt. Noch nicht zählen! Anschließend beginnt automatisch die 60-Sekunden-Messung. Ab 55 Messsekunden blinkt das Stoppuhrfeld.</p>
+<details class="measurement-rule"><summary>Messablauf: 3 × 60 Sekunden nach jeweils 10 Sekunden Anpassung</summary><p>Pro Einzelversuch sind <strong>3 Messdurchgänge à 60 Sekunden</strong> möglich. Nach „Versuch starten“ zählt die Stoppuhr zuerst <strong>10 Sekunden rückwärts</strong>: die Anpassungsphase ist im Modell verkürzt. Noch nicht zählen! Anschließend beginnt automatisch die 60-Sekunden-Messung. Ab 55 Messsekunden blinkt das Stoppuhrfeld.</p></details>
 <div class="laboratory">
  <aside class="materials" aria-label="Materialablage"><p class="eyebrow">MATERIALABLAGE</p><div id="material-tray"></div><p class="material-note">Ziehen oder auswählen und auf der Arbeitsfläche ablegen.</p></aside>
  <section class="bench" aria-labelledby="bench-title">
@@ -198,7 +300,6 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
   <div class="finish-row"><output id="run-count" class="run-count" aria-live="polite">Messdurchgänge: 0 / 3</output><button id="finish-experiment" aria-haspopup="dialog" aria-controls="finish-dialog">Versuch abschließen</button></div>
   <div class="compact-clock" id="compact-clock" hidden aria-label="Stoppuhr"><span>Stoppuhr</span><output id="timer-compact-value">00:00,0</output><button id="timer-compact-toggle" disabled>Start</button><button id="timer-compact-reset" aria-label="Stoppuhr auf null zurücksetzen">↺</button><p class="timer-notice" id="timer-compact-notice">Messzeit: 60 Sekunden</p></div>
   <p id="assembly-help" class="sr-only">Material auswählen und auf die Arbeitsfläche ziehen oder dort antippen. Geräte auf der Arbeitsfläche lassen sich verschieben. Mit der Tastatur: Material auswählen, Pfeiltasten für die Position, Enter zum Ablegen; Entf zum Zurücklegen.</p>
-  <aside class="learning-hint" id="learning-hint" role="status" aria-live="polite" hidden><strong>Denkanstoß</strong><p id="learning-hint-text"></p></aside>
   <div class="bench-feedback" id="bench-feedback" role="status" aria-live="polite" hidden></div>
  </section>
  <aside class="instruments" aria-label="Geräte und Einstellungen">
@@ -1400,13 +1501,46 @@ $('experiment-choices').innerHTML=EXPERIMENTS.map(e=>'<button data-switch-experi
 $('material-tray').innerHTML=MATERIALS.map(m=>'<button class="material-button" data-material="'+m.id+'" aria-pressed="false" title="'+m.label+' auswählen und platzieren">'+icon(m.id)+'<span>'+m.label.replace('Schnappdeckelgläschen','Schnapp<wbr>deckel<wbr>gläschen')+'</span></button>').join('');
 const marker=document.createElement('div');marker.className='keyboard-marker';marker.hidden=true;marker.setAttribute('aria-hidden','true');$('scene-wrap').append(marker);
 try{scene=createScene($('scene'));}catch(e){$('bench-note').textContent=e.message;$('run-button').disabled=true;}
-function flash(message){$('bench-feedback').hidden=!message;$('bench-feedback').textContent=message;$('status-message').textContent=message;}
+const photoNotices={action:'',context:'',contextKind:'error',alignment:'',distance:''};
+let dismissedPhotoNotice='',visiblePhotoNotice='';
+function renderPhotoNotice(){
+ const message=photoNotices.action||photoNotices.alignment||photoNotices.distance||photoNotices.context;
+ const kind=photoNotices.action||photoNotices.alignment||photoNotices.distance?'error':photoNotices.contextKind;
+ const key=message?kind+':'+message:'';
+ const banner=$('photo-notice');
+ banner.hidden=!key||key===dismissedPhotoNotice;
+ if(key!==visiblePhotoNotice){
+  banner.dataset.kind=kind;
+  $('photo-notice-title').textContent=kind==='error'?'Bitte prüfen':'Hinweis zum Versuch';
+  $('photo-notice-message').setAttribute('role',kind==='error'?'alert':'status');
+  $('photo-notice-text').textContent=message||'';
+  visiblePhotoNotice=key;
+ }
+ if(!key)dismissedPhotoNotice='';
+}
+$('photo-notice-close').addEventListener('click',()=>{dismissedPhotoNotice=visiblePhotoNotice;$('photo-notice').hidden=true;});
+function flash(message,kind='info'){
+ photoNotices.action=kind==='error'?message||'':'';
+ if(kind==='error')dismissedPhotoNotice='';
+ $('bench-feedback').hidden=!message||kind==='error';
+ $('bench-feedback').textContent=kind==='error'?'':message||'';
+ $('status-message').textContent=kind==='error'?'':message||'';
+ renderPhotoNotice();
+}
+function syncPhotoLayout(){
+ const compact=!$('factors-panel').hidden&&window.innerWidth>=700&&window.innerHeight>=600&&(window.innerWidth<=1400||window.innerHeight<=900||window.matchMedia('(pointer: coarse)').matches);
+ document.body.classList.toggle('photo-compact',compact);
+}
+window.addEventListener('resize',syncPhotoLayout);
+window.visualViewport?.addEventListener('resize',syncPhotoLayout);
+window.addEventListener('lab-view-change',syncPhotoLayout);
+syncPhotoLayout();
 function condition(b=current()){
  const distance=lampDistanceCm(b.assembly),d=deriveSetup(b.assembly);
  return {experimentId:b.assembly.experimentId,factorValue:b.assembly.experimentId==='light'?distance:b.assembly.experimentId==='temperature'?(d.waterbathConnected?b.settings.temperature:20):b.settings.carbon,light:lightAtDistance(distance),carbon:b.settings.carbon,temperature:b.assembly.experimentId!=='light'&&d.waterbathConnected?b.settings.temperature:CONFIG.defaults.temperature,lampOn:d.lampPresent&&b.settings.lampOn,lampDistanceCm:distance};
 }
-function hint(message){$('learning-hint').hidden=!message;$('learning-hint-text').textContent=message||'';}
-function refreshHint(extra=''){hint(extra||setupHint(current().assembly)||seriesHint(current().series));}
+function hint(message,kind='error'){photoNotices.context=message||'';photoNotices.contextKind=kind;renderPhotoNotice();}
+function refreshHint(extra=''){const b=current(),setup=setupHint(b.assembly);hint(extra||setup||seriesHint(b.series),extra||setup||b.series.lastIssue?'error':'info');}
 const exhausted=b=>completedRuns(b.series)>=MAX_RUNS;
 const quotaMessage='Alle 3 Messdurchgänge sind beendet. Du kannst den Versuch jetzt abschließen oder zu einem anderen Einzelversuch wechseln.';
 function endObservation(b=current()){
@@ -1462,8 +1596,8 @@ function toggleRun(){
  if(exhausted(b)){flash(quotaMessage);return;}
  if(b.stopwatch.finished){flash('Stelle die Stoppuhr für einen neuen Durchlauf auf null.');return;}
  const validation=validateAssembly(b.assembly);
- if(!validation.ok){flash(validation.message);hint(validation.message);return;}
- if(!b.assembly.items.stopwatch){const message='Stelle die Stoppuhr auf die Arbeitsfläche. Sie übernimmt zuerst die Anpassungsphase und anschließend die Messzeit.';flash(message);hint(message);return;}
+ if(!validation.ok){flash(validation.message,'error');return;}
+ if(!b.assembly.items.stopwatch){const message='Stelle die Stoppuhr auf die Arbeitsfläche. Sie übernimmt zuerst die Anpassungsphase und anschließend die Messzeit.';flash(message,'error');return;}
  syncPhysics();b.simulation.setRunning(true);b.stopwatch.start();last=performance.now();$('visibility-message').hidden=true;flash('');updateUI();refreshHint();
 }
 function completeMeasurement(b=current()){
@@ -1500,16 +1634,17 @@ function updateReadouts(){
  $('control-distance').innerHTML=distance!==null&&distance<7-1e-6&&distance.toFixed(1)==='7.0'?'&lt; 7 <small>cm</small>':distance!==null&&distance>13+1e-6&&distance.toFixed(1)==='13.0'?'&gt; 13 <small>cm</small>':readout;
  $('distance-control').hidden=activeId==='light';$('room-temperature-note').hidden=activeId!=='light';
  const alignment=lampAlignmentHint(b.preview||b.assembly,b.settings.lampOn);
- $('lamp-alignment-warning').hidden=!alignment;
+ $('lamp-alignment-warning').hidden=true;
  if($('lamp-alignment-text').textContent!==alignment)$('lamp-alignment-text').textContent=alignment;
  const warning=distanceHint({...condition(b),lampDistanceCm:distance});
- $('distance-control').classList.toggle('has-warning',!!warning);$('distance-warning').hidden=!warning;
+ $('distance-control').classList.toggle('has-warning',!!warning);$('distance-warning').hidden=true;
  if($('distance-warning').textContent!==warning)$('distance-warning').textContent=warning;
+ photoNotices.alignment=alignment;photoNotices.distance=warning;renderPhotoNotice();
  $('actual-temperature').textContent=d.thermometerConnected?n1(b.simulation.snapshot().temperature)+' °C':'— °C';
 }
 function pause(message){const b=current();b.simulation.setRunning(false);b.stopwatch.stop();updateUI();refreshHint();if(message){$('visibility-message').hidden=false;flash(message);}}
 function selectMaterial(id,keyboard=false){const b=current();pause();b.selected=id;b.pending=id==='water'?'water':present(b,id)?null:id;b.keyboard=keyboard;if(keyboard){b.zoom=false;$('scene').focus({preventScroll:true});}flash('');updateUI();}
-function commit(result){const b=current();if(!result.ok){flash(result.message);hint(result.message);return;}const before=condition(b),previous=b.assembly;b.assembly=result.state;const setupChanged=JSON.stringify(previous)!==JSON.stringify(b.assembly),preparationRestarted=setupChanged&&restartPreparationAfterChange(b);if(b.observationStart!==null&&(conditionChanged(before,condition(b))||previous.water!==b.assembly.water||previous.plant!==b.assembly.plant))b.measurementChanged=true;b.preview=null;b.pending=null;b.keyboard=false;syncPhysics();$('visibility-message').hidden=true;updateUI();flash(preparationRestarted?'Aufbau verändert. Beim Fortsetzen beginnt die 10-Sekunden-Anpassungsphase erneut.':result.message);refreshHint(b.measurementChanged?'Dein Aufbau wurde während eines begonnenen Durchlaufs verändert. Überlege, ob deine Zählung noch zu einer einzigen Bedingung gehört. Für einen neuen Durchlauf kannst du die Stoppuhr nullstellen.':'');}
+function commit(result){const b=current();if(!result.ok){flash(result.message,'error');return;}const before=condition(b),previous=b.assembly;b.assembly=result.state;const setupChanged=JSON.stringify(previous)!==JSON.stringify(b.assembly),preparationRestarted=setupChanged&&restartPreparationAfterChange(b);if(b.observationStart!==null&&(conditionChanged(before,condition(b))||previous.water!==b.assembly.water||previous.plant!==b.assembly.plant))b.measurementChanged=true;b.preview=null;b.pending=null;b.keyboard=false;syncPhysics();$('visibility-message').hidden=true;updateUI();flash(preparationRestarted?'Aufbau verändert. Beim Fortsetzen beginnt die 10-Sekunden-Anpassungsphase erneut.':result.message);refreshHint(b.measurementChanged?'Dein Aufbau wurde während eines begonnenen Durchlaufs verändert. Überlege, ob deine Zählung noch zu einer einzigen Bedingung gehört. Für einen neuen Durchlauf kannst du die Stoppuhr nullstellen.':'');}
 function clearGesture(){if(gesture){try{gesture.target.releasePointerCapture(gesture.id);}catch{}gesture=null;}current().preview=null;$('drag-ghost').hidden=true;$('scene').classList.remove('dragging');}
 function chooseExperiment(id){if(!benches.has(id)||id===activeId)return;clearGesture();pause();activeId=id;$('timer-announcement').textContent='';last=performance.now();$('visibility-message').hidden=true;flash('');syncPhysics();updateUI();refreshHint();}
 $('experiment-tabs').addEventListener('click',e=>{const tab=e.target.closest('[data-experiment]');if(tab)chooseExperiment(tab.dataset.experiment);});
@@ -3017,4 +3152,5 @@ else if(state.startedAt!==null&&!state.plateOnLid)feedback(M.timing(state).compl
 
 </script>
 </body></html>
+
 
