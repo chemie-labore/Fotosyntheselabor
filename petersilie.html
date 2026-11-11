@@ -1,0 +1,1709 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#203e34"><meta name="description" content="Interaktive Dünnschichtchromatografie von Petersilie: Blattauszug herstellen, DC-Folie vorbereiten und 20 Minuten in einer DC-Kammer entwickeln."><title>Petersilie · DC-Labor</title><style>:root{--ink:#203b32;--muted:#707b70;--paper:#f4f3ec;--line:#dce2d5;--green:#315848;--accent:#d5e39f;--white:#fcfdf8;--shadow:0 12px 35px #263c2710;color-scheme:light;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{cursor:default;opacity:.45}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #809e37;outline-offset:4px}button{border:1px solid var(--line);color:var(--ink);background:var(--white);border-radius:9px;min-height:44px;padding:10px 15px;font-weight:600;font-size:13px;transition:background .15s,transform .15s}button:hover:not(:disabled){background:#eaf0df}button:active:not(:disabled){transform:translateY(1px)}[hidden]{display:none!important}.topbar{height:88px;max-width:1560px;margin:auto;padding:0 38px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font:25px Georgia,serif;letter-spacing:-.5px}.brand>svg{width:39px;height:39px;fill:none;stroke:var(--green);stroke-width:1.2}.brand-sub{display:block;font:8px Arial,sans-serif;letter-spacing:2.3px;margin-top:5px}.header-actions{display:flex;align-items:center;gap:20px}.draft{font-size:11px;color:#738060;border:1px solid #d5dfc3;padding:6px 10px;border-radius:20px;background:#edf1e3}.quiet{background:transparent}.quiet span{margin-left:10px}main{max-width:1560px;margin:auto;padding:30px 38px 12px}.intro{display:flex;align-items:center;justify-content:space-between;margin-bottom:29px}.eyebrow{font-size:9px;font-weight:700;letter-spacing:1.8px;color:var(--muted);margin:0 0 8px}h1{font:38px/1.15 Georgia,serif;letter-spacing:-1.2px;margin:0}h2{margin:0;font-size:17px;font-weight:600;letter-spacing:-.2px}.intro-note{font:14px/1.65 Georgia,serif;color:#72806c;text-align:right;margin:0}.laboratory{display:grid;grid-template-columns:minmax(0,1fr) 302px;gap:20px;align-items:start}.bench{overflow:hidden;border:1px solid #d7dfd1;background:#f9faf4;border-radius:17px;box-shadow:var(--shadow);position:sticky;top:18px}.bench-head{display:flex;align-items:center;justify-content:space-between;padding:21px 25px 18px}.bench-head h2{font:25px Georgia,serif}.run-status{display:flex;gap:7px;align-items:center;padding:7px 11px;background:#edf0e5;border:1px solid #dce2d3;font-size:11px;border-radius:20px;color:#6a765f}.run-status i,.specimen-tag i,.page-footer i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#98aa83}.run-status.active i{background:#4f7d40;box-shadow:0 0 0 3px #4f7d4016}.scene-wrap{position:relative;background:#e8ece2;overflow:hidden;aspect-ratio:1.5}.scene-wrap canvas{display:block;width:100%;height:100%}.scene-tools{position:absolute;top:16px;right:17px}.scene-tools button{display:flex;align-items:center;gap:7px;background:#fcfdf6d9;backdrop-filter:blur(5px);box-shadow:0 3px 10px #203b3207;font-size:11px;padding:8px 11px}.scene-tools button[aria-pressed=true]{background:#d9e6bd;border-color:#94a875}.scene-tools svg{height:18px;width:18px;fill:none;stroke:currentColor;stroke-width:1.4}.scene-bottom{position:absolute;bottom:16px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.specimen-tag{font-size:10px;color:#5c6a58;display:flex;align-items:center;gap:7px;padding:7px 9px;background:#f7faf0b8;border:1px solid #f9fbf295;border-radius:5px}.simulation-tag{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#7b8872}.bench-bottom{display:flex;align-items:center;gap:16px;min-height:87px;padding:18px 24px;background:#f9faf5}.primary{background:var(--ink);border-color:var(--ink);color:#fff}.primary:hover:not(:disabled){background:#3a5c4d}.play-icon{display:inline-block;font-size:12px;margin-right:8px}#bench-note{font-size:11px;line-height:1.5;color:var(--muted);flex:1}.icon-button{font-size:25px;padding:4px;width:44px;background:transparent;flex:none}.instruments{display:grid;gap:12px}.instrument{border:1px solid var(--line);border-radius:13px;background:var(--white);padding:18px 20px}.instrument-title{display:flex;align-items:center;gap:10px;margin-bottom:18px}.instrument-title .eyebrow{font-size:8px;margin-bottom:5px;letter-spacing:1.5px}.instrument-title h2{font-size:16px}.instrument-icon{width:34px;height:34px;background:#eef2e7;border:1px solid #e2e9d9;display:grid;place-items:center;border-radius:8px;flex:none;color:#617b48}.sun{font-size:25px}.molecule{font-size:11px;font-weight:700}.thermometer svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.4}.switch{margin-left:auto;min-height:25px;width:42px;padding:3px;border-radius:14px;background:#dfe4d8;border:0;flex:none}.switch span{display:block;background:white;width:19px;height:19px;border-radius:50%;box-shadow:0 1px 3px #0002;transition:transform .15s}.switch[aria-checked=true]{background:#526f47}.switch[aria-checked=true] span{transform:translateX(17px)}.value-line{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}.value-line label{color:var(--muted);font-size:11px}.value-line output{font-size:23px;letter-spacing:-.6px;font-variant-numeric:tabular-nums}.value-line output small{font-size:12px;letter-spacing:0;color:var(--muted);margin-left:2px}input[type=range]{display:block;width:100%;height:24px;margin:2px 0 0;accent-color:#557744;cursor:pointer;touch-action:pan-y}input[type=range]::-webkit-slider-runnable-track{height:5px;background:linear-gradient(to right,#6c8755 var(--fill,55%),#e1e7d8 var(--fill,55%));border-radius:8px}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;border:3px solid #fff;background:#4b6d3f;border-radius:50%;height:19px;width:19px;box-shadow:0 0 0 1px #94a77e;margin-top:-7px}input[type=range]{appearance:none;background:none}input[type=range]::-moz-range-track{height:5px;background:#dfe6d4}input[type=range]::-moz-range-thumb{border:3px solid white;background:#4b6d3f;border-radius:50%;height:13px;width:13px}.range-ends{display:flex;justify-content:space-between;font-size:9px;color:#929a89;margin-top:0}.actual-temperature{border-top:1px solid #e7ebdf;margin-top:12px;padding-top:11px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}.actual-temperature>span{display:flex;align-items:center;gap:6px}.actual-temperature i{display:block;width:5px;height:13px;border-radius:4px;background:#bc7955}.actual-temperature output{font:14px ui-monospace,Consolas,monospace;color:var(--ink);font-variant-numeric:tabular-nums}.stopwatch{background:#243e34;color:#f4f5e7;border-radius:13px;padding:18px 20px;box-shadow:var(--shadow)}.clock-heading{display:flex;align-items:center;justify-content:space-between}.clock-heading h2{font-size:12px;font-weight:500;letter-spacing:.2px}.clock-heading>span{font-size:9px;color:#b2c2a3}.time{display:block;font:39px/1.2 ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-1.5px;margin:13px 0 15px}.time>span{color:#a8bd97;font-size:25px}.clock-buttons{display:flex;gap:9px}.clock-buttons button{flex:1;background:#dce8b9;border-color:#dce8b9;color:#2b4432;font-size:11px;min-height:38px;padding:7px}.clock-buttons button+button{background:transparent;border-color:#60715b;color:#ced8c6}.clock-buttons button:hover:not(:disabled){background:#e8f2cf;color:#2b4432}.page-footer{display:flex;justify-content:space-between;font-size:10px;color:#8a9381;padding:18px 1px}.page-footer>span:first-child{display:flex;align-items:center;gap:6px}.visibility-message{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:13px 18px;white-space:nowrap;background:#fafcf0e8;border:1px solid #d4dec7;border-radius:10px;font-size:12px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}dialog{color:var(--ink);background:#fbfcf6;border:1px solid #d8e0ce;border-radius:17px;width:min(520px,calc(100% - 32px));padding:26px;box-shadow:0 30px 80px #10271933}dialog::backdrop{background:#172d2660;backdrop-filter:blur(3px)}.dialog-head{display:flex;justify-content:space-between;align-items:center}.close-dialog{font-size:26px;min-width:44px;background:transparent;border:0;padding:0}.dialog-head .eyebrow{margin:0}dialog h2{font:29px Georgia,serif;margin:10px 0 20px}dialog p{font-size:13px;line-height:1.65;color:#60705d}dialog .dialog-note{padding-top:12px;border-top:1px solid var(--line);font-size:11px}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
+@media(min-width:1440px){.laboratory{grid-template-columns:minmax(0,1fr) 340px}.scene-wrap{aspect-ratio:1.47}.instrument{padding:20px 23px}.instruments{gap:14px}}
+@media(max-width:1030px){.topbar{padding:0 24px;height:76px}main{padding:25px 24px 10px}h1{font-size:33px}.laboratory{grid-template-columns:minmax(0,1fr) 260px;gap:14px}.instrument{padding:15px}.scene-wrap{aspect-ratio:1.05}.bench-head{padding:18px}.bench-bottom{padding:14px;gap:10px;flex-wrap:wrap}.bench-bottom .primary{font-size:12px}#bench-note{display:none}.icon-button{margin-left:auto}.instrument-title{gap:8px}.instrument-title h2{font-size:14px}.instrument-icon{width:30px;height:30px}.time{font-size:34px}}
+@media(max-width:760px){.topbar{padding:0 18px;height:72px}.brand{font-size:22px}.brand>svg{width:31px}.header-actions{gap:8px}.draft{font-size:9px}.quiet{padding:9px 11px}.header-actions .quiet{font-size:11px}.header-actions .quiet span{display:none}main{padding:24px 16px 12px}.intro{margin-bottom:20px}.intro-note{display:none}h1{font-size:31px}.laboratory{grid-template-columns:1fr}.bench{position:relative;top:auto}.scene-wrap{aspect-ratio:1.4}.bench-head{padding:17px 18px}.bench-head h2{font-size:23px}.bench-bottom{flex-wrap:nowrap}.scene-bottom{left:14px;right:14px;bottom:12px}.specimen-tag{font-size:8px}.scene-tools{top:12px;right:12px}.instruments{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.instrument{padding:16px}.instrument-title{margin-bottom:17px}.instrument-icon{display:none}.instrument-title h2{font-size:15px}.switch{width:39px}.switch[aria-checked=true] span{transform:translateX(14px)}.instrument-title .eyebrow{font-size:7px;letter-spacing:1px}.value-line label{font-size:10px}.value-line output{font-size:21px}.stopwatch{padding:18px}.time{font-size:32px}.clock-buttons{flex-direction:column;gap:6px}.clock-buttons button{min-height:40px}.page-footer{font-size:9px;gap:16px;line-height:1.5}.page-footer>span:last-child{text-align:right}}
+@media(max-width:390px){.header-actions .draft{display:none}h1{font-size:28px}.scene-wrap{aspect-ratio:1.14}.instrument{padding:13px}.value-line{display:block}.value-line output{display:block;margin:7px 0 2px}.instrument-title h2{font-size:13px}.time{font-size:28px}.stopwatch{padding:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.compact-clock{display:none}
+@media(max-width:1030px){.stopwatch{display:none}.compact-clock{display:flex;align-items:center;gap:9px;background:#243e34;color:#f4f5e7;padding:13px 16px}.compact-clock>span{font-size:10px;color:#c1cdb5}.compact-clock output{font:25px ui-monospace,Consolas,monospace;letter-spacing:-1px;margin-right:auto}.compact-clock button{padding:9px 13px;font-size:11px;background:#dce8b9;border-color:#dce8b9;min-height:44px}.compact-clock button:last-child{font-size:22px;padding:4px 10px;background:transparent;color:#dce8b9;border-color:#60715b}.scene-wrap{aspect-ratio:1.5}}
+@media(max-width:760px){.instrument[data-factor=temperature]{grid-column:1/-1}.compact-clock output{font-size:23px}}
+/* Independent, learner-built workbenches. */
+.intro{margin-bottom:22px}.experiment-tabs{display:flex;gap:10px;margin:0 0 23px}.experiment-tabs button{display:flex;align-items:center;gap:12px;flex:1;min-height:65px;text-align:left;background:#f8faf2;border-color:#d7dfcb;padding:12px 18px}.experiment-tabs button[aria-current=true]{background:#28483a;border-color:#28483a;color:#f1f5e6}.experiment-tabs small{display:block;font-size:8px;font-weight:400;letter-spacing:1.3px;margin-bottom:6px;opacity:.65}.experiment-tabs strong{font-size:15px;font-weight:500}.tab-symbol{font:23px Georgia,serif;opacity:.7;width:32px}.laboratory{grid-template-columns:132px minmax(0,1fr) 255px;gap:17px}.materials{border:1px solid var(--line);border-radius:13px;padding:15px 10px;background:#f9faf5}.materials>.eyebrow{font-size:8px;letter-spacing:1.2px;text-align:center;margin-bottom:14px}#material-tray{display:grid;gap:7px}.material-button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:73px;font-size:10px;font-weight:500;position:relative;padding:8px;background:#fffdf7;touch-action:none;user-select:none}.material-button svg{width:28px;height:28px;fill:none;stroke:#5e7853;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.material-button[aria-pressed=true]{background:#e4edce;border-color:#99ad75}.material-button.present::after{content:'';position:absolute;right:7px;top:7px;width:5px;height:5px;border-radius:50%;background:#799b57}.material-note{font-size:10px;line-height:1.5;color:var(--muted);margin:15px 3px 3px;text-align:center}.selected-material h2{font-size:15px;line-height:1.3}.selected-material p:not(.eyebrow){font-size:11px;line-height:1.55;color:var(--muted);margin:10px 0}.selected-material button{display:block;width:100%;font-size:11px;margin-top:8px}.device-state{margin:10px 0 0;font-size:10px;color:#8c967f}.thermometer-readout{padding:12px 16px}.thermometer-readout .actual-temperature{margin:0;padding:0;border:0}.empty-bench{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;color:#8e9b85}.empty-bench span{font:19px Georgia,serif;background:#f7faf0a6;border:1px dashed #b6c4aa;border-radius:12px;padding:32px 50px}.bench-feedback{font-size:12px;line-height:1.5;color:#546d42;background:#ecf1df;padding:13px 18px;border-top:1px solid #dbe3ce}.drag-ghost{position:fixed;z-index:100;pointer-events:none;background:#244d3ce8;color:#f4f8e9;padding:10px 14px;border-radius:8px;box-shadow:0 8px 20px #102e2429;font-size:12px;transform:translate(16px,14px)}#scene{touch-action:none;cursor:grab}#scene.placing{cursor:crosshair}#scene.dragging{cursor:grabbing}input[type=range]:disabled{opacity:.4;cursor:default}.bench-head{padding:18px 20px}.bench-head h2{font-size:23px}.bench-bottom{padding:15px 18px;min-height:80px}.scene-wrap{aspect-ratio:1.5}.page-footer{margin-left:149px}
+@media(min-width:1440px){.laboratory{grid-template-columns:145px minmax(0,1fr) 290px;gap:20px}.scene-wrap{aspect-ratio:1.5}}
+@media(max-width:1100px){.laboratory{grid-template-columns:minmax(0,1fr) 240px;gap:14px}.materials{grid-column:1/-1;padding:12px}.materials>.eyebrow{text-align:left;margin-bottom:8px}#material-tray{grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}.material-button{min-height:67px;font-size:9px}.material-button svg{width:24px;height:24px}.material-note{text-align:left;margin:10px 0 0;font-size:10px}.page-footer{margin-left:0}.instruments{grid-template-columns:1fr}.bench{position:relative;top:auto}}
+@media(max-width:760px){.laboratory{grid-template-columns:1fr}.experiment-tabs{gap:6px;margin-bottom:16px}.experiment-tabs button{padding:10px 9px;min-height:63px;gap:0}.experiment-tabs strong{font-size:12px}.experiment-tabs small{font-size:7px;letter-spacing:.5px}.tab-symbol{display:none}#material-tray{grid-template-columns:repeat(4,minmax(0,1fr))}.material-button{min-height:64px}.instruments{grid-template-columns:1fr 1fr;align-items:start}.selected-material{grid-row:span 2}.instrument[data-factor=temperature]{grid-column:auto}.thermometer-readout{grid-column:2}.intro h1{font-size:29px;line-height:1.15;max-width:340px}.empty-bench span{font-size:16px;padding:22px 32px}.bench-head h2{font-size:21px}.bench-feedback{font-size:11px}.compact-clock{padding:12px 15px}.compact-clock output{font-size:22px}.compact-clock button{padding:9px 11px}}
+.keyboard-marker{position:absolute;width:20px;height:20px;border:2px solid #5c7b3e;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;background:#f7ffe6a8;box-shadow:0 0 0 4px #54763615}.keyboard-marker::before,.keyboard-marker::after{content:'';position:absolute;background:#4b6833}.keyboard-marker::before{width:28px;height:1px;top:8px;left:-6px}.keyboard-marker::after{width:1px;height:28px;left:8px;top:-6px}
+/* Direct navigation beside the experiment controls, including narrow screens. */
+#experiment-switch{white-space:nowrap;background:#e4edce;border-color:#b2c299;font-size:12px}
+#experiment-switch>span{font-size:20px;line-height:1;vertical-align:-1px;margin-right:5px}
+#experiment-switch:hover{background:#d5e4b7}
+.experiment-choices{display:grid;gap:10px;margin-top:22px}
+.experiment-choices>button{display:flex;align-items:center;gap:16px;min-height:84px;width:100%;text-align:left;padding:15px 18px;background:#f3f6eb}
+.experiment-choices>button[aria-current=true]{background:#28483a;border-color:#28483a;color:#f3f6e9}
+.experiment-choices>button[aria-current=true]:hover{background:#345745}
+.choice-symbol{width:45px;font:27px Georgia,serif;text-align:center;opacity:.8;flex:none}
+.experiment-choices strong{display:block;font-size:16px;font-weight:600}
+.choice-status{display:block;font-size:11px;font-weight:400;margin-top:6px;opacity:.7}
+.choice-arrow{font-size:22px;margin-left:auto;opacity:.6}
+@media(max-width:760px){.bench-bottom{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px}.bench-bottom .primary{grid-column:1;grid-row:1}.bench-bottom #reset-open{grid-column:2;grid-row:1}.bench-bottom #experiment-switch{grid-column:1/-1;min-height:46px}.experiment-choices>button{gap:10px;padding:14px 12px}.choice-symbol{width:37px}.experiment-choices strong{font-size:15px}#experiment-dialog{padding:22px}}
+/* Optional orientation from the supplied worksheet; hidden until requested. */
+.guide-open{display:flex;align-items:center;gap:8px;flex:none;margin-left:24px;background:#edf2df;border-color:#bccba2;font-size:12px}
+.guide-open svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.guide-dialog{width:min(800px,calc(100% - 32px));max-height:calc(100dvh - 40px);padding:0;overflow:hidden}
+.guide-dialog[open]{display:flex;flex-direction:column}
+.guide-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:24px 28px 18px;border-bottom:1px solid var(--line);flex:none}
+.guide-heading h2{font:29px/1.15 Georgia,serif;letter-spacing:-.5px;margin:9px 0 0;max-width:570px}
+.guide-heading .eyebrow{font:700 8px Arial,sans-serif;letter-spacing:1.5px;line-height:1.5;margin:0}
+.guide-heading .close-dialog{flex:none;line-height:1;min-height:44px}
+.guide-body{overflow-y:auto;overscroll-behavior:contain;min-height:0;padding:0 28px 20px}
+.guide-body>p:first-child{margin:18px 0;font-size:13px}
+.inquiry-phases{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.guide-body .phase-section{font-size:10px;font-weight:700;letter-spacing:.7px;line-height:1.5;margin:18px 0 10px;color:#69765d}
+.guide-body .protocol-section{margin-top:24px;padding:12px 15px;background:#e0ebc8;border-left:3px solid #668148;border-radius:0 7px 7px 0;color:#314d35;font-size:12px;letter-spacing:0}
+.inquiry-phases.preparatory-phases li{background:#f5f5ef;border-color:#e4e5db}
+.inquiry-phases li{display:flex;align-items:center;gap:16px;padding:15px 18px;background:#f1f5e8;border:1px solid #dfe6d2;border-radius:10px}
+.phase-number{font:19px Georgia,serif;font-variant-numeric:tabular-nums;color:#758a56;flex:none;min-width:27px}
+.inquiry-phases h3{margin:0;font-size:14px;font-weight:600;line-height:1.5;letter-spacing:0}
+.inquiry-phases p{margin:4px 0 0;font-size:12px;line-height:1.55;color:#64725c}
+.guide-body .guide-source{font-size:10px;line-height:1.5;color:#88907e;margin:17px 0 0}
+.guide-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 28px;border-top:1px solid var(--line);background:#fbfcf6;flex:none}
+.guide-footer>span{font-size:10px;line-height:1.5;color:var(--muted);max-width:260px}
+.guide-footer button{flex:none;font-size:12px}
+@media(max-width:1100px){.intro h1{font-size:33px}.guide-open{margin-left:16px}}
+@media(max-width:760px){.intro{flex-direction:column;align-items:flex-start;gap:16px}.guide-open{margin-left:0;min-height:44px}.guide-dialog{max-height:calc(100dvh - 20px);width:calc(100% - 20px);border-radius:14px}.guide-heading{padding:18px;gap:8px}.guide-heading h2{font-size:23px;overflow-wrap:anywhere}.guide-heading .eyebrow{font-size:7px;letter-spacing:1px}.guide-body{padding:0 16px 18px}.inquiry-phases li{padding:13px 12px;gap:12px;align-items:flex-start}.inquiry-phases h3{font-size:13px}.phase-number{font-size:17px;line-height:1.5;min-width:23px}.guide-footer{padding:13px 16px;gap:12px}.guide-footer>span{max-width:145px;font-size:9px}.guide-footer button{font-size:11px;padding:10px 12px}}
+
+/* Contextual feedback stays separate from operation confirmations. */
+.learning-hint{padding:14px 18px;background:#fff5de;border-top:1px solid #e6d5aa;color:#65512c;font-size:12px;line-height:1.55}
+.learning-hint strong{font-size:11px;letter-spacing:.3px}.learning-hint p{margin:5px 0 0}
+.finish-row{display:flex;justify-content:flex-end;padding:0 24px 18px;background:#f9faf5}.finish-row button{min-height:46px}#finish-dialog .dialog-note{margin-bottom:0}@media(max-width:760px){.finish-row{padding:0 18px 16px}.finish-row button{width:100%}}
+.distance-reading{display:block}.distance-reading>span{display:block;color:var(--muted);font-size:11px;margin-bottom:9px}.distance-reading output{font-size:29px}
+.distance-note{font-size:11px;line-height:1.5;color:var(--muted);margin:12px 0 0}
+.material-button span{overflow-wrap:anywhere;max-width:100%}
+
+/* Fixed observation interval, with a readable one-pulse-per-second warning. */
+.measurement-rule{font-size:12px;line-height:1.6;margin:-8px 0 20px;color:#60705d}
+.timer-notice{font-size:11px;line-height:1.5;margin:0 0 13px;color:#d0dcc3;min-height:33px}
+.stopwatch.timer-warning,.compact-clock.timer-warning{animation:clock-warning 1s ease-in-out infinite}
+.stopwatch.timer-finished,.compact-clock.timer-finished{background:#554421;box-shadow:inset 0 0 0 2px #e4ba65}
+.timer-finished .timer-notice{color:#fff1cf;font-weight:600}
+@keyframes clock-warning{0%,100%{background-color:#243e34;box-shadow:inset 0 0 0 2px #e4ba65}50%{background-color:#67502a;box-shadow:inset 0 0 0 2px #ffe0a0}}
+@media(max-width:1030px){.compact-clock{flex-wrap:wrap}.compact-clock .timer-notice{flex:0 0 100%;margin:0;min-height:0;font-size:11px}.compact-clock #timer-compact-reset{font-size:22px;padding:4px 10px;background:transparent;color:#dce8b9;border-color:#60715b}}
+@media(prefers-reduced-motion:reduce){.stopwatch.timer-warning,.compact-clock.timer-warning{animation:none;background:#67502a;box-shadow:inset 0 0 0 2px #ffe0a0}}
+.distance-control{margin:0 18px 14px;padding:11px 13px;background:#edf2e4;border:1px solid #d5dfc8;border-radius:9px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:12px;line-height:1.5}
+.distance-control>div{flex:1;min-width:190px}.distance-control strong{display:block}.distance-control span{color:#60705d}.distance-control output{font-size:20px;font-variant-numeric:tabular-nums;white-space:nowrap}.distance-control output small{font-size:12px}.distance-control p{flex-basis:100%;margin:4px 0 0;font-size:12px}.distance-control.has-warning{background:#fff2db;border-color:#d5ac63;color:#74501b}.distance-control.has-warning span{color:#74501b}.finish-row{align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.run-count{font-size:12px;color:#60705d;font-variant-numeric:tabular-nums}.run-count.complete{font-weight:700;color:#28483a}
+.room-temperature-note{margin:0 18px 14px;padding:10px 13px;border:1px solid #d5dfc8;border-radius:9px;background:#edf2e4;font-size:12px;line-height:1.5}.alignment-warning{margin:0 18px 14px;padding:11px 13px;background:#fff2db;border:1px solid #d5ac63;border-radius:9px;color:#74501b;font-size:12px;line-height:1.5}.alignment-warning strong{display:block;margin-bottom:3px}
+
+.lab-nav{max-width:1484px;margin:22px auto 0;padding:0 38px;display:flex;gap:10px;align-items:center}.lab-nav button{min-height:52px;padding:13px 24px;font-size:14px;background:transparent}.lab-nav button[aria-pressed=true]{color:#fff;background:#294c3e;border-color:#294c3e}.lab-nav button span{opacity:.65;margin-right:8px;font-size:11px}.lab-nav output{margin-left:auto;font-size:12px;font-variant-numeric:tabular-nums;color:#526550}.lab-nav output:not(:empty):before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#748e37;margin-right:8px}
+#dc-panel{max-width:1484px}.dc-intro{margin-bottom:22px}.dc-intro>div>p:last-child{font-size:14px;color:var(--muted);margin:10px 0 0}.dc-topline{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding:14px 0;font-size:11px;color:#677567}.dc-topline i{width:6px;height:6px;border-radius:50%;background:#709747;display:inline-block;margin-right:6px}.dc-workspace{display:grid;grid-template-columns:208px minmax(0,1fr);gap:18px;align-items:start}.dc-inventory{border:1px solid var(--line);border-radius:14px;background:#fafbf6;padding:16px 12px}.dc-tray-title{display:flex;align-items:center;justify-content:space-between}.dc-tray-title .eyebrow{font-size:9px;margin:0}.dc-tray-title button{display:none}.dc-tool-group>p{font-size:10px;font-weight:600;color:#778575;letter-spacing:1px;margin:20px 4px 8px;text-transform:uppercase}.dc-tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.dc-tool{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:78px;padding:8px 3px;font-size:10px;font-weight:500;touch-action:none;user-select:none;background:#fffef9}.dc-tool svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}.dc-tool[aria-pressed=true]{border-color:#476d3d;background:#e6eed8;box-shadow:inset 0 0 0 1px #476d3d;color:#284627}.dc-tool small{font-size:8px;color:#788273;line-height:1.3}.dc-bench{border:1px solid var(--line);border-radius:16px;background:#fdfdf9;overflow:hidden;box-shadow:0 14px 35px #28453208}.dc-bench-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 12px}.dc-bench-head .eyebrow{margin:0 0 5px}.dc-bench-head h2{font:25px Georgia,serif;margin:0}.dc-bench-head>button{font-size:11px;min-height:44px}.dc-stage-scroll{position:relative;overflow:auto;background:linear-gradient(#fafbf7,#edf0e9);overscroll-behavior:contain}.dc-stage-scroll.zoom #dc-stage{min-width:1250px}.dc-stage-scroll.zoom{max-height:650px}#dc-stage{touch-action:none;min-width:650px;user-select:none}#dc-stage>svg{display:block;width:100%;height:auto}#dc-stage [data-dc-target]{cursor:pointer}#dc-stage [data-dc-target]:hover{filter:brightness(.985)}.dc-tool-context{display:flex;align-items:center;gap:14px;padding:16px 22px;border-top:1px solid #e2e6db;min-height:89px;background:#f5f7ee}.dc-tool-context strong{font-size:13px;font-weight:600}.dc-tool-context p{font-size:12px;color:#687465;line-height:1.5;margin:5px 0 0}#dc-selected-icon svg{width:32px;height:32px;fill:none;stroke:#476b3b;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}.dc-targets{padding:0 20px 12px;background:#f5f7ee;display:flex;flex-wrap:wrap;gap:8px}.dc-targets:empty{padding:0}.dc-targets button{min-height:46px;font-size:11px;padding:10px 14px;touch-action:none}.dc-targets button:active{background:#dbe7c7}.dc-feedback{margin:16px 20px;padding-left:13px;border-left:3px solid #a2b27b;color:#596752;font-size:12px;line-height:1.6;min-height:38px}.dc-feedback.error{border-left-color:#b89b61;color:#785c33}.dc-manual-progress{display:flex;gap:12px;align-items:center;padding:0 20px 16px;font-size:11px;color:#536844}.dc-manual-progress progress{flex:1}.dc-run-strip{margin-top:20px;border:1px solid #d3dec8;border-radius:14px;background:#eef3e5;display:flex;align-items:center;gap:30px;padding:22px 28px}.dc-clock{display:flex;flex-direction:column;min-width:135px}.dc-clock>span:first-child{font-size:9px;letter-spacing:2px;color:#748269}.dc-clock output{font:38px Georgia,serif;font-variant-numeric:tabular-nums;letter-spacing:1px;margin:4px 0}.dc-clock>span:last-child{font-size:10px;color:#617357}.dc-run-copy{flex:1}.dc-run-copy strong{font-size:14px;font-weight:500}.dc-run-copy p{font-size:12px;color:#6a7860;line-height:1.6;margin:7px 0 13px}.dc-run-copy progress{width:100%;height:4px}.dc-run-strip.done{background:#e4eedb;border-color:#a0b68a}#dc-panel progress{appearance:none;height:5px;accent-color:#648548}#dc-panel progress::-webkit-progress-bar{background:#dce4d0;border-radius:10px}#dc-panel progress::-webkit-progress-value{background:#6e8e4c;border-radius:10px}.dc-guide{max-width:730px;width:calc(100% - 32px);max-height:88vh}.dc-guide>p{line-height:1.65;color:#677460;font-size:13px}.dc-instructions{padding-left:23px;margin:25px 0}.dc-instructions li{padding:0 0 15px 9px}.dc-instructions li::marker{color:#7d9556;font:18px Georgia,serif}.dc-instructions strong{font-size:14px}.dc-instructions p{font-size:13px;line-height:1.65;color:#626e5c;margin:7px 0}.dc-guide .dc-guide-note{padding:15px;background:#f2f5ea;border-radius:8px;font-size:11px}#dc-tool-ghost{position:fixed;pointer-events:none;z-index:1001;transform:translate(-50%,-50%);filter:drop-shadow(3px 5px 4px #253f3330)}#dc-tool-ghost svg{width:70px;height:70px;stroke:#45633c;fill:#fffdf4e0;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}#dc-ruler{position:absolute;left:60%;top:16%;width:4.36%;background:#f1df8ecc;box-shadow:2px 4px 6px #223b2828;border:1px solid #c9b976;cursor:grab;touch-action:none;user-select:none;z-index:3}#dc-ruler svg{display:block;width:100%;height:auto}
+@media(max-width:1100px){.dc-workspace{grid-template-columns:1fr}.dc-inventory{padding:12px 16px}.dc-tray-title button{display:block;font-size:10px;padding:7px 10px;min-height:44px}#dc-tools{display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:14px}.dc-tool-group>p{margin-top:10px}.dc-tool-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dc-tool-group:first-child .dc-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dc-tool{min-height:70px;font-size:9px}.dc-topline{font-size:10px}.dc-run-strip{gap:20px}.dc-bench-head{padding:18px 20px 8px}}
+@media(max-width:700px){.lab-nav{padding:0 18px;margin-top:15px;flex-wrap:wrap;gap:8px}.lab-nav button{flex:1;padding:11px 9px;font-size:12px}.lab-nav output{width:100%;text-align:right;font-size:11px;min-height:10px}.dc-intro{gap:16px}.dc-intro h1{font-size:31px}.dc-topline>span:last-child{display:none}#dc-tools{grid-template-columns:1fr}.dc-tool-grid,.dc-tool-group:first-child .dc-tool-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}.dc-tool-group:first-child .dc-tool-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.dc-tool{padding:7px 2px;font-size:8px;min-height:68px}.dc-tool svg{width:25px;height:25px}.dc-tool-group>p{font-size:9px;margin:12px 0 6px}.dc-bench-head h2{font-size:22px}.dc-tool-context{padding:14px}.dc-targets{padding:0 14px 12px}.dc-feedback{margin:14px}.dc-run-strip{flex-wrap:wrap;padding:18px;gap:15px}.dc-clock{min-width:100px}.dc-clock output{font-size:32px}.dc-run-copy{min-width:170px}.dc-run-strip>button{width:100%}.dc-bench-head>button{font-size:10px}.dc-manual-progress{padding:0 14px 14px}}
+@media(prefers-reduced-motion:reduce){#dc-panel *{scroll-behavior:auto;transition:none!important}}
+
+#dc-panel .page-footer{margin-left:0}
+.dc-step-card{position:sticky;top:8px;z-index:8;display:flex;gap:18px;align-items:center;margin:2px 0 20px;padding:20px 24px;background:#f5f8ed;border:1px solid #a7b98b;border-radius:14px;box-shadow:0 8px 24px #294c3e13}.dc-step-number{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;flex:none;color:#fff;background:#355741;font:24px Georgia,serif}.dc-step-copy{flex:1;min-width:0}.dc-step-copy .eyebrow{font-size:9px;color:#728164;margin:0 0 6px}.dc-step-copy h2{font:22px/1.2 Georgia,serif;margin:0 0 7px}.dc-step-copy>p:last-child{font-size:13px;line-height:1.55;margin:0;max-width:830px;color:#455b42}.dc-step-action{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:9px;min-width:135px}.dc-step-action>span{font-size:10px;color:#6c7c60}.dc-step-action button{font-size:12px;min-height:46px}.dc-step-action output{font:30px Georgia,serif;font-variant-numeric:tabular-nums;letter-spacing:1px}.dc-tool.dc-recommended{box-shadow:0 0 0 2px #7e9c55;border-color:#7e9c55}.dc-targets button.dc-recommended{border-color:#73934d;background:#e5edda;box-shadow:inset 0 0 0 1px #73934d}#dc-stage rect.dc-next-target{stroke:#78984a;stroke-width:2;stroke-dasharray:6 5;fill:#b6cf7c0b;rx:5}.dc-step-card[data-mode=done]{background:#eaf2de}.dc-step-card[data-mode=wait]{background:#eef3e7}
+@media(max-width:1100px){.dc-step-card{padding:16px 18px;gap:14px}.dc-step-copy h2{font-size:21px}.dc-step-copy>p:last-child{font-size:12px}.dc-step-action{min-width:125px}}
+@media(max-width:700px){.dc-step-card{top:4px;padding:13px 14px;gap:10px;flex-wrap:wrap}.dc-step-number{width:33px;height:33px;font-size:19px;align-self:flex-start}.dc-step-copy{min-width:calc(100% - 50px)}.dc-step-copy h2{font-size:19px;margin-bottom:5px}.dc-step-copy>p:last-child{font-size:12px;line-height:1.4}.dc-step-action{margin-left:43px;flex:1;flex-direction:row;align-items:center;justify-content:space-between;gap:8px}.dc-step-action button{padding:8px 12px;min-height:44px;font-size:11px}.dc-step-action output{font-size:23px}}
+
+/* Tablet workspace with a persistent tool tray beside the experiment. */
+.dc-bench-tools{display:flex;align-items:center;gap:8px}.dc-bench-tools button{min-height:44px;font-size:11px}
+#dc-materials-open,#dc-guide-compact-open{display:none}
+#dc-materials{width:min(850px,calc(100% - 28px));max-height:calc(100dvh - 28px);overflow:auto;padding:20px}
+#dc-materials h2{font-size:25px;margin:0}#dc-materials>.dialog-head+p{margin:8px 0 16px}
+#dc-materials .dc-inventory{border:0;background:transparent;padding:0}#dc-materials .dc-tray-title{display:none}
+#dc-materials #dc-tools{display:grid!important;grid-template-columns:1fr 1.5fr 1.5fr;gap:16px}
+#dc-materials .dc-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#dc-materials .dc-tool{min-height:88px;padding:8px 4px;font-size:12px;touch-action:pan-y}
+#dc-materials .dc-tool small{font-size:10px}#dc-materials .dc-tool-group>p{margin:10px 0;font-size:11px}
+body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-template-rows:44px 52px minmax(0,1fr);overflow:hidden}
+.dc-compact>.topbar{width:100%;height:44px;padding:0 18px}.dc-compact .brand{font-size:20px;gap:8px}.dc-compact .brand>svg{width:26px;height:26px}.dc-compact .brand-sub{display:none}
+.dc-compact>.lab-nav{width:100%;max-width:none;margin:0;padding:4px 12px;gap:8px;flex-wrap:nowrap}.dc-compact>.lab-nav button{min-height:44px;padding:8px 18px;font-size:13px}.dc-compact>.lab-nav output{width:auto;font-size:11px;min-height:0}
+.dc-compact #dc-panel{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;min-height:0;max-width:none;width:100%;height:100%;margin:0;padding:4px 12px 10px}
+.dc-compact .dc-intro,.dc-compact .dc-topline,.dc-compact #dc-panel>.page-footer{display:none}
+.dc-compact .dc-step-card{position:static;margin:0;padding:11px 14px;gap:12px;border-radius:12px;box-shadow:none;flex-wrap:nowrap}
+.dc-compact .dc-step-number{width:36px;height:36px;font-size:21px}.dc-compact .dc-step-copy{min-width:0}.dc-compact .dc-step-copy .eyebrow{font-size:9px;margin-bottom:3px}
+.dc-compact .dc-step-copy h2{font-size:20px;margin-bottom:5px}.dc-compact .dc-step-copy>p:last-child{font-size:13px;line-height:1.4}
+.dc-compact .dc-step-action{margin:0;min-width:135px;max-width:190px;gap:6px;flex:none;flex-direction:column;align-items:flex-end}.dc-compact .dc-step-action button{min-height:44px;font-size:12px;padding:8px 12px}.dc-compact .dc-step-action output{font-size:26px}
+.dc-compact .dc-workspace{display:grid;grid-template-columns:204px minmax(0,1fr);gap:10px;align-items:stretch;min-height:0;min-width:0}.dc-compact .dc-bench{height:100%;min-height:0;position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:52px minmax(0,1fr) auto auto;border-radius:12px}
+.dc-compact .dc-bench-head{grid-column:1/-1;padding:4px 12px;gap:12px}.dc-compact .dc-bench-head .eyebrow{display:none}.dc-compact .dc-bench-head h2{font-size:19px;white-space:nowrap}
+.dc-compact .dc-bench-tools{gap:6px}.dc-compact .dc-bench-tools button{padding:8px 10px;font-size:12px}.dc-compact #dc-materials-open,.dc-compact #dc-guide-compact-open{display:block}
+.dc-compact .dc-stage-scroll{grid-column:1/-1;min-height:0;min-width:0;max-height:none;overflow:hidden}.dc-compact #dc-stage{width:100%;height:100%;min-width:0}.dc-compact #dc-stage>svg{width:100%;height:100%}
+.dc-compact .dc-stage-scroll.zoom{overflow:auto}.dc-compact .dc-stage-scroll.zoom #dc-stage{width:160%;height:160%;min-width:1100px;min-height:600px}
+.dc-compact .dc-tool-context{min-height:52px;max-width:225px;padding:4px 12px;gap:8px;border-top:1px solid #e2e6db}.dc-compact .dc-tool-context strong{font-size:12px}.dc-compact #dc-selected-help{display:none}.dc-compact #dc-selected-icon svg{width:26px;height:26px}
+.dc-compact .dc-targets{min-height:52px;padding:4px 12px 4px 4px;border-top:1px solid #e2e6db;align-items:center;justify-content:flex-end;flex-wrap:nowrap;gap:6px}.dc-compact .dc-targets:empty{padding:4px 12px}.dc-compact .dc-targets button{min-height:44px;font-size:12px;padding:8px 12px}
+.dc-compact .dc-feedback{grid-column:1/-1;min-height:0;margin:7px 12px;padding-left:9px;font-size:12px;line-height:1.4}
+.dc-compact .dc-manual-progress{position:absolute;bottom:0;left:0;right:0;z-index:4;min-height:32px;padding:8px 12px;background:#edf3e2;border-top:1px solid #d6e0c9;font-size:12px;pointer-events:none}
+.dc-compact .dc-run-strip{margin:0;padding:5px 12px;gap:16px;min-height:54px;border-radius:10px;flex-wrap:nowrap}.dc-compact .dc-clock{display:grid;grid-template-columns:auto auto;align-items:center;column-gap:10px;min-width:0}.dc-compact #dc-clock-label{display:none}.dc-compact .dc-clock output{font-size:28px;margin:0}.dc-compact .dc-clock>span:last-child{font-size:11px}.dc-compact .dc-run-copy{min-width:0}.dc-compact .dc-run-copy strong{font-size:12px}.dc-compact .dc-run-copy p{display:none}.dc-compact .dc-run-copy progress{display:block;margin-top:6px}.dc-compact #dc-reset-open{min-height:44px;width:auto;padding:8px 12px;font-size:12px}
+@media(max-width:800px){.dc-compact .dc-bench-head h2{display:none}.dc-compact .dc-bench-head{justify-content:flex-end}.dc-compact .dc-step-card{padding:10px;gap:9px}.dc-compact .dc-step-number{display:none}.dc-compact .dc-step-action{min-width:120px;max-width:150px}.dc-compact .dc-tool-context{max-width:165px}.dc-compact .dc-targets button{padding:8px}.dc-compact .dc-clock{column-gap:7px}.dc-compact .dc-run-strip{gap:10px}}
+
+/* Tools stay within reach while the apparatus remains visible. */
+.dc-inventory:focus,.dc-inventory.dc-highlight{outline:3px solid #8da95b;outline-offset:1px}
+.dc-tool-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:10px 0}
+.dc-tool-groups button{position:relative;min-width:0;min-height:46px;padding:7px 3px;font-size:12px;line-height:1.2;font-weight:600;hyphens:none;background:#f0f3e9}
+.dc-tool-groups button[aria-pressed=true]{background:#355741;border-color:#355741;color:#fff;box-shadow:inset 0 0 0 1px #355741}
+#dc-tools{display:block}
+.dc-tray-hint{margin:12px 0 0;font-size:11px;line-height:1.4;color:#5c7055}
+.dc-tool[aria-pressed=true]{box-shadow:inset 0 0 0 1px #476d3d,0 4px 9px #31584825}
+.dc-compact .dc-inventory{height:100%;min-height:0;min-width:0;padding:10px 7px 9px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;border-radius:12px;overflow:hidden}
+.dc-compact .dc-tray-title .eyebrow{font-size:9px;letter-spacing:1.1px;line-height:1.4}
+.dc-compact .dc-tray-title button{display:none}
+.dc-compact .dc-tool-groups{margin:8px 0;gap:4px}
+.dc-compact .dc-tool-groups button{min-height:46px;font-size:12px;padding:6px 2px}
+.dc-compact #dc-tools{min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:3px 2px 5px;scroll-padding-block:4px}
+.dc-compact .dc-tool-group>p{display:none}
+.dc-compact .dc-tool-grid,.dc-compact .dc-tool-group:first-child .dc-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;align-content:start}
+.dc-compact .dc-tool{min-width:0;min-height:74px;padding:6px 2px;gap:4px;font-size:10.5px;line-height:1.2;touch-action:none;hyphens:manual;overflow-wrap:normal}
+.dc-compact .dc-tool svg{width:27px;height:27px;flex:none;stroke-width:1.5}
+.dc-compact .dc-tool span{max-width:100%}
+.dc-compact .dc-tool small{font-size:9px;line-height:1.15}
+.dc-compact .dc-tray-hint{margin:7px 0 0;padding-top:7px;border-top:1px solid #e0e6d6;font-size:11px;line-height:1.3}
+
+#dc-tool-ghost[data-tool="capillary"]{transform:translate(-13px,-79px)}#dc-tool-ghost[data-tool="capillary"] svg{width:90px;height:90px}
+#dc-inventory .dc-tool{touch-action:none}#dc-tools-toggle{display:none!important}
+
+@media(max-width:1000px){.dc-compact .dc-bench-head h2{display:none}.dc-compact .dc-bench-head{justify-content:flex-end}}
+
+/* The two drawers are explicit; the next required drawer is marked without changing selection. */
+.dc-tool-groups button[data-next="true"]:not([aria-pressed="true"]){border-color:#708d4e;box-shadow:inset 0 0 0 1px #708d4e}
+.dc-tool-groups button[data-next="true"]::after{content:"";position:absolute;right:5px;top:5px;width:5px;height:5px;border-radius:50%;background:currentColor}
+.dc-compact .dc-tool-group[data-group="1"] .dc-tool-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.dc-compact .dc-tool-group[data-group="1"] .dc-tool small{font-size:8.5px}
+.dc-tray-footer{min-width:0}
+.dc-tools-scroll{display:flex;gap:5px;padding-top:6px}
+.dc-tools-scroll[hidden]{display:none}
+.dc-tools-scroll button{flex:1;min-width:0;min-height:42px;font-size:11px;padding:5px;background:#f1f5e9;touch-action:manipulation}
+.dc-tools-scroll button:disabled{opacity:.4}
+.dc-compact .dc-tray-hint{font-size:10.5px;line-height:1.35}
+@media(max-width:700px){.dc-tool-grid,.dc-tool-group:first-child .dc-tool-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dc-tool{font-size:11px;min-height:76px}.dc-tool small{font-size:9px}}
+
+/* Foil and ruler share one coordinate system, including at higher magnification. */
+.dc-measure-dialog{width:min(760px,calc(100vw - 24px));max-width:760px;max-height:94dvh;padding:20px;overflow:hidden}
+.dc-measure-dialog[open]{display:flex;flex-direction:column;gap:10px}
+.dc-measure-dialog .dialog-head{margin:0;flex:none}.dc-measure-dialog h2{margin:4px 0 0;font:25px Georgia,serif}
+.dc-measure-help{margin:0;font-size:13px;color:#53644d;line-height:1.45;flex:none}
+.dc-measure-toolbar{display:flex;align-items:center;gap:8px;flex:none}.dc-measure-toolbar button{min-height:44px;min-width:44px}.dc-measure-toolbar output{min-width:55px;text-align:center;font-variant-numeric:tabular-nums;font-size:13px}.dc-measure-toolbar button:last-child{margin-left:auto;font-size:12px}
+.dc-measure-viewport{height:min(62dvh,620px);min-height:150px;flex:1 1 auto;overflow:auto;overscroll-behavior:contain;border:1px solid #d4deca;border-radius:10px;background:#f3f5ed;touch-action:pan-x pan-y}
+#dc-measure-canvas{width:100%;height:100%;min-width:100%;min-height:100%}#dc-measure-canvas>svg{width:100%;height:100%;display:block;user-select:none}
+#dc-detail-ruler{cursor:grab;touch-action:none;outline:none}#dc-detail-ruler:active{cursor:grabbing}#dc-detail-ruler:focus .dc-detail-ruler-body{stroke:#405e35;stroke-width:1.5}
+.dc-measure-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none}.dc-measure-footer span{font-size:11px;color:#68795c}.dc-measure-footer button{min-height:44px;font-size:12px}
+.dc-disposal-dialog{width:min(620px,calc(100vw - 28px));max-width:620px;max-height:92dvh;overflow:auto}.dc-disposal-dialog h2{font:27px Georgia,serif;margin:8px 0 14px}.dc-disposal-dialog>p{font-size:14px;line-height:1.5;color:#5c6c54}
+.dc-disposal-list{list-style:none;margin:22px 0;padding:0;display:grid;gap:12px}.dc-disposal-list li{padding:12px 14px;border:1px solid #d8e1cc;background:#f5f8ee;border-radius:9px;display:grid;gap:5px}.dc-disposal-list strong{font-size:14px;color:#35533c}.dc-disposal-list span{font-size:13px;line-height:1.55;color:#53634c}
+.dc-disposal-sources{font-size:11px;color:#697760;margin:16px 0}.dc-disposal-sources summary{cursor:pointer}.dc-disposal-sources a{display:block;margin:8px 0;color:#355d43}
+.dc-bench-tools{flex-wrap:wrap}.dc-compact #dc-disposal-open{min-height:36px;padding:6px 10px}.dc-compact .dc-step-action:has(#dc-finish-measure:not([hidden])){min-width:150px}
+@media(max-width:660px){.dc-compact .dc-bench{grid-template-rows:auto minmax(0,1fr) auto auto}.dc-compact .dc-bench-head{padding-block:6px}.dc-compact .dc-bench-tools{gap:4px}.dc-compact .dc-bench-tools button{font-size:10px;padding:6px}.dc-measure-dialog{padding:12px}.dc-measure-dialog h2{font-size:22px}.dc-measure-help{font-size:12px}}
+
+
+.topbar .brand{white-space:nowrap}.parsley-heading{display:flex;gap:14px;align-items:center}.parsley-specimen{font-size:11px;border:1px solid #c5d2b6;border-radius:20px;background:#edf2e4;padding:7px 11px;color:#536944}.topbar output{margin-left:auto;color:#526550;font-size:12px;font-variant-numeric:tabular-nums}.topbar output:empty{display:none}.dc-compact{grid-template-rows:44px minmax(0,1fr)!important}.dc-compact .parsley-specimen{font-size:10px;padding:5px 9px}.dc-compact .topbar output{font-size:11px}@media(max-width:600px){.topbar{gap:12px}.parsley-specimen{display:none}.topbar output{font-size:10px;max-width:130px;text-align:right}.dc-intro h1{font-size:29px}}
+</style></head>
+<body><header class="topbar"><div class="parsley-heading"><a class="brand" href="petersilie.html" aria-label="Petersilien-DC"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28V14M16 20 8 14m8 2 7-7M16 14l-4-4M6 17l-3-5 4-1-2-5 6 1 2-5 4 5 5-3 1 5 5 1-3 5 2 3-6 2-3 4-4-3-5 2Z"/></svg><span>Petersilie<span class="brand-sub">DC-LABOR</span></span></a><span class="parsley-specimen">Blattfarbstoffe</span></div><output id="lab-dc-status" aria-live="off"></output></header>
+<main id="dc-panel" aria-labelledby="dc-heading">
+ <section class="intro dc-intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1 id="dc-heading">Die Farben der Petersilie.</h1><p>Dünnschichtchromatografie der Petersilienpigmente</p></div><button id="dc-guide-open" class="guide-open" aria-haspopup="dialog">Versuchsanleitung</button></section>
+ <div class="dc-topline"><span><i></i> Virtueller Versuch · alle Handgriffe selbst durchführen</span><span>DC-Folie 40 × 80 mm · Kieselgel</span></div>
+ <section class="dc-step-card" id="dc-step-card" aria-label="Nächster Handgriff">
+  <div class="dc-step-number" id="dc-step-number" aria-hidden="true">1</div>
+  <div class="dc-step-copy" id="dc-step-live" role="status" aria-live="polite" aria-atomic="true"><p class="eyebrow" id="dc-step-phase">SCHRITT FÜR SCHRITT</p><h2 id="dc-step-title">Laufmittel vorbereiten</h2><p id="dc-step-instruction">Wähle n-Heptan aus und gib 9 mL in das Mischglas.</p></div>
+  <div class="dc-step-action"><span id="dc-step-count">Schritt 1</span><button id="dc-step-tool" class="primary">Werkzeug auswählen</button><button id="dc-finish-measure" class="primary" aria-haspopup="dialog" hidden>Folie abmessen</button><button id="dc-disposal-open" aria-haspopup="dialog" hidden>Entsorgung</button><output id="dc-step-time" hidden aria-live="off"></output></div>
+ </section>
+ <div class="dc-workspace">
+  <aside class="dc-inventory" id="dc-inventory" tabindex="-1" aria-label="Bedienfeld für Chemikalien und Geräte">
+   <div class="dc-tray-title"><p class="eyebrow">BEDIENFELD</p><button id="dc-tools-toggle" aria-expanded="true" aria-controls="dc-tools">Einklappen</button></div>
+   <div class="dc-tool-groups" id="dc-tool-groups" role="group" aria-label="Chemikalien oder Geräte auswählen"><button type="button" data-tool-group="0" aria-pressed="true" aria-controls="dc-tools">Chemikalien</button><button type="button" data-tool-group="1" aria-pressed="false" aria-controls="dc-tools">Geräte</button></div>
+   <div id="dc-tools"></div><div class="dc-tray-footer"><div id="dc-tools-scroll" class="dc-tools-scroll" hidden aria-label="Weitere Materialien anzeigen"><button id="dc-tools-up" type="button" aria-label="In der Ablage nach oben" aria-controls="dc-tools">↑ Zurück</button><button id="dc-tools-down" type="button" aria-label="In der Ablage nach unten" aria-controls="dc-tools">Weitere ↓</button></div><p class="dc-tray-hint">Antippen, dann am Aufbau anwenden. Oder direkt dorthin ziehen.</p></div>
+  </aside>
+  <section class="dc-bench" aria-label="Arbeitsplatz für Chromatografie">
+   <header class="dc-bench-head"><div><p class="eyebrow">DEIN VERSUCHSPLATZ</p><h2 id="dc-stage-title">Ansatz vorbereiten</h2></div><div class="dc-bench-tools"><button id="dc-materials-open" aria-controls="dc-inventory">Bedienfeld</button><button id="dc-guide-compact-open" aria-haspopup="dialog">Anleitung</button><button id="dc-measure-open" aria-haspopup="dialog">Folie vergrößern</button><button id="dc-zoom" aria-pressed="false">Vergrößern</button></div></header>
+   <div class="dc-stage-scroll" id="dc-stage-scroll"><div id="dc-stage" role="group" aria-label="Mischglas, Petersilie, Mörser, DC-Folie und DC-Kammer"></div><div id="dc-tool-ghost" aria-hidden="true" hidden></div><div id="dc-ruler" hidden aria-label="Verschiebbares Lineal in Millimetern"><svg viewBox="0 0 48 380"></svg></div></div>
+   <div class="dc-tool-context"><span id="dc-selected-icon" aria-hidden="true"></span><div><strong id="dc-selected-name">Werkzeug auswählen</strong><p id="dc-selected-help">Wähle ein Material oder Werkzeug. Ziehe es an seinen Einsatzort oder tippe anschließend auf das passende Objekt.</p></div></div>
+   <div id="dc-targets" class="dc-targets" aria-label="Werkzeug an einem Objekt anwenden"></div>
+   <div class="dc-feedback" role="status" aria-live="polite" id="dc-feedback">Beginne mit der Vorbereitung deiner DC-Kammer. Die Versuchsanleitung kannst du jederzeit öffnen.</div>
+   <div class="dc-manual-progress" id="dc-hand-progress" hidden><span id="dc-hand-label">Handgriff ausführen</span><progress id="dc-hand-value" max="100" value="0"></progress></div>
+  </section>
+ </div>
+ <section class="dc-run-strip" aria-label="Laufzeit der Chromatografie"><div class="dc-clock"><span id="dc-clock-label">LAUFZEIT</span><output id="dc-clock">20:00</output><span id="dc-clock-state">Noch nicht gestartet</span></div><div class="dc-run-copy"><strong id="dc-run-title">20 Minuten in Echtzeit</strong><p id="dc-run-copy">Die Laufzeit beginnt, sobald du die vorbereitete Folie in das Laufmittel stellst. Verschließe dann die Kammer. Während des Laufs bleibt sie stehen.</p><progress id="dc-run-progress" max="1200000" value="0" aria-label="Fortschritt der Chromatografie"></progress></div><button id="dc-reset-open" class="quiet" aria-haspopup="dialog">Neu ansetzen</button></section>
+ <footer class="page-footer"><span><i></i>Experimentieroberfläche</span><span>Petersilie · virtuelle Modelldarstellung</span></footer>
+</main>
+<dialog id="dc-materials" aria-labelledby="dc-materials-title"><div class="dialog-head"><h2 id="dc-materials-title">Material & Werkzeug</h2><button class="close-dialog" data-dc-close="dc-materials" aria-label="Materialauswahl schließen">×</button></div><p>Tippe auf ein Material oder Werkzeug. Danach kannst du es am Arbeitsplatz einsetzen.</p><div id="dc-materials-body"></div></dialog>
+<dialog id="dc-guide" class="dc-guide" aria-labelledby="dc-guide-heading"><div class="dialog-head"><p class="eyebrow">VERSUCHSANLEITUNG</p><button class="close-dialog" data-dc-close="dc-guide" aria-label="Anleitung schließen">×</button></div><h2 id="dc-guide-heading">Die DC ansetzen</h2><p>Wähle Chemikalien und Geräte im Bedienfeld aus und führe die Handgriffe direkt am Aufbau aus.</p><ol class="dc-instructions">
+ <li><strong>Laufmittel und Kammer vorbereiten</strong><p>Mische 9 mL n-Heptan und 1 mL Propan-2-ol mit dem Glasstab. Führe das Mischglas zur offenen Kammer und gieße bis zur 5-mm-Markierung. Schließe den Deckel und bewege die Kammer dreimal vorsichtig seitlich hin und zurück.</p></li>
+ <li><strong>Blattauszug herstellen</strong><p>Wähle die Schere aus und fahre über die Petersilienblätter! Gib die Blattstücke, einen Spatel Calciumcarbonat und drei Spatel Quarzsand in den Mörser. Füge mit der Pipette Laufmittel hinzu und zerreibe alles mit dem Pistill zu einem dunkelgrünen Extrakt.</p></li>
+ <li><strong>DC-Folie vorbereiten</strong><p>Setze mit dem Bleistift an beiden Folienrändern kurze Markierungen 15 mm über der Unterkante. Nutze das Lineal und lasse den Bereich zwischen den Markierungen frei.</p></li>
+ <li><strong>Extrakt auftragen und trocknen</strong><p>Fülle die Kapillare am Mörser und ziehe auf Höhe der Markierungen eine schmale Spur mit 10 mm Abstand zu beiden Seiten. Trockne sie mit dem Föhn. Trage insgesamt dreimal auf und trockne nach jedem Auftrag.</p></li>
+ <li><strong>Chromatografie laufen lassen</strong><p>Öffne den Deckel, greife die trockene Folie mit der Pinzette am oberen Rand und führe sie in die Kammer. Die unteren 5 mm tauchen ein, die Auftragsspur bleibt über dem Laufmittel. Verschließe die Kammer sofort und lasse sie <strong>20 echte Minuten</strong> stehen; die Zeit läuft auch beim Tabwechsel weiter.</p></li>
+ <li><strong>Folie entnehmen</strong><p>Öffne nach 20 Minuten den Deckel und hebe die Folie mit der Pinzette heraus. Markiere sofort die Laufmittelfront mit dem Bleistift. Schließe die Kammer und lege die Folie zum Trocknen auf den Deckel.</p></li>
+</ol><p class="dc-guide-note">Laufmittel: n-Heptan : Propan-2-ol = 9 : 1. Die Laufzeit beträgt 20 Minuten. Der Versuch und die Farbstofftrennung sind eine virtuelle Modelldarstellung.</p><button class="primary" data-dc-close="dc-guide">Zum Arbeitsplatz</button></dialog>
+<dialog id="dc-reset-dialog" aria-labelledby="dc-reset-title"><div class="dialog-head"><p class="eyebrow">CHROMATOGRAFIE</p><button class="close-dialog" data-dc-close="dc-reset-dialog" aria-label="Schließen">×</button></div><h2 id="dc-reset-title">Diesen Ansatz neu beginnen?</h2><p>Deine Vorbereitung und eine bereits laufende Chromatografie werden gelöscht. Der neue Ansatz benötigt wieder 20 Minuten Laufzeit.</p><div class="dialog-actions"><button data-dc-close="dc-reset-dialog">Abbrechen</button><button class="primary" id="dc-reset-confirm">Neu beginnen</button></div></dialog>
+
+<dialog id="dc-measure" class="dc-measure-dialog" aria-labelledby="dc-measure-title">
+ <div class="dialog-head"><div><p class="eyebrow">MESSANSICHT</p><h2 id="dc-measure-title">DC-Folie abmessen</h2></div><button class="close-dialog" data-dc-close="dc-measure" aria-label="Messansicht schließen">×</button></div>
+ <p class="dc-measure-help">Verschiebe das Lineal mit Finger oder Maus. Lies die Strecken in Millimetern ab.</p>
+ <div class="dc-measure-toolbar" aria-label="Messansicht einstellen"><button id="dc-measure-minus" aria-label="Folie kleiner anzeigen">−</button><output id="dc-measure-scale" aria-live="polite">100 %</output><button id="dc-measure-plus" aria-label="Folie größer anzeigen">+</button><button id="dc-measure-ruler-reset">Lineal zurücksetzen</button></div>
+ <div id="dc-measure-viewport" class="dc-measure-viewport"><div id="dc-measure-canvas"></div></div>
+ <div class="dc-measure-footer"><span>40 × 80 mm · Kieselgel-DC-Folie</span><button data-dc-close="dc-measure">Zum Arbeitsplatz</button></div>
+</dialog>
+<dialog id="dc-disposal" class="dc-disposal-dialog" aria-labelledby="dc-disposal-title">
+ <div class="dialog-head"><p class="eyebrow">VERSUCHSENDE</p><button class="close-dialog" data-dc-close="dc-disposal" aria-label="Entsorgungshinweise schließen">×</button></div>
+ <h2 id="dc-disposal-title">Entsorgung beim realen Versuch</h2>
+ <p>Verwende die von der Lehrkraft vorgegebenen Sammelbehälter.</p>
+ <ul class="dc-disposal-list">
+  <li><strong>Flüssigkeiten</strong><span>Laufmittel und flüssige Extraktreste in den Sammelbehälter für halogenfreie organische Lösemittel geben. Nicht in den Ausguss schütten.</span></li>
+  <li><strong>Feststoffe</strong><span>Die benutzte DC-Folie und die lösemittelhaltigen Blatt-, Sand- und Calciumcarbonatreste als chemisch verunreinigte Feststoffe sammeln.</span></li>
+  <li><strong>Glaskapillaren</strong><span>Getrennt in einem stichfesten Sammelbehälter für kontaminiertes Laborglas sammeln.</span></li>
+ </ul>
+ <details class="dc-disposal-sources"><summary>Quellen zur Abfallsammlung</summary><p>Übertragen auf die Materialien dieses Versuchs; die örtlichen Sammelregeln der Schule gelten.</p><a href="https://www.uni-saarland.de/dezernat/zb/zentrale-dienste-und-liegenschaften/sonderabfall/entsorgungshinweise.html" target="_blank" rel="noopener noreferrer">Universität des Saarlandes: Entsorgungshinweise</a><a href="https://www.bcp.fu-berlin.de/chemie/chemie/service/MV/Nutzerinfos/Entsorgung.html" target="_blank" rel="noopener noreferrer">FU Berlin: Laborabfälle</a></details>
+ <div class="dialog-actions"><button data-dc-close="dc-disposal">Zum Arbeitsplatz</button><button id="dc-disposal-measure" class="primary">Folie abmessen</button></div>
+</dialog>
+
+<script>
+/* The experiment's state only; time advances through absolute timestamps. */
+(function (root) {
+  'use strict';
+
+  const DURATION_MS = 20 * 60 * 1000;
+  const MAX_TIMESTAMP = 8640000000000000;
+  const BOOLEAN_FIELDS = [
+    'mixed', 'chamberSolvent', 'chamberClosed', 'saturated',
+    'leavesInMortar', 'extractSolvent', 'capillaryLoaded', 'wet',
+    'plateInChamber', 'frontMarked', 'plateOnLid'
+  ];
+  const NUMBER_LIMITS = {
+    heptane: 9, alcohol: 1, swirls: 3, leavesCut: 8, chalk: 1,
+    sand: 3, grind: 100, coats: 3, dryProgress: 100
+  };
+
+  function createState() {
+    return {
+      version: 1,
+      heptane: 0,
+      alcohol: 0,
+      mixed: false,
+      chamberSolvent: false,
+      chamberClosed: false,
+      saturated: false,
+      swirls: 0,
+      leavesCut: 0,
+      leavesInMortar: false,
+      chalk: 0,
+      sand: 0,
+      extractSolvent: false,
+      grind: 0,
+      marks: { left: false, right: false },
+      capillaryLoaded: false,
+      coats: 0,
+      wet: false,
+      dryProgress: 0,
+      plateInChamber: false,
+      startedAt: null,
+      removedAt: null,
+      frontMarked: false,
+      plateOnLid: false
+    };
+  }
+
+  function safeNow(value) {
+    return Number.isFinite(value) && value >= 0 && value <= MAX_TIMESTAMP
+      ? Math.floor(value)
+      : Date.now();
+  }
+
+  function isTimestamp(value) {
+    return Number.isInteger(value) && value >= 0 && value <= MAX_TIMESTAMP;
+  }
+
+  function timing(state, now = Date.now()) {
+    const hasStarted = !!(state && isTimestamp(state.startedAt) &&
+      (state.removedAt === null || (isTimestamp(state.removedAt) && state.removedAt >= state.startedAt)));
+    const endpoint = state && isTimestamp(state.removedAt)
+      ? state.removedAt
+      : safeNow(now);
+    const elapsedMs = hasStarted
+      ? Math.min(DURATION_MS, Math.max(0, endpoint - state.startedAt))
+      : 0;
+    return {
+      elapsedMs,
+      remainingMs: DURATION_MS - elapsedMs,
+      progress: elapsedMs / DURATION_MS,
+      complete: hasStarted && elapsedMs >= DURATION_MS
+    };
+  }
+
+  // Invalid or contradictory saved data never earns a completed step.
+  function restore(raw, now = Date.now()) {
+    let candidate = raw;
+    if (typeof candidate === 'string') {
+      try { candidate = JSON.parse(candidate); } catch (_) { return createState(); }
+    }
+    if (!candidate || typeof candidate !== 'object' || Array.isArray(candidate) || candidate.version !== 1) {
+      return createState();
+    }
+    const clean = createState();
+    for (const field of BOOLEAN_FIELDS) {
+      if (typeof candidate[field] !== 'boolean') return createState();
+      clean[field] = candidate[field];
+    }
+    for (const field of Object.keys(NUMBER_LIMITS)) {
+      const value = candidate[field];
+      if (!Number.isInteger(value) || value < 0 || value > NUMBER_LIMITS[field]) return createState();
+      clean[field] = value;
+    }
+    if (!candidate.marks || typeof candidate.marks !== 'object' ||
+        typeof candidate.marks.left !== 'boolean' || typeof candidate.marks.right !== 'boolean') {
+      return createState();
+    }
+    clean.marks = { left: candidate.marks.left, right: candidate.marks.right };
+    const current = safeNow(now);
+    for (const field of ['startedAt', 'removedAt']) {
+      const value = candidate[field];
+      if (value !== null && (!isTimestamp(value) || value > current)) {
+        return createState();
+      }
+      clean[field] = value;
+    }
+
+    const bothMarks = clean.marks.left && clean.marks.right;
+    const completeIngredients = clean.leavesInMortar && clean.chalk === 1 && clean.sand === 3;
+    const started = clean.startedAt !== null;
+    const removed = clean.removedAt !== null;
+    const inconsistent =
+      ![0, 9].includes(clean.heptane) ||
+      (clean.mixed && !(clean.heptane === 9 && clean.alcohol === 1)) ||
+      (clean.chamberSolvent && !clean.mixed) ||
+      (clean.chamberClosed && !clean.chamberSolvent) ||
+      (clean.swirls > 0 && !clean.chamberSolvent) ||
+      (clean.saturated !== (clean.swirls === 3)) ||
+      (clean.leavesInMortar && clean.leavesCut !== 8) ||
+      (clean.chalk > 0 && !clean.leavesInMortar) ||
+      (clean.sand > 0 && !clean.leavesInMortar) ||
+      (clean.extractSolvent && !(completeIngredients && clean.mixed)) ||
+      (clean.grind > 0 && !clean.extractSolvent) ||
+      (clean.capillaryLoaded && !(clean.grind === 100 && clean.coats < 3 && !started)) ||
+      (clean.coats > 0 && !(clean.grind === 100 && bothMarks)) ||
+      (clean.wet && !(clean.coats > 0 && clean.dryProgress < 100 && !started)) ||
+      (!clean.wet && clean.coats > 0 && clean.dryProgress !== 100) ||
+      (clean.coats === 0 && clean.dryProgress !== 0) ||
+      (started && !(clean.chamberSolvent && clean.saturated && bothMarks && clean.coats === 3 && !clean.wet)) ||
+      (clean.plateInChamber !== (started && !removed)) ||
+      (removed && (!started || clean.removedAt - clean.startedAt < DURATION_MS)) ||
+      (clean.frontMarked && !removed) ||
+      (clean.plateOnLid && !(removed && clean.frontMarked && clean.chamberClosed));
+    return inconsistent ? createState() : clean;
+  }
+
+  function act(state, action, now = Date.now()) {
+    const fail = (message) => ({ state, ok: false, message });
+    if (!state || typeof state !== 'object' || !state.marks) {
+      return { state: createState(), ok: false, message: 'Der Versuchsstand konnte nicht gelesen werden. Beginne neu.' };
+    }
+    if (!action || typeof action.type !== 'string') return fail('Wähle einen Arbeitsschritt aus.');
+    const type = action.type;
+    const stamp = safeNow(now);
+    const next = { ...state, marks: { ...state.marks } };
+    const success = (message) => ({ state: next, ok: true, message });
+    const bothMarks = state.marks.left && state.marks.right;
+    const started = state.startedAt !== null;
+    const removed = state.removedAt !== null;
+
+    if (state.plateOnLid) return fail('Die Platte liegt bereits zum Trocknen auf dem Deckel.');
+    if (started && !['lid', 'removePlate', 'markFront', 'placeOnLid'].includes(type)) {
+      return fail('Der Lauf wurde bereits gestartet. Fahre mit der Entwicklung und der Entnahme fort.');
+    }
+
+    switch (type) {
+      case 'heptane':
+        if (state.heptane === 9) return fail('Die abgemessene Heptanmenge ist bereits im Mischgefäß.');
+        next.heptane = 9;
+        return success('9 ml Heptan sind im Mischgefäß.');
+      case 'alcohol':
+        if (state.alcohol === 1) return fail('Die abgemessene Alkoholmenge ist bereits im Mischgefäß.');
+        next.alcohol = 1;
+        return success('1 ml Propan-2-ol ist im Mischgefäß.');
+      case 'mix':
+        if (state.mixed) return fail('Die Flüssigkeiten sind bereits gemischt.');
+        if (state.heptane !== 9 || state.alcohol !== 1) return fail('Miss zuerst beide Flüssigkeiten für das Laufmittel ab.');
+        next.mixed = true;
+        return success('Das Laufmittel ist gemischt.');
+      case 'fillChamber':
+        if (state.chamberClosed) return fail('Öffne zuerst den Deckel der Kammer.');
+        if (!state.mixed) return fail('Bereite zuerst das Laufmittel im Mischgefäß vor.');
+        if (state.chamberSolvent) return fail('Die Kammer ist bereits bis zur vorgesehenen Höhe gefüllt.');
+        next.chamberSolvent = true;
+        return success('Das Laufmittel steht etwa 5 mm hoch in der Kammer.');
+      case 'lid':
+        if (state.chamberClosed) {
+          if (state.plateInChamber && !timing(state, stamp).complete) {
+            return fail('Lass den Deckel während der Entwicklung geschlossen. Nach 20 Minuten kannst du die Platte entnehmen.');
+          }
+          next.chamberClosed = false;
+          return success('Der Kammerdeckel ist geöffnet.');
+        }
+        if (!state.chamberSolvent) return fail('Fülle zuerst das vorbereitete Laufmittel in die Kammer.');
+        next.chamberClosed = true;
+        return success('Der Kammerdeckel ist geschlossen.');
+      case 'swirl':
+        if (!state.chamberSolvent || !state.chamberClosed) return fail('Fülle die Kammer und schließe den Deckel, bevor du sie schwenkst.');
+        if (state.swirls >= 3) return fail('Die geschlossene Kammer wurde bereits ausreichend geschwenkt.');
+        next.swirls += 1;
+        next.saturated = next.swirls === 3;
+        return success(next.saturated ? 'Die Kammer ist für den nächsten Schritt vorbereitet.' : 'Schwenke die geschlossene Kammer weiter vorsichtig.');
+      case 'cut':
+        if (state.leavesCut >= 8) return fail('Die Blätter sind bereits zerkleinert.');
+        next.leavesCut += 1;
+        return success(next.leavesCut === 8 ? 'Die Blätter sind zerkleinert und können in den Mörser.' : 'Die Blätter werden weiter zerkleinert.');
+      case 'leaves':
+        if (state.leavesInMortar) return fail('Die Blätter sind bereits im Mörser.');
+        if (state.leavesCut !== 8) return fail('Zerkleinere die Blätter zunächst vollständig.');
+        next.leavesInMortar = true;
+        return success('Die zerkleinerten Blätter liegen im Mörser.');
+      case 'chalk':
+        if (!state.leavesInMortar) return fail('Gib zuerst die zerkleinerten Blätter in den Mörser.');
+        if (state.chalk === 1) return fail('Der vorgesehene Spatel Kalk ist bereits im Mörser.');
+        next.chalk = 1;
+        return success('Ein Spatel Kalk ist im Mörser.');
+      case 'sand':
+        if (!state.leavesInMortar) return fail('Gib zuerst die zerkleinerten Blätter in den Mörser.');
+        if (state.sand === 3) return fail('Die vorgesehenen drei Spatel Sand sind bereits im Mörser.');
+        next.sand += 1;
+        return success(next.sand === 3 ? 'Drei Spatel Sand sind im Mörser.' : 'Ein Spatel Sand wurde hinzugefügt.');
+      case 'extractSolvent':
+        if (state.extractSolvent) return fail('Das Laufmittel ist bereits im Mörser.');
+        if (!(state.leavesInMortar && state.chalk === 1 && state.sand === 3)) return fail('Bereite zuerst alle festen Bestandteile im Mörser vor.');
+        if (!state.mixed) return fail('Mische zuerst das Laufmittel.');
+        next.extractSolvent = true;
+        return success('Das Laufmittel ist bei den vorbereiteten Bestandteilen im Mörser.');
+      case 'grind': {
+        if (!state.extractSolvent || !state.leavesInMortar || state.chalk !== 1 || state.sand !== 3) return fail('Bereite zuerst die Bestandteile und das Laufmittel im Mörser vor.');
+        if (state.grind === 100) return fail('Der Blattextrakt ist bereits vorbereitet.');
+        if (!Number.isInteger(action.amount) || action.amount <= 0 || action.amount > 100) return fail('Bewege den Pistill weiter über den Mörser.');
+        next.grind = Math.min(100, state.grind + action.amount);
+        return success(next.grind === 100 ? 'Der Blattextrakt ist vorbereitet.' : 'Zerreibe die Bestandteile weiter.');
+      }
+      case 'markLeft':
+      case 'markRight': {
+        const side = type === 'markLeft' ? 'left' : 'right';
+        if (state.marks[side]) return fail('Diese Bleistiftmarkierung ist bereits gesetzt.');
+        if (state.plateInChamber || state.coats > 0) return fail('Die Startmarkierungen gehören vor dem Auftragen auf die Platte.');
+        next.marks[side] = true;
+        return success('Eine Bleistiftmarkierung ist 15 mm über dem unteren Plattenrand gesetzt.');
+      }
+      case 'loadCapillary':
+        if (state.grind !== 100) return fail('Bereite zuerst den Blattextrakt im Mörser fertig vor.');
+        if (state.capillaryLoaded) return fail('Die Kapillare enthält bereits Blattextrakt.');
+        if (state.coats >= 3) return fail('Der Blattextrakt ist bereits dreimal aufgetragen.');
+        next.capillaryLoaded = true;
+        return success('Die Kapillare ist mit Blattextrakt gefüllt.');
+      case 'apply':
+        if (!bothMarks) return fail('Setze zuerst die beiden Bleistiftmarkierungen für den Auftrag.');
+        if (state.plateInChamber) return fail('Zum Auftragen muss die Platte außerhalb der Kammer liegen.');
+        if (state.coats >= 3) return fail('Der Blattextrakt ist bereits dreimal aufgetragen.');
+        if (state.wet) return fail('Lass den letzten Auftrag trocknen, bevor du erneut aufträgst.');
+        if (!state.capillaryLoaded) return fail('Fülle die Kapillare zuerst mit Blattextrakt.');
+        next.coats += 1;
+        next.wet = true;
+        next.capillaryLoaded = false;
+        next.dryProgress = 0;
+        return success('Der Auftrag ist noch feucht. Lass ihn vor dem nächsten Schritt trocknen.');
+      case 'dry':
+        if (!state.wet) return fail('Es ist kein feuchter Auftrag zu trocknen.');
+        if (!Number.isInteger(action.amount) || action.amount <= 0 || action.amount > 100) return fail('Führe den Trocknungsschritt weiter aus.');
+        next.dryProgress = Math.min(100, state.dryProgress + action.amount);
+        next.wet = next.dryProgress < 100;
+        return success(next.wet ? 'Der Auftrag trocknet weiter.' : 'Der Auftrag ist trocken.');
+      case 'insertPlate':
+        if (started) return fail('Die Platte wurde bereits eingesetzt.');
+        if (state.chamberClosed) return fail('Öffne zuerst die vorbereitete Kammer.');
+        if (!state.chamberSolvent || !state.saturated) return fail('Bereite zuerst die gefüllte, geschwenkte Kammer vor.');
+        if (!bothMarks || state.coats < 3) return fail('Bereite zuerst den dreifachen Auftrag zwischen den Startmarkierungen vor.');
+        if (state.wet) return fail('Lass den letzten Auftrag vollständig trocknen, bevor du die Platte einsetzt.');
+        next.plateInChamber = true;
+        next.startedAt = stamp;
+        return success('Die 20 Minuten laufen ab dem Einsetzen. Schließe jetzt sofort den Kammerdeckel.');
+      case 'removePlate':
+        if (!state.plateInChamber) return fail(removed ? 'Die Platte ist bereits entnommen.' : 'Setze zuerst die vorbereitete Platte in die Kammer.');
+        if (!timing(state, stamp).complete) return fail('Die Entwicklungszeit läuft noch. Warte bis zum Ende der 20 Minuten.');
+        if (state.chamberClosed) return fail('Öffne jetzt den Kammerdeckel, um die Platte zu entnehmen.');
+        next.plateInChamber = false;
+        next.removedAt = stamp;
+        return success('Die Platte ist entnommen. Markiere jetzt die Laufmittelfront mit Bleistift.');
+      case 'markFront':
+        if (!removed) return fail('Entnimm zuerst die Platte nach der vollständigen Entwicklungszeit.');
+        if (state.frontMarked) return fail('Die Laufmittelfront ist bereits markiert.');
+        next.frontMarked = true;
+        return success('Die Laufmittelfront ist mit Bleistift markiert.');
+      case 'placeOnLid':
+        if (!removed) return fail('Entnimm zuerst die entwickelte Platte aus der Kammer.');
+        if (!state.frontMarked) return fail('Markiere zuerst die Laufmittelfront mit Bleistift.');
+        if (!state.chamberClosed) return fail('Schließe zuerst die Kammer, bevor du die Platte auf den Deckel legst.');
+        next.plateOnLid = true;
+        return success('Die Platte liegt zum Trocknen auf dem geschlossenen Kammerdeckel.');
+      default:
+        return fail('Dieser Arbeitsschritt ist nicht verfügbar.');
+    }
+  }
+
+  const api = { createState, act, timing, restore, DURATION_MS };
+  root.DCModel = api;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+/* Pure, deterministic SVG rendering for the thin-layer chromatography bench. */
+(function () {
+  'use strict';
+
+  const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, Number(v) || 0));
+  const num = v => Math.round(v * 100) / 100;
+  const coords = Object.freeze({
+    width: 1100, height: 600,
+    mix: { x: 100, y: 150, bounds: { x: 50, y: 82, width: 116, height: 160 } },
+    leaves: { x: 260, y: 145, bounds: { x: 198, y: 89, width: 158, height: 139 } },
+    mortar: { x: 180, y: 350, bounds: { x: 68, y: 304, width: 230, height: 142 } },
+    plate: { x: 435, y: 130, width: 160, height: 320, bottom: 450, baseline: 390, sampleLeft: 475, sampleRight: 555 },
+    baseline: 390, sampleLeft: 475, sampleRight: 555,
+    chamber: { x: 704, y: 135, width: 290, height: 340, solventSurface: 415 },
+    chamberPlate: { x: 784, y: 190, width: 120, height: 240, bottom: 430, baseline: 385, sampleLeft: 814, sampleRight: 874 },
+    lid: { x: 694, y: 110, width: 310, height: 28 },
+    markLeft: { x: 443, y: 390 }, markRight: { x: 587, y: 390 }
+  });
+
+  const defs = `<defs>
+    <linearGradient id="dc-bench" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f2f3eb"/><stop offset="1" stop-color="#e6ebdf"/></linearGradient>
+    <linearGradient id="dc-wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f9faf4"/><stop offset="1" stop-color="#eef1e6"/></linearGradient>
+    <radialGradient id="dc-light"><stop stop-color="#fffef7" stop-opacity=".8"/><stop offset="1" stop-color="#fffef7" stop-opacity="0"/></radialGradient>
+    <linearGradient id="dc-glass" x1="0" y1="0" x2="1" y2=".25"><stop stop-color="#f8fff6" stop-opacity=".5"/><stop offset=".12" stop-color="#b6c9b8" stop-opacity=".15"/><stop offset=".4" stop-color="#fbfff7" stop-opacity=".06"/><stop offset=".83" stop-color="#fafffb" stop-opacity=".25"/><stop offset="1" stop-color="#9eb7a9" stop-opacity=".24"/></linearGradient>
+    <linearGradient id="dc-glass-edge"><stop stop-color="#d2dfd2" stop-opacity=".65"/><stop offset=".25" stop-color="#fcfff8" stop-opacity=".95"/><stop offset=".55" stop-color="#a7bcb0" stop-opacity=".45"/><stop offset="1" stop-color="#dce9d7" stop-opacity=".8"/></linearGradient>
+    <linearGradient id="dc-glass-side" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b9cec0" stop-opacity=".24"/><stop offset=".55" stop-color="#fafffa" stop-opacity=".54"/><stop offset="1" stop-color="#92ad9c" stop-opacity=".28"/></linearGradient>
+    <linearGradient id="dc-glass-bottom" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7fff8" stop-opacity=".7"/><stop offset=".55" stop-color="#9fb7a7" stop-opacity=".38"/><stop offset="1" stop-color="#fcfff7" stop-opacity=".84"/></linearGradient>
+    <linearGradient id="dc-lid" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f9fff5" stop-opacity=".92"/><stop offset=".3" stop-color="#e3ebdf" stop-opacity=".96"/><stop offset=".7" stop-color="#c4d2c1" stop-opacity=".9"/><stop offset="1" stop-color="#edf3e5" stop-opacity=".85"/></linearGradient>
+    <linearGradient id="dc-solvent" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e2ebc8" stop-opacity=".46"/><stop offset="1" stop-color="#b8c9a0" stop-opacity=".23"/></linearGradient>
+    <linearGradient id="dc-porcelain" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#fffffc"/><stop offset=".48" stop-color="#f5f5eb"/><stop offset=".81" stop-color="#dadfd3"/><stop offset="1" stop-color="#b8c4b3"/></linearGradient>
+    <radialGradient id="dc-bowl" cx=".5" cy=".32" r=".75"><stop stop-color="#e6eadf"/><stop offset=".6" stop-color="#f6f7ee"/><stop offset=".83" stop-color="#cad3c3"/><stop offset="1" stop-color="#fffffb"/></radialGradient>
+    <linearGradient id="dc-paper" x1="0" y1="0" x2="1" y2=".3"><stop stop-color="#fffff9"/><stop offset=".46" stop-color="#f8f7ec"/><stop offset="1" stop-color="#eeeee3"/></linearGradient>
+    <linearGradient id="dc-leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7e9c4b"/><stop offset=".35" stop-color="#527d36"/><stop offset=".75" stop-color="#37632c"/><stop offset="1" stop-color="#234d29"/></linearGradient>
+    <radialGradient id="dc-extract"><stop stop-color="#3e6425"/><stop offset=".65" stop-color="#354e20"/><stop offset="1" stop-color="#25422d"/></radialGradient>
+    <radialGradient id="dc-shadow"><stop stop-color="#405039" stop-opacity=".2"/><stop offset="1" stop-color="#405039" stop-opacity="0"/></radialGradient>
+    <filter id="dc-soft-shadow" x="-.3" y="-.3" width="1.6" height="1.8"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="dc-pigment-soft" x="-.2" y="-.8" width="1.4" height="2.6"><feGaussianBlur stdDeviation=".65"/></filter>
+    <filter id="dc-frost" x="0" y="0" width="1" height="1"><feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="2" seed="7"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".065"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+    <linearGradient id="dc-forceps-metal" x1="0" y1="0" x2="1" y2=".35"><stop stop-color="#a1afa8"/><stop offset=".25" stop-color="#f7fcfa"/><stop offset=".53" stop-color="#87988f"/><stop offset=".72" stop-color="#e8f1ec"/><stop offset="1" stop-color="#6e8478"/></linearGradient>
+    <clipPath id="dc-mortar-interior"><ellipse cx="180" cy="340" rx="90" ry="29"/></clipPath>
+  </defs>`;
+
+  function label(x, y, text, size = 12, anchor = 'middle', color = '#75816c') {
+    return `<text x="${x}" y="${y}" text-anchor="${anchor}" fill="${color}" font-family="Arial,Helvetica,sans-serif" font-size="${size}" letter-spacing="${size < 11 ? 1.2 : .15}">${text}</text>`;
+  }
+  function hot(target, x, y, width, height, title = '') {
+    return `<rect data-dc-target="${target}" x="${x}" y="${y}" width="${width}" height="${height}" fill="transparent" pointer-events="all"${title ? `><title>${title}</title></rect>` : '/>'}`;
+  }
+  // Flat-leaf parsley: three deeply lobed leaflets on branching petioles.
+  // Geometry stays inside the original cutting board and pointer target.
+  function leaf(x, y, scale, angle, opacity = 1) {
+    const outline = 'M0 14C-5 12-9 10-12 7L-21 8-18 2-26-2-20-7-26-13-17-14-20-22-11-20-10-30-3-25 2-35 6-25 13-29 13-19 22-20 18-12 26-9 20-4 25 1 16 2 18 9 9 8C6 12 3 13 0 14Z';
+    const leaflet = (lx, ly, rotation, size, shade) => `<g transform="translate(${lx} ${ly}) rotate(${rotation}) scale(${size})"><path d="${outline}" transform="translate(1.1 1.5)" fill="#223d24" opacity=".15"/><path d="${outline}" fill="url(#dc-leaf)" stroke="#31582b" stroke-width=".7" stroke-linejoin="round"/><path d="M0 13Q0-6 2-32M0 4Q-8-1-21-10M1-8Q-5-13-10-26M1 1Q10-5 22-9M1-11Q7-16 13-25M-4-2-17-14M6-3 17-13" fill="none" stroke="#b3c68b" stroke-width=".75" stroke-linecap="round" opacity=".56"/><path d="M-1 11Q-3-7 1-30" fill="none" stroke="#d3dfa7" stroke-width=".8" opacity=".38"/><path d="M-17-13-10-12-10-20M8-10 14-13 12-19M-11 4-5 1" fill="none" stroke="#25472a" stroke-width=".65" opacity="${shade}"/></g>`;
+    return `<g transform="translate(${x} ${y}) rotate(${angle}) scale(${scale})" opacity="${opacity}"><path d="M-8 45Q-1 27 0 10L1-15M-1 20Q-7 9-21 1M0 16Q8 5 22-1" fill="none" stroke="#3c6235" stroke-width="3.1" stroke-linecap="round"/><path d="M-8 45Q-1 27 0 10L1-15M-1 20Q-7 9-21 1M0 16Q8 5 22-1" fill="none" stroke="#8ea55a" stroke-width="1.5" stroke-linecap="round"/>${leaflet(-23,-5,-52,.72,.35)}${leaflet(23,-8,48,.7,.28)}${leaflet(1,-20,3,.86,.32)}</g>`;
+  }
+
+  function mixingBeaker(s) {
+    const volume = clamp(s.heptane, 0, 9) + clamp(s.alcohol, 0, 1);
+    const amount = s.chamberSolvent ? Math.min(volume, 1) : volume;
+    const liquidY = 210 - amount * 7.7;
+    const liquid = `<g data-dc-fill="mix" opacity="${amount > 0 ? 1 : 0}"><path data-dc-fill-part="body" d="M66 ${num(liquidY)}H145V211Q142 219 106 219Q69 219 66 211Z" fill="url(#dc-solvent)"/><ellipse data-dc-fill-part="surface" cx="105.5" cy="${num(liquidY)}" rx="39.5" ry="4" fill="#eef1d6" fill-opacity=".58" stroke="#9cae8a" stroke-opacity=".45" stroke-width=".8"/>${!s.mixed && volume > 1 && s.alcohol ? `<path d="M67 ${num(liquidY + 6)}Q101 ${num(liquidY + 10)} 144 ${num(liquidY + 7)}" fill="none" stroke="#fffdf6" stroke-opacity=".8" stroke-width="2"/>` : ''}</g>`;
+    return `<g data-dc-target="mix"><ellipse cx="109" cy="233" rx="66" ry="13" fill="url(#dc-shadow)"/><path d="M62 108L66 214Q68 227 106 227Q145 227 149 214L153 108L160 100L146 102Q108 92 65 101L57 99Z" fill="url(#dc-glass)" stroke="#aabbb0" stroke-width="1.3"/>${liquid}<path d="M65 104Q105 113 150 105M70 112L74 207M141 115L139 201" fill="none" stroke="#fffef7" stroke-width="2.1" opacity=".9"/><path d="M66 219Q105 230 147 218" fill="none" stroke="#b6c4b5" stroke-width="3" opacity=".6"/><path d="M65 101Q106 94 146 102" fill="none" stroke="#8fa79a" stroke-opacity=".5"/>${[0,1,2,3,4].map(i => `<path d="M122 ${196-i*17}h${i%2 ? 9 : 14}" stroke="#7b9685" stroke-opacity=".55" stroke-width=".85"/>`).join('')}${label(116, 114, '10', 7, 'start', '#809386')}${label(105, 260, 'Laufmittel', 12)}${hot('mix', 50, 82, 116, 160, 'Laufmittelbecher')}</g>`;
+  }
+
+  function cuttingArea(s) {
+    const cuts = clamp(s.leavesCut, 0, 8);
+    const bits = [[-40,-14,10],[-19,-24,64],[5,-20,30],[30,-14,100],[-34,7,-24],[-10,1,44],[12,3,13],[36,9,57],[-30,24,88],[-2,22,-20],[23,24,144],[43,-28,80]];
+    const intact = !s.leavesInMortar && cuts < 4 ? leaf(268, 147, .9 - cuts * .055, -12) + (cuts < 2 ? leaf(245, 151, .72, 82, .88) : '') : '';
+    const cutBits = !s.leavesInMortar ? bits.slice(0, Math.min(12, Math.round(cuts * 1.5))).map(([x,y,a],i) => `<path d="M-7-5L-1-4 2-8 5-6 4-2 8 0 5 3 6 6-1 5-3 8-6 2Z" transform="translate(${268+x} ${148+y}) rotate(${a})" fill="${['#446933','#5b7941','#315931'][i%3]}" stroke="#365a2a" stroke-width=".5"/><path d="M${266+x} ${145+y}l4 5" stroke="#9bac6d" stroke-width=".6" opacity=".6"/>`).join('') : '';
+    return `<g data-dc-target="leaves"><ellipse cx="278" cy="216" rx="86" ry="15" fill="url(#dc-shadow)"/><path d="M200 98L342 88L359 204L215 219Z" fill="#e0e4d5" stroke="#cbd2c0" stroke-width="1"/><path d="M200 95L342 85L359 201L215 216Z" fill="#f7f6ec" stroke="#dce1d2"/><path d="M208 101L337 92M213 104L340 96" stroke="#fffef7" stroke-opacity=".6"/>${intact}${cutBits}${s.leavesInMortar ? `<path d="M242 166l6 1m28-24 4 2m18 17 3-2" stroke="#7e9365" stroke-width="1.3" opacity=".5"/>` : ''}${label(279, 246, 'Petersilie', 12)}${hot('leaves',198,82,165,145,'Petersilienblätter schneiden')}</g>`;
+  }
+
+  function mortarContents(s) {
+    const g = clamp(s.grind, 0, 100) / 100;
+    const leaves = s.leavesInMortar ? Array.from({length: 15}, (_, i) => {
+      const x = 124 + ((i * 31) % 116), y = 325 + ((i * 11) % 27), sz = 9 - 6 * g;
+      return `<path d="M${num(x-sz)} ${y}l${num(sz*1.2)} ${num(-sz*.6)}l${num(sz*.8)} ${num(sz*.8)}l${num(-sz*.7)} ${num(sz*.7)}Z" fill="${['#3b5b2a','#567333','#2f522c'][i%3]}" opacity="${num(.8-.25*g)}"/>`;
+    }).join('') : '';
+    const extract = s.extractSolvent ? `<ellipse cx="180" cy="341" rx="${num(68+g*10)}" ry="${num(17+g*4)}" fill="${s.leavesInMortar ? 'url(#dc-extract)' : '#e0e7ca'}" opacity="${num(s.leavesInMortar ? .22+.77*g : .5)}"/><path d="M128 337Q154 326 180 328" stroke="#d6e3b0" stroke-width="1.3" opacity=".33" fill="none"/>` : '';
+    const sand = Array.from({length:Math.round(clamp(s.sand,0,3)*10)}, (_,i) => `<ellipse cx="${151+(i*19)%62}" cy="${331+(i*7)%18}" rx="${.9+(i%3)*.45}" ry="${.7+(i%2)*.45}" fill="${i%3 ? '#c1b38b' : '#f1e6c6'}" stroke="#b4a784" stroke-width=".3" opacity="${num(1-g*.75)}"/>`).join('');
+    const chalk = s.chalk ? `<ellipse cx="164" cy="341" rx="${num(15-g*8)}" ry="${num(5-g*2)}" fill="#f6f3d9" opacity="${num(.9-g*.75)}"/><path d="M155 339l4-2 5 2 3-1 8 4-5 2-8-1Z" fill="#fffdeb" opacity="${num(1-g*.9)}"/>` : '';
+    return `<g data-dc-fill="mortar">${extract}</g>${leaves}${chalk}${sand}${g>.3 && s.leavesInMortar ? `<path d="M114 344Q149 356 180 352T253 341M134 329Q164 318 208 327" fill="none" stroke="#49682d" stroke-width="${num(1+g*2)}" opacity="${num(g*.45)}"/>` : ''}`;
+  }
+
+  function mortar(s) {
+    return `<g data-dc-target="mortar"><ellipse cx="183" cy="441" rx="131" ry="24" fill="url(#dc-shadow)"/><ellipse cx="180" cy="423" rx="48" ry="12" fill="#c4cdbb" opacity=".7"/><path d="M70 338C74 374 106 418 151 426Q178 435 208 426C251 412 282 372 290 338Z" fill="url(#dc-porcelain)" stroke="#cbd4c2" stroke-width="1.2"/><path d="M91 361C101 386 118 403 142 411" stroke="#fffef9" stroke-width="6" stroke-linecap="round" opacity=".75" fill="none"/><ellipse cx="180" cy="338" rx="110" ry="39" fill="#fffff7" stroke="#d0d8c7" stroke-width="1"/><ellipse cx="180" cy="340" rx="92" ry="30" fill="url(#dc-bowl)" stroke="#bdcaba" stroke-opacity=".7"/><g clip-path="url(#dc-mortar-interior)" data-dc-continuous="mortar">${mortarContents(s)}</g><path d="M71 335Q80 306 140 302M212 302Q276 310 288 335" fill="none" stroke="#fffefa" stroke-width="4" stroke-linecap="round"/><path d="M72 335l-12 5 13 6" fill="#f9f9ef" stroke="#c9d3c1" stroke-width="1.2"/>${label(180, 470, 'Porzellanmörser', 12)}${hot('mortar',60,298,238,146,'Mörser')}</g>`;
+  }
+
+  function bandPath(x, y, width, height, seed) {
+    const yy = num(y), h = num(height), a = (seed%3)*.4;
+    return `M${x} ${num(yy-h*.34)}Q${num(x+width*.22)} ${num(yy-h*.68-a)} ${num(x+width*.45)} ${num(yy-h*.34)}T${num(x+width)} ${num(yy-h*.43)}L${num(x+width-.4)} ${num(yy+h*.42)}Q${num(x+width*.74)} ${num(yy+h*.73+a)} ${num(x+width*.5)} ${num(yy+h*.38)}T${num(x+.3)} ${num(yy+h*.5)}Z`;
+  }
+
+  function plate(s, timing, inside, interactive = true) {
+    const p = inside ? coords.chamberPlate : coords.plate;
+    const scale = p.width / 160;
+    const hasRun = Boolean(s.startedAt != null || s.removedAt != null || (timing && timing.progress > 0));
+    const progress = hasRun ? clamp(timing && timing.progress) : 0;
+    const frontMM = hasRun ? Math.max(5, 70 * Math.sqrt(progress)) : 0;
+    const frontY = p.bottom - frontMM * 4 * scale;
+    const separation = Math.max(0, frontMM-15) * 4 * scale;
+    const bandOpacity = clamp((frontMM - 15) / 14);
+    const sampleOpacity = hasRun ? .95 - .85 * bandOpacity : .5 + clamp(s.coats,0,3)*.16;
+    const sampleW = p.sampleRight-p.sampleLeft;
+    const marks = s.marks || {};
+    const pigmentColors = ['#d5a92f','#828574','#227a69','#87a544','#afb06f','#e2bd37','#ddc848'];
+    const fractions = [.91,.79,.66,.51,.38,.23,.13];
+    const heights = [4.4,5.4,7.3,6.3,4.5,4.2,3.8];
+    const bands = hasRun && s.coats > 0 && separation > 0 ? fractions.map((f,i) => {
+      const y=p.baseline-separation*f;
+      const h=heights[i]*scale*Math.max(.25,bandOpacity);
+      const x=p.sampleLeft-1.3*scale-(i%3)*scale;
+      const w=sampleW+2.6*scale+(i%3)*2*scale;
+      return `<path d="${bandPath(num(x),y,num(w),h,i)}" fill="${pigmentColors[i]}" opacity="${num(bandOpacity*[.83,.6,.87,.73,.65,.75,.62][i])}" filter="url(#dc-pigment-soft)"/><path d="${bandPath(num(x+2*scale),y,num(w-4*scale),h*.48,i)}" fill="${pigmentColors[i]}" opacity="${num(bandOpacity*.28)}"/>`;
+    }).join('') : '';
+    const specks = Array.from({length:48},(_,i) => `<circle cx="${num(p.x+6*scale+((i*31)%148)*scale)}" cy="${num(p.y+5*scale+((i*53)%309)*scale)}" r="${num(.35*scale)}" fill="#a4a896" opacity=".14"/>`).join('');
+    const wetness = s.wet && !hasRun ? `<path data-dc-continuous="wetness" d="${bandPath(p.sampleLeft-3*scale,p.baseline,sampleW+6*scale,7*scale,0)}" fill="#45602e" opacity="${num(.1*(1-clamp(s.dryProgress,0,100)/100))}" filter="url(#dc-pigment-soft)"/>` : '';
+    const front = hasRun ? `<path d="M${p.x+1} ${num(frontY)}Q${num(p.x+p.width*.25)} ${num(frontY-1.2*scale)} ${num(p.x+p.width*.5)} ${num(frontY-.5*scale)}T${p.x+p.width-1} ${num(frontY)}V${p.bottom-1}H${p.x+1}Z" fill="#bdc89b" opacity="${s.removedAt != null && !s.wet ? .035 : .115}"/><path d="M${p.x+2} ${num(frontY)}Q${p.x+p.width*.5} ${num(frontY-1.6*scale)} ${p.x+p.width-2} ${num(frontY)}" fill="none" stroke="#9aa580" stroke-opacity=".4" stroke-width="${.75*scale}"/>` : '';
+    const frontMark = s.frontMarked ? `<path d="M${p.x+4*scale} ${num(frontY)}L${p.x+p.width-4*scale} ${num(frontY-.4*scale)}" stroke="#62665b" stroke-width="${.75*scale}" stroke-opacity=".75"/>` : '';
+    const edgeMarks = `${marks.left ? `<path d="M${p.x+1.5*scale} ${p.baseline}h${12*scale}" stroke="#60665b" stroke-width="${.9*scale}"/>` : ''}${marks.right ? `<path d="M${p.x+p.width-13.5*scale} ${p.baseline}h${12*scale}" stroke="#60665b" stroke-width="${.9*scale}"/>` : ''}`;
+    const sample = s.coats ? `${wetness}<path d="${bandPath(p.sampleLeft,p.baseline,sampleW,(s.wet ? 3.3 : 2.4)*scale,1)}" fill="#254c2c" opacity="${num(sampleOpacity)}" filter="url(#dc-pigment-soft)"/><path d="M${p.sampleLeft} ${p.baseline}Q${p.sampleLeft+sampleW*.4} ${p.baseline-.4*scale} ${p.sampleRight} ${p.baseline+.1*scale}" fill="none" stroke="#244e2a" stroke-width="${1.3*scale}" opacity="${num(sampleOpacity*.85)}"/>` : '';
+    return `<g${interactive ? ' data-dc-target="plate"' : ''}${inside ? ' data-dc-location="chamber"' : interactive ? ' data-dc-loose-plate="true"' : ''}><path d="M${p.x+2} ${p.y+3}H${p.x+p.width+2}V${p.bottom+2}L${p.x+2} ${p.bottom+2}Z" fill="#aeb6a5" opacity=".4"/><rect x="${p.x}" y="${p.y}" width="${p.width}" height="${p.height}" rx=".6" fill="url(#dc-paper)" stroke="#d2d7c5" stroke-width=".9"/><path d="M${p.x+1} ${p.y+1}h${p.width-2}M${p.x+1} ${p.y+1}v${p.height-2}" fill="none" stroke="#fffef9" stroke-width="1.3"/>${specks}${front}${bands}${edgeMarks}${sample}${frontMark}${!inside && interactive ? `${hot('plate',p.x,p.y,p.width,p.height,'DC-Folie')}${!hasRun ? hot('markLeft',p.x-15,p.baseline-22,44,44,'Linke Randmarkierung')+hot('markRight',p.x+p.width-29,p.baseline-22,44,44,'Rechte Randmarkierung') : ''}${s.removedAt != null ? hot('markFront',p.x-2,num(frontY-22),p.width+4,44,'Laufmittelfront markieren') : ''}` : ''}</g>`;
+  }
+
+  function separatePlate(s, timing) {
+    if (s.plateInChamber) {
+      return `<g opacity=".55"><rect x="424" y="119" width="182" height="342" rx="7" fill="#e7ebdf" stroke="#c8d2be" stroke-width="1" stroke-dasharray="4 5"/><rect x="436" y="132" width="158" height="316" rx="1" fill="none" stroke="#d0d8c5"/>${label(515, 292, 'Folie in der Kammer', 12, 'middle', '#708064')}</g>`;
+    }
+    if (s.plateOnLid) {
+      return `<g data-dc-view="magnified"><rect x="409" y="84" width="212" height="444" rx="10" fill="#fafbf5" fill-opacity=".96" stroke="#cad5bf" stroke-width="1.2"/>${label(515,108,'Vergrößerte Ansicht',12,'middle','#52694a')}<path d="M425 119H605" stroke="#e2e8d8"/>${plate(s,timing,false)}${label(515,487,'Folie auf dem Deckel',12)}${label(515,508,'40 × 80 mm',10)}</g>`;
+    }
+    return `<g><ellipse cx="519" cy="459" rx="105" ry="15" fill="url(#dc-shadow)"/><rect x="423" y="119" width="184" height="343" rx="6" fill="#edf0e5" stroke="#d7ddce"/>${plate(s,timing,false)}${label(515,492,'Kieselgel-DC-Folie',12)}${label(515,512,'40 × 80 mm',10)}</g>`;
+  }
+
+  function lid(s, timing) {
+    const closed = Boolean(s.chamberClosed);
+    const transform = closed ? '' : ' transform="translate(208 -48) rotate(7 849 124) scale(.78 1)"';
+    const restingPlate = s.plateOnLid ? `<g data-dc-location="lid" pointer-events="none" transform="matrix(.15 .125 .5 0 622.75 42.625)">${plate(s,timing,false,false)}</g>` : '';
+    return `<g data-dc-target="lid"${transform}><ellipse cx="850" cy="142" rx="164" ry="10" fill="url(#dc-shadow)"/><path d="M694 115L711 104H992L1004 115V134L994 140H705L694 134Z" fill="url(#dc-lid)" stroke="#acbfad" stroke-width="1.2"/><path d="M694 115H1004L994 126H705Z" fill="#f1f6e8" stroke="#c2cfb9" stroke-width=".8"/><path d="M705 126H994V139H705Z" fill="#d3dfcb" fill-opacity=".62"/><path d="M705 128H994M712 107H989" stroke="#fffff6" stroke-width="2" stroke-opacity=".9"/><path d="M710 133H990" stroke="#b4c2aa" stroke-width=".9" stroke-opacity=".6"/><rect x="706" y="115" width="285" height="18" fill="#e9eee0" opacity=".4" filter="url(#dc-frost)"/>${restingPlate}${hot('lid',690,100,318,44,'Geschliffener Glasdeckel')}</g>`;
+  }
+
+  function chamber(s, timing) {
+    const hasSolvent = Boolean(s.chamberSolvent);
+    const back = `<path d="M704 144L722 133H977L994 144V461L977 475H722L704 461Z" fill="url(#dc-glass)" stroke="#b6c7b7" stroke-width="1.3"/><path d="M724 148H975V430H724Z" fill="#eef4e7" fill-opacity=".2" stroke="#c6d4c0" stroke-opacity=".7"/><path d="M724 430H975L984 452H715Z" fill="#e5eddd" fill-opacity=".25" stroke="#bdcebc" stroke-opacity=".5"/><path d="M724 148V430L713 460M975 148V430L985 460" fill="none" stroke="#bdcebc" stroke-opacity=".7"/>`;
+    // At the foil, 15 scene units equal 5 mm. The front wall is lower in the
+    // perspective drawing; its solvent and floor share the same depth offset.
+    const liquidBack = `<g data-dc-fill="chamber-back" opacity="${hasSolvent ? 1 : 0}"><path data-dc-fill-part="body" d="M724 415H975V430H724Z" fill="url(#dc-solvent)"/><path data-dc-fill-part="surface" d="M724 415H975L983 437H716Z" fill="#edf1d8" fill-opacity=".43" stroke="#b9c6a7" stroke-opacity=".5" stroke-width=".7"/></g>`;
+    const liquidFront = `<g data-dc-fill="chamber-front" opacity="${hasSolvent ? 1 : 0}"><path data-dc-fill-part="body" d="M716 437Q850 439 983 437V452H716Z" fill="#d6e0bd" opacity=".23"/><path data-dc-fill-part="surface" d="M716 437Q850 439 983 437" fill="none" stroke="#a5b894" stroke-opacity=".6" stroke-width=".9"/><path data-dc-fill-part="highlight" d="M719 440Q851 442 980 440" fill="none" stroke="#fffef1" stroke-opacity=".65" stroke-width=".8"/></g>`;
+    const saturated = s.saturated && s.chamberClosed ? `<rect x="725" y="149" width="248" height="254" fill="#e0ead1" opacity=".1"/>` : '';
+    return `<g><ellipse cx="855" cy="485" rx="179" ry="23" fill="url(#dc-shadow)"/><ellipse cx="852" cy="474" rx="143" ry="9" fill="#76916d" opacity=".08"/><g data-dc-apparatus="chamber"><g data-dc-target="chamber">${back}${liquidBack}${saturated}${s.plateInChamber ? plate(s,timing,true) : ''}<g data-dc-chamber-front="true">${liquidFront}<path d="M704 144H715V460L724 467V475H722L704 461Z" fill="url(#dc-glass-side)" stroke="#aec2b0" stroke-opacity=".6"/><path d="M984 144H994V461L977 475V466L984 460Z" fill="url(#dc-glass-side)" stroke="#aec2b0" stroke-opacity=".6"/><path d="M715 452H984V461L976 469H723L715 461Z" fill="url(#dc-glass-bottom)"/><path d="M704 144H994V460L979 473H721L704 460Z" fill="url(#dc-glass)" stroke="#a0b8a4" stroke-opacity=".5" stroke-width="1.1"/><path d="M704 144L721 134H979L994 144H704ZM713 149H985" fill="none" stroke="#c0d1bd" stroke-width="2"/><path d="M710 148V455M718 154V448M986 151V453M727 465H974" fill="none" stroke="#fffffb" stroke-width="2.5" stroke-opacity=".83" pointer-events="none"/><path d="M730 159H741V391H730ZM755 152H758V284H755Z" fill="#fffef8" fill-opacity=".25" pointer-events="none"/><path d="M932 151L941 151L953 445L946 445Z" fill="#fffffa" fill-opacity=".17" pointer-events="none"/></g>${hot('chamber',700,136,298,341,'DC-Entwicklungskammer')}</g>${lid(s, timing)}</g>${label(850,513,'DC-Entwicklungskammer',12)}${label(850,533,'Geschliffenes Glas',10)}</g>`;
+  }
+
+  function render(state, timing = {}) {
+    const s = state || {};
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" class="dc-scene" role="img" aria-label="Virtueller Arbeitsplatz zur Dünnschichtchromatografie" preserveAspectRatio="xMidYMid meet">${defs}<rect width="1100" height="600" fill="url(#dc-wall)"/><path d="M0 252Q550 230 1100 252V600H0Z" fill="url(#dc-bench)"/><ellipse cx="424" cy="195" rx="594" ry="295" fill="url(#dc-light)"/><path d="M0 253Q550 232 1100 253" stroke="#e1e6d8" fill="none"/><g pointer-events="none" opacity=".35"><path d="M0 540H1100" stroke="#d6deca" stroke-width="1"/><path d="M16 543H1084" stroke="#fdfdf4" stroke-width="1"/></g>${mixingBeaker(s)}${cuttingArea(s)}${mortar(s)}${separatePlate(s,timing)}${chamber(s,timing)}${label(52,570,'VORBEREITUNG',9,'start','#88927d')}${label(515,570,'DC-FOLIE',9)}${label(850,570,'ENTWICKLUNG',9)}</svg>`;
+  }
+
+
+  // A shallow rectangular pool keeps its cross-sectional area while its free
+  // surface remains horizontal in world coordinates. At larger tilts one end
+  // becomes dry, rather than drawing liquid below the chamber floor.
+  function chamberLiquidGeometry(angle = 0, slosh = 0) {
+    angle = clamp(angle, -9, 9); slosh = clamp(slosh, -4, 4);
+    const slope = Math.tan((angle + slosh) * Math.PI / 180);
+    const left = 724, right = 975, width = right-left, center = (left+right)/2;
+    const area = width*15, halfDifference = Math.abs(slope)*width/2;
+    const middleDepth = halfDifference <= 15 ? 15 : Math.sqrt(2*area*Math.abs(slope))-halfDifference;
+    const wetLeft = slope > 0 ? Math.max(left, center-middleDepth/slope) : left;
+    const wetRight = slope < 0 ? Math.min(right, center-middleDepth/slope) : right;
+    const depthAt = x => Math.max(0,middleDepth+slope*(x-center));
+    const yLeft = 430-depthAt(wetLeft), yRight = 430-depthAt(wetRight);
+    const frontX = x => 716+(x-left)*267/width;
+    const fl = frontX(wetLeft), fr = frontX(wetRight), fyl = yLeft+22, fyr = yRight+22;
+    const atRest = angle === 0 && slosh === 0;
+    return {
+      angle, slosh, area, slope, wetLeft, wetRight, yLeft, yRight,
+      polygon: [[wetLeft,yLeft],[wetRight,yRight],[wetRight,430],[wetLeft,430]],
+      backBody: atRest ? 'M724 415H975V430H724Z' : `M${num(wetLeft)} ${num(yLeft)}L${num(wetRight)} ${num(yRight)}V430H${num(wetLeft)}Z`,
+      backSurface: atRest ? 'M724 415H975L983 437H716Z' : `M${num(wetLeft)} ${num(yLeft)}L${num(wetRight)} ${num(yRight)}L${num(fr)} ${num(fyr)}L${num(fl)} ${num(fyl)}Z`,
+      frontBody: atRest ? 'M716 437Q850 439 983 437V452H716Z' : `M${num(fl)} ${num(fyl)}L${num(fr)} ${num(fyr)}V452H${num(fl)}Z`,
+      frontSurface: atRest ? 'M716 437Q850 439 983 437' : `M${num(fl)} ${num(fyl)}L${num(fr)} ${num(fyr)}`,
+      frontHighlight: atRest ? 'M719 440Q851 442 980 440' : `M${num(fl+2)} ${num(Math.min(451,fyl+2))}L${num(fr-2)} ${num(Math.min(451,fyr+2))}`
+    };
+  }
+
+  function poseChamber(stageElement, pose = {}) {
+    if (!stageElement?.querySelector) return false;
+    const apparatus = stageElement.querySelector('[data-dc-apparatus="chamber"]');
+    if (!apparatus) return false;
+    const geometry = chamberLiquidGeometry(pose.angle,pose.slosh);
+    const offsetX = clamp(pose.offsetX,-22,22);
+    // Lift the lowered corner above the bench while the hand rocks the vessel.
+    const lift = -Math.abs(Math.sin(geometry.angle*Math.PI/180))*145;
+    if (geometry.angle || offsetX) apparatus.setAttribute('transform',`translate(${num(offsetX)} ${num(lift)}) rotate(${num(geometry.angle)} 849 475)`);
+    else apparatus.removeAttribute('transform');
+    for (const [group,part,key] of [
+      ['chamber-back','body','backBody'],['chamber-back','surface','backSurface'],
+      ['chamber-front','body','frontBody'],['chamber-front','surface','frontSurface'],['chamber-front','highlight','frontHighlight']
+    ]) stageElement.querySelector(`[data-dc-fill="${group}"] [data-dc-fill-part="${part}"]`)?.setAttribute('d',geometry[key]);
+    return true;
+  }
+
+  function renderHeldPlate(state, timing = {}) {
+    // The jaws meet the top edge; the rear jaw is behind the foil, the front
+    // jaw stays visible against the silica coating while the whole tool moves.
+    return `<g class="dc-held-plate" pointer-events="none" aria-hidden="true"><path d="M-3 4Q10-23 53-78Q58-82 62-78L60-72Q24-29 1 5Z" fill="url(#dc-forceps-metal)" stroke="#758b7f" stroke-width="1"/><g transform="translate(-515 -130)">${plate(state || {},timing,false,false)}</g><path d="M1 5Q9-15 51-75Q54-81 60-80Q65-78 62-73L12-8Q7 0 5 8L1 8Z" fill="url(#dc-forceps-metal)" stroke="#687f73" stroke-width="1.1"/><path d="M5 2Q18-26 57-76" fill="none" stroke="#fcfffc" stroke-width="1.8" stroke-linecap="round"/><path d="M26-35l4 3m0-9 4 3m0-9 4 3m0-9 4 3" stroke="#7f9187" stroke-width="1.3"/><path d="M1 5h4m-4 2h3" stroke="#6d8174" stroke-width=".8"/><ellipse cx="3" cy="9" rx="3.5" ry="1.4" fill="#52634e" opacity=".16"/></g>`;
+  }
+
+  function posePlate(stageElement, state, timing = {}, pose = {}) {
+    if (!stageElement?.querySelector) return false;
+    const svg = stageElement.matches?.('svg') ? stageElement : stageElement.querySelector('svg');
+    if (!svg) return false;
+    const originals = stageElement.querySelectorAll('[data-dc-loose-plate], [data-dc-location="chamber"]');
+    let layer = svg.querySelector('[data-dc-motion="held-plate"]');
+    if (!pose.held) {
+      originals.forEach(el=>el.removeAttribute('opacity'));
+      layer?.remove(); return true;
+    }
+    originals.forEach(el=>el.setAttribute('opacity','0'));
+    if (!layer) {
+      layer = svg.ownerDocument.createElementNS('http://www.w3.org/2000/svg','g');
+      layer.setAttribute('data-dc-motion','held-plate');layer.setAttribute('pointer-events','none');layer.setAttribute('aria-hidden','true');
+      svg.appendChild(layer);
+    }
+    const s=state || {},signature=JSON.stringify([s.coats,s.wet,s.dryProgress,s.marks,s.startedAt,s.removedAt,s.frontMarked,timing.progress]);
+    if(layer.getAttribute('data-dc-paint')!==signature){layer.innerHTML=renderHeldPlate(s,timing);layer.setAttribute('data-dc-paint',signature);}
+    const x=Number.isFinite(pose.x)?pose.x:515,y=Number.isFinite(pose.y)?pose.y:130;
+    const scale=clamp(pose.scale == null?1:pose.scale,.75,1),angle=clamp(pose.angle,-12,12);
+    // Once over the chamber opening, the front glass visually covers the foil
+    // while the forceps and upper portion remain visible above the rim.
+    const front=svg.querySelector('[data-dc-chamber-front]');
+    const parent=x>=700&&x<=995&&front ? front.parentNode : svg;
+    if(layer.parentNode!==parent){if(parent===svg)svg.appendChild(layer);else parent.insertBefore(layer,front);}
+    layer.setAttribute('transform',`translate(${num(x)} ${num(y)}) rotate(${num(angle)}) scale(${num(scale)})`);
+    return true;
+  }
+
+  // The measurement view reuses the same foil geometry at four SVG units per mm.
+  // Its definitions are namespaced so it can coexist with the full bench SVG.
+  function renderPlateDetail(state, timing = {}) {
+    const content = (defs + plate(state || {}, timing || {}, false, false))
+      .replace(/\bid="dc-/g, 'id="dc-detail-')
+      .replace(/url\(#dc-/g, 'url(#dc-detail-');
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="380 65 310 410" class="dc-plate-detail" role="img" aria-label="DC-Folie in Messansicht" preserveAspectRatio="xMidYMid meet"><title>DC-Folie in Messansicht</title><rect x="380" y="65" width="310" height="410" fill="#f3f5ed"/>${content}</svg>`;
+  }
+
+  // Patch only the changing material during a continuous hand movement.
+  // The apparatus, hit targets, overlays and their DOM identity stay in place.
+  function updateContinuous(stageElement, state, type) {
+    if (!stageElement || typeof stageElement.querySelector !== 'function' || !state) return false;
+    if (type === 'grind') {
+      const contents = stageElement.querySelector('[data-dc-continuous="mortar"]');
+      if (!contents) return false;
+      contents.innerHTML = mortarContents(state);
+      return true;
+    }
+    if (type === 'dry' && state.wet && state.startedAt == null) {
+      const wetness = stageElement.querySelector('[data-dc-continuous="wetness"]');
+      if (!wetness) return false;
+      wetness.setAttribute('opacity', String(num(.1 * (1 - clamp(state.dryProgress, 0, 100) / 100))));
+      return true;
+    }
+    return false;
+  }
+
+  globalThis.DCScene = Object.freeze({ render, coords, updateContinuous, chamberLiquidGeometry, poseChamber, renderHeldPlate, posePlate, renderPlateDetail });
+})();
+
+</script>
+<script>
+/* Procedure guidance only. It observes the experiment and never performs a step. */
+(function (root) {
+  'use strict';
+
+  const TOTAL = 39;
+  const phases = {
+    chamber: 'Kammer vorbereiten', extract: 'Blattauszug herstellen',
+    marks: 'Folie vorbereiten', coating: 'Extrakt auftragen',
+    develop: 'Chromatografie starten', wait: '20 Minuten entwickeln',
+    finish: 'Folie entnehmen und trocknen'
+  };
+  function step(id, number, phase, title, instruction, tool, target, mode = 'tap') {
+    return { id, number, total: TOTAL, phase: phases[phase], title, instruction, tool, target, mode };
+  }
+  const steps = {
+    heptane: step('heptane', 1, 'chamber', '9 mL n-Heptan abmessen',
+      'Wähle n-Heptan aus und halte die Flasche über das Mischglas, bis 9 mL eingefüllt sind.', 'heptane', 'mix', 'hold'),
+    alcohol: step('alcohol', 2, 'chamber', '1 mL Propan-2-ol dazugeben',
+      'Wähle Propan-2-ol aus und gib 1 mL in das Mischglas.', 'alcohol', 'mix', 'hold'),
+    mix: step('mix', 3, 'chamber', 'Die Flüssigkeiten vermischen',
+      'Wähle den Glasstab aus und vermische die Flüssigkeiten im Mischglas.', 'rod', 'mix'),
+    fill: step('fill-chamber', 4, 'chamber', 'Laufmittel in die DC-Kammer gießen',
+      'Wähle das Mischglas aus und halte es zum Gießen über die offene Kammer, bis das Laufmittel 5 mm hoch steht.', 'pour', 'chamber', 'hold'),
+    closePrep: step('close-preparation', 5, 'chamber', 'Den Glasdeckel aufsetzen',
+      'Wähle die Hand aus und schließe den Glasdeckel.', 'hand', 'lid'),
+    cut: step('cut-leaves', 9, 'extract', 'Die Blätter klein schneiden',
+      'Wähle die Schere aus und fahre über die Petersilienblätter!', 'scissors', 'leaves', 'gesture'),
+    leaves: step('transfer-leaves', 10, 'extract', 'Die Blattstücke in den Mörser geben',
+      'Wähle die Blattstücke aus und gib sie in den Mörser.', 'leaves', 'mortar'),
+    chalk: step('add-chalk', 11, 'extract', 'Einen Spatel Calciumcarbonat zugeben',
+      'Wähle Calciumcarbonat aus und gib einen Spatel in den Mörser.', 'chalk', 'mortar'),
+    loadPipette: step('load-pipette', 15, 'extract', 'Laufmittel mit der Pipette aufnehmen',
+      'Wähle die Pipette aus und nimm Laufmittel aus dem Mischglas auf.', 'pipette', 'mix'),
+    addSolvent: step('add-extraction-solvent', 16, 'extract', 'Laufmittel zu den Blattstücken geben',
+      'Gib das Laufmittel aus der Pipette zu den Blattstücken im Mörser.', 'pipette', 'mortar'),
+    grind: step('grind-extract', 17, 'extract', 'Die Blattstücke kräftig zerreiben',
+      'Wähle den Pistill aus und zerreibe die Blattstücke mit kreisenden Bewegungen, bis der Extrakt dunkelgrün ist.', 'pestle', 'mortar', 'gesture'),
+    left: step('mark-left', 18, 'marks', 'Die linke Startmarkierung setzen',
+      'Wähle den Bleistift aus und setze am linken Folienrand eine kurze Markierung 15 mm über der Unterkante.', 'pencil', 'markLeft'),
+    right: step('mark-right', 19, 'marks', 'Die rechte Startmarkierung setzen',
+      'Setze rechts eine zweite Randmarkierung auf gleicher Höhe, ohne die Markierungen zu verbinden.', 'pencil', 'markRight'),
+    openInsert: step('open-for-insertion', 29, 'develop', 'Die vorbereitete DC-Kammer öffnen',
+      'Wähle die Hand aus und öffne den Glasdeckel.', 'hand', 'lid'),
+    gripInsert: step('grip-for-insertion', 30, 'develop', 'Die trockene Folie mit der Pinzette greifen',
+      'Wähle die Pinzette aus und greife die trockene Folie am oberen Rand.', 'forceps', 'plate'),
+    insert: step('insert-plate', 31, 'develop', 'Die Folie in die DC-Kammer stellen',
+      'Führe die Folie mit der Pinzette in die offene Kammer; die Auftragsspur bleibt über dem Laufmittel.', 'forceps', 'chamber'),
+    closeRun: step('close-for-development', 32, 'develop', 'Den Kammerdeckel sofort schließen',
+      'Wähle die Hand aus und verschließe die Kammer sofort.', 'hand', 'lid'),
+    wait: step('wait-for-development', 33, 'wait', 'Die Kammer 20 Minuten stehen lassen',
+      'Lass die geschlossene Kammer 20 Minuten ruhig stehen und bearbeite inzwischen deine Aufgaben außerhalb der Website.', null, 'chamber', 'wait'),
+    openFinish: step('open-for-removal', 34, 'finish', 'Nach dem Lauf den Deckel öffnen',
+      'Wähle nach Ablauf der 20 Minuten die Hand aus und öffne den Glasdeckel.', 'hand', 'lid'),
+    remove: step('remove-plate', 35, 'finish', 'Die Folie aus der Kammer nehmen',
+      'Wähle die Pinzette aus und hebe die Folie aus der Kammer.', 'forceps', 'chamber'),
+    front: step('mark-solvent-front', 36, 'finish', 'Die Laufmittelfront sofort markieren',
+      'Wähle den Bleistift aus und markiere sofort die obere Grenze des feuchten Bereichs.', 'pencil', 'markFront'),
+    closeFinish: step('close-after-removal', 37, 'finish', 'Die DC-Kammer wieder verschließen',
+      'Wähle die Hand aus und schließe den Glasdeckel.', 'hand', 'lid'),
+    gripFinish: step('grip-for-drying', 38, 'finish', 'Die markierte Folie greifen',
+      'Wähle die Pinzette aus und greife die markierte Folie am oberen Rand.', 'forceps', 'plate'),
+    place: step('place-on-lid', 39, 'finish', 'Die Folie zum Trocknen ablegen',
+      'Lege die Folie mit der Pinzette zum Trocknen auf den geschlossenen Kammerdeckel.', 'forceps', 'lid'),
+    done: step('completed', 39, 'finish', 'Der Versuch ist abgeschlossen',
+      'Vergrößere die Folie zum Abmessen und beachte die Entsorgungshinweise.', 'ruler', null, 'done')
+  };
+
+  function next(state, options = {}) {
+    const pipetteLoaded = options.pipetteLoaded === true;
+    const foilHeld = options.foilHeld === true;
+    const now = Number.isFinite(options.now) ? options.now : Date.now();
+    const s = state;
+    const result = value => ({ ...value });
+
+    // Once development starts, no preparation step can be suggested again.
+    if (s.plateOnLid) return result(steps.done);
+    if (s.removedAt !== null) {
+      if (!s.frontMarked) return result(steps.front);
+      if (!s.chamberClosed) return result(steps.closeFinish);
+      return result(foilHeld ? steps.place : steps.gripFinish);
+    }
+    if (s.startedAt !== null) {
+      const duration = root.DCModel ? root.DCModel.DURATION_MS : 20 * 60 * 1000;
+      const elapsed = Math.max(0, now - s.startedAt);
+      if (elapsed < duration) return result(s.chamberClosed ? steps.wait : steps.closeRun);
+      return result(s.chamberClosed ? steps.openFinish : steps.remove);
+    }
+
+    if (s.heptane < 9) return result(steps.heptane);
+    if (s.alcohol < 1) return result(steps.alcohol);
+    if (!s.mixed) return result(steps.mix);
+    if (!s.chamberSolvent) return result(steps.fill);
+    if (!s.saturated) {
+      if (!s.chamberClosed) return result(steps.closePrep);
+      const n = s.swirls + 1;
+      return step('swirl-' + n, 5 + n, 'chamber', 'Die geschlossene Kammer schwenken · ' + n + ' von 3',
+        'Wähle die Hand aus und bewege die geschlossene Kammer vorsichtig seitlich hin und zurück.', 'hand', 'chamber', 'gesture');
+    }
+    // If the lid was opened early, close it while the remaining preparation proceeds.
+    if (!s.chamberClosed && (s.coats < 3 || s.wet)) return result(steps.closePrep);
+    if (s.leavesCut < 8) return result(steps.cut);
+    if (!s.leavesInMortar) return result(steps.leaves);
+    if (s.chalk < 1) return result(steps.chalk);
+    if (s.sand < 3) {
+      const n = s.sand + 1;
+      return step('sand-' + n, 11 + n, 'extract', 'Quarzsand zugeben · Spatel ' + n + ' von 3',
+        'Wähle Quarzsand aus und gib einen Spatel in den Mörser.', 'sand', 'mortar');
+    }
+    if (!s.extractSolvent) return result(pipetteLoaded ? steps.addSolvent : steps.loadPipette);
+    if (s.grind < 100) return result(steps.grind);
+    if (!s.marks.left) return result(steps.left);
+    if (!s.marks.right) return result(steps.right);
+
+    if (s.wet) {
+      const n = s.coats;
+      return step('dry-' + n, 19 + n * 3, 'coating', 'Auftrag ' + n + ' von 3 vollständig trocknen',
+        'Wähle den Föhn aus und trockne die Auftragsspur vollständig.', 'dryer', 'plate', 'hold');
+    }
+    if (s.coats < 3) {
+      const n = s.coats + 1;
+      if (!s.capillaryLoaded) return step('load-capillary-' + n, 17 + n * 3, 'coating', 'Die Kapillare für Auftrag ' + n + ' von 3 füllen',
+        'Wähle die Kapillare aus und fülle sie am Blattauszug im Mörser.', 'capillary', 'mortar');
+      return step('apply-' + n, 18 + n * 3, 'coating', 'Eine schmale Spur auftragen · ' + n + ' von 3',
+        'Ziehe mit der gefüllten Kapillare eine schmale Spur auf Höhe der Randmarkierungen, mit 10 mm Abstand zu beiden Seiten.', 'capillary', 'plate', 'gesture');
+    }
+    if (s.chamberClosed) return result(steps.openInsert);
+    return result(foilHeld ? steps.insert : steps.gripInsert);
+  }
+
+  const api = { next, TOTAL };
+  root.DCGuide = api;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+/* Transient liquid and tool visuals; all coordinates use the bench viewBox. */
+(function () {
+  'use strict';
+  const finite = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
+  const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, finite(value)));
+  const n = value => Math.round(value * 100) / 100;
+  const defs = `<defs>
+    <linearGradient id="dc-flow-glass" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#f8fffb" stop-opacity=".9"/><stop offset=".2" stop-color="#c1d3cc" stop-opacity=".55"/><stop offset=".52" stop-color="#fcfff9" stop-opacity=".88"/><stop offset="1" stop-color="#8eaaa1" stop-opacity=".65"/></linearGradient>
+    <linearGradient id="dc-flow-water" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#a0bbb6" stop-opacity=".7"/><stop offset=".38" stop-color="#fafffd" stop-opacity=".97"/><stop offset="1" stop-color="#71948e" stop-opacity=".75"/></linearGradient>
+    <linearGradient id="dc-flow-rubber" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#627d72"/><stop offset=".38" stop-color="#8b9d8f"/><stop offset="1" stop-color="#4b685d"/></linearGradient>
+  </defs>`;
+
+  function bottle(tool, progress) {
+    const label = tool === 'heptane' ? 'n-Heptan' : 'Propan-2-ol';
+    const fillY = -43 + progress * 20;
+    return `<g transform="translate(106 60) rotate(-42)">
+      <path d="M-6-2V-15L-16-23V-59Q-16-64-11-64H11Q16-64 16-59V-23L6-15V-2Z" fill="url(#dc-flow-glass)" stroke="#809d91" stroke-width="1.2"/>
+      <path d="M-13 ${n(fillY)}H13V-24L4-16H-4L-13-24Z" fill="#d5e4d7" fill-opacity=".62"/>
+      <path d="M-10-57V-27M10-56V-29" stroke="#fffef7" stroke-width="2.4" opacity=".84" stroke-linecap="round"/>
+      <rect x="-14" y="-50" width="28" height="19" rx="1.5" fill="#f5f3e8" stroke="#bdc5b2" stroke-width=".6"/>
+      <path d="M-10-45H10M-10-35H10" stroke="#9bad8c" stroke-width=".65"/>
+      <text x="0" y="-39" fill="#4f6758" text-anchor="middle" font-family="Arial,sans-serif" font-size="${tool === 'heptane' ? 5.8 : 4.6}">${label}</text>
+      <path d="M-6-12H6M-6-8H6M-6-4H6" stroke="#819d91" stroke-width=".9"/>
+      <ellipse cy="-1" rx="5.5" ry="1.8" fill="#c1d0c4" stroke="#789489" stroke-width=".8"/>
+    </g>`;
+  }
+
+  // Solve a horizontal free surface in the rotated vessel. The filled polygon
+  // remains inside the glass, and its area decreases with the poured quantity.
+  const beakerInterior = [[-94, 6], [-88, 105], [-81, 113], [-36, 113], [-28, 105], [-20, 10], [-13, 6]];
+  function polygonArea(points) {
+    return Math.abs(points.reduce((sum, point, i) => {
+      const next = points[(i + 1) % points.length];
+      return sum + point[0] * next[1] - next[0] * point[1];
+    }, 0)) / 2;
+  }
+  function belowSurface(points, level) {
+    const result = [];
+    for (let i = 0; i < points.length; i++) {
+      const a = points[i], b = points[(i + 1) % points.length];
+      const aInside = a[1] >= level, bInside = b[1] >= level;
+      if (aInside) result.push(a);
+      if (aInside !== bInside) {
+        const t = (level - a[1]) / (b[1] - a[1]);
+        result.push([a[0] + t * (b[0] - a[0]), level]);
+      }
+    }
+    return result;
+  }
+  function beakerLiquid(angle, progress) {
+    const radians = angle * Math.PI / 180, c = Math.cos(radians), s = Math.sin(radians);
+    const world = beakerInterior.map(([x, y]) => [x * c - y * s, x * s + y * c]);
+    const target = polygonArea(world) * .62 * (1 - .9 * progress);
+    let low = Math.min(...world.map(p => p[1])), high = Math.max(...world.map(p => p[1]));
+    for (let i = 0; i < 28; i++) {
+      const level = (low + high) / 2;
+      if (polygonArea(belowSurface(world, level)) > target) low = level;
+      else high = level;
+    }
+    const level = (low + high) / 2, liquid = belowSurface(world, level);
+    const local = ([x, y]) => [x * c + y * s, -x * s + y * c];
+    const path = liquid.map((p, i) => {const [x,y]=local(p);return (i ? 'L' : 'M') + n(x) + ' ' + n(y);}).join('') + 'Z';
+    const ends = liquid.filter(p => Math.abs(p[1] - level) < .0001).sort((a,b) => a[0] - b[0]);
+    let surface = '';
+    if (ends.length >= 2) {
+      const left = local(ends[0]), right = local(ends[ends.length - 1]);
+      surface = 'M' + n(left[0]) + ' ' + n(left[1]) + 'L' + n(right[0]) + ' ' + n(right[1]);
+    }
+    return {path, surface};
+  }
+
+  function pouringBeaker(progress, x = 752, y = 92, angle = 50) {
+    const liquid = beakerLiquid(angle, progress);
+    return `<g class="dc-carried-beaker" data-dc-spout="${n(x)},${n(y)}" transform="translate(${n(x)} ${n(y)}) rotate(${n(angle)})">
+      <path d="M-100 0L-94 108Q-92 120-58 120Q-24 120-22 108L-14 8L0 0L-21 2Q-58-6-91 0Z" fill="url(#dc-flow-glass)" stroke="#8ca599" stroke-width="1.4"/>
+      <path data-dc-beaker-liquid="body" d="${liquid.path}" fill="#c5d8bc" fill-opacity=".73"/>
+      <path data-dc-beaker-liquid="surface" d="${liquid.surface}" fill="none" stroke="#8cae99" stroke-width="1.4" stroke-opacity=".8"/>
+      <path d="M-91 11L-85 102M-29 15L-34 102" stroke="#fffef8" stroke-width="3" opacity=".88"/>
+      <path d="M-95 2Q-60 11-21 5L0 0" fill="none" stroke="#698f83" stroke-width="1.4"/>
+      <path d="M-91 110Q-59 123-25 110" fill="none" stroke="#b3c7b7" stroke-width="3"/>
+      <path d="M-46 25h16m-16 18h11m-11 18h16m-16 18h11m-11 18h16" stroke="#819c8e" stroke-width="1"/>
+      <text x="-48" y="20" fill="#688576" font-size="8" font-family="Arial,sans-serif">10 mL</text>
+      <path d="M-13 7L0 0" fill="none" stroke="#fffef9" stroke-width="2" stroke-linecap="round"/>
+    </g>`;
+  }
+
+  function renderBeaker(pose = {}) {
+    const x = finite(pose.x, 752), y = finite(pose.y, 92);
+    const angle = clamp(finite(pose.angle, 50), 15, 65), progress = clamp(pose.progress);
+    return `<g class="dc-beaker-preview" pointer-events="none" aria-hidden="true">${defs}${pouringBeaker(progress,x,y,angle)}</g>`;
+  }
+
+  function pipette(progress) {
+    return `<g transform="translate(180 275) rotate(24)">
+      <path d="M-2 0L-3-29Q-8-33-8-42V-59Q-8-65-3-66H3Q8-65 8-59V-42Q8-33 3-29L2 0Z" fill="url(#dc-flow-glass)" stroke="#809f93" stroke-width="1"/>
+      <path d="M-5 ${n(-53 + progress * 20)}H5V-42Q5-35 1-31L.8-2H-.8L-1-31Q-5-35-5-42Z" fill="#a7c1b1" fill-opacity=".64"/>
+      <path d="M-4-59V-42M-1-28V-7" fill="none" stroke="#fffffa" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M-8-61V-76Q-8-86 0-86Q8-86 8-76V-61Z" fill="url(#dc-flow-rubber)" stroke="#587365" stroke-width=".9"/>
+      <path d="M-4-77Q-4-81-1-82" stroke="#c7d4be" stroke-opacity=".6" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      <ellipse cy="0" rx="1.9" ry=".8" fill="#87a299"/>
+    </g>`;
+  }
+
+  function fallingDrops(x, top, bottom, elapsed, stream) {
+    const period = stream ? 115 : 205;
+    const travel = stream ? 620 : x === 180 ? 355 : 470;
+    const last = Math.floor(elapsed / period);
+    let markup = '';
+    // Only the few visible drops are rendered, regardless of total running time.
+    for (let i = Math.max(0, last - Math.ceil((travel + 380) / period)); i <= last; i++) {
+      const age = elapsed - i * period;
+      if (age < travel) {
+        const t = age / travel;
+        const y = top + (bottom - top) * (.13 * t + .87 * t * t);
+        const rx = stream ? 2.3 : 3.6;
+        const ry = stream ? 5.5 + t * 4 : 4 + t * 2.8;
+        const dx = stream ? Math.sin(i * 1.8) * .55 : Math.sin(i * 2.4) * .35;
+        markup += `<g transform="translate(${n(x + dx)} ${n(y)})"><path d="M0 ${n(-ry)}C${n(-rx*.55)} ${n(-ry*.45)} ${n(-rx)} ${n(-ry*.1)} ${n(-rx)} ${n(ry*.3)}C${n(-rx)} ${n(ry*1.1)} ${n(rx)} ${n(ry*1.1)} ${n(rx)} ${n(ry*.3)}C${n(rx)} ${n(-ry*.1)} ${n(rx*.55)} ${n(-ry*.45)} 0 ${n(-ry)}Z" fill="url(#dc-flow-water)" stroke="#789a92" stroke-width=".7"/><path d="M${n(-rx*.4)} ${n(-ry*.16)}q-1 ${n(ry*.3)} 0 ${n(ry*.5)}" stroke="#fff" stroke-opacity=".94" stroke-width="1.1" stroke-linecap="round" fill="none"/></g>`;
+      } else if (age < travel + 380) {
+        const t = (age - travel) / 380;
+        markup += `<ellipse cx="${x}" cy="${n(bottom)}" rx="${n(3 + t * (stream ? 13 : 17))}" ry="${n(1.2 + t * 3)}" fill="none" stroke="#72968b" stroke-width="${n(.9 - t*.35)}" opacity="${n((1-t)*.56)}"/><ellipse cx="${x}" cy="${n(bottom-.7)}" rx="${n(1+t*7)}" ry="${n(.6+t*1.3)}" fill="none" stroke="#fffef5" stroke-width=".8" opacity="${n((1-t)*.8)}"/>`;
+      }
+    }
+    const forming = (elapsed % period) / period;
+    markup += `<ellipse cx="${x}" cy="${n(top-4+forming*2)}" rx="${n(1+forming*1.5)}" ry="${n(1.1+forming*2.5)}" fill="url(#dc-flow-water)" stroke="#8da79c" stroke-width=".6"/>`;
+    return markup;
+  }
+
+  function render(flow) {
+    if (!flow || !['heptane','alcohol','pour','pipette'].includes(flow.tool)) return '';
+    const elapsed = Math.max(0, finite(flow.elapsedMs));
+    const progress = clamp(flow.progress);
+    const pouring = flow.tool === 'pour', pipetting = flow.tool === 'pipette';
+    const x = pouring ? finite(flow.anchor?.x, 752) : pipetting ? 180 : 106;
+    const y = pouring ? finite(flow.anchor?.y, 92) : 0;
+    const top = pouring ? y + 4 : pipetting ? 279 : 64;
+    const surface = pouring ? clamp(finite(flow.surfaceY, 430), 415, 430) : pipetting ? 341 : clamp(finite(flow.surfaceY, 210), 133, 210);
+    const tool = pouring ? pouringBeaker(progress,x,y,clamp(finite(flow.angle,50),15,65)) : pipetting ? pipette(progress) : bottle(flow.tool, progress);
+    const end = Math.max(y + 2, Math.min(surface, y + 40));
+    const stream = pouring ? `<path d="M${n(x)} ${n(y+2)}Q${n(x-.8)} ${n((y+2+end)/2)} ${n(x)} ${n(end)}" fill="none" stroke="#89a89d" stroke-width="2.1" stroke-linecap="round" opacity=".6"/><path d="M${n(x+.4)} ${n(y+3)}V${n(end-2)}" fill="none" stroke="#fffef8" stroke-width=".8" opacity=".88"/>` : '';
+    return `<g class="dc-liquid-flow" data-flow-tool="${flow.tool}" pointer-events="none" aria-hidden="true">${defs}${fallingDrops(x,top,surface,elapsed,pouring)}${stream}${tool}</g>`;
+  }
+
+  globalThis.DCLiquid = Object.freeze({ render, renderBeaker });
+  if (typeof module !== 'undefined' && module.exports) module.exports = globalThis.DCLiquid;
+})();
+
+</script>
+<script>
+/* Touch-tolerant capillary strokes. Pure geometry; no experiment-state changes. */
+(function (root) {
+  'use strict';
+  const BASELINE = 390, LEFT = 475, RIGHT = 555;
+  const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+  const pointOK = p => !!p && Number.isFinite(p.x) && Number.isFinite(p.y);
+  const num = n => Math.round(n * 100) / 100;
+  function create(point, options = {}) {
+    if (!pointOK(point)) return null;
+    const scale = Number.isFinite(options.scale) && options.scale > 0 ? options.scale : 1;
+    // A 22-screen-pixel corridor remains usable when the whole bench is fitted.
+    const tolerance = clamp(22 / scale, 22, 55);
+    if (point.x < 425 || point.x > 605 || Math.abs(point.y - BASELINE) > tolerance) return null;
+    return {
+      start: { ...point }, last: { ...point }, tolerance,
+      pointerType: options.pointerType || 'mouse',
+      intervals: [], minX: null, maxX: null,
+      distance: 0, maxDeviation: Math.abs(point.y - BASELINE),
+      minY: point.y, maxY: point.y, invalid: false,
+      tipX: clamp(point.x, LEFT, RIGHT)
+    };
+  }
+  // Clip actual movement to the permitted lane; being near it without crossing
+  // it does not create coverage. This also handles sparsely sampled drags.
+  function clippedSegment(a, b, tolerance) {
+    let lo = 0, hi = 1;
+    const dx = b.x - a.x, dy = b.y - a.y;
+    for (const [p, q] of [[-dx, a.x - LEFT], [dx, RIGHT - a.x], [-dy, a.y - (BASELINE - tolerance)], [dy, BASELINE + tolerance - a.y]]) {
+      if (p === 0) { if (q < 0) return null; continue; }
+      const t = q / p;
+      if (p < 0) lo = Math.max(lo, t); else hi = Math.min(hi, t);
+      if (lo > hi) return null;
+    }
+    const x1 = clamp(a.x + lo * dx, LEFT, RIGHT), x2 = clamp(a.x + hi * dx, LEFT, RIGHT);
+    return Math.abs(x2 - x1) > .01 ? [Math.min(x1, x2), Math.max(x1, x2)] : null;
+  }
+  function merge(intervals) {
+    const merged = [];
+    for (const range of intervals.slice().sort((a, b) => a[0] - b[0])) {
+      const last = merged[merged.length - 1];
+      if (last && range[0] <= last[1] + .5) last[1] = Math.max(last[1], range[1]);
+      else merged.push(range.slice());
+    }
+    return merged;
+  }
+  function move(stroke, point) {
+    if (!stroke || !pointOK(point)) return stroke;
+    const segment = clippedSegment(stroke.last, point, stroke.tolerance);
+    const intervals = segment ? merge([...stroke.intervals, segment]) : stroke.intervals.map(r => r.slice());
+    const minY = Math.min(stroke.minY, point.y), maxY = Math.max(stroke.maxY, point.y);
+    const deviation = Math.max(stroke.maxDeviation, Math.abs(point.y - BASELINE));
+    return {
+      ...stroke, last: { ...point }, intervals,
+      minX: intervals.length ? intervals[0][0] : null,
+      maxX: intervals.length ? intervals[intervals.length - 1][1] : null,
+      distance: stroke.distance + Math.hypot(point.x - stroke.last.x, point.y - stroke.last.y),
+      maxDeviation: deviation, minY, maxY,
+      invalid: stroke.invalid || deviation > stroke.tolerance * 1.5 || maxY - minY > Math.max(50, stroke.tolerance * 1.5),
+      tipX: clamp(point.x, LEFT, RIGHT)
+    };
+  }
+  function finish(stroke) {
+    if (!stroke) return { ok: false, message: 'Setze die gefüllte Kapillare auf Höhe der beiden Randmarkierungen an.' };
+    if (stroke.invalid) return { ok: false, message: 'Führe die Kapillare möglichst waagerecht auf Höhe der Randmarkierungen. Probiere die Spur noch einmal.' };
+    const longest = stroke.intervals.reduce((m, [a, b]) => Math.max(m, b - a), 0);
+    if (longest < 55 || stroke.distance < 55) return { ok: false, message: 'Ziehe die Kapillare noch weiter waagerecht über den mittleren Bereich der Folie. Die grüne Spur zeigt dir den Auftrag.' };
+    return { ok: true, message: 'Die schmale Auftragsspur ist aufgetragen. Lass sie jetzt trocknen.' };
+  }
+  function render(stroke) {
+    if (!stroke) return '';
+    const lines = stroke.intervals.map(([a, b]) => `<path d="M${num(a)} ${BASELINE}H${num(b)}" fill="none" stroke="#254c2c" stroke-width="2.7" stroke-linecap="round"/>`).join('');
+    const x = num(stroke.tipX);
+    return `<g class="dc-stroke-preview" pointer-events="none" aria-hidden="true">${lines}<circle cx="${x}" cy="${BASELINE}" r="4.5" fill="#426734" fill-opacity=".2" stroke="#315b35" stroke-width="1"/><path d="M${x} ${BASELINE}l18-42" stroke="#537b68" stroke-width="3.8" stroke-linecap="round"/><path d="M${x} ${BASELINE - 1}l18-42" stroke="#f8fff4" stroke-width="1.4" stroke-linecap="round"/></g>`;
+  }
+  const api = Object.freeze({ create, move, finish, render });
+  root.DCStroke = api;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(globalThis);
+
+</script>
+<script>
+/* Pointer-driven chamber rocking. Coordinates are in the 1100 × 600 bench. */
+(function (root) {
+  'use strict';
+  const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+  const pointOK = p => !!p && Number.isFinite(p.x) && Number.isFinite(p.y);
+  const MIN_OUTWARD = 38, MIN_RETURN = 28, MIN_TRAVEL = 75;
+
+  function createSwirl(point) {
+    if (!pointOK(point)) return null;
+    return {
+      start: { ...point }, last: { ...point },
+      originX: point.x, extremeX: point.x, direction: 0,
+      angle: 0, offsetX: 0, slosh: 0, counts: 0
+    };
+  }
+
+  function moveSwirl(gesture, point) {
+    if (!gesture || !pointOK(point)) return gesture;
+    let { originX, extremeX, direction, counts } = gesture;
+    const fromOrigin = point.x - originX;
+
+    // A short tap or tremor does not establish a deliberate direction.
+    if (!direction && Math.abs(fromOrigin) >= 8) {
+      direction = Math.sign(fromOrigin);
+      extremeX = point.x;
+    } else if (direction) {
+      if ((point.x - extremeX) * direction > 0) extremeX = point.x;
+      const outward = (extremeX - originX) * direction;
+      const returned = (extremeX - point.x) * direction;
+      if (outward >= MIN_OUTWARD && returned >= MIN_RETURN && outward + returned >= MIN_TRAVEL) {
+        counts = Math.min(3, counts + 1);
+        // The return is part of this excursion, not the start of another count.
+        originX = point.x;
+        extremeX = point.x;
+        direction = 0;
+      } else if (outward < MIN_OUTWARD && fromOrigin * direction < 0) {
+        // Ignore an initial small wrong-way movement and follow the actual drag.
+        direction = Math.abs(fromOrigin) >= 8 ? Math.sign(fromOrigin) : 0;
+        extremeX = point.x;
+      }
+    }
+
+    const displacement = point.x - gesture.start.x;
+    const delta = point.x - gesture.last.x;
+    return {
+      ...gesture, last: { ...point }, originX, extremeX, direction, counts,
+      angle: clamp(displacement * .12, -8, 8),
+      offsetX: clamp(displacement * .22, -18, 18),
+      slosh: clamp(delta * .13, -8, 8)
+    };
+  }
+
+  const api = Object.freeze({ createSwirl, moveSwirl });
+  root.DCMotion = api;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(globalThis);
+
+</script>
+<script>
+/* Enlarged foil with a manually positioned millimetre ruler. No measured values are computed. */
+(function(root){
+ 'use strict';
+ const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+ const view=$('dc-measure-viewport'),canvas=$('dc-measure-canvas'),dialog=$('dc-measure');
+ let zoom=1,position={x:610,y:130},drag=null,frame=null;
+ function rulerMarkup(){
+  let ticks='';for(let mm=0;mm<=80;mm++){const y=320-mm*4;
+   ticks+='<path d="M0 '+y+'h'+(mm%10===0?18:mm%5===0?12:6)+'" stroke="#665b2d" stroke-width=".7"/>';
+   if(mm%10===0)ticks+='<text x="22" y="'+(y+3)+'" font-size="9" fill="#564b26">'+mm+'</text>';
+  }
+  return '<title>Millimeterlineal verschieben. Pfeiltasten: 1 mm; Umschalt und Pfeiltasten: 10 mm.</title><rect class="dc-detail-ruler-body" x="-2" y="-8" width="50" height="344" rx="2" fill="#eed682" fill-opacity=".68" stroke="#b39a49" stroke-width=".8"/>'+ticks+'<text x="21" y="332" font-size="8" fill="#564b26">mm</text>';
+ }
+ function paint(){frame=null;const ruler=$('dc-detail-ruler');if(ruler)ruler.setAttribute('transform','translate('+position.x+' '+position.y+')');}
+ function schedule(){if(frame===null)frame=requestAnimationFrame(paint);}
+ function localPoint(e){const svg=canvas.querySelector('svg'),matrix=svg?.getScreenCTM();if(!matrix)return null;try{const point=svg.createSVGPoint();point.x=e.clientX;point.y=e.clientY;return point.matrixTransform(matrix.inverse());}catch(_){return null;}}
+ function cancel(){if(drag){const ruler=$('dc-detail-ruler');try{if(ruler?.hasPointerCapture(drag.id))ruler.releasePointerCapture(drag.id);}catch(_){}drag=null;}if(frame!==null)cancelAnimationFrame(frame);frame=null;paint();}
+ function move(x,y){position={x:Math.max(380,Math.min(640,x)),y:Math.max(-210,Math.min(440,y))};schedule();}
+ function setZoom(next){
+  cancel();const old=zoom;zoom=Math.max(1,Math.min(2.5,next));
+  const cx=view.scrollLeft+view.clientWidth/2,cy=view.scrollTop+view.clientHeight/2;
+  canvas.style.width=(zoom*100)+'%';canvas.style.height=(zoom*100)+'%';
+  $('dc-measure-scale').textContent=Math.round(zoom*100)+' %';$('dc-measure-minus').disabled=zoom===1;$('dc-measure-plus').disabled=zoom===2.5;
+  view.scrollLeft=Math.max(0,cx*zoom/old-view.clientWidth/2);view.scrollTop=Math.max(0,cy*zoom/old-view.clientHeight/2);
+ }
+ function show(state,timing){
+  cancel();canvas.innerHTML=DCScene.renderPlateDetail(state,timing);const svg=canvas.querySelector('svg');
+  const ruler=document.createElementNS(NS,'g');ruler.id='dc-detail-ruler';ruler.setAttribute('tabindex','0');ruler.setAttribute('role','group');ruler.setAttribute('aria-label','Verschiebbares Millimeterlineal');ruler.innerHTML=rulerMarkup();svg.appendChild(ruler);
+  position={x:610,y:130};paint();setZoom(1);view.scrollTo(0,0);
+ }
+ canvas.addEventListener('pointerdown',e=>{const ruler=e.target.closest('#dc-detail-ruler');if(!ruler||e.button>0)return;const p=localPoint(e);if(!p)return;e.preventDefault();e.stopPropagation();drag={id:e.pointerId,dx:p.x-position.x,dy:p.y-position.y};ruler.focus({preventScroll:true});ruler.setPointerCapture(e.pointerId);});
+ canvas.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const p=localPoint(e);if(!p)return;e.preventDefault();e.stopPropagation();move(p.x-drag.dx,p.y-drag.dy);});
+ canvas.addEventListener('pointerup',e=>{if(drag&&e.pointerId===drag.id){e.stopPropagation();cancel();}});
+ canvas.addEventListener('pointercancel',cancel);canvas.addEventListener('lostpointercapture',cancel);
+ canvas.addEventListener('keydown',e=>{if(!e.target.closest('#dc-detail-ruler'))return;const delta=e.shiftKey?40:4,directions={ArrowLeft:[-delta,0],ArrowRight:[delta,0],ArrowUp:[0,-delta],ArrowDown:[0,delta]};if(!directions[e.key])return;e.preventDefault();const [x,y]=directions[e.key];move(position.x+x,position.y+y);});
+ $('dc-measure-minus').addEventListener('click',()=>setZoom(zoom-.5));$('dc-measure-plus').addEventListener('click',()=>setZoom(zoom+.5));
+ $('dc-measure-ruler-reset').addEventListener('click',()=>{cancel();position={x:610,y:130};paint();setZoom(1);view.scrollTo(0,0);});
+ dialog.addEventListener('close',cancel);dialog.addEventListener('cancel',cancel);window.addEventListener('blur',cancel);window.addEventListener('resize',cancel);
+ root.DCMeasure=Object.freeze({show});
+})(globalThis);
+
+</script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id), M=globalThis.DCModel, KEY='fotosyntheselabor.petersilie.dc.v1';
+let state=M.createState(), selected=null, pipetteLoaded=false, foilHeld=false, activeGesture=null, holdTimer=null, toolDrag=null, suppressToolClick=false, rulerDrag=null, rulerPosition=null, completedAnnounced=false, storageAvailable=true, guideSignature=null, targetsSignature='';
+try{const saved=localStorage.getItem(KEY);if(saved)state=M.restore(saved);}catch(_){storageAvailable=false;}
+const paths={
+ bottle:'M9 3h6v5l4 5v15H5V13l4-5ZM9 3v5h6V3M5 18h14',
+ rod:'m7 27 12-24 3 2-12 24Z',
+ beaker:'M6 4h17M8 4v20q0 4 4 4h8q4 0 4-4V4M8 19h16M10 10h3m-3 4h3m-3 8h3',
+ scissors:'M12 18 25 5M17 18 5 5M12 18a5 5 0 1 1-5-3Zm5 0a5 5 0 1 0 5-3Z',
+ leaf:'M5 25C1 10 9 3 27 4c1 17-7 25-22 21ZM5 25 23 8m-12 9-1-6m7 1 7 1',
+ spatula:'m7 27 13-17 5-6q4-2 3 2l-4 7-15 16ZM9 24l3 3',
+ pipette:'m10 28 4-12-2-3 8-9q4-3 7 1t-1 7l-10 6-4 10ZM15 16l3 2',
+ pestle:'M7 8q-2-4 1-5t5 2l13 20q3 5-2 6t-6-3Z',
+ pencil:'m5 27 4-8L23 3l5 4-15 17Zm4-8 4 5M5 27l4-2',
+ capillary:'m8 28 14-25 2 1-14 25Z',
+ dryer:'M4 7h16q8 0 8 7t-8 7H4ZM13 21l4 9h7l-4-9M4 10H1m3 5H1m3 4H1',
+ forceps:'M22 3 6 27m16-24 4 27M22 3q-7-1-7 5',
+ hand:'M8 16V9q0-4 3-2V4q3-3 4 1v1q4-3 4 2v2q4-2 4 2v12q-1 6-8 6-5-1-7-6l-4-6q0-4 4-2Z',
+ ruler:'M5 2h20v28H5ZM5 7h9m-9 5h5m-5 5h9m-9 5h5m-5 5h9'
+};
+function icon(name){return '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="'+paths[name]+'"/></svg>';}
+const tools=[
+ ['heptane','n-Heptan','9 mL','bottle',0,'Halte die Flasche am Mischglas, bis 9 mL abgemessen sind.'],
+ ['alcohol','Propan-2-ol','1 mL','bottle',0,'Halte die Flasche am Mischglas, bis 1 mL abgemessen ist.'],
+ ['rod','Glasstab','Mischen','rod',1,'Rühre die beiden Flüssigkeiten im Mischglas zusammen.'],
+ ['pour','Mischglas','Eingießen','beaker',1,'Gieße das gemischte Laufmittel in die offene DC-Kammer. Halte den Finger dort bis zur 5-mm-Markierung.'],
+ ['scissors','Schere','Zerkleinern','scissors',1,'Schneide die Blätter: über das Blattmaterial streichen, wiederholt antippen oder die Schaltfläche gedrückt halten.'],
+ ['leaves','Petersilie','Blattstücke überführen','leaf',0,'Gib die fertig zerkleinerten Petersilienblätter in den Mörser.'],
+ ['chalk','Calciumcarbonat','1 Spatel','spatula',0,'Gib einen Spatel Calciumcarbonat zu den Blattstücken.'],
+ ['sand','Quarzsand','3 Spatel','spatula',0,'Gib nacheinander drei Spatel Quarzsand in den Mörser. Jeder Handgriff fügt einen Spatel hinzu.'],
+ ['pipette','Pipette','Laufmittel','pipette',1,'Nimm zuerst Laufmittel am Mischglas auf. Gib es anschließend in den Mörser.'],
+ ['pestle','Pistill','Zerreiben','pestle',1,'Reibe mit dem Finger im Mörser in kleinen Kreisen. Alternativ: „Im Mörser reiben“ gedrückt halten.'],
+ ['pencil','Bleistift','Markieren','pencil',1,'Tippe auf die beiden Randpositionen 15 mm über der Unterkante. Nach dem Lauf markierst du damit die Laufmittelfront.'],
+ ['capillary','Kapillare','Extrakt','capillary',1,'Fülle die Kapillare am Mörser. Ziehe danach auf der Folie eine schmale Spur auf Höhe der Randmarkierungen, mit 10 mm Abstand zu beiden Seiten.'],
+ ['dryer','Föhn','Trocknen','dryer',1,'Halte den virtuellen Föhn über die Folie, bis die Auftragsspur trocken ist.'],
+ ['forceps','Pinzette','DC-Folie','forceps',1,'Greife die Folie an ihrem Rand. Stelle sie anschließend in die offene DC-Kammer.'],
+ ['hand','Hand','Deckel & Kammer','hand',1,'Tippe zum Öffnen oder Schließen auf den Glasdeckel. Die geschlossene Kammer kannst du vorsichtig seitlich schwenken.'],
+ ['ruler','Lineal','Abmessen','ruler',1,'Ziehe das Lineal an die DC-Folie. Die Skala ist in Millimetern. Erneutes Antippen legt das Lineal zurück.']
+];
+const groupNames=['Chemikalien','Geräte'];
+const toolMap=Object.fromEntries(tools.map(t=>[t[0],t]));
+const pointerCaptures=new Map(), inventory=document.querySelector('.dc-inventory'), coarsePointer=window.matchMedia('(pointer: coarse)');
+let compactLayoutActive=null, rulerFrame=null, actionPointer=null,toolGroup=0;
+const LIQUID_HOLD_MS=1800;
+let liquidFlow=null,liquidFrame=null;
+let saveTimer=null,continuousFrame=null,continuousType=null,strokeFrame=null,ghostFrame=null,ghostPosition=null,ghostKey='';
+let guideUiSignature='',sceneRevision=0,clockSignature='';
+let chamberPose={angle:0,offsetX:0,slosh:0},chamberTween=null,motionFrame=null;
+let carriedPlate=null,plateFlight=null,beakerPose=null;
+const clampMotion=(n,a,b)=>Math.max(a,Math.min(b,n));
+function paintApparatus(){
+ const stage=$('dc-stage');if($('dc-panel').hidden)return;
+ if(liquidFlow?.tool!=='pour')DCScene.poseChamber(stage,chamberPose);
+ DCScene.posePlate(stage,state,M.timing(state),carriedPlate?{...carriedPlate,held:true}:{held:false});
+ const svg=stage.querySelector('svg');if(!svg)return;
+ const mixing=svg.querySelector('g[data-dc-target="mix"]');if(mixing)mixing.style.opacity=beakerPose?'0':'';
+ let layer=svg.querySelector('.dc-user-beaker-layer');
+ if(!beakerPose||liquidFlow?.tool==='pour'){layer?.remove();return;}
+ if(!layer){layer=document.createElementNS('http://www.w3.org/2000/svg','g');layer.setAttribute('class','dc-user-beaker-layer');layer.setAttribute('pointer-events','none');layer.setAttribute('aria-hidden','true');svg.appendChild(layer);}
+ const signature=beakerPose.angle+'|'+Number(state.chamberSolvent);
+ if(layer.dataset.pose!==signature){layer.dataset.pose=signature;layer.innerHTML=DCLiquid.renderBeaker({x:0,y:0,angle:beakerPose.angle,progress:state.chamberSolvent?1:0});}
+ layer.setAttribute('transform','translate('+beakerPose.x+' '+beakerPose.y+')');
+}
+function scheduleApparatus(){if(motionFrame!==null)return;motionFrame=requestAnimationFrame(()=>{motionFrame=null;paintApparatus();});}
+function resetApparatus(){
+ if(chamberTween!==null)cancelAnimationFrame(chamberTween);chamberTween=null;
+ if(plateFlight!==null)cancelAnimationFrame(plateFlight);plateFlight=null;
+ if(motionFrame!==null)cancelAnimationFrame(motionFrame);motionFrame=null;
+ chamberPose={angle:0,offsetX:0,slosh:0};carriedPlate=null;foilHeld=false;beakerPose=null;
+ paintApparatus();
+}
+function settleChamber(onRest){
+ if(chamberTween!==null)cancelAnimationFrame(chamberTween);
+ const from={...chamberPose},start=performance.now();
+ const tick=now=>{const p=Math.min(1,(now-start)/500),ease=(1-p)**3;chamberPose={angle:from.angle*ease,offsetX:from.offsetX*ease,slosh:(from.slosh+Math.sin(p*Math.PI*3)*2)*(1-p)};paintApparatus();if(p<1)chamberTween=requestAnimationFrame(tick);else{chamberTween=null;if(onRest)onRest();}};
+ chamberTween=requestAnimationFrame(tick);
+}
+function animateSwirl(){
+ if(chamberTween!==null||activeGesture?.kind==='swirl')return;
+ const check=M.act(state,{type:'swirl'});if(!check.ok){feedback(check.message,true);return;}
+ const start=performance.now();hideGhost();feedback('Die geschlossene Kammer wird vorsichtig geschwenkt.');
+ const tick=now=>{const p=Math.min(1,(now-start)/1100),wave=Math.sin(p*Math.PI*2)*Math.sin(p*Math.PI);chamberPose={angle:wave*8,offsetX:wave*14,slosh:Math.sin(p*Math.PI*2-.6)*Math.sin(p*Math.PI)*2};paintApparatus();if(p<1)chamberTween=requestAnimationFrame(tick);else{chamberTween=null;chamberPose={angle:0,offsetX:0,slosh:0};apply('swirl');}};
+ chamberTween=requestAnimationFrame(tick);
+}
+function moveBeaker(point,overChamber=false){
+ if(!point)return;
+ beakerPose=overChamber?{x:clampMotion(point.x,745,954),y:clampMotion(point.y-75,70,112),angle:58}:{x:clampMotion(point.x+20,95,1030),y:clampMotion(point.y-30,75,380),angle:22};
+ if(liquidFlow?.tool==='pour'){liquidFlow.anchor={x:beakerPose.x,y:beakerPose.y};liquidFlow.angle=beakerPose.angle;}
+ scheduleApparatus();
+}
+function gripPlate(target='plate'){
+ if(plateFlight!==null||state.plateOnLid)return false;
+ if(state.plateInChamber){
+  const check=M.act(state,{type:'removePlate'});if(!check.ok){feedback(check.message,true);return false;}
+  if(!apply('removePlate'))return false;carriedPlate={x:844,y:190,scale:.75,angle:0};
+ }else if(!carriedPlate)carriedPlate={x:515,y:118,scale:1,angle:0};
+ foilHeld=true;paintApparatus();renderContext();feedback('Die Folie hängt an der Pinzette. Ziehe sie am oberen Rand zur offenen Kammer.');return true;
+}
+function placeCarriedPlate(target){
+ if(!foilHeld||!carriedPlate)return feedback('Greife die DC-Folie zuerst mit der Pinzette.',true);
+ if(plateFlight!==null)return;
+ const type=target==='lid'?'placeOnLid':'insertPlate',check=M.act(state,{type});
+ if(!check.ok){feedback(check.message,true);return false;}
+ const from={...carriedPlate},to=target==='lid'?{x:850,y:108,scale:.75,angle:0}:{x:844,y:190,scale:.75,angle:0},start=performance.now();
+ feedback(target==='lid'?'Lege die Folie auf dem Deckel ab.':'Senke die Folie vorsichtig in das Laufmittel.');hideGhost();
+ const tick=now=>{const p=Math.min(1,(now-start)/650),ease=p*p*(3-2*p);carriedPlate={x:from.x+(to.x-from.x)*ease,y:from.y+(to.y-from.y)*ease,scale:from.scale+(to.scale-from.scale)*ease,angle:0};paintApparatus();
+  if(p<1)plateFlight=requestAnimationFrame(tick);else{plateFlight=null;carriedPlate=null;foilHeld=false;apply(type);renderContext();}
+ };plateFlight=requestAnimationFrame(tick);return true;
+}
+
+function flushSave(){if(saveTimer!==null)clearTimeout(saveTimer);saveTimer=null;save();}
+function scheduleSave(){if(saveTimer!==null)return;saveTimer=setTimeout(flushSave,400);}
+function flushContinuous(){
+ if(continuousFrame!==null)cancelAnimationFrame(continuousFrame);continuousFrame=null;
+ if(!continuousType)return;const type=continuousType;continuousType=null;
+ if(!$('dc-panel').hidden&&!DCScene.updateContinuous($('dc-stage'),state,type))renderScene();
+}
+function scheduleContinuous(type){continuousType=type;if(continuousFrame===null)continuousFrame=requestAnimationFrame(flushContinuous);}
+function hideGhost(){if(ghostFrame!==null)cancelAnimationFrame(ghostFrame);ghostFrame=null;ghostPosition=null;$('dc-tool-ghost').hidden=true;}
+
+function capturePointer(element,id){try{element.setPointerCapture(id);pointerCaptures.set(id,element);}catch(_){}}
+function cancelGestures(){
+ activeGesture=null;toolDrag=null;rulerDrag=null;actionPointer=null;suppressToolClick=false;stopHold();stopLiquid();paintStroke();
+ for(const [id,element] of pointerCaptures){try{if(element.hasPointerCapture(id))element.releasePointerCapture(id);}catch(_){}}
+ pointerCaptures.clear();resetApparatus();flushContinuous();if(saveTimer!==null)flushSave();hideGhost();
+}
+function scheduleRuler(){if(rulerFrame!==null)return;rulerFrame=requestAnimationFrame(()=>{rulerFrame=null;syncRuler();});}
+function closeDialog(dialog){cancelGestures();if(dialog?.open)dialog.close();scheduleRuler();}
+function openDialog(id){cancelGestures();const dialog=$(id);if(dialog&&!dialog.open)dialog.showModal();}
+function syncCompactLayout(){
+ const compact=!$('dc-panel').hidden&&window.innerWidth>=600&&window.innerHeight>=540&&(window.innerWidth<=1400||coarsePointer.matches);
+ if(compact!==compactLayoutActive){
+  cancelGestures();
+  $('dc-stage-scroll').classList.remove('zoom');$('dc-stage-scroll').scrollTo(0,0);$('dc-zoom').setAttribute('aria-pressed','false');$('dc-zoom').textContent='Vergrößern';
+  document.body.classList.toggle('dc-compact',compact);
+  $('dc-tools').hidden=false;
+  compactLayoutActive=compact;
+ }
+ scheduleRuler();
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(_){storageAvailable=false;}}
+function feedback(text,error=false){$('dc-feedback').textContent=text;$('dc-feedback').classList.toggle('error',error);}
+function apply(type,extra={},quiet=false){
+ const result=M.act(state,{type,...extra});
+ if(result.ok){state=result.state;if(quiet)scheduleSave();else flushSave();}
+ if(!quiet||!result.ok)feedback(result.message,!result.ok);
+ const intermediate=result.ok&&quiet&&((type==='grind'&&state.grind<100)||(type==='dry'&&state.wet));
+ if(intermediate)scheduleContinuous(type);else{flushContinuous();render();}
+ if(result.ok&&type==='placeOnLid')openDialog('dc-disposal');
+ return result.ok;
+}
+function timeText(ms){const seconds=Math.ceil(ms/1000);return String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');}
+function renderScene(){if(!$('dc-panel').hidden){$('dc-stage').innerHTML=DCScene.render(state,M.timing(state));sceneRevision++;if(foilHeld&&!state.plateInChamber)$('dc-stage').classList.add('foil-held');else $('dc-stage').classList.remove('foil-held');scheduleRuler();renderGuide();paintLiquid();paintStroke();paintApparatus();}}
+function phase(){if(state.plateOnLid)return 'Chromatogramm auf dem Deckel';if(state.removedAt!==null)return state.frontMarked?'Chromatogramm trocknen':'Laufmittelfront markieren';if(state.startedAt!==null)return M.timing(state).complete?'Folie entnehmen':'Chromatografie läuft';if(state.coats)return 'Auftragen und trocknen';if(state.grind===100)return 'DC-Folie vorbereiten';return 'Ansatz vorbereiten';}
+function render(){document.querySelectorAll('.dc-tool').forEach(b=>{b.disabled=state.plateOnLid&&b.dataset.tool!=='ruler';});renderScene();$('dc-stage-title').textContent=phase();renderContext();updateClock();}
+function updateClock(){renderGuide();const t=M.timing(state),started=state.startedAt!==null,done=state.plateOnLid;const signature=[timeText(t.remainingMs),started,done,state.removedAt,state.frontMarked,state.chamberClosed].join('|');if(signature===clockSignature)return;clockSignature=signature;$('dc-clock').textContent=timeText(t.remainingMs);$('dc-clock-state').textContent=done?'Abgeschlossen':t.complete?'20 Minuten vergangen':started?'Läuft in Echtzeit':'Noch nicht gestartet';$('dc-run-progress').value=t.elapsedMs;$('dc-run-progress').setAttribute('aria-valuetext',timeText(t.elapsedMs)+' von 20 Minuten');document.querySelector('.dc-run-strip').classList.toggle('done',t.complete);$('dc-clock-label').textContent=started?'RESTZEIT':'LAUFZEIT';$('lab-dc-status').textContent=started?(done?'Chromatografie abgeschlossen':t.complete?'Chromatografie: Folie entnehmen':'DC läuft · '+timeText(t.remainingMs)):'';
+ if(done){$('dc-run-title').textContent='Der Versuch ist abgeschlossen.';$('dc-run-copy').textContent='Öffne die Messansicht zum Ablesen der Strecken und beachte die Entsorgungshinweise.';}
+ else if(state.removedAt!==null){$('dc-run-title').textContent=state.frontMarked?'Die Laufmittelfront ist markiert.':'Markiere jetzt die Laufmittelfront.';$('dc-run-copy').textContent=state.frontMarked?'Schließe die Kammer wieder. Greife dann die Folie mit der Pinzette und lege sie zum Trocknen auf den Deckel.':'Wähle den Bleistift und markiere die obere Grenze des feuchten Bereichs auf der entnommenen Folie.';}
+ else if(t.complete){$('dc-run-title').textContent='Die 20 Minuten sind vorbei.';$('dc-run-copy').textContent='Öffne den Deckel mit der Hand. Entnimm die Folie mit der Pinzette und markiere die Laufmittelfront mit dem Bleistift.';}
+ else if(started){$('dc-run-title').textContent=state.chamberClosed?'Die Kammer bleibt jetzt stehen.':'Schließe jetzt den Kammerdeckel.';$('dc-run-copy').textContent=state.chamberClosed?'Die verbleibende Zeit läuft auch beim Wechsel in einen anderen Tab weiter. Du kannst dich inzwischen deinen Aufgaben außerhalb dieser Seite widmen.':'Die Laufzeit hat beim Eintauchen begonnen. Wähle die Hand und setze den Deckel auf.';}
+ else{$('dc-run-title').textContent='20 Minuten in Echtzeit';$('dc-run-copy').textContent='Die Laufzeit beginnt, sobald du die vorbereitete Folie in das Laufmittel stellst. Verschließe dann die Kammer. Während des Laufs bleibt sie stehen.';}
+ if(t.complete&&!completedAnnounced){completedAnnounced=true;feedback('20 Minuten sind vergangen. Du kannst die Folie jetzt entnehmen und die Laufmittelfront markieren.');$('dc-stage-title').textContent=phase();}
+}
+function targets(){if(state.plateOnLid)return [];switch(selected){case'heptane':case'alcohol':return[['mix','Am Mischglas dosieren · halten','hold']];case'rod':return[['mix','Im Mischglas rühren','tap']];case'pour':return[['chamber','Kammer füllen · halten','hold']];case'scissors':return[['leaves','Blätter schneiden · halten','hold']];case'leaves':case'chalk':case'sand':return[['mortar',selected==='sand'?'Einen Spatel in den Mörser':'In den Mörser geben','tap']];case'pipette':return[['mix','Laufmittel aufnehmen','tap'],['mortar','In den Mörser geben','tap']];case'pestle':return[['mortar','Im Mörser reiben · halten','hold']];case'pencil':return state.removedAt!==null?[['markFront','Laufmittelfront markieren','tap']]:[['markLeft','Linke Randmarkierung','tap'],['markRight','Rechte Randmarkierung','tap']];case'capillary':return[['mortar','Kapillare füllen','tap'],['plate','Spur auftragen · halten','hold']];case'dryer':return[['plate','Auftrag trocknen · halten','hold']];case'forceps':return state.plateInChamber?[['chamber','Folie entnehmen','tap']]:[['plate',foilHeld?'Folie ist gegriffen':'Folie greifen','tap'],[state.removedAt!==null?'lid':'chamber',state.removedAt!==null?'Auf den Deckel legen':'In die Kammer stellen','tap']];case'hand':return[['lid',state.chamberClosed?'Deckel öffnen':'Deckel schließen','tap'],['chamber','Vorsichtig schwenken','tap']];default:return[];}}
+function renderContext(){if(state.plateOnLid&&selected!=='ruler'){$('dc-selected-name').textContent='Chromatogramm';$('dc-selected-help').textContent='Die Folie liegt zum Trocknen auf dem Deckel. Öffne „Folie vergrößern“ und verschiebe dort das Millimeterlineal.';$('dc-targets').innerHTML='';targetsSignature='';return;}if(!selected)return;const t=toolMap[selected];$('dc-selected-name').textContent=t[1];$('dc-selected-icon').innerHTML=icon(t[3]);let hint=t[5];if(selected==='pipette'&&pipetteLoaded)hint='Die Pipette enthält Laufmittel. Gib es jetzt in den Mörser.';if(selected==='capillary')hint=state.capillaryLoaded?'Die Kapillare ist gefüllt. Ziehe die schmale Spur auf der Folie oder halte „Spur auftragen“ gedrückt.':t[5];if(selected==='forceps'&&state.removedAt!==null&&!foilHeld)hint='Die Folie ist entnommen. Markiere zuerst die Laufmittelfront. Anschließend kannst du sie mit der Pinzette auf den geschlossenen Deckel legen.';if(selected==='forceps'&&foilHeld)hint=state.removedAt!==null?'Die Folie ist gegriffen. Lege sie nach dem Markieren auf den geschlossenen Deckel.':'Die Folie hängt an der Pinzette. Ziehe sie zur offenen Kammer und lass dort los.';if(selected==='forceps'&&state.plateInChamber)hint='Öffne nach 20 Minuten den Deckel. Entnimm dann die Folie mit der Pinzette.';$('dc-selected-help').textContent=hint;const next=targets().map(([target,label,mode])=>'<button data-target="'+target+'" data-mode="'+mode+'">'+label+'</button>').join('');if(targetsSignature!==next){$('dc-targets').innerHTML=next;targetsSignature=next;}renderGuide();}
+function currentGuide(){return DCGuide.next(state,{pipetteLoaded,foilHeld,now:Date.now()});}
+function renderGuide(){
+ $('dc-finish-measure').hidden=!state.plateOnLid;$('dc-disposal-open').hidden=!state.plateOnLid;
+ $('dc-measure-open').disabled=state.plateInChamber;$('dc-measure-open').title=state.plateInChamber?'Entnimm die Folie nach dem Lauf aus der Kammer.':'DC-Folie mit Millimeterlineal vergrößern';
+ const step=currentGuide(), signature=JSON.stringify([step.id,step.number,step.total,step.phase,step.title,step.instruction]);
+ if(signature!==guideSignature){
+  guideSignature=signature;
+  $('dc-step-number').textContent=step.mode==='done'?'✓':String(step.number);
+  $('dc-step-phase').textContent=step.phase;
+  $('dc-step-title').textContent=step.title;
+  $('dc-step-instruction').textContent=step.instruction;
+  $('dc-step-count').textContent='Schritt '+step.number+' von '+step.total;
+  $('dc-step-card').dataset.mode=step.mode;
+ }
+ $('dc-step-time').hidden=step.mode!=='wait';
+ if(step.mode==='wait')$('dc-step-time').textContent=timeText(M.timing(state).remainingMs);
+ const uiSignature=[signature,selected,sceneRevision,targetsSignature].join('|');
+ if(uiSignature===guideUiSignature)return;guideUiSignature=uiSignature;
+ const button=$('dc-step-tool');button.hidden=!step.tool||step.mode==='done';
+ if(step.tool){button.textContent=selected===step.tool?toolMap[step.tool][1]+' aufgenommen':groupNames[toolMap[step.tool][4]]+' → '+toolMap[step.tool][1];button.disabled=selected===step.tool;}
+ $('dc-step-time').hidden=step.mode!=='wait';
+ if(step.mode==='wait')$('dc-step-time').textContent=timeText(M.timing(state).remainingMs);
+ document.querySelectorAll('[data-tool-group]').forEach(b=>{const next=!!step.tool&&Number(b.dataset.toolGroup)===toolMap[step.tool][4];b.dataset.next=String(next);b.setAttribute('aria-label',groupNames[Number(b.dataset.toolGroup)]+(next?' · Material für den nächsten Schritt':''));});
+ document.querySelectorAll('.dc-tool').forEach(b=>b.classList.toggle('dc-recommended',b.dataset.tool===step.tool));
+ document.querySelectorAll('#dc-targets [data-target]').forEach(b=>b.classList.toggle('dc-recommended',selected===step.tool&&b.dataset.target===step.target));
+ document.querySelectorAll('#dc-stage .dc-next-target').forEach(el=>el.classList.remove('dc-next-target'));
+ if(selected===step.tool&&step.target)document.querySelectorAll('#dc-stage rect[data-dc-target]').forEach(el=>{if(el.dataset.dcTarget===step.target)el.classList.add('dc-next-target');});
+}
+$('dc-step-tool').addEventListener('click',focusTools);
+function selectTool(id){stopHold();stopLiquid();if(selected!==id)resetApparatus();selected=id;if(id==='pour')beakerPose={x:155,y:110,angle:22};paintApparatus();setToolGroup(toolMap[id][4]);document.querySelectorAll('.dc-tool').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tool===id)));if(id==='ruler'){$('dc-ruler').hidden=!$('dc-ruler').hidden;syncRuler();}renderContext();}
+function targetAllowed(target){return (selected==='pour'&&target==='mix')||targets().some(t=>t[0]===target);}
+function activate(target){if(!selected)return feedback('Wähle zuerst ein Werkzeug.');if(!targetAllowed(target))return feedback('Prüfe, an welchem Objekt du dieses Werkzeug sinnvoll einsetzen kannst.',true);
+ switch(selected){
+ case'heptane':case'alcohol':return apply(selected);
+ case'rod':return apply('mix');case'pour':return apply('fillChamber');case'scissors':return apply('cut');case'leaves':return apply('leaves');case'chalk':return apply('chalk');case'sand':return apply('sand');
+ case'pipette':if(target==='mix'){if(!state.mixed)return feedback('Mische zuerst die Flüssigkeiten im Mischglas.',true);if(state.extractSolvent)return feedback('Der Mörser enthält bereits Laufmittel.');pipetteLoaded=true;feedback('Die Pipette ist gefüllt. Gib das Laufmittel in den Mörser.');renderContext();return true;}if(!pipetteLoaded)return feedback('Die Pipette ist leer. Wo kannst du Laufmittel aufnehmen?',true);if(apply('extractSolvent')){pipetteLoaded=false;startLiquid('pipette',false);}renderContext();return;
+ case'pencil':return apply(target);
+ case'capillary':return apply(target==='mortar'?'loadCapillary':'apply');
+ case'forceps':if(target==='plate'||(state.plateInChamber&&target==='chamber'))return gripPlate(target);return placeCarriedPlate(target);
+ case'hand':return target==='lid'?apply('lid'):animateSwirl();
+ }
+}
+function continuousKind(target){if(!targetAllowed(target))return null;if(['heptane','alcohol'].includes(selected)||(selected==='pour'&&target==='chamber'))return 'pour';if(selected==='pestle')return 'grind';if(selected==='dryer')return 'dry';if(selected==='scissors')return 'cut';if(selected==='capillary'&&target==='plate')return 'apply';return null;}
+function canHold(kind){let action=kind==='grind'?{type:'grind',amount:1}:kind==='dry'?{type:'dry',amount:1}:kind==='cut'?{type:'cut'}:kind==='apply'?{type:'apply'}:{type:selected==='pour'?'fillChamber':selected};const check=M.act(state,action);if(!check.ok){feedback(check.message,true);return false;}return true;}
+function startHold(target,event){const kind=continuousKind(target);if(!kind||!canHold(kind))return false;stopHold();const start=performance.now();let lastCut=0;const origin=event?{x:event.clientX,y:event.clientY}:null;const chosen=selected;if(kind==='pour'){if(chosen==='pour'){const p=event?stagePoint(event):null;moveBeaker(p&&p.x>680?p:{x:785,y:170},true);}startLiquid(chosen,true);}$('dc-hand-progress').hidden=false;$('dc-hand-value').value=0;$('dc-hand-label').textContent=kind==='grind'?'Mit dem Pistill zerreiben':kind==='dry'?'Auftrag trocknen':kind==='cut'?'Blätter zerkleinern':kind==='apply'?'Schmale Spur auftragen':'Flüssigkeit dosieren';
+ holdTimer=setInterval(()=>{if(selected!==chosen){stopHold();return;}const elapsed=performance.now()-start;let p=0;if(kind==='grind'){if(!apply('grind',{amount:3},true)){stopHold();return;}p=state.grind;if(p===100){feedback('Der Blattauszug ist dunkelgrün.');stopHold();}}
+ else if(kind==='dry'){if(!apply('dry',{amount:6},true)){stopHold();return;}p=state.dryProgress;if(p===100){feedback('Die Auftragsspur ist trocken.');stopHold();}}
+ else if(kind==='cut'){if(elapsed-lastCut>350){lastCut=elapsed;apply('cut',{},true);}p=state.leavesCut/8*100;if(state.leavesCut===8){feedback('Die Blätter sind zerkleinert.');stopHold();}}
+ else{p=Math.min(100,elapsed/(kind==='apply'?1600:LIQUID_HOLD_MS)*100);if(p>=100){activate(target);stopHold();}}
+ $('dc-hand-value').value=p;if(origin&&holdTimer){const ox=kind==='grind'?Math.cos(elapsed/100)*14:kind==='apply'?Math.min(1,elapsed/1600)*40-20:0,oy=kind==='grind'?Math.sin(elapsed/100)*8:0;showGhost(origin.x+ox,origin.y+oy);}
+ },180);return true;}
+function stopHold(){flushContinuous();if(saveTimer!==null)flushSave();if(holdTimer)clearInterval(holdTimer);holdTimer=null;if(liquidFlow?.hold)stopLiquid();$('dc-hand-progress').hidden=true;hideGhost();}
+function showGhost(x,y){
+ if(!selected||liquidFlow)return;
+ if(selected==='pour'){const p=stagePoint({clientX:x,clientY:y});if(p&&p.x>0&&p.x<1100&&p.y>0&&p.y<600)moveBeaker(p,p.x>=700&&p.x<=998&&p.y>=80&&p.y<=475);hideGhost();return;}
+ if((selected==='forceps'&&carriedPlate)||(selected==='hand'&&(activeGesture?.kind==='swirl'||chamberTween!==null))){hideGhost();return;}
+ const g=$('dc-tool-ghost'),key=selected+'|'+(selected==='capillary'&&state.capillaryLoaded);
+ if(key!==ghostKey){ghostKey=key;g.dataset.tool=selected;g.innerHTML=selected==='capillary'?'<svg viewBox="0 0 90 90" aria-hidden="true"><path d="M12 78 67 12 72 16 15 80Z" fill="#eff9e8" fill-opacity=".85" stroke="#547363" stroke-width="1.3"/><path d="M14 77 59 24" stroke="'+(state.capillaryLoaded?'#47742d':'#bdccc2')+'" stroke-width="2.6"/><path d="M67 12l5 4" stroke="#fff" stroke-width="1.6"/><circle cx="13" cy="79" r="2" fill="#436e2c"/></svg>':icon(toolMap[selected][3]);}
+ ghostPosition={x,y};if(ghostFrame!==null)return;
+ ghostFrame=requestAnimationFrame(()=>{ghostFrame=null;if(!ghostPosition)return;g.style.left='0';g.style.top='0';g.style.translate=ghostPosition.x+'px '+ghostPosition.y+'px';g.hidden=false;});
+}
+// Liquid motion is visual only; experiment quantities remain in DCModel.
+function startLiquid(tool,hold){
+ stopLiquid();
+ liquidFlow={tool,hold,startedAt:performance.now(),duration:hold?LIQUID_HOLD_MS:1400,baseVolume:state.heptane+state.alcohol,anchor:tool==='pour'&&beakerPose?{x:beakerPose.x,y:beakerPose.y}:null,angle:beakerPose?.angle};
+ paintApparatus();
+ hideGhost();
+ const tick=()=>{liquidFrame=null;if(!liquidFlow)return;paintLiquid();if(!liquidFlow.hold&&performance.now()-liquidFlow.startedAt>=liquidFlow.duration){stopLiquid();return;}liquidFrame=requestAnimationFrame(tick);};
+ tick();
+}
+function stopLiquid(){
+ if(liquidFrame!==null)cancelAnimationFrame(liquidFrame);liquidFrame=null;
+ if(!liquidFlow)return;liquidFlow=null;renderScene();
+}
+function paintLiquid(){
+ if(!liquidFlow||$('dc-panel').hidden)return;
+ const svg=$('dc-stage').querySelector('svg');if(!svg)return;
+ let layer=svg.querySelector('.dc-liquid-layer');
+ if(!layer){layer=document.createElementNS('http://www.w3.org/2000/svg','g');layer.setAttribute('class','dc-liquid-layer');layer.setAttribute('pointer-events','none');layer.setAttribute('aria-hidden','true');svg.appendChild(layer);}
+ const elapsedMs=Math.max(0,performance.now()-liquidFlow.startedAt),progress=Math.min(1,elapsedMs/liquidFlow.duration),tool=liquidFlow.tool;
+ // Filling begins when the first drop reaches the bottom of the vessel.
+ const firstImpact=tool==='pour'?620:tool==='pipette'?355:470;
+ const fill=Math.max(0,Math.min(1,(elapsedMs-firstImpact)/(liquidFlow.duration-firstImpact)));
+ let surfaceY=341;
+ const group=name=>svg.querySelector('[data-dc-fill="'+name+'"]');
+ const path=(g,part,d)=>g?.querySelector('[data-dc-fill-part="'+part+'"]').setAttribute('d',d);
+ if(tool==='heptane'||tool==='alcohol'){
+  const amount=liquidFlow.baseVolume+(tool==='heptane'?9:1)*fill;surfaceY=210-Math.min(10,amount)*7.7;
+  const g=group('mix');g?.setAttribute('opacity',amount>0?'1':'0');path(g,'body','M66 '+surfaceY+'H145V211Q142 219 106 219Q69 219 66 211Z');g?.querySelector('ellipse').setAttribute('cy',surfaceY);
+ }else if(tool==='pour'){
+  surfaceY=430-15*fill;const frontY=surfaceY+22;
+  const back=group('chamber-back'),front=group('chamber-front');back?.setAttribute('opacity',fill>0?'1':'0');front?.setAttribute('opacity',fill>0?'1':'0');
+  path(back,'body','M724 '+surfaceY+'H975V430H724Z');path(back,'surface','M724 '+surfaceY+'H975L983 '+frontY+'H716Z');
+  path(front,'body','M716 '+frontY+'Q850 '+(frontY+2)+' 983 '+frontY+'V452H716Z');path(front,'surface','M716 '+frontY+'Q850 '+(frontY+2)+' 983 '+frontY);path(front,'highlight','M719 '+(frontY+3)+'Q851 '+(frontY+5)+' 980 '+(frontY+3));
+  const mix=group('mix'),y=210-(10-9*fill)*7.7;path(mix,'body','M66 '+y+'H145V211Q142 219 106 219Q69 219 66 211Z');mix?.querySelector('ellipse').setAttribute('cy',y);
+ }else group('mortar')?.setAttribute('opacity',fill);
+ layer.innerHTML=DCLiquid.render({tool,elapsedMs,progress,surfaceY,anchor:liquidFlow.anchor,angle:liquidFlow.angle});
+}
+function stagePoint(e){
+ const svg=$('dc-stage').querySelector('svg'),matrix=svg?.getScreenCTM();if(!matrix)return null;
+ try{const point=svg.createSVGPoint();point.x=e.clientX;point.y=e.clientY;const local=point.matrixTransform(matrix.inverse());return Number.isFinite(local.x)&&Number.isFinite(local.y)?{x:local.x,y:local.y}:null;}catch(_){return null;}
+}
+function targetAt(e){const node=document.elementFromPoint(e.clientX,e.clientY);return node?.closest('[data-dc-target]')?.dataset.dcTarget||null;}
+function updateTrayScroll(){
+ const tray=$('dc-tools'),controls=$('dc-tools-scroll');if(!controls)return;
+ const overflow=tray.scrollHeight>tray.clientHeight+2;controls.hidden=!overflow;
+ $('dc-tools-up').disabled=tray.scrollTop<=1;
+ $('dc-tools-down').disabled=tray.scrollTop+tray.clientHeight>=tray.scrollHeight-2;
+}
+function setToolGroup(group){
+ const next=Number(group),changed=next!==toolGroup;toolGroup=next;
+ document.querySelectorAll('#dc-tools .dc-tool-group').forEach(el=>{el.hidden=Number(el.dataset.group)!==toolGroup;});
+ document.querySelectorAll('[data-tool-group]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.toolGroup)===toolGroup)));
+ if(changed)$('dc-tools').scrollTop=0;requestAnimationFrame(updateTrayScroll);
+}
+function focusTools(){
+ const step=currentGuide();if(step.tool)setToolGroup(toolMap[step.tool][4]);inventory.focus({preventScroll:true});
+ if(step.tool){const tray=$('dc-tools'),button=tray.querySelector('[data-tool="'+step.tool+'"]');if(button){const b=button.getBoundingClientRect(),r=tray.getBoundingClientRect();if(b.top<r.top)tray.scrollTop+=b.top-r.top-4;else if(b.bottom>r.bottom)tray.scrollTop+=b.bottom-r.bottom+4;}}
+ updateTrayScroll();
+}
+function renderTools(){guideUiSignature='';$('dc-tools').innerHTML=groupNames.map((name,g)=>'<section class="dc-tool-group" data-group="'+g+'"><p>'+name+'</p><div class="dc-tool-grid">'+tools.filter(t=>t[4]===g).map(t=>'<button class="dc-tool" data-tool="'+t[0]+'" aria-label="'+t[1]+' aufnehmen" aria-pressed="false">'+icon(t[3])+'<span>'+t[1]+'</span><small>'+t[2]+'</small></button>').join('')+'</div></section>').join('');setToolGroup(toolGroup);}
+$('dc-tools').addEventListener('scroll',updateTrayScroll,{passive:true});
+for(const [id,direction] of [['dc-tools-up',-1],['dc-tools-down',1]])$(id)?.addEventListener('click',()=>{$('dc-tools').scrollBy({top:direction*Math.max(100,$('dc-tools').clientHeight*.7),behavior:'smooth'});});
+$('dc-tool-groups').addEventListener('click',e=>{const b=e.target.closest('[data-tool-group]');if(b){cancelGestures();setToolGroup(b.dataset.toolGroup);}});
+// Pointer pickup happens immediately; keyboard/assistive clicks select the same tool.
+$('dc-tools').addEventListener('click',e=>{const b=e.target.closest('[data-tool]');if(e.detail===0&&b&&!b.disabled){selectTool(b.dataset.tool);feedback(toolMap[b.dataset.tool][1]+' aufgenommen. Wähle jetzt seinen Einsatzort.');}});
+$('dc-tools').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-tool]');if(!b||b.disabled||e.button>0)return;e.preventDefault();cancelGestures();selectTool(b.dataset.tool);toolDrag={id:e.pointerId,startX:e.clientX,startY:e.clientY,moved:false,lastTarget:null,completed:false,pointerType:e.pointerType};capturePointer(b,e.pointerId);feedback(toolMap[selected][1]+' aufgenommen. Tippe auf den Einsatzort oder ziehe es dorthin.');showGhost(e.clientX,e.clientY);});
+function strokeAt(e){const p=stagePoint(e),m=$('dc-stage').querySelector('svg')?.getScreenCTM();return p?DCStroke.create(p,{scale:m?Math.hypot(m.a,m.b):1,pointerType:e.pointerType}):null;}
+function gestureTarget(e){const target=targetAt(e),p=stagePoint(e);
+ if(selected==='forceps'&&carriedPlate&&p){const c=carriedPlate;if(p.x>c.x-90*c.scale&&p.x<c.x+90*c.scale&&p.y>c.y-70*c.scale&&p.y<c.y+320*c.scale)return 'plate';}
+ if(selected==='pour'&&p){if(p.x>=700&&p.x<=998&&p.y>=75&&p.y<=475)return 'chamber';if(beakerPose&&Math.abs(p.x-beakerPose.x)<120&&Math.abs(p.y-beakerPose.y)<125)return 'mix';}
+ if(selected==='capillary'&&!state.plateInChamber&&strokeAt(e))return 'plate';return target;}
+function paintStroke(){
+ if(strokeFrame!==null)return;
+ strokeFrame=requestAnimationFrame(()=>{
+  strokeFrame=null;const svg=$('dc-stage').querySelector('svg');if(!svg)return;
+  let layer=svg.querySelector('.dc-stroke-layer');
+  if(!activeGesture?.stroke){layer?.remove();return;}
+  if(!layer){layer=document.createElementNS('http://www.w3.org/2000/svg','g');layer.setAttribute('class','dc-stroke-layer');layer.setAttribute('pointer-events','none');layer.setAttribute('aria-hidden','true');svg.appendChild(layer);}
+  layer.innerHTML=DCStroke.render(activeGesture.stroke);
+ });
+}
+function beginGesture(e,target,fromTray=false){
+ const p=stagePoint(e);if(!p||!targetAllowed(target)||plateFlight!==null)return false;
+ const kind=continuousKind(target),g={id:e.pointerId,target,last:p,distance:0,moved:false,kind,fromTray};
+ if(selected==='hand'&&target==='chamber'){
+  const check=M.act(state,{type:'swirl'});if(!check.ok){feedback(check.message,true);return false;}
+  if(chamberTween!==null)cancelAnimationFrame(chamberTween);chamberTween=null;
+  g.kind='swirl';g.swirl=DCMotion.createSwirl(p);activeGesture=g;hideGhost();feedback('Bewege die geschlossene Kammer seitlich und wieder zurück.');return true;
+ }
+ if(selected==='pour'&&target==='mix'){g.kind='carryBeaker';activeGesture=g;moveBeaker(p);hideGhost();return true;}
+ if(selected==='forceps'){
+  if(target==='plate'||(target==='chamber'&&state.plateInChamber)){if(!gripPlate(target))return false;g.kind='plateMove';g.plateOffset={x:p.x-carriedPlate.x,y:p.y-carriedPlate.y};activeGesture=g;hideGhost();return true;}
+ }
+
+ if(kind==='apply'){if(!canHold(kind))return false;g.stroke=strokeAt(e);if(!g.stroke){feedback('Setze die Kapillare auf Höhe einer Randmarkierung an und ziehe sie waagerecht über die Folie.',true);return false;}}
+ if(kind==='grind'&&!canHold(kind))return false;
+ activeGesture=g;
+ if(kind==='pour'||kind==='dry'||(fromTray&&(kind==='grind'||kind==='cut'))){g.held=startHold(target,e);if(!g.held){activeGesture=null;return false;}}
+ paintStroke();if(g.stroke)hideGhost();else showGhost(e.clientX,e.clientY);return true;
+}
+function moveGesture(e){
+ const g=activeGesture;if(!g||g.id!==e.pointerId)return;const p=stagePoint(e);if(!p)return;
+ const distance=Math.hypot(p.x-g.last.x,p.y-g.last.y);g.distance+=distance;g.moved=g.distance>10;g.last=p;
+ if(g.kind==='swirl'){
+  const previous=g.swirl.counts;g.swirl=DCMotion.moveSwirl(g.swirl,p);chamberPose={angle:g.swirl.angle,offsetX:g.swirl.offsetX,slosh:g.swirl.slosh*.4};scheduleApparatus();
+  if(g.swirl.counts>previous&&state.swirls<3)apply('swirl');return;
+ }
+ if(g.kind==='plateMove'){
+  let x=clampMotion(p.x-g.plateOffset.x,90,1000);if(state.chamberClosed&&x>=700&&x<=995)x=640;const scale=1-.25*clampMotion((x-600)/180,0,1),floor=x>=700&&x<=995?430:570;
+  carriedPlate={x,y:clampMotion(p.y-g.plateOffset.y,65,floor-320*scale),scale,angle:0};scheduleApparatus();hideGhost();return;
+ }
+ if(selected==='pour'){
+  const over=p.x>=700&&p.x<=998&&p.y>=75&&p.y<=475;moveBeaker(p,over);
+  if(g.kind==='carryBeaker'){if(over&&!g.held)g.held=startHold('chamber',e);else if(!over&&g.held){stopHold();g.held=false;}return;}
+ }
+
+ if(g.stroke){g.stroke=DCStroke.move(g.stroke,p);paintStroke();hideGhost();return;}
+ if(g.held){if(gestureTarget(e)!==g.target){stopHold();activeGesture=null;}return;}
+ showGhost(e.clientX,e.clientY);
+ if(g.kind==='grind'&&targetAt(e)==='mortar'&&distance>3){const ok=apply('grind',{amount:Math.max(1,Math.min(12,Math.floor(distance/9)))},true);if(!ok||state.grind===100){feedback(state.grind===100?'Der Blattauszug ist dunkelgrün.':$('dc-feedback').textContent,!ok);activeGesture=null;}}
+ if(g.kind==='cut'&&g.distance>55&&targetAt(e)==='leaves'){g.distance=0;apply('cut',{},true);if(state.leavesCut===8){feedback('Die Blätter sind zerkleinert.');activeGesture=null;}}
+}
+function finishGesture(e){
+ const g=activeGesture;if(!g||g.id!==e.pointerId)return false;
+ moveGesture(e);activeGesture=null;stopHold();paintStroke();
+ if(g.kind==='swirl'){if(g.moved){const returned=DCMotion.moveSwirl(g.swirl,g.swirl.start),countOnRest=returned.counts>g.swirl.counts;settleChamber(()=>{if(countOnRest&&state.swirls<3)apply('swirl');});}else animateSwirl();return true;}
+ if(g.kind==='plateMove'){
+  if(g.moved&&carriedPlate){const p=stagePoint(e),target=targetAt(e);if(state.removedAt!==null&&target==='lid')placeCarriedPlate('lid');else if(state.removedAt===null&&p&&p.x>=705&&p.x<=995&&p.y>=90&&p.y<=475)placeCarriedPlate('chamber');else feedback('Die Folie bleibt an der Pinzette. Ziehe sie zur Kammer oder wähle einen anderen Gegenstand, um sie abzulegen.');}
+  return true;
+ }
+ if(g.kind==='carryBeaker')return true;
+ if(g.held)return true;
+ if(g.stroke){const result=DCStroke.finish(g.stroke);if(result.ok)activate('plate');else feedback(result.message,true);return true;}
+ if(g.kind==='grind'){if(!g.moved)feedback('Bewege den Pistill im Mörser oder halte „Im Mörser reiben“ gedrückt.');return true;}
+ if(!g.fromTray)activate(g.target);return !g.fromTray;
+}
+function moveTool(e){
+ const drag=toolDrag;if(!drag||drag.id!==e.pointerId)return;
+ if(Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>8)drag.moved=true;if(!drag.moved)return;e.preventDefault();
+ const target=gestureTarget(e);
+ if(activeGesture){moveGesture(e);if(activeGesture)return;}
+ if(selected==='capillary'&&target==='plate'&&state.capillaryLoaded&&!state.wet&&strokeAt(e)){if(beginGesture(e,'plate',true)){drag.lastTarget=target;return;}}
+ if(target!==drag.lastTarget){stopHold();drag.lastTarget=target;drag.completed=false;
+  if(targetAllowed(target)){
+   if(selected==='capillary'&&target==='mortar'&&!state.capillaryLoaded){activate('mortar');drag.completed=true;}
+   else if(selected==='pipette'&&target==='mix'&&!pipetteLoaded){activate('mix');drag.completed=true;}
+   else if(selected==='forceps'&&(target==='plate'||(target==='chamber'&&state.plateInChamber))&&!foilHeld){if(beginGesture(e,target,true))return;}
+   else if(continuousKind(target)||(selected==='hand'&&target==='chamber')){if(beginGesture(e,target,true))return;}
+  }
+ }
+ showGhost(e.clientX,e.clientY);
+}
+document.addEventListener('pointermove',e=>{
+ if(toolDrag){moveTool(e);return;}
+ if(rulerDrag&&e.pointerId===rulerDrag.id){e.preventDefault();const p=stagePoint(e);if(p){rulerPosition={x:Math.max(0,Math.min(1052,p.x-rulerDrag.dx)),y:Math.max(0,Math.min(250,p.y-rulerDrag.dy))};scheduleRuler();}return;}
+ if(activeGesture){e.preventDefault();moveGesture(e);}
+});
+document.addEventListener('pointerup',e=>{
+ const drag=toolDrag;if(drag&&drag.id===e.pointerId){moveTool(e);const handled=finishGesture(e);toolDrag=null;if(drag.moved&&!handled&&!drag.completed){const target=gestureTarget(e);if(targetAllowed(target)){if(!continuousKind(target))activate(target);else feedback('Werkzeug bereit. Halte es am Einsatzort; die Kapillare ziehst du waagerecht über die Folie.');}else feedback('Das Werkzeug ist aufgenommen. Tippe auf seinen Einsatzort.');}}
+ else finishGesture(e);
+ rulerDrag=null;actionPointer=null;pointerCaptures.delete(e.pointerId);stopHold();hideGhost();renderGuide();
+});
+document.addEventListener('pointercancel',cancelGestures);
+document.addEventListener('lostpointercapture',e=>{if(pointerCaptures.get(e.pointerId)===e.target){pointerCaptures.delete(e.pointerId);cancelGestures();}});
+$('dc-stage').addEventListener('pointerdown',e=>{if(e.button>0)return;e.preventDefault();if(!selected){feedback('Nimm zuerst ein Werkzeug aus der Ablage.');return;}const target=gestureTarget(e);if(!targetAllowed(target)){feedback('Prüfe, an welchem Objekt du dieses Werkzeug sinnvoll einsetzen kannst.',true);return;}if(beginGesture(e,target))capturePointer($('dc-stage'),e.pointerId);});
+$('dc-stage').addEventListener('pointermove',e=>{if(e.pointerType==='mouse'&&!e.buttons&&!activeGesture&&!toolDrag&&selected)showGhost(e.clientX,e.clientY);});
+$('dc-stage').addEventListener('pointerleave',()=>{if(!activeGesture&&!toolDrag)hideGhost();});
+$('dc-targets').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-target]');if(!b||e.button>0)return;e.preventDefault();actionPointer=e.pointerId;capturePointer(document.documentElement,e.pointerId);if(b.dataset.mode==='hold')startHold(b.dataset.target,e);else activate(b.dataset.target);});
+$('dc-targets').addEventListener('keydown',e=>{const b=e.target.closest('[data-target]');if(!b||![' ','Enter'].includes(e.key)||e.repeat)return;e.preventDefault();if(b.dataset.mode==='hold')startHold(b.dataset.target);else activate(b.dataset.target);});
+document.addEventListener('keyup',e=>{if([' ','Enter'].includes(e.key))stopHold();});
+$('dc-ruler').addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();const p=stagePoint(e),pos=rulerPosition||{x:615,y:70};if(!p)return;rulerDrag={id:e.pointerId,dx:p.x-pos.x,dy:p.y-pos.y};capturePointer($('dc-ruler'),e.pointerId);});
+function syncRuler(){
+ const ruler=$('dc-ruler'),svg=$('dc-stage').querySelector('svg'),container=$('dc-stage-scroll'),matrix=svg?.getScreenCTM();if(!matrix||!svg.getBoundingClientRect().width)return;
+ const scale=Math.hypot(matrix.a,matrix.b),pos=rulerPosition||{x:615,y:70},rect=container.getBoundingClientRect();if(!Number.isFinite(scale)||scale<=0)return;
+ const point=svg.createSVGPoint();point.x=pos.x;point.y=pos.y;const screen=point.matrixTransform(matrix);
+ ruler.style.boxSizing='content-box';ruler.style.width=(48*scale*(state.plateInChamber?.75:1))+'px';
+ ruler.style.left=(screen.x-rect.left-container.clientLeft+container.scrollLeft-ruler.clientLeft)+'px';
+ ruler.style.top=(screen.y-rect.top-container.clientTop+container.scrollTop-ruler.clientTop)+'px';
+}
+let marks='';for(let mm=0;mm<=80;mm++){const y=340-mm*4;marks+='<path d="M0 '+y+'h'+(mm%10===0?19:mm%5===0?13:7)+'" stroke="#75683e" stroke-width="1"/>';if(mm%10===0)marks+='<text x="23" y="'+(y+4)+'" font-size="10" fill="#5d5131">'+mm+'</text>';}$('dc-ruler').querySelector('svg').innerHTML='<text x="25" y="12" font-size="10" fill="#5d5131">mm</text>'+marks;
+function setView(){ $('dc-panel').hidden=false;syncCompactLayout();render(); }
+$('dc-tools-toggle').addEventListener('click',()=>{const collapsed=!$('dc-tools').hidden;$('dc-tools').hidden=collapsed;$('dc-tools-toggle').setAttribute('aria-expanded',String(!collapsed));$('dc-tools-toggle').textContent=collapsed?'Ausklappen':'Einklappen';});
+$('dc-zoom').addEventListener('click',()=>{cancelGestures();const on=$('dc-stage-scroll').classList.toggle('zoom');$('dc-zoom').setAttribute('aria-pressed',String(on));$('dc-zoom').textContent=on?'Gesamtansicht':'Vergrößern';scheduleRuler();});
+function openMeasure(){openDialog('dc-measure');DCMeasure.show(state,M.timing(state));}
+$('dc-measure-open').addEventListener('click',openMeasure);
+$('dc-finish-measure').addEventListener('click',openMeasure);
+$('dc-disposal-open').addEventListener('click',()=>openDialog('dc-disposal'));
+$('dc-disposal-measure').addEventListener('click',()=>{closeDialog($('dc-disposal'));openMeasure();});
+$('dc-guide-open').addEventListener('click',()=>openDialog('dc-guide'));
+$('dc-guide-compact-open').addEventListener('click',()=>openDialog('dc-guide'));
+$('dc-materials-open').addEventListener('click',focusTools);
+$('dc-reset-open').addEventListener('click',()=>openDialog('dc-reset-dialog'));
+document.querySelectorAll('[data-dc-close]').forEach(b=>b.addEventListener('click',()=>closeDialog($(b.dataset.dcClose))));
+document.querySelectorAll('dialog[id^="dc-"]').forEach(dialog=>{dialog.addEventListener('cancel',cancelGestures);dialog.addEventListener('close',()=>{cancelGestures();scheduleRuler();});});
+$('dc-reset-confirm').addEventListener('click',()=>{cancelGestures();state=M.createState();selected=null;pipetteLoaded=false;foilHeld=false;completedAnnounced=false;save();closeDialog($('dc-reset-dialog'));$('dc-ruler').hidden=true;rulerPosition=null;renderTools();$('dc-selected-icon').innerHTML='';$('dc-selected-name').textContent='Werkzeug auswählen';$('dc-selected-help').textContent='Wähle ein Material oder Werkzeug und seinen Einsatzort.';$('dc-targets').innerHTML='';targetsSignature='';feedback('Ein neuer Ansatz ist bereit.');render();});
+document.addEventListener('visibilitychange',()=>{cancelGestures();if(!document.hidden){syncCompactLayout();updateClock();renderScene();}});
+window.addEventListener('resize',()=>{cancelGestures();syncCompactLayout();});window.addEventListener('blur',cancelGestures);
+coarsePointer.addEventListener('change',()=>{cancelGestures();syncCompactLayout();});
+if(typeof ResizeObserver!=='undefined'){const observer=new ResizeObserver(scheduleRuler);observer.observe($('dc-stage-scroll'));observer.observe($('dc-stage'));const trayObserver=new ResizeObserver(updateTrayScroll);trayObserver.observe($('dc-tools'));}
+renderTools();setView();
+let developmentFrame='';
+setInterval(()=>{
+ if(document.hidden)return;updateClock();
+ if(!$('dc-panel').hidden&&state.plateInChamber&&!carriedPlate&&plateFlight===null){
+  const t=M.timing(state),frame=String(Math.floor(t.elapsedMs/1000));
+  if(frame!==developmentFrame){developmentFrame=frame;renderScene();}
+ }
+},1000);
+window.addEventListener('pagehide',()=>{if(saveTimer!==null)flushSave();});
+if(!storageAvailable)feedback('Der Browser erlaubt hier kein Speichern. Lass die Seite während deines Versuchs geöffnet.',true);
+else if(state.startedAt!==null&&!state.plateOnLid)feedback(M.timing(state).complete?'Dein Lauf ist beendet. Entnimm die Folie und markiere die Laufmittelfront.':'Dein gespeicherter Ansatz läuft weiter.');
+})();
+
+</script></body></html>
