@@ -345,6 +345,13 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 @media(max-width:699px){#factors-panel .fs-leaf-helper{grid-column:1/-1;max-width:360px;width:100%;justify-self:center}#factors-panel .fs-leaf-bubble{max-height:min(430px,60dvh,var(--fs-leaf-available-height,430px))}}
 @media(prefers-reduced-motion:reduce){#factors-panel .fs-leaf-helper.is-open .fs-leaf-character{animation:none}}
 
+
+/* Keep Blättchen beside the experiment choice on narrow/short screens. */
+#factors-panel .fs-leaf-helper.is-inline{display:flex;flex-direction:column;gap:11px;height:auto;width:100%;max-width:480px;margin:4px 0 12px;justify-self:start}
+#factors-panel .fs-leaf-helper.is-inline .fs-leaf-toggle{order:-1}
+#factors-panel .fs-leaf-helper.is-inline .fs-leaf-bubble{position:relative;inset:auto;max-height:min(430px,60dvh);width:100%;flex:none}
+#factors-panel .fs-leaf-helper.is-inline.is-open::before{top:60px;bottom:auto;transform:rotate(225deg)}
+
 </style></head>
 <body>
 <header class="topbar"><a class="brand" href="#" aria-label="Fotosyntheselabor"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26 5C9 3 3 12 8 23c12 7 21-2 18-18Z"/><path d="M6 27 24 8M13 20l-1-8m6 3 7 1"/></svg><span>Fotosynthese<span class="brand-sub">EXPERIMENTIERLABOR</span></span></a></header>
@@ -1929,6 +1936,20 @@ leafHelper=createLeafHelper($('fs-leaf-helper'),()=>{
  const b=current();
  return {bench:b,experimentId:activeId,setup:deriveSetup(b.assembly),completedRuns:completedRuns(b.series),stopwatchStage:b.stopwatch.preparing?'warmup':b.stopwatch.stage,alignmentIssue:!!lampAlignmentHint(b.assembly,b.settings.lampOn),distanceIssue:!!currentDistanceHint(b)};
 });
+// Move the same helper node; rotating the device never creates a new hint budget.
+const leafRoot=$('fs-leaf-helper'),leafHome=document.createComment('Blättchen: Seitenleistenplatz');
+leafRoot.before(leafHome);
+const leafInlineMedia=matchMedia('(max-width:699px), (max-width:900px) and (max-height:599px)');
+function syncLeafPlacement(){
+ const focused=document.activeElement,keepFocus=leafRoot.contains(focused);
+ leafRoot.classList.toggle('is-inline',leafInlineMedia.matches);
+ if(leafInlineMedia.matches)$('factors-panel').insertBefore(leafRoot,document.querySelector('#factors-panel>.measurement-rule'));
+ else leafHome.after(leafRoot);
+ leafHelper.update();
+ if(keepFocus)focused.focus({preventScroll:true});
+}
+leafInlineMedia.addEventListener('change',syncLeafPlacement);
+syncLeafPlacement();
 syncPhysics();updateUI();requestAnimationFrame(frame);
 
 })();</script>
