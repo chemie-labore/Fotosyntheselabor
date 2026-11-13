@@ -179,93 +179,127 @@ body.dc-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-templa
 .dc-bench-tools{flex-wrap:wrap}.dc-compact #dc-disposal-open{min-height:36px;padding:6px 10px}.dc-compact .dc-step-action:has(#dc-finish-measure:not([hidden])){min-width:150px}
 @media(max-width:660px){.dc-compact .dc-bench{grid-template-rows:auto minmax(0,1fr) auto auto}.dc-compact .dc-bench-head{padding-block:6px}.dc-compact .dc-bench-tools{gap:4px}.dc-compact .dc-bench-tools button{font-size:10px;padding:6px}.dc-measure-dialog{padding:12px}.dc-measure-dialog h2{font-size:22px}.dc-measure-help{font-size:12px}}
 /* Compact photosynthesis workspace; activated by the viewport controller. */
-body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-template-rows:44px 52px minmax(0,1fr);overflow:hidden}
-.photo-compact>.topbar{height:44px;width:100%;padding:0 16px}
+#factors-panel .photo-controls{display:contents}
+#factors-panel .material-help,#factors-panel .instrument-help{position:relative}
+#factors-panel .material-help>summary,#factors-panel .instrument-help>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:12px;font-weight:600}
+#factors-panel .material-help>summary::before{content:'▸';margin-right:6px}
+#factors-panel .material-help[open]>summary::before{content:'▾'}
+#factors-panel .material-help>summary,#factors-panel .instrument-help>summary{list-style:none}
+#factors-panel .material-help>summary::-webkit-details-marker,#factors-panel .instrument-help>summary::-webkit-details-marker{display:none}
+#factors-panel .instrument-help>summary{justify-content:center;width:44px;border:1px solid var(--line);border-radius:8px;background:#f1f5e8}
+#factors-panel .instrument-help>p{font-size:12px;line-height:1.5}
+#factors-panel .selected-material{position:relative}
+#factors-panel .selected-material>h2,#factors-panel .selected-material>.eyebrow{padding-right:48px}
+#factors-panel .selection-help{position:absolute;right:10px;top:10px}
+#factors-panel .instrument-help[open]{z-index:20}
+#factors-panel .instrument-help>p{position:absolute;right:0;top:calc(100% + 4px);width:220px;max-height:240px;overflow:auto;margin:0;padding:12px;background:#fdfef8;border:1px solid #b9c9a9;border-radius:9px;box-shadow:0 8px 24px #203b3224}
+#factors-panel .light-help{margin-left:auto;flex:none}
+#factors-panel .light-help+.switch{margin-left:0}
+#factors-panel .light-help>p{right:-49px}
+#factors-panel summary:focus-visible{outline:3px solid #809e37;outline-offset:3px}
+body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:52px minmax(0,1fr);overflow:hidden}
+.photo-compact>.topbar{grid-column:1;grid-row:1;height:52px;width:100%;padding:0 16px;max-width:none}
 .photo-compact>.topbar .brand{font-size:20px;gap:8px}
 .photo-compact>.topbar .brand>svg{width:26px;height:26px}
 .photo-compact>.topbar .brand-sub{display:none}
-.photo-compact>.lab-nav{width:100%;max-width:none;margin:0;padding:4px 12px;gap:8px;flex-wrap:nowrap}
-.photo-compact>.lab-nav button{min-height:44px;padding:8px 16px;font-size:13px}
-.photo-compact>.lab-nav output{width:auto;min-height:0;font-size:11px}
-.photo-compact #factors-panel{width:100%;max-width:none;height:100%;min-height:0;display:grid;grid-template-rows:auto auto auto minmax(0,1fr);gap:6px;margin:0;padding:4px 12px 8px}
-.photo-compact #factors-panel>.intro{margin:0;min-width:0;gap:12px;flex-direction:row;align-items:center}
+.photo-compact>.lab-nav{grid-column:2;grid-row:1;width:100%;min-width:0;max-width:none;margin:0;padding:4px 12px 4px 0;gap:8px;flex-wrap:nowrap;border-bottom:1px solid var(--line)}
+.photo-compact>.lab-nav button{min-height:44px;padding:8px 16px;font-size:13px;flex:none}
+.photo-compact>.lab-nav output{width:auto;min-width:0;min-height:0;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.photo-compact #factors-panel{grid-column:1/-1;grid-row:2;width:100%;max-width:none;height:100%;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,490px);grid-template-rows:44px 44px minmax(0,1fr);gap:6px;margin:0;padding:4px 12px 8px}
+.photo-compact #factors-panel>.intro{grid-column:1;grid-row:1;margin:0;min-width:0;gap:12px;flex-direction:row;align-items:center}
 .photo-compact #factors-panel>.intro .eyebrow{display:none}
 .photo-compact #factors-panel>.intro h1{font-size:24px;line-height:1.15;max-width:none;letter-spacing:-.5px}
-.photo-compact #guide-open{margin:0;min-height:44px;padding:8px 10px;font-size:11px}
-.photo-compact #experiment-tabs{margin:0;gap:7px}
+.photo-compact #guide-open{margin:0;min-height:44px;padding:8px 10px;font-size:12px}
+.photo-compact #experiment-tabs{grid-column:1/-1;grid-row:2;margin:0;gap:7px}
 .photo-compact #experiment-tabs button{min-height:44px;gap:7px;padding:7px 11px}
 .photo-compact #experiment-tabs small{display:none}
 .photo-compact #experiment-tabs strong{font-size:13px}
 .photo-compact #experiment-tabs .tab-symbol{width:24px;font-size:19px}
-.photo-compact #factors-panel>.measurement-rule{position:relative;font-size:11px;line-height:1.4;margin:0;z-index:15}
-.photo-compact #factors-panel>.measurement-rule summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 11px;list-style:none;cursor:pointer;border:1px solid #d6dfcc;border-radius:8px;background:#edf2e4;font-size:12px}
+.photo-compact #factors-panel>.measurement-rule{grid-column:2;grid-row:1;position:relative;font-size:12px;line-height:1.4;margin:0;z-index:15}
+.photo-compact #factors-panel>.measurement-rule summary{display:flex;align-items:center;gap:8px;height:44px;min-height:44px;padding:6px 11px;list-style:none;cursor:pointer;border:1px solid #d6dfcc;border-radius:8px;background:#edf2e4;font-size:12px}
 .photo-compact #factors-panel>.measurement-rule summary::-webkit-details-marker{display:none}
 .photo-compact #factors-panel>.measurement-rule summary::before{content:'▸';font-size:16px;flex:none}
 .photo-compact #factors-panel>.measurement-rule[open] summary::before{content:'▾'}
 .photo-compact #factors-panel>.measurement-rule>p{position:absolute;top:calc(100% + 5px);left:0;right:0;max-height:min(45dvh,260px);overflow:auto;margin:0;padding:13px 15px;background:#fdfef8;border:1px solid #b9c9a9;border-radius:9px;box-shadow:0 8px 24px #203b3224;font-size:12px;line-height:1.5}
-.photo-compact #factors-panel>.laboratory{min-height:0;min-width:0;grid-template-columns:98px minmax(0,1fr) 212px;gap:9px;align-items:stretch}
-.photo-compact #factors-panel .materials{grid-column:auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:8px}
-.photo-compact #factors-panel .materials>.eyebrow{font-size:8px;margin:0 0 8px;text-align:center;letter-spacing:.7px}
-.photo-compact #material-tray{grid-template-columns:1fr;gap:5px}
-.photo-compact #material-tray .material-button{min-height:52px;padding:5px 2px;gap:3px;font-size:10px;line-height:1.2}
+.photo-compact #factors-panel>.laboratory{grid-column:1/-1;grid-row:3;min-height:0;min-width:0;grid-template-columns:132px minmax(0,1fr) 250px;gap:9px;align-items:stretch}
+.photo-compact #factors-panel .materials{grid-column:auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:6px}
+.photo-compact #factors-panel .material-help{margin:0 0 4px}
+.photo-compact #factors-panel .material-help>summary{font-size:12px;white-space:nowrap}
+.photo-compact #factors-panel .material-help>p{font-size:12px;line-height:1.4;margin:0 0 8px;text-align:left}
+.photo-compact #material-tray{grid-template-columns:1fr;gap:4px}
+.photo-compact #material-tray .material-button{min-height:52px;padding:5px 4px;gap:5px;font-size:12px;line-height:1.2;flex-direction:row;justify-content:flex-start;text-align:left}
 .photo-compact #material-tray .material-button svg{width:22px;height:22px;flex:none}
-.photo-compact #factors-panel .material-note{font-size:10px;line-height:1.35;margin:8px 0 0;text-align:left}
+.photo-compact #material-tray .material-button span{min-width:0}
 .photo-compact #factors-panel .bench{min-width:0;min-height:0;height:100%;position:relative;top:auto;display:flex;flex-direction:column;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;border-radius:12px}
 .photo-compact #factors-panel .bench> :not(.scene-wrap){flex:none}
 .photo-compact #factors-panel .bench-head{padding:8px 11px;min-height:42px;gap:8px}
 .photo-compact #factors-panel .bench-head .eyebrow{display:none}
 .photo-compact #factors-panel .bench-head h2{font-size:19px}
-.photo-compact #factors-panel .run-status{font-size:10px;padding:5px 8px;white-space:nowrap}
-.photo-compact #factors-panel .room-temperature-note,.photo-compact #factors-panel .alignment-warning,.photo-compact #factors-panel .distance-control{margin:0 10px 7px;padding:7px 9px;font-size:11px;line-height:1.35}
+.photo-compact #factors-panel .run-status{font-size:12px;padding:5px 8px;white-space:nowrap}
+.photo-compact #factors-panel .room-temperature-note,.photo-compact #factors-panel .alignment-warning,.photo-compact #factors-panel .distance-control{margin:0 10px 7px;padding:7px 9px;font-size:12px;line-height:1.35}
 .photo-compact #factors-panel .distance-control>div{min-width:150px}
-.photo-compact #factors-panel .distance-control p{font-size:11px}
-.photo-compact #factors-panel .scene-wrap{flex:1 0 180px;min-height:180px;aspect-ratio:auto}
+.photo-compact #factors-panel .distance-control p{font-size:12px}
+.photo-compact #factors-panel .scene-wrap{flex:1 0 200px;min-height:200px;aspect-ratio:auto}
 .photo-compact #factors-panel .scene-tools{top:8px;right:8px}
-.photo-compact #factors-panel .scene-tools button{min-height:44px;padding:8px 10px}
+.photo-compact #factors-panel .scene-tools button{min-height:44px;padding:8px 10px;font-size:12px}
 .photo-compact #factors-panel .scene-bottom{left:10px;right:10px;bottom:8px}
-.photo-compact #factors-panel .specimen-tag{font-size:9px;padding:5px 7px}
+.photo-compact #factors-panel .specimen-tag{font-size:11px;padding:5px 7px}
 .photo-compact #factors-panel .bench-bottom{display:flex;flex-wrap:wrap;gap:6px;min-height:56px;padding:6px 10px}
-.photo-compact #factors-panel .bench-bottom button{min-height:44px;font-size:11px;padding:7px 9px}
+.photo-compact #factors-panel .bench-bottom button{min-height:44px;font-size:12px;padding:7px 9px}
 .photo-compact #bench-note{display:none}
 .photo-compact #experiment-switch{margin-left:auto}
 .photo-compact #reset-open{flex:0 0 44px;margin:0}
 .photo-compact #factors-panel .finish-row{padding:0 10px 7px;gap:6px}
-.photo-compact #factors-panel .finish-row button{min-height:44px;padding:7px 9px;font-size:11px}
-.photo-compact #run-count{font-size:11px}
-.photo-compact #factors-panel .instruments{height:100%;min-height:0;min-width:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;display:grid;grid-template-columns:1fr;align-content:start;gap:7px}
-.photo-compact #factors-panel .instrument,.photo-compact #factors-panel .stopwatch{padding:10px;border-radius:10px;grid-column:auto;grid-row:auto}
-.photo-compact #factors-panel .instrument-title{margin-bottom:8px;gap:6px}
+.photo-compact #factors-panel .finish-row button{min-height:44px;padding:7px 9px;font-size:12px}
+.photo-compact #run-count{font-size:12px}
+.photo-compact #factors-panel .instruments{height:100%;min-height:0;min-width:0;overflow:visible;display:flex;flex-direction:column;gap:7px}
+.photo-compact #factors-panel .photo-controls{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;display:flex;flex-direction:column;gap:7px;flex:1}
+.photo-compact #factors-panel .instrument,.photo-compact #factors-panel .stopwatch{padding:10px;border-radius:10px;grid-column:auto;grid-row:auto;flex:none}
+.photo-compact #factors-panel .instrument-title{margin-bottom:7px;gap:5px}
 .photo-compact #factors-panel .instrument-title h2{font-size:14px}
+.photo-compact #factors-panel .instrument-title .eyebrow{font-size:10px;letter-spacing:.6px}
 .photo-compact #factors-panel .instrument-icon{display:none}
-.photo-compact #factors-panel .selected-material p:not(.eyebrow){font-size:11px;line-height:1.4;margin:7px 0}
-.photo-compact #factors-panel .selected-material button{min-height:44px;padding:7px 9px;margin-top:6px}
-.photo-compact #factors-panel .distance-reading output{font-size:24px}
-.photo-compact #factors-panel .distance-reading>span{margin-bottom:4px}
-.photo-compact #factors-panel .relative-light-reading{margin-top:7px;padding-top:7px}
-.photo-compact #factors-panel .distance-note{font-size:11px;line-height:1.4;margin:7px 0}
-.photo-compact #factors-panel .device-state{margin-top:6px}
+.photo-compact #factors-panel .selected-material{min-height:66px}
+.photo-compact #factors-panel .selected-material>.eyebrow{font-size:10px;margin:0 0 4px;letter-spacing:1px}
+.photo-compact #factors-panel .selected-material p:not(.eyebrow){font-size:12px;line-height:1.4;margin:0}
+.photo-compact #factors-panel .selected-material button{min-height:44px;padding:7px 9px;margin-top:7px;font-size:12px}
+.photo-compact #factors-panel .instrument[data-factor=light]{display:grid;grid-template-columns:1fr 1fr;column-gap:8px}
+.photo-compact #factors-panel .instrument[data-factor=light]>.instrument-title,.photo-compact #factors-panel .instrument[data-factor=light]>.device-state{grid-column:1/-1}
+.photo-compact #factors-panel .distance-reading,.photo-compact #factors-panel .relative-light-reading{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:3px;margin:0;padding:0;border:0}
+.photo-compact #factors-panel .distance-reading>span,.photo-compact #factors-panel .relative-light-reading>span{font-size:12px;line-height:1.3;margin:0}
+.photo-compact #factors-panel .distance-reading output,.photo-compact #factors-panel .relative-light-reading output{font-size:24px;white-space:nowrap}
+.photo-compact #factors-panel .value-line label,.photo-compact #factors-panel .actual-temperature,.photo-compact #factors-panel .range-ends{font-size:12px}
+.photo-compact #factors-panel .device-state{font-size:12px;margin-top:7px}
 .photo-compact #factors-panel input[type=range]{height:44px;margin:0}
 .photo-compact #factors-panel .switch{min-width:44px;min-height:44px;width:44px;border-radius:22px;padding:12px 3px}
 .photo-compact #factors-panel .switch[aria-checked=true] span{transform:translateX(19px)}
 .photo-compact #compact-clock{display:none}
-.photo-compact #stopwatch-panel{display:block}
-.photo-compact #stopwatch-panel .time{font-size:28px;margin:7px 0}
+.photo-compact #stopwatch-panel{display:block;flex:none}
+.photo-compact #stopwatch-panel .time{font-size:30px;margin:7px 0}
 .photo-compact #stopwatch-panel .time>span{font-size:20px}
-.photo-compact #stopwatch-panel .timer-notice{font-size:11px;line-height:1.35;min-height:0;margin:0 0 7px}
+.photo-compact #stopwatch-panel .clock-heading>span{font-size:12px}
+.photo-compact #stopwatch-panel .timer-notice{font-size:12px;line-height:1.35;min-height:0;margin:0 0 7px}
 .photo-compact #stopwatch-panel .clock-buttons{gap:6px;flex-direction:row}
-.photo-compact #stopwatch-panel .clock-buttons button{min-height:44px;padding:7px 8px}
+.photo-compact #stopwatch-panel .clock-buttons button{min-height:44px;padding:7px 8px;font-size:12px}
 .photo-compact #factors-panel>.page-footer{display:none}
+@media(max-width:1199px){
+  .photo-compact #factors-panel>.intro h1{font-size:21px}
+  .photo-compact #factors-panel>.laboratory{grid-template-columns:132px minmax(0,1fr) 240px}
+}
+@media(max-width:1099px){
+  .photo-compact #factors-panel{grid-template-columns:auto minmax(0,1fr)}
+  .photo-compact #factors-panel>.intro>div{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+}
 @media(max-width:899px){
-  .photo-compact #factors-panel>.laboratory{grid-template-columns:minmax(0,1fr) 190px;grid-template-rows:auto minmax(0,1fr);gap:8px}
-  .photo-compact #factors-panel .materials{grid-column:1/-1;max-height:140px;padding:7px 8px}
-  .photo-compact #factors-panel .materials>.eyebrow{text-align:left;margin-bottom:5px}
-  .photo-compact #material-tray{grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}
-  .photo-compact #material-tray .material-button{min-height:52px;font-size:9px;padding:4px 2px;gap:2px}
-  .photo-compact #material-tray .material-button svg{width:20px;height:20px}
-  .photo-compact #factors-panel .material-note{margin-top:5px;font-size:10px}
+  .photo-compact #factors-panel>.laboratory{grid-template-columns:minmax(0,1fr) 240px;grid-template-rows:auto minmax(0,1fr);gap:8px}
+  .photo-compact #factors-panel .materials{grid-column:1/-1;padding:6px 8px;overflow:visible}
+  .photo-compact #factors-panel .material-help{margin:0 0 4px}
+  .photo-compact #factors-panel .material-help>p{position:absolute;left:0;top:100%;width:min(420px,100%);padding:12px;margin:0;background:#fdfef8;border:1px solid #b9c9a9;border-radius:9px;box-shadow:0 8px 24px #203b3224;z-index:20}
+  .photo-compact #material-tray{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+  .photo-compact #material-tray .material-button{min-height:52px;font-size:12px;padding:5px 6px;gap:6px}
   .photo-compact #factors-panel .bench{grid-column:1;grid-row:2}
   .photo-compact #factors-panel .instruments{grid-column:2;grid-row:2}
-  .photo-compact #factors-panel>.intro h1{font-size:21px}
+  .photo-compact #factors-panel .finish-row button{width:auto}
 }
 /* Feedback remains visible at the top, even when the workspace is scrolled. */
 #photo-notice{position:fixed;z-index:2000;top:max(10px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:flex;align-items:flex-start;gap:14px;width:min(720px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:14px 12px 14px 18px;border:2px solid #bd3636;border-left-width:6px;border-radius:12px;background:#fff0ef;color:#9f2020;box-shadow:0 10px 32px #551b1b33}
@@ -279,6 +313,38 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 #factors-panel>.measurement-rule>p{margin:0 0 12px}
 .photo-compact #factors-panel .bench-feedback{padding:7px 10px;font-size:11px;line-height:1.35}
 @media(max-width:699px){#photo-notice{top:8px;padding:12px 10px 12px 13px;gap:10px}#photo-notice-message{font-size:13px}#factors-panel .scene-wrap{max-height:50dvh}#factors-panel>.intro{margin-bottom:12px}#factors-panel>.experiment-tabs{margin-bottom:8px}}
+/* Scoped to the photosynthesis helper; the scene and chromatography are untouched. */
+#factors-panel .fs-leaf-helper{position:relative;isolation:isolate;flex:none;min-width:0;height:56px;z-index:12}
+#factors-panel .fs-leaf-toggle{position:relative;display:flex;align-items:center;gap:5px;width:100%;height:56px;min-height:56px;padding:2px 8px 2px 2px;border:1px solid #becfa8;border-radius:14px;background:#eaf1db;text-align:left;overflow:visible}
+#factors-panel .fs-leaf-toggle:hover{background:#e1eccd}
+#factors-panel .fs-leaf-toggle[aria-expanded=true]{background:#e1eccd;border-color:#82a454}
+#factors-panel .fs-leaf-character{width:61px;height:61px;flex:none;align-self:center;overflow:visible;filter:drop-shadow(0 2px 0 #f7faeb)}
+#factors-panel .fs-leaf-toggle-copy{display:grid;gap:4px;min-width:0;flex:1}
+#factors-panel .fs-leaf-toggle-copy strong{font-size:13px;line-height:1.15;color:#28472f}
+#factors-panel .fs-leaf-toggle-copy>span{font-size:11px;line-height:1.2;font-weight:400;color:#536a43}
+#factors-panel .fs-leaf-toggle-mark{display:grid;place-items:center;flex:none;width:24px;height:24px;border:1px solid #9fb97f;border-radius:50%;font:700 15px Georgia,serif;color:#536f3e;background:#f7faee}
+#factors-panel .fs-leaf-bubble{position:absolute;z-index:1;bottom:calc(100% + 11px);right:0;display:flex;flex-direction:column;width:100%;max-height:min(430px,65dvh,var(--fs-leaf-available-height,430px));overflow:hidden;padding:13px;border:1.5px solid #89a669;border-radius:18px 18px 18px 5px;background:#fffef4;color:#294832;box-shadow:0 8px 28px #203b3224}
+#factors-panel .fs-leaf-helper.is-open::before{content:'';position:absolute;z-index:2;bottom:calc(100% + 4px);left:27px;width:14px;height:14px;transform:rotate(45deg);border-right:1.5px solid #89a669;border-bottom:1.5px solid #89a669;background:#fffef4;pointer-events:none}
+#factors-panel .fs-leaf-bubble-head{display:flex;align-items:flex-start;flex:none;gap:3px;margin:-3px -6px 0 0}
+#factors-panel .fs-leaf-bubble-body{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#a9bb8a transparent;padding-right:2px}
+#factors-panel .fs-leaf-bubble-head>div{flex:1;min-width:0;padding-top:5px}
+#factors-panel .fs-leaf-kicker{display:block;font-size:8px;font-weight:700;letter-spacing:1.05px;color:#758460;margin-bottom:5px}
+#factors-panel .fs-leaf-bubble h2{font:20px/1.1 Georgia,serif;letter-spacing:-.2px;margin:0}
+#factors-panel .fs-leaf-close{padding:0;min-height:44px;min-width:44px;width:44px;border:0;background:transparent;font:27px/1 Arial,sans-serif;margin-top:-4px;flex:none;border-radius:50%}
+#factors-panel .fs-leaf-context{font-size:10px;font-weight:700;color:#758460;line-height:1.3;margin:12px 0 7px}
+#factors-panel .fs-leaf-message{font-size:13px;line-height:1.55;margin:0 0 12px;color:#36523c;overflow-wrap:anywhere}
+#factors-panel .fs-leaf-history{display:flex;align-items:center;justify-content:space-between;gap:3px;margin:0 0 7px;border-top:1px solid #e3e8d3;padding-top:5px}
+#factors-panel .fs-leaf-history button{width:44px;min-width:44px;min-height:44px;padding:4px;font-size:18px;border-color:#d8e2c6;background:transparent}
+#factors-panel .fs-leaf-history>span{font-size:11px;text-align:center;color:#647650;line-height:1.3}
+#factors-panel .fs-leaf-next{width:100%;min-height:44px;padding:9px 6px;border-color:#355b3a;background:#355b3a;color:#fffef4;font-size:12px;line-height:1.3;border-radius:10px}
+#factors-panel .fs-leaf-next:hover:not(:disabled){background:#486d43}
+#factors-panel .fs-leaf-next:disabled{opacity:1;color:#68795b;background:#e9eedc;border-color:#d4dec2;cursor:default}
+#factors-panel .fs-leaf-budget-note{font-size:10px;line-height:1.45;color:#748062;margin:8px 0 0}
+#factors-panel .fs-leaf-helper.is-open .fs-leaf-character{animation:fs-leaf-greet .38s ease-out 1;transform-origin:50% 90%}
+@keyframes fs-leaf-greet{0%,100%{transform:rotate(0)}45%{transform:rotate(-7deg)}75%{transform:rotate(3deg)}}
+@media(max-width:699px){#factors-panel .fs-leaf-helper{grid-column:1/-1;max-width:360px;width:100%;justify-self:center}#factors-panel .fs-leaf-bubble{max-height:min(430px,60dvh,var(--fs-leaf-available-height,430px))}}
+@media(prefers-reduced-motion:reduce){#factors-panel .fs-leaf-helper.is-open .fs-leaf-character{animation:none}}
+
 </style></head>
 <body>
 <header class="topbar"><a class="brand" href="#" aria-label="Fotosyntheselabor"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26 5C9 3 3 12 8 23c12 7 21-2 18-18Z"/><path d="M6 27 24 8M13 20l-1-8m6 3 7 1"/></svg><span>Fotosynthese<span class="brand-sub">EXPERIMENTIERLABOR</span></span></a></header>
@@ -289,7 +355,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 <nav class="experiment-tabs" aria-label="Einzelversuch wählen" id="experiment-tabs"></nav>
 <details class="measurement-rule"><summary>Messablauf: 3 × 60 Sekunden nach jeweils 10 Sekunden Anpassung</summary><p>Pro Einzelversuch sind <strong>3 Messdurchgänge à 60 Sekunden</strong> möglich. Nach „Versuch starten“ zählt die Stoppuhr zuerst <strong>10 Sekunden rückwärts</strong>: die Anpassungsphase ist im Modell verkürzt. Noch nicht zählen! Anschließend beginnt automatisch die 60-Sekunden-Messung. Ab 55 Messsekunden blinkt das Stoppuhrfeld.</p></details>
 <div class="laboratory">
- <aside class="materials" aria-label="Materialablage"><p class="eyebrow">MATERIALABLAGE</p><div id="material-tray"></div><p class="material-note">Ziehen oder auswählen und auf der Arbeitsfläche ablegen.</p></aside>
+ <aside class="materials" aria-label="Materialablage"><details class="material-help"><summary>Materialablage</summary><p class="material-note">Ziehen oder auswählen und auf der Arbeitsfläche ablegen.</p></details><div id="material-tray"></div></aside>
  <section class="bench" aria-labelledby="bench-title">
   <header class="bench-head"><div><p class="eyebrow">DEIN VERSUCHSPLATZ</p><h2 id="bench-title">Lichtintensität</h2></div><span class="run-status" id="run-status"><i></i>Aufbau</span></header>
   <p id="room-temperature-note" class="room-temperature-note">Annahme für diesen Versuch: <strong>konstante Raumtemperatur von 20 °C</strong>. Ein Wasserbad ist nicht erforderlich.</p>
@@ -303,11 +369,63 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
   <div class="bench-feedback" id="bench-feedback" role="status" aria-live="polite" hidden></div>
  </section>
  <aside class="instruments" aria-label="Geräte und Einstellungen">
-  <section class="instrument selected-material"><p class="eyebrow">AUSWAHL</p><h2 id="selected-name">Kein Material gewählt</h2><p id="selected-description">Die Arbeitsfläche ist frei gestaltbar.</p><button id="remove-material" class="quiet" hidden>Zurücklegen</button><button id="lamp-power" class="quiet" hidden aria-pressed="true">Leuchte ausschalten</button></section>
-  <section class="instrument" data-factor="light" aria-labelledby="light-title"><div class="instrument-title"><span class="instrument-icon sun" aria-hidden="true">☼</span><div><p class="eyebrow">LED-LEUCHTE</p><h2 id="light-title">Lichtintensität</h2></div><button class="switch" id="lamp-button" role="switch" aria-checked="true" aria-label="LED-Leuchte"><span></span></button></div><div class="value-line distance-reading"><span>Abstand Lampe–Pflanze</span><output id="light-value" aria-live="off">— <small>cm</small></output></div><div class="value-line relative-light-reading"><span>Relative Lichtintensität</span><output id="light-intensity-value" aria-live="off">— <small>%</small></output></div><p class="distance-note">Die Leuchte auf der Arbeitsfläche ziehen, um den Abstand zu verändern. Die relative Lichtintensität ist eine Modellgröße.</p><p class="device-state" id="light-device-state">Nicht aufgestellt</p></section>
+  <div class="photo-controls">
+  <section class="instrument selected-material"><p class="eyebrow">AUSWAHL</p><h2 id="selected-name">Kein Material gewählt</h2><details class="instrument-help selection-help"><summary aria-label="Hinweis zur Materialbedienung">?</summary><p id="selected-description">Die Arbeitsfläche ist frei gestaltbar.</p></details><button id="remove-material" class="quiet" hidden>Zurücklegen</button><button id="lamp-power" class="quiet" hidden aria-pressed="true">Leuchte ausschalten</button></section>
+  <section class="instrument" data-factor="light" aria-labelledby="light-title"><div class="instrument-title"><span class="instrument-icon sun" aria-hidden="true">☼</span><div><p class="eyebrow">LED-LEUCHTE</p><h2 id="light-title">Lichtintensität</h2></div><details class="instrument-help light-help"><summary aria-label="Hinweise zu Abstand und Lichtintensität">?</summary><p class="distance-note">Die Leuchte auf der Arbeitsfläche ziehen, um den Abstand zu verändern. Die relative Lichtintensität ist eine Modellgröße.</p></details><button class="switch" id="lamp-button" role="switch" aria-checked="true" aria-label="LED-Leuchte"><span></span></button></div><div class="value-line distance-reading"><span>Abstand Lampe–Pflanze</span><output id="light-value" aria-live="off">— <small>cm</small></output></div><div class="value-line relative-light-reading"><span>Relative Lichtintensität</span><output id="light-intensity-value" aria-live="off">— <small>%</small></output></div><p class="device-state" id="light-device-state">Nicht aufgestellt</p></section>
   <section class="instrument" data-factor="carbon" aria-labelledby="carbon-title" hidden><div class="instrument-title"><div><p class="eyebrow">VERSUCHSWASSER</p><h2 id="carbon-title">CO₂-Gehalt</h2></div></div><div class="value-line"><label for="carbon">Relative Einstellung</label><output id="carbon-value" for="carbon">55 <small>%</small></output></div><input id="carbon" type="range" min="0" max="100" step="5" value="55" aria-label="Relativer CO₂-Gehalt in Prozent"><div class="range-ends"><span>0 %</span><span>100 %</span></div><p class="device-state" id="carbon-device-state">Nicht verbunden</p></section>
   <section class="instrument" data-factor="temperature" aria-labelledby="temperature-title" hidden><div class="instrument-title"><span class="instrument-icon" aria-hidden="true">°C</span><div><p class="eyebrow">WASSERBAD</p><h2 id="temperature-title">Temperatur</h2></div></div><div class="value-line"><label for="temperature">Sollwert</label><output id="temperature-value" for="temperature">20 <small>°C</small></output></div><input id="temperature" type="range" min="5" max="45" step="1" value="20" aria-label="Solltemperatur des Wasserbads in Grad Celsius"><div class="range-ends"><span>5 °C</span><span>45 °C</span></div><p class="device-state" id="temperature-device-state">Nicht verbunden</p></section>
   <section class="instrument thermometer-readout" id="thermometer-panel" hidden><div class="actual-temperature"><span><i></i>Thermometer</span><output id="actual-temperature">— °C</output></div></section>
+  </div>
+<section id="fs-leaf-helper" class="fs-leaf-helper" aria-label="Blättchens Denkanstöße">
+  <div id="fs-leaf-bubble" class="fs-leaf-bubble" role="region" aria-labelledby="fs-leaf-heading" hidden>
+    <div class="fs-leaf-bubble-head">
+      <div><span class="fs-leaf-kicker">DEIN DENKPARTNER</span><h2 id="fs-leaf-heading">Ein kleiner Anstoß?</h2></div>
+      <button id="fs-leaf-close" class="fs-leaf-close" type="button" aria-label="Sprechblase schließen">×</button>
+    </div>
+    <div id="fs-leaf-body" class="fs-leaf-bubble-body">
+    <p id="fs-leaf-context" class="fs-leaf-context"></p>
+    <p id="fs-leaf-message" class="fs-leaf-message" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">Ich bin Blättchen. Wenn du feststeckst, denke ich mit dir mit. Du entscheidest, wie du weiterforschst.</p>
+    <div id="fs-leaf-history" class="fs-leaf-history" hidden>
+      <button id="fs-leaf-previous" type="button" aria-label="Vorherigen Denkanstoß erneut lesen">←</button>
+      <span id="fs-leaf-position"></span>
+      <button id="fs-leaf-forward" type="button" aria-label="Bereits erhaltenen nächsten Denkanstoß erneut lesen">→</button>
+    </div>
+    <button id="fs-leaf-next" class="fs-leaf-next" type="button">Denkanstoß holen</button>
+    <p id="fs-leaf-budget-note" class="fs-leaf-budget-note">4 Denkanstöße pro Versuchsaufbau. Erneutes Lesen ist frei.</p>
+    </div>
+  </div>
+  <button id="fs-leaf-toggle" class="fs-leaf-toggle" type="button" aria-expanded="false" aria-controls="fs-leaf-bubble">
+    <svg class="fs-leaf-character" viewBox="0 0 126 126" aria-hidden="true" focusable="false">
+      <ellipse cx="66" cy="117" rx="38" ry="5" fill="#244b3020"/>
+      <g fill="none" stroke="#31563b" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M54 92 48 109 36 111M77 91 84 108 96 110"/>
+        <path d="M33 63 18 69 13 60"/>
+        <path class="fs-leaf-wave-arm" d="m92 57 14-10 4-13"/>
+      </g>
+      <g fill="#f7fbeb" stroke="#31563b" stroke-width="2.5" stroke-linejoin="round">
+        <path d="m13 61-5-3-2-7 4-2 4 4 1-8 4 1 1 10 4 4-5 7Z"/>
+        <path class="fs-leaf-wave-hand" d="m108 36-6-6 1-5 5 3 1-11 4-1 2 11 4-5 4 3-6 11-4 3Z"/>
+        <path d="M48 106q-11-4-17 5l1 5h21l1-6ZM82 106q10-4 17 5l-1 5H78l-1-6Z"/>
+      </g>
+      <path d="M64 99C31 96 21 68 35 40 44 22 68 12 93 9c-2 18 12 35 7 54-5 21-17 34-36 36Z" fill="#a9d36c" stroke="#31563b" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M64 99C55 74 61 41 91 12c-9 29-8 65-27 87Z" fill="#8fc058" opacity=".65"/>
+      <path d="M62 91q-3-40 27-73M61 73 43 64m20-9 19-7M69 39l-10-9" fill="none" stroke="#6f9b44" stroke-width="2.2" stroke-linecap="round"/>
+      <ellipse cx="51" cy="57" rx="5.7" ry="8" fill="#fcfdef"/>
+      <ellipse cx="77" cy="53" rx="5.7" ry="8" fill="#fcfdef"/>
+      <ellipse cx="52.5" cy="58" rx="2.8" ry="4.1" fill="#274531"/>
+      <ellipse cx="78" cy="54" rx="2.8" ry="4.1" fill="#274531"/>
+      <path d="M45 43q5-4 10-1m17-4q5-3 10 1" fill="none" stroke="#31563b" stroke-width="2.6" stroke-linecap="round"/>
+      <ellipse cx="43" cy="70" rx="7" ry="4" fill="#e6a78b" opacity=".78"/>
+      <ellipse cx="85" cy="65" rx="7" ry="4" fill="#e6a78b" opacity=".78"/>
+      <path d="M53 71q11 13 22-3" fill="#36543a" stroke="#31563b" stroke-width="2.3" stroke-linecap="round"/>
+      <path d="M58 74q7 4 12-2" fill="none" stroke="#fff6df" stroke-width="3" stroke-linecap="round"/>
+      <path d="m92 8 3-4" fill="none" stroke="#31563b" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+    <span class="fs-leaf-toggle-copy"><strong>Frag Blättchen</strong><span id="fs-leaf-budget">4 von 4 Denkanstößen frei</span></span>
+    <span class="fs-leaf-toggle-mark" aria-hidden="true">?</span>
+  </button>
+</section>
+
   <section class="stopwatch" id="stopwatch-panel" hidden aria-labelledby="timer-title"><div class="clock-heading"><h2 id="timer-title">Stoppuhr</h2><span id="timer-state">Bereit</span></div><output class="time" id="timer-value" aria-label="Verstrichene Messzeit">00:00<span>,0</span></output><p class="timer-notice" id="timer-notice">Messzeit: 60 Sekunden</p><div class="clock-buttons"><button id="timer-toggle" disabled>Start</button><button id="timer-reset" aria-label="Stoppuhr auf null zurücksetzen">Nullstellen</button></div></section>
  </aside>
 </div>
@@ -396,7 +514,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 </dialog>
 <dialog id="experiment-dialog" aria-labelledby="experiment-dialog-title" aria-describedby="experiment-dialog-description"><div class="dialog-head"><p class="eyebrow">EINZELVERSUCHE</p><button class="close-dialog" data-close="experiment-dialog" aria-label="Versuchsauswahl schließen">×</button></div><h2 id="experiment-dialog-title">Versuch wechseln</h2><p id="experiment-dialog-description">Deine Aufbauten bleiben beim Wechsel erhalten. Laufende Versuche und Stoppuhren pausieren.</p><div id="experiment-choices" class="experiment-choices"></div><div class="dialog-actions"><button class="quiet" data-close="experiment-dialog">Zurück zum Arbeitsplatz</button></div></dialog>
 <dialog id="finish-dialog" aria-labelledby="finish-title" aria-describedby="finish-message"><div class="dialog-head"><p class="eyebrow">DEIN EINZELVERSUCH</p><button class="close-dialog" data-close="finish-dialog" aria-label="Hinweis schließen">×</button></div><h2 id="finish-title">Versuch abschließen</h2><p id="finish-message"></p><p id="finish-incomplete" class="dialog-note" hidden></p><p class="dialog-note">Hier werden nur vollständig beobachtete Einstellungen berücksichtigt. Bläschenzahlen und deine eigenen Aufzeichnungen werden nicht geprüft. Dein Aufbau bleibt erhalten.</p><div class="dialog-actions"><button class="primary" data-close="finish-dialog">Zurück zum Versuch</button></div></dialog>
-<dialog id="reset-dialog" aria-labelledby="reset-title"><div class="dialog-head"><p class="eyebrow">VERSUCHSPLATZ</p><button class="close-dialog" data-close="reset-dialog" aria-label="Schließen">×</button></div><h2 id="reset-title">Diesen Aufbau leeren?</h2><p>Der Aufbau und die Messreihe dieses Einzelversuchs werden zurückgesetzt. Danach stehen wieder drei Messdurchgänge zur Verfügung. Die anderen Versuchsplätze bleiben erhalten.</p><div class="dialog-actions"><button class="quiet" data-close="reset-dialog">Abbrechen</button><button class="primary" id="reset-confirm">Zurücksetzen</button></div></dialog>
+<dialog id="reset-dialog" aria-labelledby="reset-title"><div class="dialog-head"><p class="eyebrow">VERSUCHSPLATZ</p><button class="close-dialog" data-close="reset-dialog" aria-label="Schließen">×</button></div><h2 id="reset-title">Diesen Aufbau leeren?</h2><p>Der Aufbau und die Messreihe dieses Einzelversuchs werden zurückgesetzt. Danach stehen wieder drei Messdurchgänge und vier Denkanstöße von Blättchen zur Verfügung. Die anderen Versuchsplätze bleiben erhalten.</p><div class="dialog-actions"><button class="quiet" data-close="reset-dialog">Abbrechen</button><button class="primary" id="reset-confirm">Zurücksetzen</button></div></dialog>
 <div class="drag-ghost" id="drag-ghost" hidden aria-hidden="true"></div>
 <div id="timer-announcement" class="sr-only" role="status" aria-live="polite"></div>
 <div id="status-message" class="sr-only" role="status" aria-live="polite"></div>
@@ -1418,6 +1536,16 @@ function createScene(canvas) {
     return { x: (px - lens.x) / lens.scale / W, y: (py - lens.y) / lens.scale / H };
   }
 
+  function worldToCanvas(point, options = lastView) {
+    const box = canvas.getBoundingClientRect();
+    const scale = Math.min(box.width / W, box.height / H);
+    const lens = lensView(options.setup, options.zoom);
+    return {
+      x: (box.width - W * scale) / 2 + (point.x * W * lens.scale + lens.x) * scale,
+      y: (box.height - H * scale) / 2 + (point.y * H * lens.scale + lens.y) * scale,
+    };
+  }
+
   function hitTest(point, setup = lastView.setup) {
     const x = Array.isArray(point) ? point[0] : point?.x;
     const y = Array.isArray(point) ? point[1] : point?.y;
@@ -1487,6 +1615,7 @@ function createScene(canvas) {
     render,
     hitTest,
     screenToWorld,
+    worldToCanvas,
     destroy() { disposed = true; ctx.clearRect(0, 0, canvas.width, canvas.height); },
   };
 }
@@ -1498,6 +1627,98 @@ const fresh=id=>({assembly:createAssembly(id),simulation:createSimulation(),stop
 const benches=new Map(EXPERIMENTS.map(e=>[e.id,fresh(e.id)]));
 let activeId='light',last=performance.now(),lastReadout=0,scene=null,gesture=null;
 const current=()=>benches.get(activeId);
+let leafHelper=null;
+/* Define before mounting. State follows each bench object's existing lifetime. */
+function createLeafHelper(root,getContext){
+  if(!root)throw new Error('Blättchens Platz fehlt.');
+  const LIMIT=4,states=new WeakMap(),find=id=>root.querySelector('#fs-leaf-'+id);
+  const ui={toggle:find('toggle'),bubble:find('bubble'),body:find('body'),close:find('close'),heading:find('heading'),context:find('context'),message:find('message'),budget:find('budget'),next:find('next'),history:find('history'),position:find('position'),previous:find('previous'),forward:find('forward'),note:find('budget-note')};
+  const view=root.ownerDocument?.defaultView,sidebar=root.closest?.('.instruments');
+  function fitBubble(){
+    if(!sidebar||!root.getBoundingClientRect||!root.style)return;
+    const anchor=root.getBoundingClientRect();
+    if(!anchor.height)return;
+    const sidebarTop=sidebar.getBoundingClientRect().top,viewportTop=view?.visualViewport?.offsetTop||0;
+    // The bubble's bottom sits 11 px above the helper. Its top must stay within
+    // the sidebar and the visible viewport, even when the stopwatch takes space.
+    const available=Math.max(0,Math.min(430,Math.floor(anchor.top-Math.max(sidebarTop,viewportTop+8)-11)));
+    root.style.setProperty('--fs-leaf-available-height',available+'px');
+  }
+  const names={light:'Lichtintensität',carbon:'CO₂-Gehalt',temperature:'Temperatur'};
+  const questions={
+    light:[
+      'Welche Frage möchtest du zum Licht untersuchen? Formuliere, was du gezielt veränderst und woran du eine Veränderung bei der Wasserpest erkennen willst.',
+      'Verfolge den Weg des Lichts zur Pflanze. Welche Rolle spielt die Ausrichtung der Leuchte, wenn du deine Einstellungen vergleichst? Überlege auch, welche Rolle ein Versuch im Dunkeln haben könnte.',
+      'Welche Bedingungen sollen beim Vergleich der Lichtverhältnisse gleich bleiben? Notiere sie vor der nächsten Messung und prüfe deinen Aufbau daran.',
+      'Wie kannst du deine Bläschenzählungen fair vergleichen? Denke an Anpassungszeit, gleich lange Messungen und daran, deine gewählten Bedingungen mit zu notieren.'
+    ],
+    carbon:[
+      'Was möchtest du über den CO₂-Gehalt herausfinden? Formuliere eine Frage, in der die relative CO₂-Einstellung die gezielt veränderte Größe ist.',
+      'Schau dir an, wie du die relative CO₂-Einstellung im Versuch verändern kannst. Welche Aufgabe hat das dafür verfügbare Material in deinem Aufbau?',
+      'Denke an deine Untersuchung zum Licht: Was könnte neben der CO₂-Einstellung die Bläschenzahl beeinflussen? Wie hältst du diese Bedingungen beim Vergleich konstant?',
+      'Wie machst du die Zählungen verschiedener CO₂-Einstellungen vergleichbar? Plane die Messzeiten und notiere zu jeder Zählung auch die Versuchsbedingungen.'
+    ],
+    temperature:[
+      'Welche Frage möchtest du zur Temperatur untersuchen? Unterscheide dabei die gezielt veränderte Größe von dem, was du an der Wasserpest beobachtest.',
+      'Betrachte den Wärmeaustausch zwischen deiner Probe und ihrer Umgebung. Wo erfasst dein Thermometer die Temperatur? Was sagt dir diese Messstelle über die Bedingungen an der Pflanze?',
+      'Der eingestellte Sollwert und die Temperatur an der Pflanze sind zwei verschiedene Angaben. Woran könntest du erkennen, wann eine neue Messung sinnvoll beginnt?',
+      'Wie vergleichst du deine Zählungen bei unterschiedlichen Temperaturen? Prüfe Messdauer und Anpassung und überlege, welche anderen Bedingungen gleich bleiben sollten.'
+    ]
+  };
+  function read(){
+    const c=getContext();
+    if(!c||!c.bench||!questions[c.experimentId])throw new Error('Unvollständiger Kontext für Blättchen.');
+    let state=states.get(c.bench);
+    if(!state){state={open:false,history:[],view:0};states.set(c.bench,state);}
+    return {c,state};
+  }
+  function makeHint(c,index){
+    const d=c.setup||{},id=c.experimentId,runs=c.completedRuns||0;
+    if(index===0&&runs>0)return 'Du hast schon gemessen. Lies noch einmal deine Fragestellung zu '+names[id]+': Welche Größe hast du gezielt verändert, und welche Beobachtung hilft dir bei der Antwort?';
+    if(index===1){
+      if(!d.beakerPresent||!d.waterPresent||!d.plantPresent)return 'Betrachte zuerst den Platz, an dem du die Wasserpest beobachten möchtest. Welche Funktion sollen die von dir gewählten Materialien dort erfüllen? Was brauchst du noch, um Bläschen zählen zu können?';
+      if(id==='light'&&c.alignmentIssue)return 'Schau dir den Lichtweg in deinem Aufbau an. Wie trifft das Licht auf die Pflanze? Welche Bedeutung könnte die Ausrichtung haben, wenn du später verschiedene Abstände vergleichst?';
+      if(id==='temperature'&&!d.waterbathConnected)return 'Wie könnte dein Aufbau die Wasserpest erwärmen oder abkühlen? Prüfe die Verbindung zwischen den Teilen deines Aufbaus. Welche Rolle könnte ein Vergleich bei Raumtemperatur spielen?';
+      if(id==='temperature'&&!d.thermometerConnected)return 'Welche Temperatur möchtest du tatsächlich erfassen? Überlege, ob die Messstelle deines Thermometers etwas über die Bedingungen an der Wasserpest aussagt.';
+    }
+    if(index===2&&id!=='light'&&(c.distanceIssue||c.alignmentIssue))return 'Vergleiche die Beleuchtung deiner bisherigen und geplanten Messungen. Was würde es für deine Auswertung bedeuten, wenn sich neben '+(id==='carbon'?'der CO₂-Einstellung':'der Temperatur')+' auch die Lichtbedingungen ändern?';
+    if(index===3){
+      if(runs>=3)return 'Lege deine drei Zählungen mit den zugehörigen Bedingungen nebeneinander. Welche Vergleiche passen zu deiner Fragestellung? Was lässt sich daraus begründen, und welche Frage bleibt noch offen?';
+      if(runs>0)return 'Du hast bereits '+runs+(runs===1?' Messdurchgang':' Messdurchgänge')+' beendet. Was muss beim nächsten Durchgang gleich bleiben, damit du die Zählungen vergleichen kannst? Halte zuerst fest, was du gezielt ändern möchtest.';
+      if(c.stopwatchStage==='warmup')return 'Dein Versuch ist gerade in der Anpassungsphase. Warum könnte es für einen fairen Vergleich wichtig sein, erst danach zu zählen? Überlege, welche Bedingungen während der Messung gleich bleiben sollten.';
+    }
+    return questions[id][index];
+  }
+  function update(){
+    const {c,state}=read(),used=state.history.length,remaining=LIMIT-used;
+    ui.bubble.hidden=!state.open;root.classList.toggle('is-open',state.open);ui.toggle.setAttribute('aria-expanded',String(state.open));
+    ui.budget.textContent=remaining+' von '+LIMIT+' Denkanstößen frei';
+    ui.toggle.setAttribute('aria-label','Frag Blättchen. '+remaining+' von '+LIMIT+' Denkanstößen für '+names[c.experimentId]+' frei. '+(state.open?'Sprechblase schließen.':'Sprechblase öffnen.'));
+    ui.context.textContent=names[c.experimentId]+' · '+(used?'Denkanstoß '+(state.view+1):'Dein eigener Forschungsweg');
+    ui.heading.textContent=used?'Denk einmal darüber nach …':'Ein kleiner Anstoß?';
+    const message=used?state.history[state.view]:'Ich bin Blättchen. Wenn du feststeckst, denke ich mit dir mit. Du entscheidest, wie du weiterforschst.';
+    if(ui.message.textContent!==message)ui.message.textContent=message;
+    ui.history.hidden=used<2;ui.position.textContent='Hinweis '+(state.view+1)+' / '+used;ui.previous.disabled=state.view<=0;ui.forward.disabled=state.view>=used-1;
+    ui.next.disabled=used>=LIMIT;ui.next.textContent=used>=LIMIT?'Alle 4 Denkanstöße genutzt':used?'Nächster Denkanstoß':'Denkanstoß holen';
+    ui.note.textContent=used>=LIMIT?'Du kannst deine Denkanstöße weiter frei lesen. Dein Aufbau bleibt in deiner Hand.':'4 Denkanstöße pro Versuchsaufbau. Nur ein neuer Denkanstoß zählt; erneutes Lesen ist frei.';
+    fitBubble();
+  }
+  function revealMessage(focus=false){ui.body.scrollTop=0;if(focus)ui.message.focus({preventScroll:true});}
+  function setOpen(open,focus=false){const {state}=read();state.open=open;update();if(open)revealMessage();if(focus)(open?ui.close:ui.toggle).focus({preventScroll:true});}
+  const onToggle=()=>{const {state}=read();setOpen(!state.open,true);};
+  const onClose=()=>setOpen(false,true);
+  const onNext=()=>{const {c,state}=read();if(state.history.length>=LIMIT)return;state.history.push(makeHint(c,state.history.length));state.view=state.history.length-1;update();revealMessage(true);};
+  const onPrevious=()=>{const {state}=read();if(state.view>0){state.view--;update();revealMessage(true);}};
+  const onForward=()=>{const {state}=read();if(state.view<state.history.length-1){state.view++;update();revealMessage(true);}};
+  const onKey=e=>{if(e.key==='Escape'&&read().state.open){e.preventDefault();onClose();}};
+  ui.toggle.addEventListener('click',onToggle);ui.close.addEventListener('click',onClose);ui.next.addEventListener('click',onNext);ui.previous.addEventListener('click',onPrevious);ui.forward.addEventListener('click',onForward);root.addEventListener('keydown',onKey);
+  view?.addEventListener('resize',fitBubble);view?.visualViewport?.addEventListener('resize',fitBubble);view?.addEventListener('scroll',fitBubble,true);
+  const resizeObserver=view?.ResizeObserver?new view.ResizeObserver(fitBubble):null;
+  if(sidebar){resizeObserver?.observe(sidebar);const controls=sidebar.querySelector('.photo-controls');if(controls)resizeObserver?.observe(controls);}
+  update();
+  return {update,destroy(){ui.toggle.removeEventListener('click',onToggle);ui.close.removeEventListener('click',onClose);ui.next.removeEventListener('click',onNext);ui.previous.removeEventListener('click',onPrevious);ui.forward.removeEventListener('click',onForward);root.removeEventListener('keydown',onKey);view?.removeEventListener('resize',fitBubble);view?.visualViewport?.removeEventListener('resize',fitBubble);view?.removeEventListener('scroll',fitBubble,true);resizeObserver?.disconnect();}};
+}
+
 const present=(b,id)=>id==='water'?(b.assembly.water||b.assembly.bathWater):id==='plant'?b.assembly.plant:!!b.assembly.items[id];
 const n1=n=>n.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
 const symbols={light:'☼',temperature:'°C'};
@@ -1536,7 +1757,7 @@ function flash(message,kind='info'){
  renderPhotoNotice();
 }
 function syncPhotoLayout(){
- const compact=!$('factors-panel').hidden&&window.innerWidth>=700&&window.innerHeight>=600&&(window.innerWidth<=1400||window.innerHeight<=900||window.matchMedia('(pointer: coarse)').matches);
+ const compact=!$('factors-panel').hidden&&window.innerWidth>=700&&window.innerHeight>=600;
  document.body.classList.toggle('photo-compact',compact);
 }
 window.addEventListener('resize',syncPhotoLayout);
@@ -1636,9 +1857,10 @@ function updateUI(){
  $('empty-bench').hidden=Object.keys(b.assembly.items).length>0;
  $('placement-label').textContent=b.pending==='water'?'Wasser zugeben':b.pending?selected.label+' ablegen':b.assembly.plant?'Bläschen am Stiel':'Material frei platzieren';
  $('scene').classList.toggle('placing',!!b.pending);$('thermometer-panel').hidden=!d.thermometerPresent;
- marker.hidden=!b.keyboard||!b.pending;marker.style.left=b.cursor.x*100+'%';marker.style.top=b.cursor.y*100+'%';
- updateReadouts();updateTimer();
+ marker.hidden=!b.keyboard||!b.pending;positionKeyboardMarker(b);
+ updateReadouts();updateTimer();leafHelper?.update();
 }
+function positionKeyboardMarker(b=current()){if(marker.hidden||!scene)return;const p=scene.worldToCanvas(b.cursor,{setup:b.assembly,zoom:b.zoom});marker.style.left=p.x+'px';marker.style.top=p.y+'px';}
 function updateReadouts(){
  const b=current(),d=deriveSetup(b.assembly),distance=lampDistanceCm(b.preview||b.assembly),readout=(distance===null?'—':n1(distance))+' <small>cm</small>';
  $('light-value').innerHTML=readout;$('light-intensity-value').innerHTML=(distance===null?'—':n1(b.settings.lampOn?lightAtDistance(distance):0))+' <small>%</small>';
@@ -1702,7 +1924,11 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
 $('reset-confirm').addEventListener('click',()=>{clearGesture();benches.set(activeId,fresh(activeId));$('reset-dialog').close();$('visibility-message').hidden=true;flash('Versuchsplatz geleert.');syncPhysics();updateUI();hint('');});
 window.addEventListener('lab-view-change',event=>{if(event.detail==='chromatography'){clearGesture();pause();}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){clearGesture();if(current().simulation.running)pause('Versuch und Stoppuhr beim Tabwechsel pausiert.');}last=performance.now();});
-function frame(now){if(document.hidden||document.getElementById('factors-panel')?.hidden){last=now;requestAnimationFrame(frame);return;}const b=current(),dt=Math.max(0,(now-last)/1000);last=now;if(b.simulation.running&&dt>1.5)pause('Darstellung unterbrochen; Versuch pausiert.');if(b.simulation.running&&b.stopwatch.running){advanceTimedRun(b.simulation,b.stopwatch,dt,()=>startMeasurement(b));if(b.stopwatch.finished)completeMeasurement(b);}const s=b.simulation.snapshot(),setup=b.preview||b.assembly;scene?.render({setup,time:s.time,light:lightAtDistance(lampDistanceCm(setup)),pendingMaterial:b.pending,selectedMaterial:b.selected,temperature:s.temperature,lampOn:s.settings.lampOn,bubbles:s.bubbles,running:s.running,zoom:b.zoom,stopwatchElapsed:b.stopwatch.preparing?Math.ceil(Math.max(0,b.stopwatch.warmupRemaining)-1e-9):b.stopwatch.elapsed});if(now-lastReadout>95){updateReadouts();updateTimer();lastReadout=now;}requestAnimationFrame(frame);}
+function frame(now){if(document.hidden||document.getElementById('factors-panel')?.hidden){last=now;requestAnimationFrame(frame);return;}const b=current(),dt=Math.max(0,(now-last)/1000);last=now;if(b.simulation.running&&dt>1.5)pause('Darstellung unterbrochen; Versuch pausiert.');if(b.simulation.running&&b.stopwatch.running){advanceTimedRun(b.simulation,b.stopwatch,dt,()=>startMeasurement(b));if(b.stopwatch.finished)completeMeasurement(b);}const s=b.simulation.snapshot(),setup=b.preview||b.assembly;scene?.render({setup,time:s.time,light:lightAtDistance(lampDistanceCm(setup)),pendingMaterial:b.pending,selectedMaterial:b.selected,temperature:s.temperature,lampOn:s.settings.lampOn,bubbles:s.bubbles,running:s.running,zoom:b.zoom,stopwatchElapsed:b.stopwatch.preparing?Math.ceil(Math.max(0,b.stopwatch.warmupRemaining)-1e-9):b.stopwatch.elapsed});positionKeyboardMarker(b);if(now-lastReadout>95){updateReadouts();updateTimer();lastReadout=now;}requestAnimationFrame(frame);}
+leafHelper=createLeafHelper($('fs-leaf-helper'),()=>{
+ const b=current();
+ return {bench:b,experimentId:activeId,setup:deriveSetup(b.assembly),completedRuns:completedRuns(b.series),stopwatchStage:b.stopwatch.preparing?'warmup':b.stopwatch.stage,alignmentIssue:!!lampAlignmentHint(b.assembly,b.settings.lampOn),distanceIssue:!!currentDistanceHint(b)};
+});
 syncPhysics();updateUI();requestAnimationFrame(frame);
 
 })();</script>
@@ -3176,6 +3402,7 @@ else if(state.startedAt!==null&&!state.plateOnLid)feedback(M.timing(state).compl
 
 </script>
 </body></html>
+
 
 
 
