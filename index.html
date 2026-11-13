@@ -386,18 +386,18 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 <section id="fs-leaf-helper" class="fs-leaf-helper" aria-label="Blättchens Denkanstöße">
   <div id="fs-leaf-bubble" class="fs-leaf-bubble" role="region" aria-labelledby="fs-leaf-heading" hidden>
     <div class="fs-leaf-bubble-head">
-      <div><span class="fs-leaf-kicker">DEIN DENKPARTNER</span><h2 id="fs-leaf-heading">Ein kleiner Anstoß?</h2></div>
+      <div><span class="fs-leaf-kicker">DEIN DENKPARTNER</span><h2 id="fs-leaf-heading">Versuchsplanung</h2></div>
       <button id="fs-leaf-close" class="fs-leaf-close" type="button" aria-label="Sprechblase schließen">×</button>
     </div>
     <div id="fs-leaf-body" class="fs-leaf-bubble-body">
     <p id="fs-leaf-context" class="fs-leaf-context"></p>
-    <p id="fs-leaf-message" class="fs-leaf-message" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">Ich bin Blättchen. Wenn du feststeckst, denke ich mit dir mit. Du entscheidest, wie du weiterforschst.</p>
+    <p id="fs-leaf-message" class="fs-leaf-message" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">Ich unterstütze dich mit Fragen zur Versuchsplanung und Auswertung. Prüfe damit deine eigenen Entscheidungen.</p>
     <div id="fs-leaf-history" class="fs-leaf-history" hidden>
       <button id="fs-leaf-previous" type="button" aria-label="Vorherigen Denkanstoß erneut lesen">←</button>
       <span id="fs-leaf-position"></span>
       <button id="fs-leaf-forward" type="button" aria-label="Bereits erhaltenen nächsten Denkanstoß erneut lesen">→</button>
     </div>
-    <button id="fs-leaf-next" class="fs-leaf-next" type="button">Denkanstoß holen</button>
+    <button id="fs-leaf-next" class="fs-leaf-next" type="button">Denkanstoß anzeigen</button>
     <p id="fs-leaf-budget-note" class="fs-leaf-budget-note">4 Denkanstöße pro Versuchsaufbau. Erneutes Lesen ist frei.</p>
     </div>
   </div>
@@ -1655,22 +1655,22 @@ function createLeafHelper(root,getContext){
   const names={light:'Lichtintensität',carbon:'CO₂-Gehalt',temperature:'Temperatur'};
   const questions={
     light:[
-      'Welche Frage möchtest du zum Licht untersuchen? Formuliere, was du gezielt veränderst und woran du eine Veränderung bei der Wasserpest erkennen willst.',
-      'Verfolge den Weg des Lichts zur Pflanze. Welche Rolle spielt die Ausrichtung der Leuchte, wenn du deine Einstellungen vergleichst? Überlege auch, welche Rolle ein Versuch im Dunkeln haben könnte.',
-      'Welche Bedingungen sollen beim Vergleich der Lichtverhältnisse gleich bleiben? Notiere sie vor der nächsten Messung und prüfe deinen Aufbau daran.',
-      'Wie kannst du deine Bläschenzählungen fair vergleichen? Denke an Anpassungszeit, gleich lange Messungen und daran, deine gewählten Bedingungen mit zu notieren.'
+      'Formuliere eine überprüfbare Hypothese zum Einfluss der Lichtintensität auf die Fotosyntheseaktivität. Unterscheide dabei die unabhängige Variable und die erfasste Messgröße.',
+      'Prüfe den Lichtweg zwischen Leuchte und Pflanze. Welche Bedeutung hat die Ausrichtung für den Vergleich verschiedener Abstände? Welchen Beitrag könnte eine Dunkelkontrolle leisten?',
+      'Welche Kontrollvariablen sind erforderlich, um Veränderungen der Bläschenzahl auf die Beleuchtung zurückführen zu können? Prüfe deinen Aufbau entsprechend.',
+      'Wie standardisierst du Anpassungszeit und Messdauer? Welche Grenzen hat die Bläschenzahl als Maß für die Fotosyntheseaktivität?'
     ],
     carbon:[
-      'Was möchtest du über den CO₂-Gehalt herausfinden? Formuliere eine Frage, in der die relative CO₂-Einstellung die gezielt veränderte Größe ist.',
-      'Schau dir an, wie du die relative CO₂-Einstellung im Versuch verändern kannst. Welche Aufgabe hat das dafür verfügbare Material in deinem Aufbau?',
-      'Denke an deine Untersuchung zum Licht: Was könnte neben der CO₂-Einstellung die Bläschenzahl beeinflussen? Wie hältst du diese Bedingungen beim Vergleich konstant?',
-      'Wie machst du die Zählungen verschiedener CO₂-Einstellungen vergleichbar? Plane die Messzeiten und notiere zu jeder Zählung auch die Versuchsbedingungen.'
+      'Formuliere eine überprüfbare Hypothese zum Einfluss des CO₂-Angebots auf die Fotosyntheseaktivität. Welche Größe veränderst du, welche erfasst du?',
+      'Welche Funktion erfüllt das für diesen Versuch vorgesehene Material? Prüfe, wie seine Verwendung mit der untersuchten Einflussgröße zusammenhängt.',
+      'Beziehe deine Ergebnisse aus Versuch 1 ein: Welche Lichtbedingungen eignen sich für diese Untersuchung, und wie hältst du sie während der Messreihe vergleichbar?',
+      'Welche Bedingungen müssen neben der CO₂-Einstellung dokumentiert werden? Prüfe, ob Anpassungszeit, Messdauer und Vergleichsbedingungen eine belastbare Auswertung ermöglichen.'
     ],
     temperature:[
-      'Welche Frage möchtest du zur Temperatur untersuchen? Unterscheide dabei die gezielt veränderte Größe von dem, was du an der Wasserpest beobachtest.',
-      'Betrachte den Wärmeaustausch zwischen deiner Probe und ihrer Umgebung. Wo erfasst dein Thermometer die Temperatur? Was sagt dir diese Messstelle über die Bedingungen an der Pflanze?',
-      'Der eingestellte Sollwert und die Temperatur an der Pflanze sind zwei verschiedene Angaben. Woran könntest du erkennen, wann eine neue Messung sinnvoll beginnt?',
-      'Wie vergleichst du deine Zählungen bei unterschiedlichen Temperaturen? Prüfe Messdauer und Anpassung und überlege, welche anderen Bedingungen gleich bleiben sollten.'
+      'Formuliere eine überprüfbare Hypothese zum Einfluss der Temperatur auf die Fotosyntheseaktivität. Welche Messgröße eignet sich zur Prüfung?',
+      'Welche Temperatur ist für deine Fragestellung relevant? Prüfe, ob die Position des Thermometers diese Größe tatsächlich erfasst.',
+      'Nach einer Änderung des Sollwerts: Anhand welcher Beobachtung entscheidest du, wann du mit der Messung beginnen kannst?',
+      'Welche Faktoren müssen für den Temperaturvergleich konstant bleiben? Beziehe Versuch 1 ein und berücksichtige auch Anpassungszeit und Messdauer.'
     ]
   };
   function read(){
@@ -1682,18 +1682,18 @@ function createLeafHelper(root,getContext){
   }
   function makeHint(c,index){
     const d=c.setup||{},id=c.experimentId,runs=c.completedRuns||0;
-    if(index===0&&runs>0)return 'Du hast schon gemessen. Lies noch einmal deine Fragestellung zu '+names[id]+': Welche Größe hast du gezielt verändert, und welche Beobachtung hilft dir bei der Antwort?';
+    if(index===0&&runs>0)return 'Prüfe deine bisherigen Messungen zum Faktor '+names[id]+': Welche Größe wurde variiert, welche erfasst? Inwiefern lässt sich damit deine Hypothese überprüfen?';
     if(index===1){
-      if(!d.beakerPresent||!d.waterPresent||!d.plantPresent)return 'Betrachte zuerst den Platz, an dem du die Wasserpest beobachten möchtest. Welche Funktion sollen die von dir gewählten Materialien dort erfüllen? Was brauchst du noch, um Bläschen zählen zu können?';
-      if(id==='light'&&c.alignmentIssue)return 'Schau dir den Lichtweg in deinem Aufbau an. Wie trifft das Licht auf die Pflanze? Welche Bedeutung könnte die Ausrichtung haben, wenn du später verschiedene Abstände vergleichst?';
-      if(id==='temperature'&&!d.waterbathConnected)return 'Wie könnte dein Aufbau die Wasserpest erwärmen oder abkühlen? Prüfe die Verbindung zwischen den Teilen deines Aufbaus. Welche Rolle könnte ein Vergleich bei Raumtemperatur spielen?';
-      if(id==='temperature'&&!d.thermometerConnected)return 'Welche Temperatur möchtest du tatsächlich erfassen? Überlege, ob die Messstelle deines Thermometers etwas über die Bedingungen an der Wasserpest aussagt.';
+      if(!d.beakerPresent||!d.waterPresent||!d.plantPresent)return 'Prüfe die Funktion der gewählten Materialien im Versuchsaufbau. Welche Voraussetzung für eine systematische Bläschenzählung ist noch nicht erfüllt?';
+      if(id==='light'&&c.alignmentIssue)return 'Prüfe den Lichtweg zur Pflanze. Wie beeinflusst die Ausrichtung die Vergleichbarkeit von Messungen bei unterschiedlichen Abständen?';
+      if(id==='temperature'&&!d.waterbathConnected)return 'Prüfe den Wärmeaustausch zwischen Wasserbad und Probe. Welche Verbindung muss dein Aufbau dafür ermöglichen?';
+      if(id==='temperature'&&!d.thermometerConnected)return 'Welche Temperatur soll deine Messung repräsentieren? Prüfe, ob die gewählte Messstelle eine Aussage über die Bedingungen an der Wasserpest erlaubt.';
     }
-    if(index===2&&id!=='light'&&(c.distanceIssue||c.alignmentIssue))return 'Vergleiche die Beleuchtung deiner bisherigen und geplanten Messungen. Was würde es für deine Auswertung bedeuten, wenn sich neben '+(id==='carbon'?'der CO₂-Einstellung':'der Temperatur')+' auch die Lichtbedingungen ändern?';
+    if(index===2&&id!=='light'&&(c.distanceIssue||c.alignmentIssue))return 'Beziehe Versuch 1 ein: Lassen sich Änderungen der Bläschenzahl eindeutig '+(id==='carbon'?'der CO₂-Einstellung':'der Temperatur')+' zuordnen, wenn zugleich die Beleuchtung verändert wurde?';
     if(index===3){
-      if(runs>=3)return 'Lege deine drei Zählungen mit den zugehörigen Bedingungen nebeneinander. Welche Vergleiche passen zu deiner Fragestellung? Was lässt sich daraus begründen, und welche Frage bleibt noch offen?';
-      if(runs>0)return 'Du hast bereits '+runs+(runs===1?' Messdurchgang':' Messdurchgänge')+' beendet. Was muss beim nächsten Durchgang gleich bleiben, damit du die Zählungen vergleichen kannst? Halte zuerst fest, was du gezielt ändern möchtest.';
-      if(c.stopwatchStage==='warmup')return 'Dein Versuch ist gerade in der Anpassungsphase. Warum könnte es für einen fairen Vergleich wichtig sein, erst danach zu zählen? Überlege, welche Bedingungen während der Messung gleich bleiben sollten.';
+      if(runs>=3)return 'Ordne die Messwerte ihren jeweiligen Versuchsbedingungen zu. Welche Aussage stützen sie zu deiner Hypothese? Wo bleiben Unsicherheiten?';
+      if(runs>0)return 'Du hast '+runs+(runs===1?' Messdurchgang':' Messdurchgänge')+' abgeschlossen. Prüfe vor der nächsten Messung, welche Größe du variierst und welche Kontrollvariablen konstant bleiben müssen.';
+      if(c.stopwatchStage==='warmup')return 'Die Anpassungsphase läuft. Welche Bedeutung hat sie für die Vergleichbarkeit der Messwerte? Prüfe außerdem, welche Bedingungen während der Zählung konstant bleiben müssen.';
     }
     return questions[id][index];
   }
@@ -1704,13 +1704,13 @@ function createLeafHelper(root,getContext){
     ui.toggle.setAttribute('aria-label','Frag Blättchen. '+remaining+' von '+LIMIT+' Denkanstößen für '+names[c.experimentId]+' frei. '+(state.greeting?'Hilfe öffnen.':state.open?'Sprechblase schließen.':'Sprechblase öffnen.'));
     const greeting=!!state.greeting;
     ui.context.hidden=greeting;ui.next.hidden=greeting;ui.note.hidden=greeting;
-    ui.context.textContent=names[c.experimentId]+' · '+(used?'Denkanstoß '+(state.view+1):'Dein eigener Forschungsweg');
-    ui.heading.textContent=greeting?'Hallo, ich bin Blättchen!':used?'Denk einmal darüber nach …':'Ein kleiner Anstoß?';
-    const message=greeting?'Wenn du Hilfe brauchst, klick mich an.':used?state.history[state.view]:'Ich bin Blättchen. Wenn du feststeckst, denke ich mit dir mit. Du entscheidest, wie du weiterforschst.';
+    ui.context.textContent=names[c.experimentId]+' · '+(used?'Denkanstoß '+(state.view+1):'Planung und Auswertung');
+    ui.heading.textContent=greeting?'Hallo, ich bin Blättchen!':used?'Denkanstoß':'Versuchsplanung';
+    const message=greeting?'Wenn du Hilfe brauchst, klick mich an.':used?state.history[state.view]:'Ich unterstütze dich mit Fragen zur Versuchsplanung und Auswertung. Prüfe damit deine eigenen Entscheidungen.';
     if(ui.message.textContent!==message)ui.message.textContent=message;
     ui.history.hidden=greeting||used<2;ui.position.textContent='Hinweis '+(state.view+1)+' / '+used;ui.previous.disabled=state.view<=0;ui.forward.disabled=state.view>=used-1;
-    ui.next.disabled=used>=LIMIT;ui.next.textContent=used>=LIMIT?'Alle 4 Denkanstöße genutzt':used?'Nächster Denkanstoß':'Denkanstoß holen';
-    ui.note.textContent=used>=LIMIT?'Du kannst deine Denkanstöße weiter frei lesen. Dein Aufbau bleibt in deiner Hand.':'4 Denkanstöße pro Versuchsaufbau. Nur ein neuer Denkanstoß zählt; erneutes Lesen ist frei.';
+    ui.next.disabled=used>=LIMIT;ui.next.textContent=used>=LIMIT?'Alle 4 Denkanstöße abgerufen':used?'Nächster Denkanstoß':'Denkanstoß anzeigen';
+    ui.note.textContent=used>=LIMIT?'Du kannst die bisherigen Denkanstöße jederzeit erneut lesen.':'4 Denkanstöße pro Versuchsaufbau. Nur ein neuer Denkanstoß zählt; erneutes Lesen ist frei.';
     fitBubble();
   }
   function revealMessage(focus=false){ui.body.scrollTop=0;if(focus)ui.message.focus({preventScroll:true});}
