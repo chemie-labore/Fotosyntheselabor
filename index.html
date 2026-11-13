@@ -1639,6 +1639,7 @@ let leafHelper=null;
 function createLeafHelper(root,getContext){
   if(!root)throw new Error('Blättchens Platz fehlt.');
   const LIMIT=4,states=new WeakMap(),find=id=>root.querySelector('#fs-leaf-'+id);
+  let firstBench=true;
   const ui={toggle:find('toggle'),bubble:find('bubble'),body:find('body'),close:find('close'),heading:find('heading'),context:find('context'),message:find('message'),budget:find('budget'),next:find('next'),history:find('history'),position:find('position'),previous:find('previous'),forward:find('forward'),note:find('budget-note')};
   const view=root.ownerDocument?.defaultView,sidebar=root.closest?.('.instruments');
   function fitBubble(){
@@ -1676,7 +1677,7 @@ function createLeafHelper(root,getContext){
     const c=getContext();
     if(!c||!c.bench||!questions[c.experimentId])throw new Error('Unvollständiger Kontext für Blättchen.');
     let state=states.get(c.bench);
-    if(!state){state={open:false,history:[],view:0};states.set(c.bench,state);}
+    if(!state){state={open:firstBench,greeting:firstBench,history:[],view:0};firstBench=false;states.set(c.bench,state);}
     return {c,state};
   }
   function makeHint(c,index){
@@ -1700,19 +1701,21 @@ function createLeafHelper(root,getContext){
     const {c,state}=read(),used=state.history.length,remaining=LIMIT-used;
     ui.bubble.hidden=!state.open;root.classList.toggle('is-open',state.open);ui.toggle.setAttribute('aria-expanded',String(state.open));
     ui.budget.textContent=remaining+' von '+LIMIT+' Denkanstößen frei';
-    ui.toggle.setAttribute('aria-label','Frag Blättchen. '+remaining+' von '+LIMIT+' Denkanstößen für '+names[c.experimentId]+' frei. '+(state.open?'Sprechblase schließen.':'Sprechblase öffnen.'));
+    ui.toggle.setAttribute('aria-label','Frag Blättchen. '+remaining+' von '+LIMIT+' Denkanstößen für '+names[c.experimentId]+' frei. '+(state.greeting?'Hilfe öffnen.':state.open?'Sprechblase schließen.':'Sprechblase öffnen.'));
+    const greeting=!!state.greeting;
+    ui.context.hidden=greeting;ui.next.hidden=greeting;ui.note.hidden=greeting;
     ui.context.textContent=names[c.experimentId]+' · '+(used?'Denkanstoß '+(state.view+1):'Dein eigener Forschungsweg');
-    ui.heading.textContent=used?'Denk einmal darüber nach …':'Ein kleiner Anstoß?';
-    const message=used?state.history[state.view]:'Ich bin Blättchen. Wenn du feststeckst, denke ich mit dir mit. Du entscheidest, wie du weiterforschst.';
+    ui.heading.textContent=greeting?'Hallo, ich bin Blättchen!':used?'Denk einmal darüber nach …':'Ein kleiner Anstoß?';
+    const message=greeting?'Wenn du Hilfe brauchst, klick mich an.':used?state.history[state.view]:'Ich bin Blättchen. Wenn du feststeckst, denke ich mit dir mit. Du entscheidest, wie du weiterforschst.';
     if(ui.message.textContent!==message)ui.message.textContent=message;
-    ui.history.hidden=used<2;ui.position.textContent='Hinweis '+(state.view+1)+' / '+used;ui.previous.disabled=state.view<=0;ui.forward.disabled=state.view>=used-1;
+    ui.history.hidden=greeting||used<2;ui.position.textContent='Hinweis '+(state.view+1)+' / '+used;ui.previous.disabled=state.view<=0;ui.forward.disabled=state.view>=used-1;
     ui.next.disabled=used>=LIMIT;ui.next.textContent=used>=LIMIT?'Alle 4 Denkanstöße genutzt':used?'Nächster Denkanstoß':'Denkanstoß holen';
     ui.note.textContent=used>=LIMIT?'Du kannst deine Denkanstöße weiter frei lesen. Dein Aufbau bleibt in deiner Hand.':'4 Denkanstöße pro Versuchsaufbau. Nur ein neuer Denkanstoß zählt; erneutes Lesen ist frei.';
     fitBubble();
   }
   function revealMessage(focus=false){ui.body.scrollTop=0;if(focus)ui.message.focus({preventScroll:true});}
-  function setOpen(open,focus=false){const {state}=read();state.open=open;update();if(open)revealMessage();if(focus)(open?ui.close:ui.toggle).focus({preventScroll:true});}
-  const onToggle=()=>{const {state}=read();setOpen(!state.open,true);};
+  function setOpen(open,focus=false){const {state}=read();state.open=open;if(!open)state.greeting=false;update();if(open)revealMessage();if(focus)(open?ui.close:ui.toggle).focus({preventScroll:true});}
+  const onToggle=()=>{const {state}=read();if(state.greeting){state.greeting=false;setOpen(true,true);}else setOpen(!state.open,true);};
   const onClose=()=>setOpen(false,true);
   const onNext=()=>{const {c,state}=read();if(state.history.length>=LIMIT)return;state.history.push(makeHint(c,state.history.length));state.view=state.history.length-1;update();revealMessage(true);};
   const onPrevious=()=>{const {state}=read();if(state.view>0){state.view--;update();revealMessage(true);}};
