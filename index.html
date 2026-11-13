@@ -314,17 +314,17 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 .photo-compact #factors-panel .bench-feedback{padding:7px 10px;font-size:11px;line-height:1.35}
 @media(max-width:699px){#photo-notice{top:8px;padding:12px 10px 12px 13px;gap:10px}#photo-notice-message{font-size:13px}#factors-panel .scene-wrap{max-height:50dvh}#factors-panel>.intro{margin-bottom:12px}#factors-panel>.experiment-tabs{margin-bottom:8px}}
 /* Scoped to the photosynthesis helper; the scene and chromatography are untouched. */
-#factors-panel .fs-leaf-helper{position:relative;isolation:isolate;flex:none;min-width:0;height:108px;z-index:12}
-#factors-panel .fs-leaf-toggle{position:relative;display:flex;align-items:center;gap:5px;width:100%;height:108px;min-height:108px;padding:2px 8px 2px 2px;border:1px solid #becfa8;border-radius:14px;background:#eaf1db;text-align:left;overflow:visible}
+#factors-panel .fs-leaf-helper{position:relative;isolation:isolate;flex:none;min-width:0;height:226px;z-index:12}
+#factors-panel .fs-leaf-toggle{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;height:226px;min-height:226px;padding:4px 8px;border:1px solid #becfa8;border-radius:14px;background:#eaf1db;text-align:left;overflow:visible}
 #factors-panel .fs-leaf-toggle:hover{background:#e1eccd}
 #factors-panel .fs-leaf-toggle[aria-expanded=true]{background:#e1eccd;border-color:#82a454}
-#factors-panel .fs-leaf-character{width:104px;height:104px;flex:none;align-self:center;overflow:visible;filter:drop-shadow(0 2px 0 #f7faeb)}
-#factors-panel .fs-leaf-toggle-copy{display:grid;gap:4px;min-width:0;flex:1}
+#factors-panel .fs-leaf-character{width:177px;height:177px;flex:none;align-self:center;overflow:visible;filter:drop-shadow(0 2px 0 #f7faeb)}
+#factors-panel .fs-leaf-toggle-copy{display:grid;gap:4px;min-width:0;flex:none;text-align:center}
 #factors-panel .fs-leaf-toggle-copy strong{font-size:13px;line-height:1.15;color:#28472f}
 #factors-panel .fs-leaf-toggle-copy>span{font-size:11px;line-height:1.2;font-weight:400;color:#536a43}
-#factors-panel .fs-leaf-toggle-mark{display:grid;place-items:center;flex:none;width:24px;height:24px;border:1px solid #9fb97f;border-radius:50%;font:700 15px Georgia,serif;color:#536f3e;background:#f7faee}
+#factors-panel .fs-leaf-toggle-mark{position:absolute;top:10px;right:10px;display:grid;place-items:center;flex:none;width:24px;height:24px;border:1px solid #9fb97f;border-radius:50%;font:700 15px Georgia,serif;color:#536f3e;background:#f7faee}
 #factors-panel .fs-leaf-bubble{position:absolute;z-index:1;bottom:calc(100% + 11px);right:0;display:flex;flex-direction:column;width:100%;max-height:min(430px,65dvh,var(--fs-leaf-available-height,430px));overflow:hidden;padding:13px;border:1.5px solid #89a669;border-radius:18px 18px 18px 5px;background:#fffef4;color:#294832;box-shadow:0 8px 28px #203b3224}
-#factors-panel .fs-leaf-helper.is-open::before{content:'';position:absolute;z-index:2;bottom:calc(100% + 4px);left:49px;width:14px;height:14px;transform:rotate(45deg);border-right:1.5px solid #89a669;border-bottom:1.5px solid #89a669;background:#fffef4;pointer-events:none}
+#factors-panel .fs-leaf-helper.is-open::before{content:'';position:absolute;z-index:2;bottom:calc(100% + 4px);left:calc(50% - 7px);width:14px;height:14px;transform:rotate(45deg);border-right:1.5px solid #89a669;border-bottom:1.5px solid #89a669;background:#fffef4;pointer-events:none}
 #factors-panel .fs-leaf-bubble-head{display:flex;align-items:flex-start;flex:none;gap:3px;margin:-3px -6px 0 0}
 #factors-panel .fs-leaf-bubble-body{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#a9bb8a transparent;padding-right:2px}
 #factors-panel .fs-leaf-bubble-head>div{flex:1;min-width:0;padding-top:5px}
@@ -350,7 +350,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 #factors-panel .fs-leaf-helper.is-inline{display:flex;flex-direction:column;gap:11px;height:auto;width:100%;max-width:480px;margin:4px 0 12px;justify-self:start}
 #factors-panel .fs-leaf-helper.is-inline .fs-leaf-toggle{order:-1}
 #factors-panel .fs-leaf-helper.is-inline .fs-leaf-bubble{position:relative;inset:auto;max-height:min(430px,60dvh);width:100%;flex:none}
-#factors-panel .fs-leaf-helper.is-inline.is-open::before{top:112px;bottom:auto;transform:rotate(225deg)}
+#factors-panel .fs-leaf-helper.is-inline.is-open::before{top:230px;bottom:auto;transform:rotate(225deg)}
 
 </style></head>
 <body>
