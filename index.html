@@ -340,6 +340,9 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 #factors-panel .fs-leaf-next:hover:not(:disabled){background:#486d43}
 #factors-panel .fs-leaf-next:disabled{opacity:1;color:#68795b;background:#e9eedc;border-color:#d4dec2;cursor:default}
 #factors-panel .fs-leaf-budget-note{font-size:10px;line-height:1.45;color:#748062;margin:8px 0 0}
+#factors-panel .fs-leaf-helper[data-kind=warning] .fs-leaf-bubble{border-color:#bd3636;background:#fff0ef}
+#factors-panel .fs-leaf-helper[data-kind=warning] .fs-leaf-message,#factors-panel .fs-leaf-helper[data-kind=warning] .fs-leaf-bubble h2{color:#9f2020}
+#factors-panel .fs-leaf-helper[data-kind=warning].is-open::before{border-color:#bd3636;background:#fff0ef}
 #factors-panel .fs-leaf-helper.is-open .fs-leaf-character{animation:fs-leaf-greet .38s ease-out 1;transform-origin:50% 90%}
 @keyframes fs-leaf-greet{0%,100%{transform:rotate(0)}45%{transform:rotate(-7deg)}75%{transform:rotate(3deg)}}
 @media(max-width:699px){#factors-panel .fs-leaf-helper{grid-column:1/-1;max-width:360px;width:100%;justify-self:center}#factors-panel .fs-leaf-bubble{max-height:min(430px,60dvh,var(--fs-leaf-available-height,430px))}}
@@ -400,7 +403,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 <aside id="photo-notice" data-kind="error" aria-label="Hinweis zum Versuch" hidden><div id="photo-notice-message" role="alert" aria-atomic="true"><strong id="photo-notice-title">Bitte prüfen</strong><p id="photo-notice-text"></p></div><button type="button" id="photo-notice-close" aria-label="Hinweis schließen">×</button></aside>
 <section class="intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1>Außenfaktoren der Fotosynthese.</h1></div><button id="guide-open" class="guide-open" aria-haspopup="dialog" aria-controls="guide-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>Erkenntnisweg</button></section>
 <nav class="experiment-tabs" aria-label="Einzelversuch wählen" id="experiment-tabs"></nav>
-<details class="measurement-rule"><summary>Messablauf: 3 × 60 Sekunden nach jeweils 10 Sekunden Anpassung</summary><p>Pro Einzelversuch sind <strong>3 Messdurchgänge à 60 Sekunden</strong> möglich. Nach „Versuch starten“ zählt die Stoppuhr zuerst <strong>10 Sekunden rückwärts</strong>: die Anpassungsphase ist im Modell verkürzt. Noch nicht zählen! Anschließend beginnt automatisch die 60-Sekunden-Messung. Ab 55 Messsekunden blinkt das Stoppuhrfeld.</p></details>
+<details class="measurement-rule"><summary>Messablauf: 3 × 60 Sekunden nach jeweils 10 Sekunden Anpassung</summary><p>Pro Einzelversuch sind <strong>3 Messdurchgänge à 60 Sekunden</strong> möglich. Nach „Versuch starten“ zählt die Stoppuhr zuerst <strong>10 Sekunden rückwärts</strong>: die Anpassungsphase ist im Modell verkürzt. Noch nicht zählen! Anschließend beginnt automatisch die 60-Sekunden-Messung. Ab 55 Messsekunden blinkt das Stoppuhrfeld.</p><p>Die Licht- und Temperaturkurven orientieren sich an den bereitgestellten Richtwerten und sind modellierte Verläufe. Die CO₂-Reihe orientiert sich an <a href="https://journals.usamvcluj.ro/index.php/promediu/article/view/14787/13306" target="_blank" rel="noopener noreferrer">Mihalescu et al. (2023)</a> für Egeria densa bei natürlichem Licht und 20 °C. Die Übertragung dieser Reihe auf die virtuelle Lampe bei 10 cm Abstand und 20 °C ist modelliert. Die Einzelversuche nutzen getrennte Referenzreihen. Vergleiche die absoluten Bläschenzahlen deshalb innerhalb einer Messreihe.</p></details>
 <div class="laboratory">
  <aside class="materials" aria-label="Materialablage"><details class="material-help"><summary>Materialablage</summary><p class="material-note">Ziehen oder auswählen und auf der Arbeitsfläche ablegen.</p></details><div id="material-tray"></div></aside>
  <section class="bench" aria-labelledby="bench-title">
@@ -419,8 +422,8 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
   <div class="photo-controls">
   <section class="instrument selected-material"><p class="eyebrow">AUSWAHL</p><h2 id="selected-name">Kein Material gewählt</h2><details class="instrument-help selection-help"><summary aria-label="Hinweis zur Materialbedienung">?</summary><p id="selected-description">Die Arbeitsfläche ist frei gestaltbar.</p></details><button id="remove-material" class="quiet" hidden>Zurücklegen</button><button id="lamp-power" class="quiet" hidden aria-pressed="true">Leuchte ausschalten</button></section>
   <section class="instrument" data-factor="light" aria-labelledby="light-title"><div class="instrument-title"><span class="instrument-icon sun" aria-hidden="true">☼</span><div><p class="eyebrow">LED-LEUCHTE</p><h2 id="light-title">Lichtintensität</h2></div><details class="instrument-help light-help"><summary aria-label="Hinweise zu Abstand und Lichtintensität">?</summary><p class="distance-note">Die Leuchte auf der Arbeitsfläche ziehen, um den Abstand zu verändern. Die relative Lichtintensität ist eine Modellgröße.</p></details><button class="switch" id="lamp-button" role="switch" aria-checked="true" aria-label="LED-Leuchte"><span></span></button></div><div class="value-line distance-reading"><span>Abstand Lampe–Pflanze</span><output id="light-value" aria-live="off">— <small>cm</small></output></div><div class="value-line relative-light-reading"><span>Relative Lichtintensität</span><output id="light-intensity-value" aria-live="off">— <small>%</small></output></div><p class="device-state" id="light-device-state">Nicht aufgestellt</p></section>
-  <section class="instrument" data-factor="carbon" aria-labelledby="carbon-title" hidden><div class="instrument-title"><div><p class="eyebrow">VERSUCHSWASSER</p><h2 id="carbon-title">CO₂-Gehalt</h2></div></div><div class="value-line"><label for="carbon">Relative Einstellung</label><output id="carbon-value" for="carbon">55 <small>%</small></output></div><input id="carbon" type="range" min="0" max="100" step="5" value="55" aria-label="Relativer CO₂-Gehalt in Prozent"><div class="range-ends"><span>0 %</span><span>100 %</span></div><p class="device-state" id="carbon-device-state">Nicht verbunden</p></section>
-  <section class="instrument" data-factor="temperature" aria-labelledby="temperature-title" hidden><div class="instrument-title"><span class="instrument-icon" aria-hidden="true">°C</span><div><p class="eyebrow">WASSERBAD</p><h2 id="temperature-title">Temperatur</h2></div></div><div class="value-line"><label for="temperature">Sollwert</label><output id="temperature-value" for="temperature">20 <small>°C</small></output></div><input id="temperature" type="range" min="5" max="45" step="1" value="20" aria-label="Solltemperatur des Wasserbads in Grad Celsius"><div class="range-ends"><span>5 °C</span><span>45 °C</span></div><p class="device-state" id="temperature-device-state">Nicht verbunden</p></section>
+  <section class="instrument" data-factor="carbon" aria-labelledby="carbon-title" hidden><div class="instrument-title"><div><p class="eyebrow">VERSUCHSWASSER</p><h2 id="carbon-title">CO₂-Angebot</h2></div></div><div class="value-line"><label for="carbon">NaHCO₃-Konzentration</label><output id="carbon-value" for="carbon">0 <small>mg/L</small></output></div><input id="carbon" type="range" min="0" max="4" step="1" value="0" aria-label="NaHCO₃-Konzentration im Versuchsansatz"><div class="range-ends"><span>0 mg/L</span><span>15 mg/L</span></div><p class="device-state">Fertige NaHCO₃-Lsg. · 100 mg/L<br><output id="carbon-dose">0,0 mL · auf 10 mL Endvolumen</output></p><p class="device-state">0 mg/L: kein NaHCO₃-Zusatz; das Wasser ist nicht CO₂-frei.</p><p class="device-state" id="carbon-device-state">Nicht verbunden</p></section>
+  <section class="instrument" data-factor="temperature" aria-labelledby="temperature-title" hidden><div class="instrument-title"><span class="instrument-icon" aria-hidden="true">°C</span><div><p class="eyebrow">WASSERBAD</p><h2 id="temperature-title">Temperatur</h2></div></div><div class="value-line"><label for="temperature">Sollwert</label><output id="temperature-value" for="temperature">20 <small>°C</small></output></div><input id="temperature" type="range" min="5" max="50" step="1" value="20" aria-label="Solltemperatur des Wasserbads in Grad Celsius"><div class="range-ends"><span>5 °C</span><span>50 °C</span></div><p class="device-state" id="temperature-device-state">Nicht verbunden</p></section>
   <section class="instrument thermometer-readout" id="thermometer-panel" hidden><div class="actual-temperature"><span><i></i>Thermometer</span><output id="actual-temperature">— °C</output></div></section>
   </div>
 <section id="fs-leaf-helper" class="fs-leaf-helper" aria-label="Blättchens Denkanstöße">
@@ -476,7 +479,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
   <section class="stopwatch" id="stopwatch-panel" hidden aria-labelledby="timer-title"><div class="clock-heading"><h2 id="timer-title">Stoppuhr</h2><span id="timer-state">Bereit</span></div><output class="time" id="timer-value" aria-label="Verstrichene Messzeit">00:00<span>,0</span></output><p class="timer-notice" id="timer-notice">Messzeit: 60 Sekunden</p><div class="clock-buttons"><button id="timer-toggle" disabled>Start</button><button id="timer-reset" aria-label="Stoppuhr auf null zurücksetzen">Nullstellen</button></div></section>
  </aside>
 </div>
-<footer class="page-footer"><span><i></i>Getrennte Versuchsplätze</span><span>Qualitatives Modell · Bläschen von Hand zählen</span></footer>
+<footer class="page-footer"><span><i></i>Getrennte Versuchsplätze</span><span>Modellierte Versuchsreihen · Bläschen von Hand zählen</span></footer>
 </main>
 <main id="dc-panel" hidden aria-labelledby="dc-heading">
  <section class="intro dc-intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1 id="dc-heading">Die Farben eines Blattes.</h1><p>Dünnschichtchromatografie der Blattfarbstoffe</p></div><button id="dc-guide-open" class="guide-open" aria-haspopup="dialog">Versuchsanleitung</button></section>
@@ -683,13 +686,15 @@ const {VESSEL,LAMP_GEOMETRY,LAMP_ANGLE_TOLERANCE_DEG,lampMeasurement,lampDistanc
 // Centimetres describe the virtual bench, not a calibrated real lamp.
 const VESSEL = Object.freeze({cx:571,cy:322,sx:96/290,sy:186/432});
 const LAMP_GEOMETRY = Object.freeze({cx:204,cy:366,scale:.8});
+// Shared scale for all distance readouts, the ruler and the light input.
+const BENCH_UNITS_PER_CM=12;
 function lampMeasurement(setup){
  const jar=setup?.items?.beaker,lamp=setup?.items?.lamp;
  if(!jar||!lamp)return null;
  const direction=jar.x<lamp.x?-1:1;
  const origin={x:lamp.x*960+direction*77,y:lamp.y*640-112};
  const target={x:jar.x*960+(566.4-VESSEL.cx)*VESSEL.sx,y:jar.y*640+(217.6-VESSEL.cy)*VESSEL.sy};
- return {origin,target,direction,distanceCm:Math.hypot(target.x-origin.x,target.y-origin.y )/32};
+ return {origin,target,direction,distanceCm:Math.hypot(target.x-origin.x,target.y-origin.y )/BENCH_UNITS_PER_CM};
 }
 const lampDistanceCm=setup=>lampMeasurement(setup)?.distanceCm??null;
 const LAMP_ANGLE_TOLERANCE_DEG=15;
@@ -860,11 +865,12 @@ const {CONFIG} = (()=>{
 const CONFIG = Object.freeze({
   title: 'Fotosynthese · Wasserpest',
   enabledFactors: ['light', 'carbon', 'temperature'],
-  defaults: {light: 55, carbon: 55, temperature: 20, lampOn: true},
-  ranges: {light:[0,100,5],carbon:[0,100,5],temperature:[5,45,1]},
+  defaults: {light: 55, carbon: 0, temperature: 20, lampOn: true},
+  ranges: {light:[0,100,5],carbon:[0,15,1],temperature:[5,50,1]},
 });
 
 return {CONFIG};})();
+const CARBON_DOSE_LEVELS=Object.freeze([0,1,5,10,15]);
 const {MATERIALS,EXPERIMENTS,createAssembly,placeMaterial,moveMaterial,removeMaterial,validateAssembly,deriveSetup,setupHint} = (()=>{
 // Independent workbenches: placement constraints model the apparatus, not a
 // prescribed worksheet sequence. Planning hints never supply measurement results.
@@ -876,7 +882,7 @@ const MATERIALS = Object.freeze([
   {id:'bath',label:'Wasserbad',kind:'equipment'},
   {id:'thermometer',label:'Thermometer',kind:'equipment'},
   {id:'stopwatch',label:'Stoppuhr',kind:'equipment'},
-  {id:'bottle',label:'CO₂-Vorrat',kind:'equipment'},
+  {id:'bottle',label:'NaHCO₃-Lsg.',kind:'equipment'},
 ].map(material=>Object.freeze(material)));
 
 const commonMaterials=['beaker','water','plant','lamp','bath','thermometer','stopwatch'];
@@ -1014,21 +1020,42 @@ function setupHint(state){
 return {MATERIALS,EXPERIMENTS,createAssembly,placeMaterial,moveMaterial,removeMaterial,validateAssembly,deriveSetup,setupHint};})();
 const {MEASUREMENT_SECONDS,WARMUP_SECONDS,WARNING_SECONDS,bubbleTarget,createSimulation,createStopwatch,advanceTimedRun,formatTime} = (()=>{
 const bound=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
-// Every numeric response coefficient below is a chosen teaching-model parameter,
-// not a measurement, species calibration, or conversion to photosynthetic units.
-function bubbleTarget({light,carbon,temperature,lampOn}) {
-  const irradiance=lampOn?bound(light,0,100):0;
-  const fLight=1-Math.exp(-irradiance/30);
-  const c=bound(carbon,0,100);
-  const fCarbon=c/(c+16);
-  const t=bound(temperature,5,45);
-  const fTemp=Math.exp(-(((t-27)/14)**2));
-  const respiration=1.4*2**((t-20)/10);
-  return Math.max(0,60*Math.min(fLight,fCarbon*fTemp)-respiration);
+// Independent reference setups: these rows must not be presented as one
+// calibrated plant measured under identical experimental conditions.
+// Light and temperature: the teacher's supplied illustrative ranges (midpoints).
+// Carbon: the cited study's concentration series, entered as mg/L, not percent.
+const LIGHT_REFERENCE_POINTS=Object.freeze([[10,24],[15,23.5],[20,21],[30,13.5],[40,7],[50,3]].map(Object.freeze));
+const TEMPERATURE_REFERENCE_POINTS=Object.freeze([[5,3.5],[10,8],[20,18],[30,30],[40,11.5],[50,1]].map(Object.freeze));
+const CARBON_REFERENCE_POINTS=Object.freeze([[0,45],[1,56],[5,65],[10,42],[15,30]].map(Object.freeze));
+function interpolateReference(points,value){
+  if(value<=points[0][0])return points[0][1];
+  for(let i=1;i<points.length;i++){
+    const [x0,y0]=points[i-1],[x1,y1]=points[i];
+    if(value<=x1)return y0+(y1-y0)*(value-x0)/(x1-x0);
+  }
+  return points.at(-1)[1];
+}
+function referenceLightRate(light){
+  const irradiance=bound(light,0,100);if(irradiance===0)return 0;
+  const distance=10*Math.sqrt(100/irradiance-1);
+  // Outside the supplied range this is only a mathematical model continuation.
+  return distance>50?3*(50/distance)**2:interpolateReference(LIGHT_REFERENCE_POINTS,distance);
+}
+function bubbleTarget({experimentId='light',light,carbon,temperature,lampOn}){
+  const lightFactor=lampOn?referenceLightRate(light)/24:0;
+  if(lightFactor===0)return 0;
+  const tempRate=interpolateReference(TEMPERATURE_REFERENCE_POINTS,bound(temperature,5,50));
+  if(experimentId==='temperature')return tempRate*lightFactor;
+  if(experimentId==='carbon')return interpolateReference(CARBON_REFERENCE_POINTS,bound(carbon,0,15))*lightFactor*(tempRate/18);
+  return 24*lightFactor*(tempRate/18);
 }
 function createSimulation({random=Math.random,settings={}}={}) {
-  let input={...CONFIG.defaults,...settings};
-  let temperature=20,rate=0,time=0,phase=0,nextThreshold=.9+random()*.2,remainder=0;
+  const experimentId=['light','carbon','temperature'].includes(settings.experimentId)?settings.experimentId:'light';
+  let input={...CONFIG.defaults,...settings,experimentId};
+  // Event offsets stay within ±0.12 bubble: irregular intervals without
+  // accumulating a random drift in the number emitted during one minute.
+  let pulseOffset=.2*random()-.1;
+  let temperature=20,rate=0,time=0,phase=0,nextThreshold=1+pulseOffset,remainder=0;
   let bubbles=[],running=false,emitted=0;
   const step=.05;
   function set(key,value) {
@@ -1047,17 +1074,18 @@ function createSimulation({random=Math.random,settings={}}={}) {
       if(rate<.02&&target===0){rate=0;phase=0;}
       bubbles=bubbles.filter(b=>(b.age+=step)<b.duration);
       phase+=rate/60*step;
-      while(phase>=nextThreshold){
-        phase-=nextThreshold; emitted++;
+      while(phase+1e-9>=nextThreshold){
+        phase=Math.max(0,phase-nextThreshold); emitted++;
         bubbles.push({age:0,duration:2.8+random()*.5,radius:4.6+random()*1.5,wobble:1.5+random(),phase:random()*Math.PI*2});
-        nextThreshold=.88+random()*.24;
+        const nextOffset=.24*random()-.12;
+        nextThreshold=1+nextOffset-pulseOffset;pulseOffset=nextOffset;
       }
     }
   }
-  function reset(){input={...CONFIG.defaults};temperature=20;rate=time=phase=remainder=emitted=0;bubbles=[];running=false;nextThreshold=.9+random()*.2;}
+  function reset(){input={...CONFIG.defaults,experimentId};temperature=20;rate=time=phase=remainder=emitted=0;bubbles=[];running=false;pulseOffset=.2*random()-.1;nextThreshold=1+pulseOffset;}
   // The ten-second preparation represents a deliberately shortened adaptation
   // in this teaching model; it is not a physiological timing claim.
-  function equilibrate(){temperature=input.temperature;rate=bubbleTarget({...input,temperature});phase=remainder=0;bubbles=[];nextThreshold=.9+random()*.2;}
+  function equilibrate(){temperature=input.temperature;rate=bubbleTarget({...input,temperature});phase=remainder=0;bubbles=[];pulseOffset=.2*random()-.1;nextThreshold=1+pulseOffset;}
   return {set,advance,reset,equilibrate,setRunning(value){running=!!value;},get running(){return running;},
     snapshot(){return {settings:{...input},temperature,rate,time,bubbles:bubbles.map(b=>({...b})),emitted,running};}};
 }
@@ -1599,7 +1627,7 @@ function createScene(canvas) {
     tube.addColorStop(1, 'rgba(114,151,127,.55)');
     rounded(-8, -91, 16, 185, 7, tube, 'rgba(103,140,115,.55)');
     rounded(-2, -68, 4, 145, 2, '#d4dcd0');
-    const level = clamp((finite(temperature, 20) - 5) / 40, 0, 1);
+    const level = clamp((finite(temperature, 20) - 5) / 45, 0, 1);
     rounded(-2, 74 - level * 134, 4, 5 + level * 134, 2, '#ad6954');
     ellipse(0, 82, 4, 8, '#ad6954');
     for (let i = 0; i < 15; i++) {
@@ -1666,10 +1694,10 @@ function createScene(canvas) {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = '#456043';
-    ctx.font = 'bold 16px sans-serif';
-    ctx.fillText('CO₂', 0, 28);
+    ctx.font = 'bold 10px sans-serif';
+    ctx.fillText('NaHCO₃-Lsg.', 0, 28);
     ctx.font = '8px sans-serif';
-    ctx.fillText('QUELLE', 0, 43);
+    ctx.fillText('100 mg/L', 0, 43);
     line([[-27, -22], [-27, 7]], 'rgba(255,255,255,.75)', 3);
     ctx.restore();
   }
@@ -1781,7 +1809,7 @@ function createScene(canvas) {
 return {createScene};})();
 const $=id=>document.getElementById(id);
 const materialById=new Map(MATERIALS.map(m=>[m.id,m]));
-const fresh=id=>({assembly:createAssembly(id),simulation:createSimulation(),stopwatch:createStopwatch(),settings:{...CONFIG.defaults},selected:null,pending:null,zoom:false,preview:null,cursor:{x:.55,y:.5},keyboard:false,series:createSeries(),observationStart:null,measurementChanged:false,runStartCondition:null,lampDistanceChanged:false,timerPhase:'ready'});
+const fresh=id=>({assembly:createAssembly(id),simulation:createSimulation({settings:{experimentId:id}}),stopwatch:createStopwatch(),settings:{...CONFIG.defaults},selected:null,pending:null,zoom:false,preview:null,cursor:{x:.55,y:.5},keyboard:false,series:createSeries(),observationStart:null,measurementChanged:false,runStartCondition:null,lampDistanceChanged:false,timerPhase:'ready'});
 const benches=new Map(EXPERIMENTS.map(e=>[e.id,fresh(e.id)]));
 let activeId='light',last=performance.now(),lastReadout=0,scene=null,gesture=null;
 const current=()=>benches.get(activeId);
@@ -1828,7 +1856,7 @@ function createLeafHelper(root,getContext){
     const c=getContext();
     if(!c||!c.bench||!questions[c.experimentId])throw new Error('Unvollständiger Kontext für Blättchen.');
     let state=states.get(c.bench);
-    if(!state){state={open:firstBench,greeting:firstBench,history:[],view:0};firstBench=false;states.set(c.bench,state);}
+    if(!state){state={open:firstBench,greeting:firstBench,history:[],view:0,notice:'',showingWarning:false};firstBench=false;states.set(c.bench,state);}
     return {c,state};
   }
   function makeHint(c,index){
@@ -1853,20 +1881,23 @@ function createLeafHelper(root,getContext){
     ui.bubble.hidden=!state.open;root.classList.toggle('is-open',state.open);ui.toggle.setAttribute('aria-expanded',String(state.open));
     ui.budget.textContent=remaining+' von '+LIMIT+' Denkanstößen frei';
     ui.toggle.setAttribute('aria-label','Frag Blättchen. '+remaining+' von '+LIMIT+' Denkanstößen für '+names[c.experimentId]+' frei. '+(state.greeting?'Hilfe öffnen.':state.open?'Sprechblase schließen.':'Sprechblase öffnen.'));
-    const greeting=!!state.greeting;
-    ui.context.hidden=greeting;ui.next.hidden=greeting;ui.note.hidden=greeting;
+    const warning=state.showingWarning&&!!state.notice,greeting=!!state.greeting&&!warning;
+    root.dataset.kind=warning?'warning':greeting?'greeting':'help';
+    ui.message.setAttribute('role',warning?'alert':'status');
+    ui.message.setAttribute('aria-live',warning?'assertive':'polite');
+    ui.context.hidden=greeting||warning;ui.next.hidden=greeting||warning;ui.note.hidden=greeting;
     ui.context.textContent=names[c.experimentId]+' · '+(used?'Denkanstoß '+(state.view+1):'Planung und Auswertung');
-    ui.heading.textContent=greeting?'Hallo, ich bin Blättchen!':used?'Denkanstoß':'Versuchsplanung';
-    const message=greeting?'Wenn du Hilfe brauchst, klick mich an.':used?state.history[state.view]:'Ich unterstütze dich mit Fragen zur Versuchsplanung und Auswertung. Prüfe damit deine eigenen Entscheidungen.';
+    ui.heading.textContent=warning?'Ein Blick auf die Lichtbedingungen':greeting?'Hallo, ich bin Blättchen!':used?'Denkanstoß':'Versuchsplanung';
+    const message=warning?state.notice:greeting?'Wenn du Hilfe brauchst, klick mich an.':used?state.history[state.view]:'Ich unterstütze dich mit Fragen zur Versuchsplanung und Auswertung. Prüfe damit deine eigenen Entscheidungen.';
     if(ui.message.textContent!==message)ui.message.textContent=message;
-    ui.history.hidden=greeting||used<2;ui.position.textContent='Hinweis '+(state.view+1)+' / '+used;ui.previous.disabled=state.view<=0;ui.forward.disabled=state.view>=used-1;
+    ui.history.hidden=greeting||warning||used<2;ui.position.textContent='Hinweis '+(state.view+1)+' / '+used;ui.previous.disabled=state.view<=0;ui.forward.disabled=state.view>=used-1;
     ui.next.disabled=used>=LIMIT;ui.next.textContent=used>=LIMIT?'Alle 4 Denkanstöße abgerufen':used?'Nächster Denkanstoß':'Denkanstoß anzeigen';
-    ui.note.textContent=used>=LIMIT?'Du kannst die bisherigen Denkanstöße jederzeit erneut lesen.':'4 Denkanstöße pro Versuchsaufbau. Nur ein neuer Denkanstoß zählt; erneutes Lesen ist frei.';
+    ui.note.textContent=warning?'Dieser automatische Hinweis verbraucht keinen Denkanstoß.':used>=LIMIT?'Du kannst die bisherigen Denkanstöße jederzeit erneut lesen.':'4 Denkanstöße pro Versuchsaufbau. Nur ein neuer Denkanstoß zählt; erneutes Lesen ist frei.';
     fitBubble();
   }
   function revealMessage(focus=false){ui.body.scrollTop=0;if(focus)ui.message.focus({preventScroll:true});}
-  function setOpen(open,focus=false){const {state}=read();state.open=open;if(!open)state.greeting=false;update();if(open)revealMessage();if(focus)(open?ui.close:ui.toggle).focus({preventScroll:true});}
-  const onToggle=()=>{const {state}=read();if(state.greeting){state.greeting=false;setOpen(true,true);}else setOpen(!state.open,true);};
+  function setOpen(open,focus=false){const {state}=read();state.open=open;if(!open){state.greeting=false;state.showingWarning=false;}update();if(open)revealMessage();if(focus)(open?ui.close:ui.toggle).focus({preventScroll:true});}
+  const onToggle=()=>{const {state}=read();if(state.showingWarning){state.showingWarning=false;setOpen(true,true);return;}if(state.greeting){state.greeting=false;setOpen(true,true);}else setOpen(!state.open,true);};
   const onClose=()=>setOpen(false,true);
   const onNext=()=>{const {c,state}=read();if(state.history.length>=LIMIT)return;state.history.push(makeHint(c,state.history.length));state.view=state.history.length-1;update();revealMessage(true);};
   const onPrevious=()=>{const {state}=read();if(state.view>0){state.view--;update();revealMessage(true);}};
@@ -1877,7 +1908,17 @@ function createLeafHelper(root,getContext){
   const resizeObserver=view?.ResizeObserver?new view.ResizeObserver(fitBubble):null;
   if(sidebar){resizeObserver?.observe(sidebar);const controls=sidebar.querySelector('.photo-controls');if(controls)resizeObserver?.observe(controls);}
   update();
-  return {update,destroy(){ui.toggle.removeEventListener('click',onToggle);ui.close.removeEventListener('click',onClose);ui.next.removeEventListener('click',onNext);ui.previous.removeEventListener('click',onPrevious);ui.forward.removeEventListener('click',onForward);root.removeEventListener('keydown',onKey);view?.removeEventListener('resize',fitBubble);view?.visualViewport?.removeEventListener('resize',fitBubble);view?.removeEventListener('scroll',fitBubble,true);resizeObserver?.disconnect();}};
+  // Compare per bench: repeated animation frames must neither reopen a dismissed
+  // warning nor interrupt a requested hint. A resolved condition can warn again.
+  function setNotice(message){
+    const {state}=read(),notice=String(message||'');
+    if(notice===state.notice)return;
+    state.notice=notice;
+    if(notice){state.showingWarning=true;state.greeting=false;state.open=true;}
+    else if(state.showingWarning){state.showingWarning=false;state.open=false;}
+    update();if(notice)revealMessage();
+  }
+  return {update,setNotice,destroy(){ui.toggle.removeEventListener('click',onToggle);ui.close.removeEventListener('click',onClose);ui.next.removeEventListener('click',onNext);ui.previous.removeEventListener('click',onPrevious);ui.forward.removeEventListener('click',onForward);root.removeEventListener('keydown',onKey);view?.removeEventListener('resize',fitBubble);view?.visualViewport?.removeEventListener('resize',fitBubble);view?.removeEventListener('scroll',fitBubble,true);resizeObserver?.disconnect();}};
 }
 
 const present=(b,id)=>id==='water'?(b.assembly.water||b.assembly.bathWater):id==='plant'?b.assembly.plant:!!b.assembly.items[id];
@@ -1894,7 +1935,7 @@ try{scene=createScene($('scene'));}catch(e){$('bench-note').textContent=e.messag
 const photoNotices={action:'',context:'',contextKind:'error',alignment:'',distance:''};
 let dismissedPhotoNotice='',visiblePhotoNotice='';
 function renderPhotoNotice(){
- const message=photoNotices.action||photoNotices.alignment||photoNotices.distance||photoNotices.context;
+ const message=photoNotices.action||[photoNotices.alignment,photoNotices.distance].filter(Boolean).join(' ')||photoNotices.context;
  const kind=photoNotices.action||photoNotices.alignment||photoNotices.distance?'error':photoNotices.contextKind;
  const key=message?kind+':'+message:'';
  const banner=$('photo-notice');
@@ -1907,6 +1948,7 @@ function renderPhotoNotice(){
   visiblePhotoNotice=key;
  }
  if(!key)dismissedPhotoNotice='';
+ leafHelper?.setNotice(kind==='error'?message:'');
 }
 $('photo-notice-close').addEventListener('click',()=>{dismissedPhotoNotice=visiblePhotoNotice;$('photo-notice').hidden=true;});
 function flash(message,kind='info'){
@@ -2006,7 +2048,7 @@ function updateUI(){
  document.querySelectorAll('[data-switch-experiment]').forEach(el=>{const id=el.dataset.switchExperiment,isCurrent=id===activeId,hasSetup=Object.keys(benches.get(id).assembly.items).length>0;el.setAttribute('aria-current',String(isCurrent));el.querySelector('.choice-status').textContent=isCurrent?'Aktuell geöffnet':hasSetup?'Aufbau vorhanden':'Leerer Arbeitsplatz';});
  document.querySelectorAll('[data-material]').forEach(el=>{const id=el.dataset.material;el.hidden=!exp.availableMaterials.includes(id);el.classList.toggle('present',present(b,id));el.setAttribute('aria-pressed',String(id===b.selected));});
  const enabled={carbon:d.carbonSupplyPresent&&d.waterPresent,temperature:d.waterbathConnected};
- for(const key of CONFIG.enabledFactors){document.querySelector('[data-factor="'+key+'"]').hidden=key!==activeId;if(key==='light')continue;const input=$(key);input.disabled=key!==activeId||!enabled[key];input.value=b.settings[key];input.style.setProperty('--fill',((b.settings[key]-Number(input.min))/(Number(input.max)-Number(input.min))*100)+'%');$(key+'-value').innerHTML=b.settings[key]+' <small>'+(key==='temperature'?'°C':'%')+'</small>';}
+ for(const key of CONFIG.enabledFactors){document.querySelector('[data-factor="'+key+'"]').hidden=key!==activeId;if(key==='light')continue;const input=$(key);input.disabled=key!==activeId||!enabled[key];input.value=key==='carbon'?CARBON_DOSE_LEVELS.indexOf(b.settings.carbon):b.settings[key];input.style.setProperty('--fill',((Number(input.value)-Number(input.min))/(Number(input.max)-Number(input.min))*100)+'%');$(key+'-value').innerHTML=b.settings[key]+' <small>'+(key==='temperature'?'°C':'mg/L')+'</small>';if(key==='carbon'){input.setAttribute('aria-valuetext',b.settings.carbon+' mg/L NaHCO₃');$('carbon-dose').textContent=n1(b.settings.carbon/10)+' mL · auf 10 mL Endvolumen';}}
  $('light-device-state').textContent=d.lampPresent?'Aufgestellt':'Nicht aufgestellt';$('carbon-device-state').textContent=enabled.carbon?'Vorrat aufgestellt':'Nicht verbunden';$('temperature-device-state').textContent=!d.bathPresent?'Nicht aufgestellt':!b.assembly.bathWater?'Wasserbad leer':d.waterbathConnected?'Wasserkontakt zum Gläschen':'Ohne Wasserkontakt zum Gläschen';
  $('lamp-button').disabled=!d.lampPresent;$('lamp-button').setAttribute('aria-checked',String(d.lampPresent&&b.settings.lampOn));
  const selected=materialById.get(b.selected);$('selected-name').textContent=selected?.label||'Kein Material gewählt';$('selected-description').textContent=b.pending==='water'?(activeId==='light'?'Wasser in das Gläschen geben.':'Wasser in das Gläschen oder in das Wasserbad geben.'):b.pending==='plant'?'Die Wasserpest in das Gläschen einsetzen.':b.pending?'Auf der Arbeitsfläche ablegen.':selected?'Auf der Arbeitsfläche verschiebbar oder zurücklegbar.':'Die Arbeitsfläche ist frei gestaltbar.';
@@ -2071,7 +2113,7 @@ window.addEventListener('pointercancel',()=>{clearGesture();updateUI();});
 $('scene').addEventListener('keydown',e=>{const b=current();if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();pause();b.keyboard=true;b.zoom=false;const dx=e.key==='ArrowLeft'?-.02:e.key==='ArrowRight'?.02:0,dy=e.key==='ArrowUp'?-.02:e.key==='ArrowDown'?.02:0;if(b.pending){b.cursor={x:Math.max(.1,Math.min(.9,b.cursor.x+dx)),y:Math.max(.28,Math.min(.8,b.cursor.y+dy))};updateUI();}else if(b.selected&&b.assembly.items[b.selected]){const p=b.assembly.items[b.selected];commit(moveMaterial(b.assembly,b.selected,{x:p.x+dx,y:p.y+dy}));}}else if((e.key==='Enter'||e.key===' ')&&b.pending){e.preventDefault();commit(placeMaterial(b.assembly,b.pending,b.cursor));}else if(e.key==='Delete'&&b.selected){e.preventDefault();removeSelected();}});
 function removeSelected(){const b=current(),id=b.selected;if(!id)return;pause();const r=removeMaterial(b.assembly,id);if(r.ok&&['beaker','water','plant'].includes(id)){b.simulation=createSimulation({settings:b.settings});b.stopwatch.stop();}if(r.ok&&id==='stopwatch'){cancelObservation(b);b.stopwatch.reset();}if(r.ok&&id==='beaker')b.zoom=false;commit(r);}
 $('remove-material').addEventListener('click',removeSelected);
-for(const key of CONFIG.enabledFactors.filter(key=>key!=='light'))$(key).addEventListener('input',e=>{if(key!==activeId||e.target.disabled)return;const b=current(),before=condition(b);const value=Number(e.target.value),changed=value!==b.settings[key];b.settings[key]=value;const preparationRestarted=changed&&restartPreparationAfterChange(b);if(changed&&b.observationStart!==null)b.measurementChanged=true;syncPhysics();updateUI();if(preparationRestarted)flash('Einstellung verändert. Beim Fortsetzen beginnt die 10-Sekunden-Anpassungsphase erneut.');refreshHint(changeHint(before,condition(b)));});
+for(const key of CONFIG.enabledFactors.filter(key=>key!=='light'))$(key).addEventListener('input',e=>{if(key!==activeId||e.target.disabled)return;const b=current(),before=condition(b);const value=key==='carbon'?CARBON_DOSE_LEVELS[Number(e.target.value)]:Number(e.target.value),changed=value!==b.settings[key];b.settings[key]=value;const preparationRestarted=changed&&restartPreparationAfterChange(b);if(changed&&b.observationStart!==null)b.measurementChanged=true;syncPhysics();updateUI();if(preparationRestarted)flash('Einstellung verändert. Beim Fortsetzen beginnt die 10-Sekunden-Anpassungsphase erneut.');refreshHint(changeHint(before,condition(b)));});
 function toggleLamp(){const b=current();if(!b.assembly.items.lamp)return;const before=condition(b);b.settings.lampOn=!b.settings.lampOn;const preparationRestarted=restartPreparationAfterChange(b);if(b.observationStart!==null)b.measurementChanged=true;syncPhysics();updateUI();if(preparationRestarted)flash('Beleuchtung verändert. Beim Fortsetzen beginnt die 10-Sekunden-Anpassungsphase erneut.');refreshHint(changeHint(before,condition(b)));}
 $('lamp-button').addEventListener('click',toggleLamp);$('lamp-power').addEventListener('click',toggleLamp);
 $('run-button').addEventListener('click',toggleRun);
