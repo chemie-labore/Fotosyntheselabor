@@ -398,7 +398,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 </style></head>
 <body>
 <header class="topbar"><a class="brand" href="#" aria-label="Fotosyntheselabor"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26 5C9 3 3 12 8 23c12 7 21-2 18-18Z"/><path d="M6 27 24 8M13 20l-1-8m6 3 7 1"/></svg><span>Fotosynthese<span class="brand-sub">EXPERIMENTIERLABOR</span></span></a></header>
-<nav class="lab-nav" aria-label="Laborbereich wählen"><button id="lab-factors" aria-pressed="true"><span>01</span>Außenfaktoren</button><button id="lab-chromatography" aria-pressed="false"><span>02</span>Chromatografie</button><output id="lab-dc-status" aria-live="off"></output></nav>
+<nav class="lab-nav" aria-label="Laborbereich wählen"><button id="lab-factors" aria-pressed="true"><span>01</span>Außenfaktoren</button><button id="lab-chromatography" aria-controls="dc-panel" aria-pressed="false"><span>02</span>Laubblatt-DC</button><output id="lab-dc-status" aria-live="off"></output></nav>
 <main id="factors-panel">
 <aside id="photo-notice" data-kind="error" aria-label="Hinweis zum Versuch" hidden><div id="photo-notice-message" role="alert" aria-atomic="true"><strong id="photo-notice-title">Bitte prüfen</strong><p id="photo-notice-text"></p></div><button type="button" id="photo-notice-close" aria-label="Hinweis schließen">×</button></aside>
 <section class="intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1>Außenfaktoren der Fotosynthese.</h1></div><button id="guide-open" class="guide-open" aria-haspopup="dialog" aria-controls="guide-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>Erkenntnisweg</button></section>
@@ -482,7 +482,7 @@ body.photo-compact{height:100vh;height:100dvh;min-height:0;display:grid;grid-tem
 <footer class="page-footer"><span><i></i>Getrennte Versuchsplätze</span><span>Modellierte Versuchsreihen · Bläschen von Hand zählen</span></footer>
 </main>
 <main id="dc-panel" hidden aria-labelledby="dc-heading">
- <section class="intro dc-intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1 id="dc-heading">Die Farben eines Blattes.</h1><p>Dünnschichtchromatografie der Blattfarbstoffe</p></div><button id="dc-guide-open" class="guide-open" aria-haspopup="dialog">Versuchsanleitung</button></section>
+ <section class="intro dc-intro"><div><p class="eyebrow">BIOLOGIE · Q13 gA</p><h1 id="dc-heading">Farbstoffe im Laubblatt</h1><p>Dünnschichtchromatografie der Blattfarbstoffe</p></div><button id="dc-guide-open" class="guide-open" aria-haspopup="dialog">Versuchsanleitung</button></section>
  <div class="dc-topline"><span><i></i> Virtueller Versuch · alle Handgriffe selbst durchführen</span><span>DC-Folie 40 × 80 mm · Kieselgel</span></div>
  <section class="dc-step-card" id="dc-step-card" aria-label="Nächster Handgriff">
   <div class="dc-step-number" id="dc-step-number" aria-hidden="true">1</div>
@@ -3705,7 +3705,13 @@ document.addEventListener('visibilitychange',()=>{cancelGestures();if(!document.
 window.addEventListener('resize',()=>{cancelGestures();syncCompactLayout();});window.addEventListener('blur',cancelGestures);
 coarsePointer.addEventListener('change',()=>{cancelGestures();syncCompactLayout();});
 if(typeof ResizeObserver!=='undefined'){const observer=new ResizeObserver(scheduleRuler);observer.observe($('dc-stage-scroll'));observer.observe($('dc-stage'));const trayObserver=new ResizeObserver(updateTrayScroll);trayObserver.observe($('dc-tools'));}
-renderTools();setView(location.hash==='#chromatografie'?'chromatography':'factors');
+function showLinkedLab() {
+  setView(location.hash === '#chromatografie' ? 'chromatography' : 'factors');
+}
+window.addEventListener('hashchange', () => {
+  if (['#chromatografie', '#aussenfaktoren', ''].includes(location.hash)) showLinkedLab();
+});
+renderTools();showLinkedLab();
 let developmentFrame='';
 setInterval(()=>{
  if(document.hidden)return;updateClock();
